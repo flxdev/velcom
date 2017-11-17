@@ -1,0 +1,92 @@
+include _mixins.pug
+
+.footer-info
+	.box
+		.footer-info__inner
+			.footer-info__wrap
+				.footer-logo-wrap
+					a.footer-logo__link(href="")
+						+icon('velcom-logo')
+					a.footer-lang(href="") Рус
+				.footer-info__nav
+					+link-navigation(['Главная', 'Приватность информации', 'Дата-Центр', 'Услуги', 'Партнеры', 'Клиенты и проекты', 'Контакты'])
+			.footer-info__wrap
+				.footer-contacts
+					p.footer-contacts__title.text-small Справочно-информационная служба
+					h5.footer-contacts__phone +375 29 600 04 11, доб. 6
+					p.text-primary.text-primary_black с мобильного телефона velcom по номеру 411, бесплатно в сети velcom
+					.footer-contacts__working-hours
+						p.text-primary Пн–пт: 8:00–21:00
+						p.text-primary Сб–вс: выходной 
+				.footer-action
+					.footer-social
+						.footer-social__link.footer-social__link_insta
+							+icon('social-instagram')
+						.footer-social__link.footer-social__link_vk
+							+icon('social-vk')
+						.footer-social__link.footer-social__link_yout
+							+icon('social-youtube')
+						.footer-social__link.footer-social__link_fb
+							+icon('social-facebook')
+						.footer-social__link.footer-social__link_tw
+							+icon('social-twitter')
+					.footer-search
+						input(type="search").footer-search__field
+						button.footer-search__serch-btn(type="submit")
+							+icon('search')
+				.footer-more-info
+					p.text-small Взаимодействие между клиентом и компанией по вопросам предоставления услуги происходит посредством электронной почты&nbsp;
+						strong sales@vdc.by
+						|&nbsp;и мобильного номера&nbsp;
+						strong 411-6
+						|.
+					p.text-small При отправлении сообщений на данный адрес в теме письма необходимо указывать номер договора.
+.footer-links
+	.box
+		.footer-services
+			ul.footer-services__list
+				li.footer-services__item
+					a.footer-services__link(href="https://velcom.by", target="_blank")
+						img(src="img/png/services-1.png", alt="services icon")
+						| velcom.by
+				li.footer-services__item
+					a.footer-services__link(href="https://shop.velcom.by", target="_blank")
+						img(src="img/png/services-2.png", alt="services icon")
+						| shop.velcom.by
+				li.footer-services__item
+					a.footer-services__link(href="https://voka.velcom.by", target="_blank")
+						img(src="img/png/services-3.png", alt="services icon")
+						| voka.velcom.by
+				li.footer-services__item
+					a.footer-services__link(href="https://v-banking.by", target="_blank")
+						img(src="img/png/services-4.png", alt="services icon")
+						| v-banking.by
+				li.footer-services__item
+					a.footer-services__link(href="https://velcom.by/wi-fi", target="_blank")
+						img(src="img/png/services-1.png", alt="services icon")
+						| velcom.by/wi-fi
+		.footer-partners
+			ul.footer-partners__list
+				li.footer-partners__item
+					a.footer-partners__link(href="#") A1 Austria
+				li.footer-partners__item
+					a.footer-partners__link(href="#") Vipnet
+				li.footer-partners__item
+					a.footer-partners__link(href="#") Vip mobile
+				li.footer-partners__item
+					a.footer-partners__link(href="#") Mtel
+				li.footer-partners__item
+					a.footer-partners__link(href="#") one.Vip
+				li.footer-partners__item
+					a.footer-partners__link(href="#") A1 Slovenia
+				li.footer-partners__item
+					a.footer-partners__link(href="#") FL1
+.footer-copyright
+	.box
+		.footer-copyright__wrap
+			.footer-copyright__item
+				span.text-small &copy; 2017, Унитарное предприятие «Велком».
+			.footer-copyright__map
+				a.text-small(href="#") Карта сайта
+				span.text-small.site-dev Разработка сайта:&nbsp;
+					a(href="#") FLEX.MEDIA

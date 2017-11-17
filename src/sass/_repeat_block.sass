@@ -1,0 +1,193 @@
+.h1
+	color: #ffffff
+	font-size: 3rem
+  	line-height: 1.042
+  	font-weight: 400
+.h2
+	color: #000000
+	font-size: 2rem
+	line-height: 1.75
+	font-weight: 400
+.h3
+	color: #000000
+	font-size: 1.25rem
+	line-height: 1.7
+	font-weight: 400
+.h4
+	color: #000000
+	font-size: 1.125rem
+	line-height:  1.333
+	font-weight: 800
+
+.text-primary
+	font-size: 1rem
+	line-height: 1.5
+	color: #767a7d
+	font-weight: 400
+	&_black
+		color: #000000
+
+.text-increased
+	font-size: 1.25rem
+	line-height: 1.7
+	color: rgba(#000000, .8)
+	font-weight: 400
+
+.text-small
+	font-size: 0.875rem
+	line-height: 1.714
+	color: #767a7d
+	font-weight: 400
+
+.box
+	width: 100%
+	max-width: 76.5rem
+	height: inherit
+	margin: 0 auto
+
+.link-button
+	+link-btn( #000000,$main-decor-color, #f2db00, #edcd1c)
+	&_small
+		font-size: 0.875rem
+.link-border
+	+link-btn(#000000,$main-decor-color , #fff164)
+	border: 2px solid #000000
+
+.link-navigation
+	&__item
+		margin-bottom: 1.5rem
+		&:last-child
+			margin-bottom: 0
+	&__link
+		font-size: 1rem
+		line-height: 1.5
+		font-weight: bold
+		color: #000000
+		+tr(color .3s ease)
+		&:hover
+			color: #ecdc00
+.link-more
+	display: flex
+	align-items: center
+	color: #000000
+	font-size: 1.125rem
+	line-height: 1.333
+	font-weight: bold
+	&__arrow
+		display: inline-block
+		width: 1.5625rem
+		height: 1.5625rem
+		margin-left: 0.8125rem
+
+.link-consultation
+	+link-btn( #000000,#ffffff, #f2db00, #edcd1c)
+	font-size: 0.875rem
+	margin: 0 auto
+
+.contacts-header
+	display: flex
+	justify-content: space-between
+	align-items: flex-end
+	color: #ffffff
+	width: 100%
+	max-width: 76.5rem
+	position: absolute
+	top: 97px
+	left: 50%
+	transform: translateX(-50%)
+	&__phones
+		display: flex
+	&__link
+		display: flex
+		align-items: center
+		font-size: 1.3125rem
+		letter-spacing: -0.02em
+		margin-left: 2.3rem
+		span
+			display: block
+			opacity: .5
+			margin-left: 10px
+			font-size: 0.5625rem
+			line-height: 1
+			max-width: 3rem
+
+.service-card
+	width: 31.781%
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	+box
+	border: 1px solid #cccccc
+	padding: 2.3rem 2.09rem 2.09rem
+	background-color: #ffffff
+	position: relative
+	+tr(all .3s ease)
+	&__title
+		width: 100%
+		position: relative
+		margin-bottom: 2rem
+	&__t-arrow
+		position: absolute
+		right: 1.125rem
+		bottom: 0
+		width: 1.5625rem
+		height: 1.5625rem
+		+tr(all .5s linear)
+	&__desc
+		margin-bottom: 2rem
+	&__link
+		margin-bottom: 0
+		margin-top: auto
+	&__icon
+		position: absolute
+		bottom: 0.78rem
+		right: 2.125rem
+		height: 7.1875rem
+		width: 7.5rem
+	&:hover
+		background-color: #fff164
+		border-color: #fff164
+	&:hover	&__link
+		background-color: #f2db00
+	&:hover &__t-arrow
+		right: 0
+	&:active &__link
+		background-color: #edcd1c
+
+.datacenter-characteristics
+	display: flex
+	justify-content: space-between
+	&__item
+		width: 30%
+	&__value
+		font-size: 3rem
+		line-height: 1.167
+		font-weight:bold
+	&__desc
+
+.second-news
+	display: flex
+	width: 50%
+	&__img
+		width: 10.78rem
+		margin-right: 2rem
+	&__short
+		max-width: 19.375rem
+	&__text
+		color: #000000
+
+.v-style-text
+	display: inline-block
+	position: relative
+	z-index: 1
+	&::before
+		content: ''
+		display: block
+		height: 1.5rem
+		width: 103%
+		background-color: $main-decor-color
+		position: absolute
+		z-index: -1
+		top: 0.4rem
+		left: -4px
+		transform: skew(-12deg)

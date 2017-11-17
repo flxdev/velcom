@@ -1,0 +1,50 @@
+.nav-menu
+	width: 100%
+	display: flex
+	align-items: center
+	background-color: $main-decor-color
+	padding-right: 1rem
+	padding-left: 1rem
+	position: fixed
+	z-index: 10
+	top: 0
+	left: 0
+	&__list
+		display: flex
+		margin-left: 2.3rem
+	&__btn-wrap
+		margin-left: auto
+		margin-right: 0
+	&__item
+		margin-right: 2.3rem
+		&:last-child
+			margin-right: 0
+	&__link
+		font-size: 1rem
+		font-weight: bold
+		line-height: 3.75
+		color: #000000
+		+tr(color .3s ease)
+		&:hover
+			color:#917d12
+.nav-mob-btn
+	display: none
+.nav-burger
+	display: block
+	width: 25px
+	height: 24px
+	&__line
+		display: block
+		height: 2px
+		width: 100%
+		background-color: #000000
+		margin-bottom: 3px
+		&:last-child
+			margin-bottom: 0
+
+.application-btn
+	line-height: 2.3
+	&__desc
+		display: block
+	&__mob
+		display: none

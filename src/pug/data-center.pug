@@ -1,0 +1,19 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Главная
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.data-center-slider
+			.data-center-slider__slide
+				.box
+					h2.h2 hello
+			.data-center-slider__slide
+				.box
+					h2.h2 world
+				

@@ -1,0 +1,85 @@
+mixin icon(name)
+	svg(class="icon-" + name)
+		use(xlink:href="#"+ name)
+
+mixin nav-menu
+	nav.nav-menu
+		button.nav-burger
+			span.nav-burger__line
+			span.nav-burger__line
+			span.nav-burger__line
+		a.nav-mob-btn(href="tel:+375 29 600 20 20") +375 29 600 20 20
+			span Техническая поддержка
+		ul.nav-menu__list
+			li.nav-menu__item
+				a.nav-menu__link(href="#") Дата-центр
+			li.nav-menu__item
+				a.nav-menu__link(href="#") Приватность информации
+			li.nav-menu__item
+				a.nav-menu__link(href="#") Услуги
+			li.nav-menu__item
+				a.nav-menu__link(href="#") Наши проекты
+			li.nav-menu__item
+				a.nav-menu__link(href="#") Контакты
+		.nav-menu__btn-wrap
+			button.application-btn.link-border
+				span.application-btn__desc Оставить заявку
+				span.application-btn__mob
+					+icon('envelope')
+
+mixin link-navigation(links)
+	ul.link-navigation
+		each link in links
+			li.link-navigation__item
+				a.link-navigation__link(href="#")= link
+
+mixin contacts-header
+	.contacts-header
+		.contacts-header__logo
+			a.header-logo(href="/")
+				span.header-logo__icon
+					+icon('velcom-logo')
+				span.header-logo__text DataCenter
+		.contacts-header__phones
+			a.contacts-header__link(href="tel:411") 411
+				span Бесплатно в сети velcom
+			a.contacts-header__link(href="te:+375 29 600 20 20") +375 29 600 20 20
+				span Техническая поддержка
+
+mixin service-card(title, desc, icon)
+	a(href="#").service-card
+		h4.service-card__title.h4= title
+			span.service-card__t-arrow
+				+icon('arrow-circle')
+		p.service-card__desc.text-primary= desc
+		span.service-card__link.link-button.link-button_small(href="#") Узнать больше
+		.service-card__icon
+			+icon(icon)
+
+mixin link-more(text, add_class)
+	a.link-more(href="#", class=""+add_class)= text
+		span.link-more__arrow
+			+icon('arrow-circle')
+
+mixin datacenter-characteristics
+	.datacenter-characteristics
+		.datacenter-characteristics__item
+			p.datacenter-characteristics__value 6 620
+			p.datacenter-characteristics__desc.text-primary кв.м. площадь ЦОД
+		.datacenter-characteristics__item
+			p.datacenter-characteristics__value 800
+			p.datacenter-characteristics__desc.text-primary Серверных стоек
+		.datacenter-characteristics__item
+			p.datacenter-characteristics__value 4
+			p.datacenter-characteristics__desc.text-primary Машинных зала
+
+mixin v-style-text(text)
+	span.v-style-text=text
+
+mixin second-news(img, short_text, date)
+	.second-news
+		.second-news__img
+			img(src="img/"+img, alt="")
+		.second-news__short
+			p.text-primary.second-news__text= short_text
+			p.text-primary.second-news__date= date

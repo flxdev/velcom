@@ -1,0 +1,295 @@
+input[type='number']
+	-moz-appearance: textfield
+
+input[type='submit']
+	-webkit-appearance: none
+	-moz-appearance: none
+	appearance: none
+	background-color: transparent
+
+input::-webkit-clear-button,
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button
+	-webkit-appearance: none
+
+input[type="password"]
+	font: small-caption
+	line-height: 1.65
+
+input
+	box-shadow: none
+	font-family: $o
+	color: #000
+	font-size: 16px
+	+placeholder
+		font-family: $o
+	&::-ms-clear
+		display: none
+
+svg
+	display: inline-block
+	max-width: 100%
+	max-height: 100%
+
+img
+	max-width: 100%
+
+button
+	background: 0 0
+
+*
+	+box
+	-webkit-tap-highlight-color: transparent
+	+placeholder
+		font-family: $o
+		font-size: 16px
+
+textarea
+	resize: none
+	font-family: 'Roboto'
+	font-size: 16px
+	+placeholder
+		font-family: $o
+		font-size: 14px
+
+ul
+	li > a
+		display: inline-block
+		width: 100%
+
+html
+	font-size: 16px
+	line-height: 1
+	position: relative
+	+box
+	width: 100%
+	height: auto
+	overflow: auto
+
+		
+body
+	margin: 0
+	background-attachment: fixed
+	+box
+	+font-smoothing
+	text-rendering: optimizeLegibility
+	font-family: $o
+	min-width: 320px
+	min-height: 100vh
+	-webkit-overflow-scrolling: touch
+	position: relative
+	overflow-x: hidden
+	&.menu-stuck:not(.mobile)
+		overflow: hidden !important
+	&.menu-mobile
+		overflow: hidden !important
+
+//::-webkit-scrollbar-track
+//	background-color: #fff
+//
+//::-webkit-scrollbar
+//	width: 5px
+//	background-color: transparent
+//
+//::-webkit-scrollbar-thumb
+//	background-color: $green
+
+.hidden
+	display: none !important
+
+.video-wrapper
+	width: 100%
+	height: 100vh
+	background-repeat: no-repeat
+	background-position: center center
+	background-size: cover
+
+.header-logo
+	display: flex
+	align-items: center
+	&__icon
+		display: inline-block
+		max-width: 8.4375rem
+		height: 1.875rem
+	&__text
+		font-size: 1.3125rem
+		font-weight: bold
+		letter-spacing: -0.03em
+		margin-left: 0.75rem
+
+.header-wrapper
+	height: 100%
+	position: relative
+.header-inner
+	height: 100%
+	display: flex
+	flex-direction: column
+
+.promo-inner
+	max-width: 46.875rem
+	margin-top: 16.875rem
+	margin-left: 9.375rem
+	a
+		margin-top: 4.375rem
+
+.promo-reclame
+	display: flex
+	justify-content: space-between
+	margin-bottom: 8.4375rem
+	margin-top: auto
+	&__item
+		display: flex
+		align-items: center
+	&__icon
+		width: 4.6875rem
+		height: 4.6875rem
+	&__text
+		margin-left: 1.25rem
+		width: 12rem
+		color: rgba(#ffffff, .8)
+.basic-services
+	background-color: #ffffff
+	padding-top: 5.9375rem
+	&-wrapper
+		display: flex
+		justify-content: space-between
+	&-title
+		font-size : 2rem
+		line-height : 1
+		margin-bottom: 2.8125rem
+
+.server-graph
+	text-align: center
+	background-color: #ffffff
+	background-repeat: no-repeat
+	background-position-x: 0
+	background-position-y: bottom
+	background-size: cover
+	animation: graph-move 60s infinite linear
+	margin-top: 4.94rem
+	padding-bottom: 3.94rem
+	position: relative
+	&::before
+		content: ''
+		display: block
+		height: 100%
+		width: 10rem
+		//background-color: #ffffff
+		background-image: linear-gradient(to left, transparent, #ffffff)
+		position: absolute
+		top: 0
+		left: 0
+	&::after
+		content: ''
+		display: block
+		height: 100%
+		width: 10rem
+		//background-color: #ffffff
+		background-image: linear-gradient(to right, transparent, #ffffff)
+		position: absolute
+		top: 0
+		right: 0
+	&__title
+		font-size: 5.625rem
+
+@keyframes graph-move
+	0%
+		background-position-x: 0
+	100%
+		background-position-x: 100%
+
+.about-center
+	background-image: linear-gradient(0deg, rgb(230,245,255) 23%, rgb(206,223,255) 74%, rgb(173,208,255) 100%)
+	padding-top: 5.625rem
+	padding-bottom: 6.25rem
+	position: relative
+	z-index: 1
+	font-size: 0
+	&__inner
+		display: flex
+		flex-wrap: wrap
+		position: relative
+	z-index: 1
+	&__title
+		width: 50%
+		display: flex
+		flex-direction: column
+		p
+			margin-top: auto
+			margin-bottom: 0
+	&__info
+		width: 50%
+	&__desc
+		position: relative
+		z-index: 2
+	&__characteristic
+		width: 50%
+		margin-left: auto
+		margin-right: 0
+		margin-top: 4.0625rem
+	&__link
+		margin-top: 4.0625rem
+	&__build
+		max-width: 560px
+		position: absolute
+		bottom: -6.25rem
+		left: -2rem
+		z-index: -1
+	&__clouds
+		position: absolute
+		top: 10%
+		left: 0
+		width: 70%
+		z-index: -2
+		
+.advantages
+	background-color: #fff233
+	position: relative
+	z-index: 1
+	padding-top: 6.09375rem
+	padding-bottom: 6.59375rem
+	&__title
+		line-height: 1.438
+		max-width: 1000px
+		margin-bottom: 3.75rem
+	&__slider
+		overflow: hidden
+	&__item
+		padding-left: 3.125rem
+		position: relative
+		vertical-align: top
+		p
+			max-width: 70%
+			color: rgba(#000000, .8)
+	&__check
+		display: block
+		width: 1.75rem
+		height: 1.25rem
+		position: absolute
+		top: 0
+		left: 10px
+	&__btn-wrap
+		margin-top: 3.75rem
+		text-align: center
+	&-decor
+		position: absolute
+		bottom: 0
+		right: 0
+		height: 100%
+		z-index: -1
+		img
+			height: 100%
+
+.main-news
+	padding-top: 5.75rem
+	padding-bottom: 6.75rem
+	&__title
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 3.9375rem
+	&__wrap
+		display: flex
+
+.data-center-slider
+	height: 620px
