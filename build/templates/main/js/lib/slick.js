@@ -10,7 +10,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 |___/_|_|\___|_|\_(_)/ |___/
                    |__/
 
- Version: 1.6.0
+ Version: 1.8.1
   Author: Ken Wheeler
  Website: http://kenwheeler.github.io
     Docs: http://kenwheeler.github.io/slick
@@ -67,6 +67,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 edgeFriction: 0.35,
                 fade: false,
                 focusOnSelect: false,
+                focusOnChange: false,
                 infinite: true,
                 initialSlide: 0,
                 lazyLoad: 'ondemand',
@@ -458,7 +459,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             i,
             dot;
 
-        if (_.options.dots === true) {
+        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
 
             _.$slider.addClass('slick-dotted');
 
@@ -528,7 +529,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         newSlides = document.createDocumentFragment();
         originalSlides = _.$slider.children();
 
-        if (_.options.rows > 1) {
+        if (_.options.rows > 0) {
 
             slidesPerSection = _.options.slidesPerRow * _.options.rows;
             numOfSlides = Math.ceil(originalSlides.length / slidesPerSection);
@@ -731,8 +732,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             _.$nextArrow && _.$nextArrow.off('click.slick', _.changeSlide);
 
             if (_.options.accessibility === true) {
-                _.$prevArrow.off('keydown.slick', _.keyHandler);
-                _.$nextArrow.off('keydown.slick', _.keyHandler);
+                _.$prevArrow && _.$prevArrow.off('keydown.slick', _.keyHandler);
+                _.$nextArrow && _.$nextArrow.off('keydown.slick', _.keyHandler);
             }
         }
 
@@ -777,7 +778,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         var _ = this,
             originalSlides;
 
-        if (_.options.rows > 1) {
+        if (_.options.rows > 0) {
             originalSlides = _.$slides.children().children();
             originalSlides.removeAttr('style');
             _.$slider.empty().append(originalSlides);
@@ -1007,7 +1008,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             targetLeft,
             verticalHeight,
             verticalOffset = 0,
-            targetSlide;
+            targetSlide,
+            coef;
 
         _.slideOffset = 0;
         verticalHeight = _.$slides.first().outerHeight(true);
@@ -1015,7 +1017,16 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         if (_.options.infinite === true) {
             if (_.slideCount > _.options.slidesToShow) {
                 _.slideOffset = _.slideWidth * _.options.slidesToShow * -1;
-                verticalOffset = verticalHeight * _.options.slidesToShow * -1;
+                coef = -1;
+
+                if (_.options.vertical === true && _.options.centerMode === true) {
+                    if (_.options.slidesToShow === 2) {
+                        coef = -1.5;
+                    } else if (_.options.slidesToShow === 1) {
+                        coef = -2;
+                    }
+                }
+                verticalOffset = verticalHeight * _.options.slidesToShow * coef;
             }
             if (_.slideCount % _.options.slidesToScroll !== 0) {
                 if (slideIndex + _.options.slidesToScroll > _.slideCount && _.slideCount > _.options.slidesToShow) {
@@ -1231,9 +1242,12 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                 });
 
                 if (slideControlIndex !== -1) {
-                    $(this).attr({
-                        'aria-describedby': 'slick-slide-control' + _.instanceUid + slideControlIndex
-                    });
+                    var ariaButtonControl = 'slick-slide-control' + _.instanceUid + slideControlIndex;
+                    if ($('#' + ariaButtonControl).length) {
+                        $(this).attr({
+                            'aria-describedby': ariaButtonControl
+                        });
+                    }
                 }
             });
 
@@ -1259,7 +1273,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         }
 
         for (var i = _.currentSlide, max = i + _.options.slidesToShow; i < max; i++) {
-            _.$slides.eq(i).attr('tabindex', 0);
+            if (_.options.focusOnChange) {
+                _.$slides.eq(i).attr({ 'tabindex': '0' });
+            } else {
+                _.$slides.eq(i).removeAttr('tabindex');
+            }
         }
 
         _.activateADA();
@@ -1288,7 +1306,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
         var _ = this;
 
-        if (_.options.dots === true) {
+        if (_.options.dots === true && _.slideCount > _.options.slidesToShow) {
             $('li', _.$dots).on('click.slick', {
                 message: 'index'
             }, _.changeSlide);
@@ -1298,7 +1316,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             }
         }
 
-        if (_.options.dots === true && _.options.pauseOnDotsHover === true) {
+        if (_.options.dots === true && _.options.pauseOnDotsHover === true && _.slideCount > _.options.slidesToShow) {
 
             $('li', _.$dots).on('mouseenter.slick', $.proxy(_.interrupt, _, true)).on('mouseleave.slick', $.proxy(_.interrupt, _, false));
         }
@@ -1570,8 +1588,8 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
             if (_.options.accessibility === true) {
                 _.initADA();
-                // for non-autoplay: once active slide (group) has updated, set focus on first newly showing slide 
-                if (!_.options.autoplay) {
+
+                if (_.options.focusOnChange) {
                     var $currentSlide = $(_.$slides.get(_.currentSlide));
                     $currentSlide.attr('tabindex', 0).focus();
                 }
@@ -2122,17 +2140,18 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
         if (_.options.centerMode === true) {
 
+            var evenCoef = _.options.slidesToShow % 2 === 0 ? 1 : 0;
+
             centerOffset = Math.floor(_.options.slidesToShow / 2);
 
             if (_.options.infinite === true) {
 
                 if (index >= centerOffset && index <= _.slideCount - 1 - centerOffset) {
-
-                    _.$slides.slice(index - centerOffset, index + centerOffset + 1).addClass('slick-active').attr('aria-hidden', 'false');
+                    _.$slides.slice(index - centerOffset + evenCoef, index + centerOffset + 1).addClass('slick-active').attr('aria-hidden', 'false');
                 } else {
 
                     indexOffset = _.options.slidesToShow + index;
-                    allSlides.slice(indexOffset - centerOffset + 1, indexOffset + centerOffset + 2).addClass('slick-active').attr('aria-hidden', 'false');
+                    allSlides.slice(indexOffset - centerOffset + 1 + evenCoef, indexOffset + centerOffset + 2).addClass('slick-active').attr('aria-hidden', 'false');
                 }
 
                 if (index === 0) {
@@ -2200,7 +2219,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
                     slideIndex = i - 1;
                     $(_.$slides[slideIndex]).clone(true).attr('id', '').attr('data-slick-index', slideIndex - _.slideCount).prependTo(_.$slideTrack).addClass('slick-cloned');
                 }
-                for (i = 0; i < infiniteCount; i += 1) {
+                for (i = 0; i < infiniteCount + _.slideCount; i += 1) {
                     slideIndex = i;
                     $(_.$slides[slideIndex]).clone(true).attr('id', '').attr('data-slick-index', slideIndex + _.slideCount).appendTo(_.$slideTrack).addClass('slick-cloned');
                 }
@@ -2273,7 +2292,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         if (_.options.infinite === false && _.options.centerMode === false && (index < 0 || index > _.getDotCount() * _.options.slidesToScroll)) {
             if (_.options.fade === false) {
                 targetSlide = _.currentSlide;
-                if (dontAnimate !== true) {
+                if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
                     _.animateSlide(slideLeft, function () {
                         _.postSlide(targetSlide);
                     });
@@ -2285,7 +2304,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         } else if (_.options.infinite === false && _.options.centerMode === true && (index < 0 || index > _.slideCount - _.options.slidesToScroll)) {
             if (_.options.fade === false) {
                 targetSlide = _.currentSlide;
-                if (dontAnimate !== true) {
+                if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
                     _.animateSlide(slideLeft, function () {
                         _.postSlide(targetSlide);
                     });
@@ -2353,7 +2372,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
             return;
         }
 
-        if (dontAnimate !== true) {
+        if (dontAnimate !== true && _.slideCount > _.options.slidesToShow) {
             _.animateSlide(targetLeft, function () {
                 _.postSlide(animSlide);
             });
@@ -2700,13 +2719,9 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
 
         if (_.$dots !== null) {
 
-            _.$dots.find('li').removeClass('slick-active').end().find('button').attr({
-                'aria-pressed': false
-            });
+            _.$dots.find('li').removeClass('slick-active').end();
 
-            _.$dots.find('li').eq(Math.floor(_.currentSlide / _.options.slidesToScroll)).addClass('slick-active').find('button').attr({
-                'aria-pressed': true
-            });
+            _.$dots.find('li').eq(Math.floor(_.currentSlide / _.options.slidesToScroll)).addClass('slick-active');
         }
     };
 

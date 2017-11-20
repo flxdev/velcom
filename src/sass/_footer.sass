@@ -7,13 +7,19 @@
 	&__inner
 		display: flex
 		align-items: flex-start
+		flex-wrap: wrap
 	&__nav
 		padding-left: 2.2rem
+		box-sizing: border-box
 	&__wrap
 		display: flex
 		width: 50%
 		flex-wrap: wrap
 		align-content: flex-start
+	+r(590)
+		padding-top: 2.9375rem
+		&__wrap
+			width: 100%
 
 .footer-contacts
 	width: 50%
@@ -25,12 +31,23 @@
 		font-weight: bold
 	&__working-hours
 		margin-top: 1.4rem
+	+r(1100)
+		width: 100%
+	+r(590)
+		margin-top: 3.4375rem
+		&__title
+			margin-bottom: 2.03125rem
+
 
 .footer-action
 	width: 50%
 	display: flex
 	flex-direction: column
 	justify-content: space-between
+	+r(1100)
+		width: 100%
+		margin-top: 2.3rem
+
 .footer-more-info
 	width: 100%
 	margin-top: 3rem
@@ -41,9 +58,18 @@
 		flex-direction: column
 		justify-content: space-between
 		align-items: flex-start
+		width: auto
 	&__link
 		max-width: 8.4375rem
 		height: 1.875rem
+	+r(850)
+		&-wrap
+			flex-direction: row
+			width: 90%
+	+r(590)
+		&-wrap
+			flex-direction: column
+			width: auto
 
 .footer-lang
 	width: 3rem
@@ -64,7 +90,7 @@
 		height: 2rem
 		padding: 0.4rem
 		border-radius: 50%
-		margin-left: 1rem
+		margin-right: 1rem
 		color: #ffffff
 		+tr(background-color .3s ease)
 		&:hover
@@ -72,6 +98,9 @@
 			cursor: pointer
 		&:last-child
 			margin-right: 0
+	+r(1100)
+		justify-content: flex-start
+		margin-bottom: 2rem
 .footer-search
 	position: relative
 	text-align: right
@@ -94,11 +123,15 @@
 		top: 50%
 		right: 1rem
 		transform: translateY(-50%)
+	+r(1100)
+		text-align: left
 		
 .footer-links
 	padding-top: 4.125rem
 	padding-bottom: 7.625rem
 	background-color: #f4f4f4
+	+r(980)
+		padding-bottom: 2.8125rem
 .footer-copyright
 	background-color: #f4f4f4
 	padding-bottom: 3.125rem
@@ -107,9 +140,11 @@
 	padding-bottom: 3.125rem
 	&__list
 		display: flex
+		justify-content: space-between
+		max-width: 61rem
 	&__item
 		display: inline-block
-		margin-right: 4.3rem
+		max-width: 155px
 		&:last-child
 			margin-right: 0
 	&__link
@@ -117,38 +152,58 @@
 		img
 			max-width: 1.25rem
 			margin-right: 0.8125rem
+
+	+r(850)
+		&__list
+			justify-content: flex-start
+			flex-wrap: wrap
+		&__item
+			max-width: 100%
+			width: 30%
+			margin-bottom: 1rem
+	+r(620)
+		&__item
+			width: 50%
+		&__link
+			img
+				margin-right: 0.5rem
+	+r(350)
+		&__item
+			width: 100%;
+	
+
 .footer-partners
-	&__list
-		display: flex
-	&__item
+	&__link
 		display: inline-block
-		margin: 0 1rem
 		font-weight: bold
-		position: relative
+		font-size: 0.875rem
+		line-height: 1.714
 		&::after
-			display: block
-			content: ''
-			width: 1px
-			height: 100%
-			background-color: #7f7f7f
-			position: absolute
-			top: 0
-			left: -1rem
-		&:first-child
-			margin-left: 0
+			content: '|'
+			display: inline-block
+			font-size: 1rem
+			padding: 0 1rem
+			color: #7f7f7f
+		&:last-child
 			&::after
 				display: none
-		&:last-child
-			margin-right: 0
 
 .footer-copyright
 	&__wrap
 		display: flex
+		flex-wrap: wrap
 	&__item
 		width: 50%
 	&__map
 		display: flex
 		width: 50%
+	+r(680)
+		&__item
+			width: 100%
+			margin-bottom: 1.4rem
+		&__map
+			width: 100%
+
 
 .site-dev
 	margin-right: 0

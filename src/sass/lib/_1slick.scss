@@ -16,11 +16,11 @@
 }
 .slick-list {
     position: relative;
-    overflow: hidden;
+    //overflow: hidden;
     display: block;
     margin: 0;
     padding: 0;
-
+    height: 100%;
     &:focus {
         outline: none;
     }
@@ -44,8 +44,7 @@
     left: 0;
     top: 0;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
+    height: 100%;
 
     &:before,
     &:after {
@@ -65,6 +64,7 @@
     float: left;
     height: 100%;
     min-height: 1px;
+    opacity: 1;
     [dir="rtl"] & {
         float: right;
     }

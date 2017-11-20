@@ -7,28 +7,31 @@ block title
 block config
 	- var main = true
 block content
-	.video-wrapper(style="background-image:url('img/promo.jpg')")
-		.header-wrapper
-			+contacts-header
-			.box
-				.header-inner
-					.promo-inner
-						h1.h1 Крупнейший в Беларуси сертифицированный дата-центр
-						a(href="#").link-button Посмотреть услуги
-					.promo-reclame
-						.promo-reclame__item
+	.header-wrapper.header-wrapper_full-page(style="background-image:url('img/promo.jpg')")
+		+contacts-header
+		.box
+			.header-inner
+				.header-inner__title.header-inner__title_offset
+					h1.h1 Крупнейший в Беларуси сертифицированный дата-центр
+					a(href="#").link-button Посмотреть услуги
+				.promo-reclame
+					.promo-reclame__item
+						.promo-reclame__body
 							.promo-reclame__icon
 								+icon('general-sla')
 							p.text-primary.promo-reclame__text Гарантированно высокие параметры SLA
-						.promo-reclame__item
+					.promo-reclame__item
+						.promo-reclame__body
 							.promo-reclame__icon
 								+icon('general-datacenter')
 							p.text-primary.promo-reclame__text Дата-центр класса Tier III Uptime institute
-						.promo-reclame__item
+					.promo-reclame__item
+						.promo-reclame__body
 							.promo-reclame__icon
 								+icon('general-alltime')
 							p.text-primary.promo-reclame__text Беспрерывная работа и соединение 24/7
-						.promo-reclame__item
+					.promo-reclame__item
+						.promo-reclame__body
 							.promo-reclame__icon
 								+icon('general-speedtest')
 							p.text-primary.promo-reclame__text Уровень доступности сервисов 99,982%
@@ -53,7 +56,10 @@ block content
 						+v-style-text('повышает скорость, масштаб и экономическую')
 						+v-style-text('выгоду для предприятий.')
 				.about-center__characteristic
-					+datacenter-characteristics
+					.datacenter-characteristics
+						+datacenter-characteristics('6 620', 'кв.м. площадь ЦОД')
+						+datacenter-characteristics('800', 'Серверных стоек')
+						+datacenter-characteristics('4', 'Машинных зала')
 					+link-more('Больше о дата-центре', 'about-center__link')
 				.about-center__build
 					img(src="img/data-canter.png", alt="clouds")

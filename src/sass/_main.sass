@@ -97,13 +97,6 @@ body
 .hidden
 	display: none !important
 
-.video-wrapper
-	width: 100%
-	height: 100vh
-	background-repeat: no-repeat
-	background-position: center center
-	background-size: cover
-
 .header-logo
 	display: flex
 	align-items: center
@@ -120,39 +113,78 @@ body
 .header-wrapper
 	height: 100%
 	position: relative
+	padding-top: 3.75rem
+	background-repeat: no-repeat
+	background-position: center center
+	background-size: cover
+	&_full-page
+		height: 100vh
+
 .header-inner
 	height: 100%
 	display: flex
 	flex-direction: column
-
-.promo-inner
-	max-width: 46.875rem
-	margin-top: 16.875rem
-	margin-left: 9.375rem
-	a
-		margin-top: 4.375rem
+	&_row
+		flex-direction: row
+		margin-top: 13.125rem
+	&__title
+		max-width: 46.875rem
+		&_offset
+			margin-top: 13.125rem
+			margin-left: 9.375rem
+		&_col
+			width: 50%
+			padding-left: 9.1875rem
+		a
+			margin-top: 4.375rem
+	&__desc
+		color: #ffffff
+		&_col
+			width: 50%
+	&__text
+		color: rgba(#ffffff, .8)
+	+r(768)
+		&__title
+			margin-top: 8.6875rem
+			&_offset-l
+				margin-left : 0
 
 .promo-reclame
-	display: flex
-	justify-content: space-between
 	margin-bottom: 8.4375rem
 	margin-top: auto
 	&__item
+		display: inline-block
+	&__body
 		display: flex
 		align-items: center
 	&__icon
+		display: inline-block
 		width: 4.6875rem
 		height: 4.6875rem
 	&__text
+		display: inline-block
 		margin-left: 1.25rem
 		width: 12rem
 		color: rgba(#ffffff, .8)
+	& .slick-track
+		width: 100%
+	+r(1024)
+		margin-bottom: 4.875rem
+		&__body
+			width: 50%
+
+ul.slick-dots * 
+	color: red
+
+
 .basic-services
 	background-color: #ffffff
 	padding-top: 5.9375rem
 	&-wrapper
 		display: flex
 		justify-content: space-between
+		+r(1024)
+			flex-wrap: wrap
 	&-title
 		font-size : 2rem
 		line-height : 1
@@ -191,6 +223,12 @@ body
 		right: 0
 	&__title
 		font-size: 5.625rem
+	+r(720)
+		&::before,
+		&::after
+			width: 5rem
+		&__title
+			font-size: 3.4375rem
 
 @keyframes graph-move
 	0%
@@ -219,6 +257,8 @@ body
 			margin-bottom: 0
 	&__info
 		width: 50%
+		+r(980)
+			width: 100%
 	&__desc
 		position: relative
 		z-index: 2
@@ -229,6 +269,7 @@ body
 		margin-top: 4.0625rem
 	&__link
 		margin-top: 4.0625rem
+		max-width: 244px
 	&__build
 		max-width: 560px
 		position: absolute
@@ -241,7 +282,19 @@ body
 		left: 0
 		width: 70%
 		z-index: -2
-		
+	+r(980)
+		padding-top: 3.4375rem
+		padding-bottom: 0
+		&__title
+			width: 100%
+		&__characteristic
+			width: 100%
+			margin-top: 3rem
+		&__build
+			position: relative
+			bottom: auto
+			left: auto
+			margin: 0 auto
 .advantages
 	background-color: #fff233
 	position: relative
@@ -279,6 +332,9 @@ body
 		z-index: -1
 		img
 			height: 100%
+	+r(980)
+		padding-top: 3.40625rem
+		padding-bottom: 5.4375rem
 
 .main-news
 	padding-top: 5.75rem
@@ -290,6 +346,68 @@ body
 		margin-bottom: 3.9375rem
 	&__wrap
 		display: flex
+		flex-wrap: wrap
+	+r(980)
+		padding-top: 3.4375rem
+		padding-bottom: 3.125rem
+		&__title
+			margin-bottom: 1.875rem
 
+/*!** data-center page **/
 .data-center-slider
-	height: 620px
+	position: relative
+	z-index: 1
+	&__slide
+		height: 620px
+		background-repeat: no-repeat
+		background-size: cover
+		position: relative
+		z-index: 1
+		&:before
+			content: ''
+			display: block
+			width: 100%
+			height: 100%
+			position: absolute
+			z-index: -1
+			left: 0
+			top: 0
+			background-color: #000000
+			opacity: .7
+
+.slick-prev,
+.slick-next
+	position: absolute
+	top: 50%
+	right: 5%
+	transform: translateY(-50%)
+	background-repeat: no-repeat
+	color: #ffffff
+	z-index: 5
+
+.slick-prev
+	right: auto
+	left: 5% 
+
+.slick-dots
+	position: absolute
+	bottom: 5%
+	left: 50%
+	transform: translateX(-50%)
+
+.content-wrap
+	display: flex
+.side-bar
+	width: 25%
+
+.content-inner
+	width: 75%
+	&__title
+		line-height: 1.406
+
+.sertification-wrap
+	display: flex
+
+.sertification-link
+	display: flex
+	align-items: center

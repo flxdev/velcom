@@ -61,25 +61,25 @@ mixin link-more(text, add_class)
 		span.link-more__arrow
 			+icon('arrow-circle')
 
-mixin datacenter-characteristics
-	.datacenter-characteristics
-		.datacenter-characteristics__item
-			p.datacenter-characteristics__value 6 620
-			p.datacenter-characteristics__desc.text-primary кв.м. площадь ЦОД
-		.datacenter-characteristics__item
-			p.datacenter-characteristics__value 800
-			p.datacenter-characteristics__desc.text-primary Серверных стоек
-		.datacenter-characteristics__item
-			p.datacenter-characteristics__value 4
-			p.datacenter-characteristics__desc.text-primary Машинных зала
+mixin datacenter-characteristics(val, text)
+	.datacenter-characteristics__item
+		p.datacenter-characteristics__value= val
+		p.datacenter-characteristics__desc.text-primary= text
 
 mixin v-style-text(text)
 	span.v-style-text=text
 
 mixin second-news(img, short_text, date)
 	.second-news
-		.second-news__img
-			img(src="img/"+img, alt="")
-		.second-news__short
-			p.text-primary.second-news__text= short_text
-			p.text-primary.second-news__date= date
+		a(href="").second-news__inner
+			.second-news__img
+				img(src="img/"+img, alt="")
+			.second-news__short
+				p.text-primary.second-news__text= short_text
+				p.text-primary.second-news__date= date
+
+mixin breadcrumbs(crumbs)
+	.breadcrumbs
+		.box
+			each crumb in crumbs
+				a.breadcrumbs__link(href="#")= crumb

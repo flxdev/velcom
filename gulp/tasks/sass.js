@@ -54,7 +54,7 @@ gulp.task('sass', function() {
     // rootValue - default pixel size for rem
 		rootValue: 16,
     propList: ['*'],
-		mediaQuery: true,
+		mediaQuery: false,
 		minPixelValue: 12
 	}))
 	.pipe(cache('sassing'))
