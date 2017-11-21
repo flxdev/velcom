@@ -1,0 +1,44 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Comandos
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title
+					h1.h1 Команда
+	.box
+		+breadcrumbs(['Главная', 'Дата-центер'])
+	.box
+		.content-wrap
+			aside.side-bar
+				.side-bar__nav
+					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
+			.content-inner
+				.comandos-group
+					h2.h2.comandos-group__title Руководство
+					.comandos-group__wrap
+						+worker-item('worker-1.jpg', 'Юлия Самойлова', 'Генеральный директор')
+						+worker-item('worker-2.jpg', 'Анастасия Севастьянова', 'Первый заместитель генерального директора')
+						+worker-item('worker-3.jpg', 'Сергей Мищук', 'Технический директор')
+						+worker-item('worker-4.jpg', 'Анна Мищук', 'Технический директор')
+						+worker-item('worker-5.jpg', 'Жанна Федута', 'Генеральный директор')
+						+worker-item('worker-6.jpg', 'Валентина Самойлова', 'Первый заместитель')
+				.comandos-group
+					h2.h2.comandos-group__title Менеджмент
+					.comandos-group__wrap
+						+worker-item('worker-1.jpg', 'Юлия Самойлова', 'Генеральный директор')
+						+worker-item('worker-2.jpg', 'Анастасия Севастьянова', 'Первый заместитель генерального директора')
+						+worker-item('worker-3.jpg', 'Сергей Мищук', 'Технический директор')
+						+worker-item('worker-4.jpg', 'Анна Мищук', 'Технический директор')
+						+worker-item('worker-5.jpg', 'Жанна Федута', 'Генеральный директор')
+						+worker-item('worker-6.jpg', 'Валентина Самойлова', 'Первый заместитель')
+						+worker-item('worker-empty.jpg', 'Жанна Федута', 'Генеральный директор')
+						+worker-item('worker-empty.jpg', 'Валентина Самойлова', 'Первый заместитель')

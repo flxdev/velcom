@@ -7,8 +7,11 @@ block title
 block config
 	- var main = true
 block content
-	.header-wrapper.header-wrapper_full-page(style="background-image:url('img/promo.jpg')")
+	.header-wrapper.header-wrapper_full-page
 		+contacts-header
+		.wrapper-bg(style="background-image:url('img/video.jpg')")
+			.video-container
+				video.fillWidth(autoplay='', loop='',data-src='img/video.mp4', type='video/mp4')
 		.box
 			.header-inner
 				.header-inner__title.header-inner__title_offset

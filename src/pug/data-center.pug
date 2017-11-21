@@ -31,40 +31,142 @@ block content
 							.datacenter-characteristics
 								+datacenter-characteristics('35 000', 'Общая проектная площадь кв.м.')
 								+datacenter-characteristics('6620', 'Площадь зданий и сооружений кв.м.')
-	+breadcrumbs(['Главная', 'Дата-центер'])
+	.box
+		+breadcrumbs(['Главная', 'Дата-центер'])
 	.box
 		.content-wrap
 			aside.side-bar
 				.side-bar__nav
-					+link-navigation(['Главная', 'Приватность информации', 'Дата-Центр', 'Услуги', 'Партнеры', 'Клиенты и проекты', 'Контакты'])
+					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
 			.content-inner
 				h2.h2.content-inner__title ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
-				.datacenter-characteristics
+				.datacenter-characteristics.datacenter-characteristics_data
 					+datacenter-characteristics('99,982%', 'Уровень доступности сервисов')
 					+datacenter-characteristics('35000 м²', 'Общая проектная площадь')
 					+datacenter-characteristics('6620 м²', 'Площадь зданий и сооружений')
 				.content-inner-item
-					h3.h3 Сертификация
+					h3.h3.content-inner-item__title Сертификация
 					.sertification-wrap
 						a(href="").sertification-link
-							img.sertification-link__img(src="", alt="PCI DSS")
+							.sertification-link__img
+								img(src="img/png/sertificat-1.png", alt="PCI DSS")
 							p.text-primary.sertification-link__title PCI DSS
 						a(href="").sertification-link
-							img.sertification-link__img(src="", alt="ISO27001")
+							.sertification-link__img
+								img(src="img/png/sertificat-2.png", alt="ISO27001")
 							p.text-primary.sertification-link__title ISO27001
 						a(href="").sertification-link
-							img.sertification-link__img(src="", alt="Tier III Design")
+							.sertification-link__img
+								img(src="img/png/sertificat-3.png", alt="Tier III Design")
 							p.text-primary.sertification-link__title Tier III Design
 						a(href="").sertification-link
-							img.sertification-link__img(src="", alt="Tier III Facility")
+							.sertification-link__img
+								img(src="img/png/sertificat-4.png", alt="Tier III Facility")
 							p.text-primary.sertification-link__title Tier III Facility
 				.content-inner-item
-					h3.h3 Система электроснабжения
+					h3.h3.content-inner-item__title Система электроснабжения
+					.parameters-table
+						dl.data-parameters
+							dt.data-parameters__title.text-small Общая электрическая мощность
+							dd.data-parameters__desc.text-small 8 МВт
+							dt.data-parameters__title.text-small Электрическая мощность модуля
+							dd.data-parameters__desc.text-small 2 МВт
+							dt.data-parameters__title.text-small Гарантированное внешнее электроснабжение
+							dd.data-parameters__desc.text-small 2 акт. линии по 10 кВ
+							dt.data-parameters__title.text-small Гарантированное электроснабжение
+							dd.data-parameters__desc.text-small 2N
+						dl.data-parameters
+							dt.data-parameters__title.text-small Дизель-генераторные установки
+							dd.data-parameters__desc.text-small N+1
+							dt.data-parameters__title.text-small Внешние топливохранилища
+							dd.data-parameters__desc.text-small 24 ч
+							dt.data-parameters__title.text-small Бесперебойное питание (UPS)
+							dd.data-parameters__desc.text-small 2N 
+							dt.data-parameters__title.text-small Электрическая мощность одного шкафа
+							dd.data-parameters__desc.text-small до 12 кВт
+					.content-inner-item__decor
+						+icon('characteristics-electro')
 				.content-inner-item
-					h3.h3 Система поддержания климата
+					h3.h3.content-inner-item__title Система поддержания климата
+					.parameters-table
+						dl.data-parameters
+							dt.data-parameters__title.text-small Изолированные холодные коридоры
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+							dt.data-parameters__title.text-small Уровень влажности в помещении
+							dd.data-parameters__desc.text-small 45%±10%
+						dl.data-parameters
+							dt.data-parameters__title.text-small Кондиционирование
+							dd.data-parameters__desc.text-small N+1
+							dt.data-parameters__title.text-small Температура воздуха
+							dd.data-parameters__desc.text-small 23°±2°
+					.content-inner-item__decor
+						+icon('characteristics-climate')
 				.content-inner-item
-					h3.h3 Каналы связи
+					h3.h3.content-inner-item__title Каналы связи
+					.parameters-table
+						dl.data-parameters
+							dt.data-parameters__title.text-small Оптические каналы связи
+							dd.data-parameters__desc.text-small 2N
+							dt.data-parameters__title.text-small Кольцевая организация соединений
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+						dl.data-parameters
+							dt.data-parameters__title.text-small Подключение с резервацией маршрутов
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+					.content-inner-item__decor
+						+icon('services-colocation')
 				.content-inner-item
-					h3.h3 Физическая безопасность
-				.content-inner-item
-					h3.h3 Система поддержания климата
+					h3.h3.content-inner-item__title Физическая безопасность
+					.parameters-table
+						dl.data-parameters
+							dt.data-parameters__title.text-small Круглосуточная охрана
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+							dt.data-parameters__title.text-small Видеонаблюдение
+							dd.data-parameters__desc.text-small 152 камеры
+							dt.data-parameters__title.text-small Глубина архива
+							dd.data-parameters__desc.text-small 60 дней
+							dt.data-parameters__title.text-small Огнестойкость
+							dd.data-parameters__desc.text-small ≥ 60 минут
+						dl.data-parameters
+							dt.data-parameters__title.text-small Пропускная система
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+							dt.data-parameters__title.text-small Уровень доступа
+							dd.data-parameters__desc.text-small 6 ступеней
+							dt.data-parameters__title.text-small Мониторинг инфраструктуры
+							dd.data-parameters__desc.text-small 24/7
+					.content-inner-item__decor
+						+icon('characteristics-security')
+				.data-center-details
+					h3.h3 Дата-центры подключены к точкам обмена трафиком MSK-IX, DATA-IX. Точки присутствия на ММТС-9, ММТС-10. Собственная оптоволоконная сеть
+					ul.data-center-details__list
+						li.data-center-details__item.text-primary Все активное оборудование дублируется по принципу N+1
+						li.data-center-details__item.text-primary Энергосистема организована на базе двух независимых вводов как со стороны городских сетей, так и оборудования клиента
+						li.data-center-details__item.text-primary Климатическое оборудование также построено на базе резервирования
+						li.data-center-details__item.text-primary При проведении профилактических работ функционирование ЦОД функционирует в обычном режиме не страдает
+						li.data-center-details__item.text-primary ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+				.data-center-cooperation
+					.data-center-cooperation__promo(style="background-image:url('img/partner-bg.jpg')")
+						.data-center-partner
+							p.data-center-partner__title Сотрудничество
+							p.data-center-partner__text Мы открыты к сотрудничеству и всегда рады найти новых деловых партнеров
+							a(href="#").data-center-partner__link.link-button.link-button_small Стать партнёром
+					.data-center-cooperation__details
+						p.text-small Позвоните нам&#32;
+							a(href="tel:+375 29 600 04 11")
+								strong +375 29 600 04 11
+							|, отправьте заявку по электронной почте&#32;
+							a(href="mailto:sales@vdc.by")
+								strong sales@vdc.by
+							|&#32;или заполните&#32;
+							a(href="#")
+								strong форму обратной связи
+							|, и консультант свяжется с вами для разработки индивидуального предложения

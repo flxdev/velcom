@@ -29,9 +29,13 @@ mixin nav-menu
 
 mixin link-navigation(links)
 	ul.link-navigation
-		each link in links
-			li.link-navigation__item
-				a.link-navigation__link(href="#")= link
+		each link,index in links
+			if index == 1
+				li.link-navigation__item
+					a.link-navigation__link.link-navigation__link_active(href="#")= link
+			else 
+				li.link-navigation__item
+					a.link-navigation__link(href="#")= link
 
 mixin contacts-header
 	.contacts-header
@@ -80,6 +84,12 @@ mixin second-news(img, short_text, date)
 
 mixin breadcrumbs(crumbs)
 	.breadcrumbs
-		.box
-			each crumb in crumbs
-				a.breadcrumbs__link(href="#")= crumb
+		each crumb in crumbs
+			a.breadcrumbs__link(href="#")= crumb
+
+mixin worker-item(photo, name, position)
+	.worker-item
+		.worker-item__photo
+			img(src="img/worker/"+photo, alt="worker-item")
+		p.worker-item__name= name
+		p.worker-item__position= position
