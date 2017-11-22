@@ -98,6 +98,10 @@
 		width: 1.5625rem
 		height: 1.5625rem
 		margin-left: 0.8125rem
+		color: rgb(172, 174, 176);
+		+tr(color .3s ease)
+	&:hover &__arrow
+		color: #000000
 
 .link-consultation
 	+link-btn( #000000,#ffffff, #f2db00, #edcd1c)
@@ -158,7 +162,8 @@
 		bottom: 0
 		width: 1.5625rem
 		height: 1.5625rem
-		+tr(all .5s linear)
+		color:  rgb(236, 239, 242)
+		+tr(all .3s ease)
 	&__desc
 		margin-bottom: 2rem
 	&__link
@@ -171,6 +176,8 @@
 		right: 2.125rem
 		height: 7.1875rem
 		width: 7.5rem
+		color: #e8e8e8
+		+tr(all .3s ease)
 	&:hover
 		background-color: #fff164
 		border-color: #fff164
@@ -178,6 +185,9 @@
 		background-color: #f2db00
 	&:hover &__t-arrow
 		right: 0
+		color: #000000
+	&:hover &__icon
+		color: #f2db00
 	&:active &__link
 		background-color: #edcd1c
 	+r(1100)
@@ -295,7 +305,7 @@
 	
 	
 	video
-		position: absolute
+		position: fixed
 		z-index: 0
 		bottom: 0
 		min-height: 100%

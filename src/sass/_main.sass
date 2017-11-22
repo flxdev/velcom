@@ -77,12 +77,12 @@ body
 	min-width: 320px
 	min-height: 100vh
 	-webkit-overflow-scrolling: touch
-	position: relative
 	overflow-x: hidden
 	&.menu-stuck:not(.mobile)
 		overflow: hidden !important
 	&.menu-mobile
 		overflow: hidden !important
+		position: fixed
 
 //::-webkit-scrollbar-track
 //	background-color: #fff
@@ -180,6 +180,7 @@ ul.slick-dots *
 
 
 .basic-services
+	position: relative
 	background-color: #ffffff
 	padding-top: 5.9375rem
 	&-wrapper
@@ -341,6 +342,8 @@ ul.slick-dots *
 .main-news
 	padding-top: 5.75rem
 	padding-bottom: 6.75rem
+	position: relative
+	background-color: #ffffff
 	&__title
 		display: flex
 		justify-content: space-between
@@ -404,6 +407,8 @@ ul.slick-dots *
 
 .side-bar
 	width: 25%
+	&__nav
+		padding-bottom: 40px
 	+r(768)
 		width: 100%
 
@@ -493,6 +498,7 @@ ul.slick-dots *
 		position: absolute
 		top: 0
 		right: 100%
+		z-index: -1
 	&:before
 		content: ''
 		display: block
@@ -502,6 +508,7 @@ ul.slick-dots *
 		position: absolute
 		top: 0
 		left: 100%
+		z-index: -1
 	padding: 4.375rem 0
 	&__list
 		margin-top: 1.5625rem
