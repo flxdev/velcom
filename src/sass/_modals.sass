@@ -35,9 +35,15 @@
 		flex-wrap: wrap
 		align-items: flex-start
 		width: 100%
-		padding: 59px 68px 195px 130px
-	&.modal-menu-body
+		height: 100%
+		padding: 59px 68px 15px 130px
+	&-body
 		+vertical
+		width: 100%
+		text-align: left
+		display: flex
+		flex-wrap: wrap
+		align-items: flex-start
 	&__close-btn
 		display: block
 		width: 22px
@@ -47,7 +53,7 @@
 		top: 20px
 		right: 20px
 	&__header
-		margin-bottom: 80px
+		margin-bottom: 10px
 		width: 100%
 	&__nav
 		display: flex
@@ -108,10 +114,11 @@
 			margin-bottom: 10px
 	+r(1024)
 		&-inner
-			padding: 45px 38px 155px 60px
+			padding: 45px 38px 15px 60px
 	+r(768)
+		overflow-y: scroll
 		&-inner
-			padding: 45px 25px 50px 40px
+			padding: 45px 25px 15px 40px
 		&__nav
 			width: 50%
 			padding-right: 20px
@@ -133,7 +140,7 @@
 				display: none
 	+r(620)
 		&-inner
-			padding: 52px 16px 50px 16px
+			padding: 52px 16px 30px 16px
 		&__close-btn
 			top: 19px
 			right: 19px

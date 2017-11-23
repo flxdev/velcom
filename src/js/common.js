@@ -4,7 +4,7 @@ window.onload = function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-	var promo_reclame = $('.promo-reclame').slick({
+	var slider_promo_reclame = $('.promo-reclame').slick({
 		slidesToShow: 4,
 		arrows: false,
 		dots: false,
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
 					rows : 2,
 					slidesPerRow : 2,
 					slidesToShow: 1,
-					dots: true,
 				}
 			},
 			{
@@ -26,18 +25,45 @@ document.addEventListener('DOMContentLoaded', function () {
 				settings: {
 					rows : 1,
 					slidesPerRow : 1,
-					slidesToShow: 1,
+					slidesToShow: 2,
 					dots: true,
+					autoplay: true,
+					autoplaySpeed: 3500,
+					dotsClass: 'custom_dots'
 				}
 			}
 		]
 	});
 
-	var advantages = $('.advantages__slider').slick({
+	var slider_services = $('.basic-services-wrapper').slick({
+		slidesToShow: 4,
+		arrows: false,
+		dots: true,
+		dotsClass: 'custom_dots custom_dots_black',
+		touchMove: false,
+		dragable: false,
+		adaptiveHeight : false,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow : 2,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow : 1,
+				}
+			}
+		]
+	});
+
+	var slider_advantages = $('.advantages__slider').slick({
 		rows : 2,
 		slidesPerRow : 3,
 		arrows: false,
-		adaptiveHeight : true,
+		adaptiveHeight : false,
 		touchMove: false,
 		dragable: false,
 		responsive: [
@@ -46,13 +72,15 @@ document.addEventListener('DOMContentLoaded', function () {
 				settings: {
 					rows : 3,
 					slidesPerRow : 1,
-					dots : true
+					dots : true,
+					dotsClass: 'custom_dots custom_dots_black',
+					appendDots : $('.advantages__slider-dots')
 				}
 			}
 		]
 	});
 
-	var data_slider = $('.data-center-slider').slick({
+	var slider_data_slider = $('.data-center-slider').slick({
 		touchMove: false,
 		dragable: false,
 		dots: true,
@@ -91,7 +119,15 @@ function scrollAnimations(){
 	});
 	inView.threshold(0.1);
 	
-	inView('.anim-cont')
+	inView('.header-inner__animate')
+		.on('enter', function(el){
+			if(!el.done) {
+				el.classList.add('active');
+			}
+		}).on('exit', function(el){
+			el.done = true;
+		});
+	inView('.contacts-header')
 		.on('enter', function(el){
 			if(!el.done) {
 				el.classList.add('active');
@@ -143,7 +179,7 @@ function Menu() {
 		target = $('.mob-menu'),
 		OpenClass = 'active';
 
-	trigger.add(target).on('click', function(e) {
+	trigger.on('click', function(e) {
 		console.log('kek');
 		if (!trigger.hasClass('anim')) {
 

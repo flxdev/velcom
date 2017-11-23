@@ -74,8 +74,10 @@ body
 	+font-smoothing
 	text-rendering: optimizeLegibility
 	font-family: $o
+	width: 100%
 	min-width: 320px
-	min-height: 100vh
+	height: auto
+	min-height: 100%
 	-webkit-overflow-scrolling: touch
 	overflow-x: hidden
 	&.menu-stuck:not(.mobile)
@@ -114,48 +116,63 @@ body
 	height: 100%
 	position: relative
 	z-index: 0
-	padding-top: 3.75rem
+	padding-top: 60px
 	&_full-page
 		height: 100vh
 
 .header-inner
 	height: 100%
-	display: flex
-	flex-direction: column
+	padding: 110px 0 60px
 	position: relative
 	z-index: 2
+	display: flex
+	flex-direction: column
 	&_inner-page
-		padding: 11.15625rem 0 4.0625rem
+		padding: 178px 0 65px
 	&_row
 		flex-direction: row
 		margin-top: 13.125rem
 	&__title
+		display: inline-block
 		max-width: 46.875rem
 		&_offset
-			margin-top: 13.125rem
+			margin-top: auto
+			margin-bottom: auto
 			margin-left: 9.375rem
+			padding-bottom: 20px
 		&_col
 			width: 50%
 			padding-left: 9.1875rem
 		a
-			margin-top: 4.375rem
+			margin-top: 70px
 	&__desc
 		color: #ffffff
 		&_col
 			width: 50%
 	&__text
 		color: rgba(#ffffff, .8)
+	&__animate
+		transform: translateY(40px)
+		opacity: 0
+		+tr(all .5s ease .8s)
+		&.active
+			transform: translateY(0)
+			opacity: 1
 	+r(768)
+		padding: 90px 0 20px
 		&__title
-			margin-top: 8.6875rem
-			&_offset-l
+			&_offset
 				margin-left : 0
+			a
+				margin-top: 35px
 
 .promo-reclame
-	margin-bottom: 8.4375rem
+	margin-bottom: 0
 	margin-top: auto
+	width: 100%
 	&__item
 		display: inline-block
+		margin-right: 35px
 	&__body
 		display: flex
 		align-items: center
@@ -171,28 +188,38 @@ body
 	& .slick-track
 		width: 100%
 	+r(1024)
-		margin-bottom: 4.875rem
+		&__item
+			margin-right: 0
+			padding-bottom: 20px
 		&__body
-			width: 50%
-
-ul.slick-dots * 
-	color: red
-
-
+			width: 80%
+	+r(768)
+		width: auto
+		margin-right: -70vw
+		&__item
+			margin-bottom: 0px
+		&__body
+			width: 100%
+			padding-right: 15px
+	
 .basic-services
-	position: relative
 	background-color: #ffffff
 	padding-top: 5.9375rem
-	&-wrapper
-		display: flex
-		justify-content: space-between
-		+r(1024)
-			flex-wrap: wrap
+	// &-wrapper
+	// 	display: flex
+	// 	justify-content: space-between
+	// 	+r(1024)
+	// 		flex-wrap: wrap
 	&-title
 		font-size : 2rem
 		line-height : 1
 		margin-bottom: 2.8125rem
+	&-wrapper
+		margin-right: -70vw
 
+.services-slider
+	width: 100%
+	
 .server-graph
 	text-align: center
 	background-color: #ffffff
@@ -298,50 +325,72 @@ ul.slick-dots *
 			bottom: auto
 			left: auto
 			margin: 0 auto
+	+r(768)
+		&__link
+			margin-top: 20px
+			margin-bottom: 40px
+			max-width: 244px
 .advantages
 	background-color: #fff233
 	position: relative
 	z-index: 1
-	padding-top: 6.09375rem
-	padding-bottom: 6.59375rem
+	padding-top: 95px
+	padding-bottom: 100px
 	&__title
 		line-height: 1.438
 		max-width: 1000px
-		margin-bottom: 3.75rem
+		margin-bottom: 60px
 	&__slider
 		overflow: hidden
 	&__item
-		padding-left: 3.125rem
+		padding-left: 50px
 		position: relative
 		vertical-align: top
+		margin-bottom: 50px
 		p
-			max-width: 70%
+			max-width: 85%
 			color: rgba(#000000, .8)
 	&__check
 		display: block
-		width: 1.75rem
-		height: 1.25rem
+		width: 25px
+		height: 15px
 		position: absolute
-		top: 0
+		top: 5px
 		left: 10px
 	&__btn-wrap
-		margin-top: 3.75rem
+		// margin-top: 50px
 		text-align: center
 	&-decor
 		position: absolute
 		bottom: 0
 		right: 0
 		height: 100%
+		width: 100%
+		background-repeat: no-repeat
+		background-size: contain
+		background-position: 100% 100%
 		z-index: -1
-		img
-			height: 100%
+	&__slider-dots
+		display: none
+	+r(1024)
+		&-decor
+			background-size: cover
+			background-position: center 0
 	+r(980)
-		padding-top: 3.40625rem
-		padding-bottom: 5.4375rem
+		padding-top: 54px
+		padding-bottom: 80px
+		&__title
+			margin-bottom: 30px
+		&__item
+			margin-bottom: 20px
+			p
+				width: 100%
+		&__slider-dots
+			display: block
 
 .main-news
-	padding-top: 5.75rem
-	padding-bottom: 6.75rem
+	padding-top: 55px
+	padding-bottom: 90px
 	position: relative
 	background-color: #ffffff
 	&__title
@@ -354,9 +403,14 @@ ul.slick-dots *
 		flex-wrap: wrap
 	+r(980)
 		padding-top: 3.4375rem
-		padding-bottom: 3.125rem
 		&__title
 			margin-bottom: 1.875rem
+	+r(620)
+		&__more-news
+			position: absolute
+			bottom: 35px
+			left: 16px
+			
 
 /*!** data-center page **/
 .data-center-slider
