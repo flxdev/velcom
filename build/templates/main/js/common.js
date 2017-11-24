@@ -32,27 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		}]
 	});
 
-	var slider_services = $('.basic-services-wrapper').slick({
-		slidesToShow: 4,
-		arrows: false,
-		dots: true,
-		dotsClass: 'custom_dots custom_dots_black',
-		touchMove: false,
-		dragable: false,
-		adaptiveHeight: false,
-		responsive: [{
-			breakpoint: 1024,
-			settings: {
-				slidesToShow: 2
-			}
-		}, {
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 1
-			}
-		}]
-	});
-
 	var slider_advantages = $('.advantages__slider').slick({
 		rows: 2,
 		slidesPerRow: 3,
@@ -72,16 +51,36 @@ document.addEventListener('DOMContentLoaded', function () {
 		}]
 	});
 
-	var slider_data_slider = $('.data-center-slider').slick({
+	var slider_data_slider_text = $('.data-center-slider-text').slick({
 		touchMove: false,
 		dragable: false,
-		dots: true
+		arrows: true,
+		dots: true,
+		dotsClass: 'custom_dots data-dots',
+		asNavFor: '.data-center-slider-bg',
+		responsive: [{
+			breakpoint: 768,
+			settings: {
+				arrows: false
+			}
+		}]
+
+	});
+
+	var slider_data_slider_bg = $('.data-center-slider-bg').slick({
+		touchMove: false,
+		dragable: false,
+		dots: false,
+		arrows: false,
+		asNavFor: '.data-center-slider-text'
+		//fade: true
 	});
 
 	stickinit();
 	show_video();
 	scrollAnimations();
 	Menu();
+	servicescSliderInit();
 });
 
 function isMobile() {
@@ -103,20 +102,23 @@ function show_video() {
 		}
 	}
 }
+
 function scrollAnimations() {
 	inView.offset({
 		top: 0,
 		bottom: 0
 	});
 	inView.threshold(0.1);
-
-	inView('.header-inner__animate').on('enter', function (el) {
+	// 1st-block info slide down->top
+	inView('.header-inner_animate').on('enter', function (el) {
 		if (!el.done) {
 			el.classList.add('active');
 		}
 	}).on('exit', function (el) {
 		el.done = true;
 	});
+
+	// 1st-block contact slide top->down
 	inView('.contacts-header').on('enter', function (el) {
 		if (!el.done) {
 			el.classList.add('active');
@@ -124,10 +126,10 @@ function scrollAnimations() {
 	}).on('exit', function (el) {
 		el.done = true;
 	});
-	inView('.projects-wrap').on('enter', function (el) {
+	// block fade-in and down->top 
+	inView('.fade-down').on('enter', function (el) {
 		if (!el.done) {
 			el.classList.add('active');
-			tabs.init();
 		}
 	}).on('exit', function (el) {
 		el.done = true;
@@ -195,5 +197,46 @@ function Menu() {
 				trigger.removeClass('anim');
 			}, 500);
 		}
+	});
+}
+
+function servicescSliderInit() {
+	var services_slider = $('.basic-services-wrapper');
+	var slide_count;
+
+	services_slider.on('init', function (event, slick, currentSlide, nextSlide) {
+
+		var count = slick.slideCount;
+
+		console.log(count + ' count');
+		if (count > 3) {
+			services_slider.addClass('serv_offset');
+			slide_count = 4;
+			console.log(count + ' slide_count');
+		} else if (count <= 3) {
+			slide_count = count;
+			console.log(slide_count + ' slide_count');
+		}
+	});
+
+	services_slider.slick({
+		slidesToShow: slide_count,
+		arrows: false,
+		dots: true,
+		dotsClass: 'custom_dots custom_dots_black',
+		touchMove: true,
+		dragable: true,
+		adaptiveHeight: false,
+		responsive: [{
+			breakpoint: 1200,
+			settings: {
+				slidesToShow: slide_count - 1
+			}
+		}, {
+			breakpoint: 768,
+			settings: {
+				slidesToShow: slide_count - 2
+			}
+		}]
 	});
 }

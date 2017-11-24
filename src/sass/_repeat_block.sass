@@ -150,10 +150,9 @@
 			display: none
 
 .service-card
-	height: 100%
 	width: 30%
 	border: 1px solid #cccccc
-	padding: 2.375rem 2.09rem 2.09375rem 2.09rem
+	padding: 38px 33px 33px 33px
 	background-color: #ffffff
 	position: relative
 	z-index: 1
@@ -163,26 +162,28 @@
 		width: 100%
 		position: relative
 		margin-bottom: 2rem
+		display: flex
+		justify-content: space-between
+		align-items: center
 	&__t-arrow
-		position: absolute
-		right: 1.125rem
-		bottom: 0
-		width: 1.5625rem
-		height: 1.5625rem
+		width: 25px
+		height: 25px
+		margin-right: 20px
 		color:  rgb(236, 239, 242)
 		+tr(all .3s ease)
 	&__desc
-		margin-bottom: 2rem
+		margin-bottom: 60px
 	&__link
-		margin-bottom: 0
-		margin-top: auto
+		position: absolute
+		bottom: 33px
+		left: 33px
 	&__icon
 		position: absolute
 		z-index: -1
-		bottom: 0.78rem
-		right: 2.125rem
-		height: 7.1875rem
-		width: 7.5rem
+		bottom: 12px
+		right: 34px
+		height: 115px
+		width: 120px
 		color: #e8e8e8
 		+tr(all .3s ease)
 	&:hover
@@ -191,7 +192,7 @@
 	&:hover	&__link
 		background-color: #f2db00
 	&:hover &__t-arrow
-		right: 0
+		margin-right: 0
 		color: #000000
 	&:hover &__icon
 		color: #f2db00
@@ -199,20 +200,27 @@
 		background-color: #edcd1c
 	+r(1100)
 		&__icon
-			right: 1rem
+			right: 16px
 	+r(1024)
 		width: 48.68%
-		margin-bottom: 1.6875rem
+		margin-bottom: 27px
 	+r(720)
-		padding: 2.375rem 1.625rem 2.09375rem 1.625rem
+		padding: 38px 25px 33px 25px
 		width: 100%
+		&__link
+			bottom: 33px
+			left: 25px
 
 .datacenter-characteristics
 	display: flex
 	flex-wrap: wrap
-	justify-content: space-between
+	// justify-content: space-between
 	&__item
-		width: 30%
+		margin-right: 5%
+		margin-bottom: 20px
+		&:last-child
+			margin-right: 0
+	// 	width: 30%
 	&__value
 		font-size: 3rem
 		line-height: 1.167
@@ -224,7 +232,6 @@
 		margin-bottom: 4.0625rem
 	+r(768)
 		&__item
-			width: 45%
 			margin-bottom: 16px
 		&__value
 			font-size: 2.375rem
@@ -280,6 +287,14 @@
 		top: 0.4rem
 		left: -4px
 		transform: skew(-12deg)
+	+r(520)
+		display: inline
+		background-color: $main-decor-color
+		-webkit-box-decoration-break: clone
+		padding: 0 5px
+		margin: 0 -5px
+		&::before
+			display: none
 
 .breadcrumbs
 	margin-top: 2.8125rem
@@ -434,3 +449,24 @@
 		width: 34px
 		height: 34px
 		font-size: 0
+
+
+
+/* animated block*/
+.fade-down
+	transform: translateY(100px)
+	opacity: 0
+	+tr(all .3s ease .35s)
+	&.active
+		transform: translateY(0)
+		opacity: 1
+
+.slider-animate
+	transform: translateY(20px)
+	opacity: 0
+	+tr(all .3s ease .4s)
+.slick-initialized
+	.slick-slide.slick-current.slick-active
+		.slider-animate
+			transform: translateY(0)
+			opacity: 1
