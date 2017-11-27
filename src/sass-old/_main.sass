@@ -104,13 +104,13 @@ body
 	align-items: center
 	&__icon
 		display: inline-block
-		max-width: 135px
-		height: 30px
+		max-width: 8.4375rem
+		height: 1.875rem
 	&__text
-		font-size: 21px
+		font-size: 1.3125rem
 		font-weight: bold
 		letter-spacing: -0.03em
-		margin-left: 12px
+		margin-left: 0.75rem
 
 .header-wrapper
 	height: 100%
@@ -128,7 +128,7 @@ body
 	display: flex
 	flex-direction: column
 	&_inner-page
-		padding: 170px 0 65px
+		padding: 178px 0 65px
 	&_row
 		height: auto
 		flex-direction: row
@@ -136,7 +136,7 @@ body
 		padding: 60px 0
 	&__title
 		display: inline-block
-		max-width: 750px
+		max-width: 46.875rem
 		&_offset
 			margin-top: auto
 			margin-bottom: auto
@@ -203,12 +203,12 @@ body
 		align-items: center
 	&__icon
 		display: inline-block
-		width: 75px
-		height: 75px
+		width: 4.6875rem
+		height: 4.6875rem
 	&__text
 		display: inline-block
-		margin-left: 20px
-		width: 192px
+		margin-left: 1.25rem
+		width: 12rem
 		color: rgba(#ffffff, .8)
 	& .slick-track
 		width: 100%
@@ -280,14 +280,14 @@ body
 	background-position-y: bottom
 	background-size: cover
 	animation: graph-move 60s infinite linear
-	margin-top: 79px
-	padding-bottom: 63px
+	margin-top: 4.94rem
+	padding-bottom: 3.94rem
 	position: relative
 	&::before
 		content: ''
 		display: block
 		height: 100%
-		width: 160px
+		width: 10rem
 		//background-color: #ffffff
 		background-image: linear-gradient(to left, transparent, #ffffff)
 		position: absolute
@@ -297,20 +297,20 @@ body
 		content: ''
 		display: block
 		height: 100%
-		width: 160px
+		width: 10rem
 		//background-color: #ffffff
 		background-image: linear-gradient(to right, transparent, #ffffff)
 		position: absolute
 		top: 0
 		right: 0
 	&__title
-		font-size: 90px
+		font-size: 5.625rem
 	+r(720)
 		&::before,
 		&::after
-			width: 80px
+			width: 5rem
 		&__title
-			font-size: 55px
+			font-size: 3.4375rem
 
 @keyframes graph-move
 	0%
@@ -320,8 +320,8 @@ body
 
 .about-center
 	background-image: linear-gradient(0deg, rgb(230,245,255) 23%, rgb(206,223,255) 74%, rgb(173,208,255) 100%)
-	padding-top: 90px
-	padding-bottom: 100px
+	padding-top: 5.625rem
+	padding-bottom: 6.25rem
 	position: relative
 	z-index: 1
 	font-size: 0
@@ -348,15 +348,15 @@ body
 		width: 50%
 		margin-left: auto
 		margin-right: 0
-		margin-top: 65px
+		margin-top: 4.0625rem
 	&__link
-		margin-top: 65px
+		margin-top: 4.0625rem
 		max-width: 244px
 	&__build
 		max-width: 560px
 		position: absolute
-		bottom: -100px
-		left: -32px
+		bottom: -6.25rem
+		left: -2rem
 		z-index: -1
 	&__clouds
 		position: absolute
@@ -365,13 +365,13 @@ body
 		width: 70%
 		z-index: -2
 	+r(980)
-		padding-top: 55px
+		padding-top: 3.4375rem
 		padding-bottom: 0
 		&__title
 			width: 100%
 		&__characteristic
 			width: 100%
-			margin-top: 48px
+			margin-top: 3rem
 		&__build
 			position: relative
 			bottom: auto
@@ -395,7 +395,7 @@ body
 	&__slider
 		overflow: hidden
 	&__item
-		padding-left: 40px
+		padding-left: 50px
 		position: relative
 		vertical-align: top
 		margin-bottom: 50px
@@ -408,7 +408,7 @@ body
 		height: 15px
 		position: absolute
 		top: 5px
-		left: 0px
+		left: 10px
 	&__btn-wrap
 		// margin-top: 50px
 		text-align: center
@@ -449,14 +449,14 @@ body
 		display: flex
 		justify-content: space-between
 		align-items: center
-		margin-bottom: 63px
+		margin-bottom: 3.9375rem
 	&__wrap
 		display: flex
 		flex-wrap: wrap
 	+r(980)
-		padding-top: 55px
+		padding-top: 3.4375rem
 		&__title
-			margin-bottom: 30px
+			margin-bottom: 1.875rem
 	+r(620)
 		&__more-news
 			position: absolute
@@ -543,6 +543,57 @@ body
 	+r(768)
 		justify-content: flex-start
 
+.content-wrap
+	display: flex
+	padding-bottom: 90px
+	+r(768)
+		flex-direction: column
+
+.side-bar
+	width: 25%
+	z-index: 2
+	// &__nav
+	// 	padding-bottom: 40px
+	+r(768)
+		width: 100%
+
+.content-inner
+	width: 75%
+	&__title
+		line-height: 1.406
+	+r(768)
+		width: 100%
+		margin-top: 30px
+		&__title
+			font-size: 21px
+			line-height: 1.43
+
+.content-inner-item
+	border-top: 1px solid #cccccc
+	padding-top: 70px
+	padding-bottom: 60px
+	position: relative
+	&__title
+		margin-bottom: 60px
+	&__decor
+		position: absolute
+		top: 70px
+		right: 0
+		width: 80px
+		height: 90px
+		color: #f2db00
+	+r(1100)
+		padding-top: 50px
+		&__decor
+			top: 30px
+			width: 70px
+			height: 80px
+	+r(768)
+		padding-top: 40px
+		padding-bottom: 40px
+		&__title
+			margin-bottom: 40px
+
 .sertification-wrap
 	display: flex
 	align-items: flex-end
@@ -557,13 +608,13 @@ body
 .sertification-link
 	&__img
 		display: inline-block
-		max-width: 92px
-		height: 58.5px
+		max-width: 5.75rem
+		height: 3.65625rem
 		+vertical
 		margin-bottom: 11px
 		img
 			max-width: 100%
-			max-height: 58.5px
+			max-height: 3.65625rem
 			vertical-align: middle
 
 .parameters-table
@@ -583,14 +634,14 @@ body
 	&__title
 		width: 70%
 		border-bottom: 1px solid #cccccc
-		padding-bottom: 21px
+		padding-bottom: 1.3125rem
 		padding-right: 50px
-		margin-bottom: 17.5px
+		margin-bottom: 1.09375rem
 	&__desc
 		width: 30%
 		border-bottom: 1px solid #cccccc
-		padding-bottom: 21px
-		margin-bottom: 17.5px
+		padding-bottom: 1.3125rem
+		margin-bottom: 1.09375rem
 		font-weight: bold
 		color: #000000
 	&__check
@@ -610,7 +661,7 @@ body
 .data-center-details
 	background-color: #fcfcfc
 	position: relative
-	max-width: 714px
+	max-width: 44.625rem
 	&:after
 		content: ''
 		display: block
@@ -631,44 +682,44 @@ body
 		top: 0
 		left: 100%
 		z-index: -1
-	padding: 70px 0
+	padding: 4.375rem 0
 	&__list
-		margin-top: 25px
+		margin-top: 1.5625rem
 	&__item
-		padding-left: 40px
-		margin-bottom: 32px
+		padding-left: 2.5rem
+		margin-bottom: 2rem
 		position: relative
 		&::after
 			content: ''
 			display: block
 			background-color: #f2db00
-			width: 8px
-			height: 8px
+			width: .5rem
+			height: .5rem
 			border-radius: 50%
 			position: absolute
 			left: 0
-			top: 8px
+			top: .5rem
 		&:last-child
 			margin-bottom: 0
 		span
 			display: inline-block
-			padding-left: 32px
+			padding-left: 2rem
 
 .data-center-cooperation
-	max-width: 714px
-	padding: 68px 0 0
+	max-width: 44.625rem
+	padding: 4.25rem 0 0
 	&__promo
 		background-repeat: no-repeat
 		background-size: cover
-		padding: 36px 36px 65px 36px
+		padding: 2.25rem 2.25rem 4.0625rem 2.25rem
 		display: flex
 		justify-content: flex-end
-		margin-bottom: 55.5px
+		margin-bottom: 3.46875rem
 
 .data-center-partner
 	display: inline-block
 	background-color: #fff233
-	padding: 33.5px 29px 33.5px 35px
+	padding: 2.09375rem 1.8125rem 2.09375rem 2.1875rem
 	position: relative
 	z-index: 1
 	box-shadow: none
@@ -677,47 +728,31 @@ body
 		box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2)
 	&__title
 		font-weight: bold
-		font-size: 22px
-		line-height: 24px
-		margin-bottom: 25px
+		font-size: 1.375rem
+		line-height: 1.5rem
+		margin-bottom: 1.5625rem
 		text-transform: uppercase
 	&__text
-		max-width: 225px
-		font-size: 32px
-		margin-bottom: 30px
-		line-height: 24px
+		max-width: 14.0625rem
+		font-size: 1rem
+		margin-bottom: 2.5rem
+		line-height: 1.5rem
 	&__link
 		background-color: #f2db00
 		&:hover
 			background-color: #ffffff
 
-.data-sertificate
-	max-width: 714px
-	display: flex
-	flex-wrap: wrap
-	justify-content: flex-start
-	margin-bottom: -68px
-	& .sertificate-item
-		width: 29%
-		margin-right: 6%
-		margin-bottom: 68px
-		&:nth-child(3n)
-			margin-right: 0
-	+r(620)
-		margin-bottom: -68px
-		& .sertificate-item
-			width: 47%
-			margin-bottom: 68px
-			&:nth-child(3n)
-				margin-right: 6%
-			&:nth-child(2n)
-				margin-right: 0
-
-.news-wrap
-	display: flex
-	flex-wrap: wrap
-	margin-bottom: -60px
-	+r(980)
-		margin-bottom: -40px
-	+r(620)
-		margin-bottom: -30px
+.comandos-group
+	border-bottom: 1px solid #cccccc
+	margin-bottom: 4.6875rem
+	&:last-child
+		border: none
+	&__wrap
+		display: flex
+		flex-wrap: wrap
+		margin-top: 4.0625rem
+	&__title
+		line-height: 1
+	+r(650)
+		&__wrap
+			justify-content: space-between

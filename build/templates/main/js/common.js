@@ -27,7 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
 				dots: true,
 				autoplay: true,
 				autoplaySpeed: 3500,
-				dotsClass: 'custom_dots'
+				dotsClass: 'custom_dots',
+				touchMove: true,
+				dragable: true
 			}
 		}]
 	});
@@ -76,12 +78,25 @@ document.addEventListener('DOMContentLoaded', function () {
 		//fade: true
 	});
 
+	activeSidebarLink();
+
+	$('.show-sidebar-menu').click(function (e) {
+		e.preventDefault();
+		$(this).toggleClass('side-bar-nav__mob-btn_visible').next().slideToggle();
+	});
+
 	stickinit();
 	show_video();
 	scrollAnimations();
 	Menu();
-	servicescSliderInit();
+	servicesSliderInit();
+	popUpsInit();
 });
+
+function activeSidebarLink() {
+	var link_value = $('.side-bar-nav .link-navigation__link_active').text();
+	$('.show-sidebar-menu').text(link_value);
+}
 
 function isMobile() {
 	return (/Android|webOS|iPhone|iPod|iPad|BlackBerry|Windows Phone|iemobile/i.test(navigator.userAgent)
@@ -134,6 +149,13 @@ function scrollAnimations() {
 	}).on('exit', function (el) {
 		el.done = true;
 	});
+	inView('.fade-up').on('enter', function (el) {
+		if (!el.done) {
+			el.classList.add('active');
+		}
+	}).on('exit', function (el) {
+		el.done = true;
+	});
 }
 
 function stickinit() {
@@ -161,8 +183,74 @@ window.DOM = {
 		this.__prevScrollTop && window.scroll(0, this.__prevScrollTop);
 		this.__prevScrollTop = null;
 	}
-
 };
+
+function popUpsInit() {
+	var _this = $(this);
+	_this.b = {
+		open: $('.js-popup-button')
+	};
+	_this.c = {
+		popup: $('.js-popup-container')
+	};
+	_this.f = {};
+	_this.conf = {
+		active_class: 'active',
+		close_selector: '.closePopup',
+		initial_class: 'popup-initialed',
+		header_class: 'is-hidden'
+	};
+	_this.f.initModalActions = function (_popup) {
+		/**
+   * Close buttons.
+   */
+		$(_popup).on('click', '.modal-container', function (e) {
+			if (!$(_this.conf.close_selector).is(e.target)) {
+				e.stopPropagation();
+			}
+		});
+
+		_popup.find(_this.conf.close_selector).add(_popup).off('click.popup').on('click.popup', function () {
+			_this.f.closePopup(_popup);
+		});
+	};
+
+	_this.f.closePopup = function (_popup) {
+		// var _cont = _popup.find('.modal-container-content:not(.response)'),
+		// 	_response = _popup.find('.response');
+		_popup.removeClass(_this.conf.active_class);
+		window.DOM.showScroll();
+		console.log('no pop up');
+	};
+	_this.f.openPopup = function (_popup) {
+
+		_popup.addClass(_this.conf.active_class);
+		window.DOM.hideScroll();
+		console.log('pop up');
+	};
+	/**
+  * Initial.
+  */
+	$.each(_this.c.popup.not('.' + _this.conf.initial_class), function () {
+		var _popup = $(this);
+		_this.f.initModalActions(_popup);
+		_popup.off('reinit').on('reinit', function () {
+			_this.f.initModalActions(_popup);
+		});
+		_popup.addClass(_this.conf.initial_class);
+	});
+
+	_this.b.open.off('click.popup').on('click.popup', function (e) {
+		e.preventDefault();
+		var _b = $(this),
+		    _popup = _this.c.popup.filter('[data-modal="' + _b.data('modal') + '"]');
+
+		console.log(_popup);
+
+		_this.f.openPopup(_popup);
+		return false;
+	});
+}
 
 function Menu() {
 	var trigger = $('.js-menu'),
@@ -200,27 +288,13 @@ function Menu() {
 	});
 }
 
-function servicescSliderInit() {
+function servicesSliderInit() {
 	var services_slider = $('.basic-services-wrapper');
 	var slide_count;
-
-	services_slider.on('init', function (event, slick, currentSlide, nextSlide) {
-
-		var count = slick.slideCount;
-
-		console.log(count + ' count');
-		if (count > 3) {
-			services_slider.addClass('serv_offset');
-			slide_count = 4;
-			console.log(count + ' slide_count');
-		} else if (count <= 3) {
-			slide_count = count;
-			console.log(slide_count + ' slide_count');
-		}
-	});
-
+	var children = services_slider.find('.service-card').length;
+	children > 3 ? services_slider.addClass('serv_offset') : false;
 	services_slider.slick({
-		slidesToShow: slide_count,
+		slidesToShow: children > 3 ? 4 : 3,
 		arrows: false,
 		dots: true,
 		dotsClass: 'custom_dots custom_dots_black',
@@ -230,12 +304,12 @@ function servicescSliderInit() {
 		responsive: [{
 			breakpoint: 1200,
 			settings: {
-				slidesToShow: slide_count - 1
+				slidesToShow: children > 3 ? 3 : 2
 			}
 		}, {
 			breakpoint: 768,
 			settings: {
-				slidesToShow: slide_count - 2
+				slidesToShow: 2
 			}
 		}]
 	});

@@ -1,0 +1,37 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Документы
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Документы
+	.box
+		+breadcrumbs(['Главная', 'Документы'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-nav.js-stick
+					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu active
+					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
+			.content-inner
+				.content-inner-group
+					h2.h2.content-inner-group__title.fade-up Правила оферты
+					.content-inner-group__wrap.content-inner-group__wrap_mw.fade-down
+						+document-item('09.06.2017, бессрочно', 'Uptime Institute Tier III Certified: Constructed Facility')
+						+document-item('с 08.06.2015 по 08.06.2017', 'Uptime Institute Tier III Certified: Design')
+						+document-item('с 15.06.2017 по 15.06.2018', 'M&O Approved')
+				.content-inner-group
+					h2.h2.content-inner-group__title.fade-up Инструкции
+					.content-inner-group__wrap.content-inner-group__wrap_mw.fade-down
+						+document-item('09.06.2017, бессрочно', 'Uptime Institute Tier III Certified: Constructed Facility')
+						+document-item('с 08.06.2015 по 08.06.2017', 'Uptime Institute Tier III Certified: Design')
+						+document-item('с 15.06.2017 по 15.06.2018', 'M&O Approved')

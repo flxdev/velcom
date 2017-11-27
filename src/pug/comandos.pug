@@ -12,28 +12,29 @@ block content
 		.wrapper-bg(style="background-image:url('img/promo.jpg')")
 		.box
 			.header-inner.header-inner_inner-page
-				.header-inner__title
+				.header-inner__title.fade-down
 					h1.h1 Команда
 	.box
-		+breadcrumbs(['Главная', 'Дата-центер'])
+		+breadcrumbs(['Главная', 'Команда'])
 	.box
 		.content-wrap
 			aside.side-bar.js-stick-parent
-				.side-bar__nav.js-stick
+				.side-bar-nav.js-stick
+					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu active
 					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
 			.content-inner
-				.comandos-group
-					h2.h2.comandos-group__title Руководство
-					.comandos-group__wrap
+				.content-inner-group
+					h2.h2.content-inner-group__title.fade-up Руководство
+					.content-inner-group__wrap.fade-down
 						+worker-item('worker-1.jpg', 'Юлия Самойлова', 'Генеральный директор')
 						+worker-item('worker-2.jpg', 'Анастасия Севастьянова', 'Первый заместитель генерального директора')
 						+worker-item('worker-3.jpg', 'Сергей Мищук', 'Технический директор')
 						+worker-item('worker-4.jpg', 'Анна Мищук', 'Технический директор')
 						+worker-item('worker-5.jpg', 'Жанна Федута', 'Генеральный директор')
 						+worker-item('worker-6.jpg', 'Валентина Самойлова', 'Первый заместитель')
-				.comandos-group
-					h2.h2.comandos-group__title Менеджмент
-					.comandos-group__wrap
+				.content-inner-group
+					h2.h2.content-inner-group__title.fade-up Менеджмент
+					.content-inner-group__wrap.fade-down
 						+worker-item('worker-1.jpg', 'Юлия Самойлова', 'Генеральный директор')
 						+worker-item('worker-2.jpg', 'Анастасия Севастьянова', 'Первый заместитель генерального директора')
 						+worker-item('worker-3.jpg', 'Сергей Мищук', 'Технический директор')

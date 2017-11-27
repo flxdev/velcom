@@ -42,10 +42,11 @@ block content
 	.box
 		.content-wrap
 			aside.side-bar.js-stick-parent
-				.side-bar__nav.js-stick
+				.side-bar-nav.js-stick
+					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu active
 					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
 			.content-inner
-				h2.h2.content-inner__title ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+				h2.h2.content-inner__title.fade-up ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
 				.datacenter-characteristics.datacenter-characteristics_data.fade-down
 					+datacenter-characteristics('99,982%', 'Уровень доступности сервисов')
 					+datacenter-characteristics('35000 м²', 'Общая проектная площадь')

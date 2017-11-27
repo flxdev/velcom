@@ -4,10 +4,12 @@ mixin icon(name)
 
 mixin nav-menu
 	nav.nav-menu
-		button.nav-burger.js-menu
+		button(type="button").nav-burger.js-menu
 			span.nav-burger__line
 			span.nav-burger__line
 			span.nav-burger__line
+		a.nav-home-btn(href="/", title="На Главную")
+			+icon('velcom-logo-black')
 		a.nav-mob-btn(href="tel:+375 29 600 20 20") +375 29 600 20 20
 			span Техническая поддержка
 		ul.nav-menu__list
@@ -22,7 +24,7 @@ mixin nav-menu
 			li.nav-menu__item
 				a.nav-menu__link(href="#") Контакты
 		.nav-menu__btn-wrap
-			button.application-btn.link-border
+			button(type="button").application-btn.link-border.js-popup-button(data-modal='fast-application')
 				span.application-btn__desc Оставить заявку
 				span.application-btn__mob
 					+icon('envelope')
@@ -63,14 +65,25 @@ mixin datacenter-characteristics(val, text)
 mixin v-style-text(text)
 	span.v-style-text=text
 
-mixin second-news(img, short_text, date)
-	.second-news
-		a(href="").second-news__inner
-			.second-news__img
-				img(src="img/"+img, alt="")
-			.second-news__short
-				p.text-primary.second-news__text= short_text
-				p.text-primary.second-news__date= date
+mixin news-item(img, short_text, date, add_class, tags)
+	if(add_class)
+		.news-item(class=""+add_class)
+			a(href="").news-item__inner
+				.news-item__img(class=""+add_class)
+					img(src="img/"+img, alt="")
+				.news-item__short(class=""+add_class)
+					p.text-primary.news-item__text= short_text
+					p.text-primary.news-item__date= date
+						span.news-item__tags= tags
+	else
+		.news-item
+			a(href="").news-item__inner
+				.news-item__img
+					img(src="img/"+img, alt="")
+				.news-item__short
+					p.text-primary.news-item__text= short_text
+					p.text-primary.news-item__date= date
+						span.news-item__tags= tags
 
 mixin breadcrumbs(crumbs)
 	.breadcrumbs
@@ -83,3 +96,19 @@ mixin worker-item(photo, name, position)
 			img(src="img/worker/"+photo, alt="worker-item")
 		p.worker-item__name= name
 		p.worker-item__position= position
+
+mixin document-item(date, title)
+	a(href="#").document-item
+		.document-item__info
+			p.document-item__date= date
+			p.document-item__title= title
+		.document-item__icon
+			+icon('documents')
+
+mixin sertificate(data, title, min_img, i)
+	a(href="#").sertificate-item.js-popup-button(data-modal='sertificate', data-href='/sertificate-popup.html', data-slideto=''+i+'').ajax-trigger
+		.sertificate-item__img
+			img(src="img/"+min_img, alt="sertificate")
+		.sertificate-item__info
+			h4.h4.sertificate-item__title= title
+			p.text-small.sertificate-item__date= data

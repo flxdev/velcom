@@ -1,1 +1,74 @@
 //TODO need modals!!!
+
+.modal-layout(data-modal='sertificate').js-popup-container
+
+.modal-layout(data-modal='gallery').js-popup-container
+
+.modal-layout(data-modal='fast-application').js-popup-container
+	.modal-container.application-modal
+		.modal-container-inner
+			i.small-link.pop-close.closePopup CLOSE
+			.modal-container-header
+				h2.title.h2 Заявка в техподдержку
+				p.text-small Укажите минимум данных и мы перезвоним вам в течение 
+					strong 30 минут в рабочее время (с 8:30 до 17:30),
+					| чтобы уточнить требования по телефону
+			.modal-container-content
+				form.form.js-validate
+					p.h4 Контактные данные
+					input(type="text", placeholder="ФИО")
+					input(type="mail", placeholder="email")
+					input(type="text", placeholder="region")
+					input(type="text", placeholder="phone")
+					p.h4 Тема обращения
+					.wrapp-radio-btn
+						label Вопрос по услугам
+							input(type="radio", name='theme')
+						label Общие вопросы
+							input(type="radio", name='theme')
+					select
+						option(value='') Co-location
+						option(value='') Выделенные сервера
+						option(value='') IaaS
+						option(value='') Другое
+					textarea
+					.form-footer
+						input(type="checkbox", name="agreement")
+						label(for="agreement").text-small Даю согласие на обработку моих 
+							stong персональных данных*
+						button(type="submit")
+
+.modal-layout(data-modal='get-consultation').js-popup-container
+	.modal-container.consultation-modal
+		.modal-container-inner
+			i.small-link.pop-close.closePopup CLOSE
+			.modal-container-header
+				h2.title.h2 Получить консультацию
+			.modal-container-content
+				form.form.js-validate
+					p.h4 Контактные данные
+					input(type="text", placeholder="ФИО")
+					input(type="text", placeholder="region")
+					input(type="text", placeholder="phone")
+					input(type="mail", placeholder="email")
+					input(type="text", placeholder="Организация")
+					input(type="text", placeholder="Должность")
+					p.h4 Тема обращения
+					.wrapp-radio-btn
+						label Вопрос по услугам
+							input(type="radio", name='theme')
+						label Общие вопросы
+							input(type="radio", name='theme')
+						label Регистрация инцидента
+							input(type="radio", name='theme')
+					select
+						option(value='') Co-location
+						option(value='') Выделенные сервера
+						option(value='') IaaS
+						option(value='') Другое
+					textarea
+					.form-footer
+						input(type="checkbox", name="agreement")
+						label(for="agreement").text-small Даю согласие на обработку моих 
+							stong персональных данных*
+						button(type="submit")
