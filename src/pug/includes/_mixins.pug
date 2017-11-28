@@ -106,9 +106,41 @@ mixin document-item(date, title)
 			+icon('documents')
 
 mixin sertificate(data, title, min_img, i)
-	a(href="#").sertificate-item.js-popup-button(data-modal='sertificate', data-href='/sertificate-popup.html', data-slideto=''+i+'').ajax-trigger
+	a(href="#").sertificate-item.js-popup-button.ajax-trigger(data-modal='sertificate', data-href='sertificate-popup.html', data-slideto=''+i).ajax-trigger
 		.sertificate-item__img
 			img(src="img/"+min_img, alt="sertificate")
 		.sertificate-item__info
 			h4.h4.sertificate-item__title= title
 			p.text-small.sertificate-item__date= data
+
+mixin infrastructure-links-item(links)
+	each link, index in links
+		if index == 0
+			a(href="").infrastructure-links__item.active= link
+		else 
+			a(href="").infrastructure-links__item= link
+
+mixin gallery-block(img, title, count)
+	a(href="#").gallert-block
+		.gallert-block__image
+			img(src="img/"+img, alt="album gallery")
+		.gallert-block__info
+			.gallert-block__title.h3= title
+			.gallert-block__count.text-primary
+				span.gallert-block__total= count
+				span &nbsp;фото
+
+mixin paginate
+	.paginate
+		.paginate__arrow.paginate__arrow_prev
+			+icon('arrow-circle')
+		.paginate-button
+			a(href="#").paginate__link 1
+			span.paginate__devider ...
+			a(href="#").paginate__link 4
+			a(href="#").paginate__link.active 5
+			a(href="#").paginate__link 6
+			span.paginate__devider ...
+			a(href="#").paginate__link 12
+		.paginate__arrow.paginate__arrow_next
+			+icon('arrow-circle')

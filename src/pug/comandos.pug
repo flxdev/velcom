@@ -20,7 +20,10 @@ block content
 		.content-wrap
 			aside.side-bar.js-stick-parent
 				.side-bar-nav.js-stick
-					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu active
+					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu
+						span.link-value ...
+						span.link-i-arrow
+							+icon('arrow_down')
 					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
 			.content-inner
 				.content-inner-group

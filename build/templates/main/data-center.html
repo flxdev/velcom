@@ -115,7 +115,7 @@
                   <div class="data-center-bg" style="background-image:url(&quot;img/data-slide-1.jpg&quot;);"></div>
                   <div class="data-center-bg" style="background-image:url(&quot;img/data-slide-2.jpg&quot;);"></div>
                 </div>
-                <div class="box">
+                <div class="box box_inner">
                   <div class="data-center-slider-text">
                     <div class="data-center-slider__slide">
                       <div class="data-center-slider__slide-wrap">
@@ -166,6 +166,18 @@
                       </div>
                     </div>
                   </div>
+                  <div class="data-center-slider__nav">
+                    <button class="slick-prev data-center-slider__prev" type="button">
+                                    <svg class="icon-arrow">
+                                      <use xlink:href="#arrow"></use>
+                                    </svg>
+                    </button>
+                    <button class="slick-next data-center-slider__next" type="button">
+                                    <svg class="icon-arrow">
+                                      <use xlink:href="#arrow"></use>
+                                    </svg>
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -176,7 +188,10 @@
             <div class="box">
               <div class="content-wrap">
                 <aside class="side-bar js-stick-parent">
-                  <div class="side-bar-nav js-stick"><a class="side-bar-nav__mob-btn show-sidebar-menu" href="#">active</a>
+                  <div class="side-bar-nav js-stick"><a class="side-bar-nav__mob-btn show-sidebar-menu" href="#"><span class="link-value">...</span><span class="link-i-arrow">
+                                      <svg class="icon-arrow_down">
+                                        <use xlink:href="#arrow_down"></use>
+                                      </svg></span></a>
                                   <ul class="link-navigation">
                                     <li class="link-navigation__item"><a class="link-navigation__link" href="#">Команда</a></li>
                                     <li class="link-navigation__item"><a class="link-navigation__link link-navigation__link_active" href="#">Документация</a></li>
@@ -438,7 +453,8 @@
       <div class="modal-layout js-popup-container" data-modal="gallery"></div>
       <div class="modal-layout js-popup-container" data-modal="fast-application">
         <div class="modal-container application-modal">
-          <div class="modal-container-inner"><i class="small-link pop-close closePopup">CLOSE</i>
+          <div class="modal-container-inner">
+            <div class="pop-close closePopup">CLOSE</div>
             <div class="modal-container-header">
               <h2 class="title h2">Заявка в техподдержку</h2>
               <p class="text-small">Укажите минимум данных и мы перезвоним вам в течение <strong>30 минут в рабочее время (с 8:30 до 17:30),</strong>чтобы уточнить требования по телефону</p>
@@ -480,7 +496,8 @@
       </div>
       <div class="modal-layout js-popup-container" data-modal="get-consultation">
         <div class="modal-container consultation-modal">
-          <div class="modal-container-inner"><i class="small-link pop-close closePopup">CLOSE</i>
+          <div class="modal-container-inner">
+            <div class="pop-close closePopup">CLOSE</div>
             <div class="modal-container-header">
               <h2 class="title h2">Получить консультацию</h2>
             </div>

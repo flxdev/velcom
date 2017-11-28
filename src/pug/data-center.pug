@@ -14,7 +14,7 @@ block content
 			.data-center-slider-bg
 				.data-center-bg(style='background-image:url("img/data-slide-1.jpg")')
 				.data-center-bg(style='background-image:url("img/data-slide-2.jpg")')
-			.box
+			.box.box_inner
 				.data-center-slider-text
 					.data-center-slider__slide
 						.data-center-slider__slide-wrap
@@ -37,13 +37,21 @@ block content
 									.datacenter-characteristics
 										+datacenter-characteristics('35 000', 'Общая проектная площадь кв.м.')
 										+datacenter-characteristics('6620', 'Площадь зданий и сооружений кв.м.')
+				.data-center-slider__nav
+					button(type="button",class="slick-prev").data-center-slider__prev
+						+icon('arrow')
+					button(type="button", class="slick-next").data-center-slider__next
+						+icon('arrow')
 	.box
 		+breadcrumbs(['Главная', 'Дата-центер'])
 	.box
 		.content-wrap
 			aside.side-bar.js-stick-parent
 				.side-bar-nav.js-stick
-					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu active
+					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu
+						span.link-value ...
+						span.link-i-arrow
+							+icon('arrow_down')
 					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
 			.content-inner
 				h2.h2.content-inner__title.fade-up ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи

@@ -253,11 +253,8 @@ body
 			align-items: stretch
 			height: 100%
 			float: none
-			& > div
-				display: flex
-				align-items: stretch
-				height: 100%
 		+r(768)
+			margin-right: -80vw
 			&.serv_offset
 				margin-right: -80vw
 		// &::after
@@ -493,30 +490,34 @@ body
 			display: flex
 			align-items: center
 			height: 100%
-	&-arrows
-		position: absolute
-	& .slick-prev,
-	& .slick-next
+	&__nav
 		position: absolute
 		top: 50%
-		right: 0
+		left: 0
 		transform: translateY(-50%)
-		background-repeat: no-repeat
+		width: 100%
+	&__prev,
+	&__next
+		position: absolute
 		color: #ffffff
 		font-size: 0
-		background-image: url('../img/svg/arrow.svg')
 		z-index: 5
 		width: 37px
 		height: 65px
-	& .slick-prev
+		right: 16px
+		left: auto
+	&__prev
 		right: auto
-		left: 0
-		transform: rotate(180deg) translateY(50%)
+		left: 16px
+		transform: rotate(180deg)
 	& .custom_dots
 		position: absolute
 		bottom: 5%
 		left: 50%
 		transform: translateX(-50%)
+	+r(768)
+		&__nav
+			display: none
 
 .data-center-bg
 	width: 100%
@@ -597,6 +598,8 @@ body
 		display: block
 		width: 30px
 		height: 20px
+	&_no-mw
+		max-width: 100%
 	+r(620)
 		width: 100%
 		max-width: 100%
@@ -721,3 +724,9 @@ body
 		margin-bottom: -40px
 	+r(620)
 		margin-bottom: -30px
+
+.gallery
+	display: flex
+	flex-wrap: wrap
+	justify-content: space-between
+	margin-bottom: -70px

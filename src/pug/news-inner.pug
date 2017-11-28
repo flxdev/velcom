@@ -1,0 +1,58 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Инфраструктура
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Инфраструктура
+	.box
+		+breadcrumbs(['Главная', 'Инфраструктура'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-nav.js-stick
+					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu
+						span.link-value ...
+						span.link-i-arrow
+							+icon('arrow_down')
+					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
+			.content-inner
+				.content-inner-group.fade-down
+					h2.h2.content-inner__title Приняли участие в панельной дискуссии в рамках Мир ЦОД 2017
+					.image-inner-block image
+					h3.h3 Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных
+					p.text-primary Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+
+					.inner-slider
+						.inner-slider-init
+							.inner-slider__slide
+								img(src="img/inner-slide-2.jpg", alt="")
+							.inner-slider__slide
+								img(src="img/inner-slide-1.jpg", alt="")
+							.inner-slider__slide
+								img(src="img/inner-slide-2.jpg", alt="")
+						.inner-slider-nav
+							button(type="button").inner-slider__prev
+								+icon('arrow')
+							.slider-counter
+								.slider-curr . . . 
+								.slider-divider /
+								.slider-total . . .
+							button(type="button").inner-slider__next
+								+icon('arrow')
+
+					p.text-primary Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+	.main-news.fade-down
+		.box
+			.main-news__wrap
+				+news-item('news-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', 'news-index')
+				+news-item('news-2.jpg', '#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон', '23 августа 2017', 'news-index')

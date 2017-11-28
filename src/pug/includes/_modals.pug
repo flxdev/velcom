@@ -1,4 +1,5 @@
 //TODO need modals!!!
+include _mixins.pug
 
 .modal-layout(data-modal='sertificate').js-popup-container
 
@@ -7,7 +8,7 @@
 .modal-layout(data-modal='fast-application').js-popup-container
 	.modal-container.application-modal
 		.modal-container-inner
-			i.small-link.pop-close.closePopup CLOSE
+			.pop-close.closePopup CLOSE
 			.modal-container-header
 				h2.title.h2 Заявка в техподдержку
 				p.text-small Укажите минимум данных и мы перезвоним вам в течение 
@@ -41,7 +42,7 @@
 .modal-layout(data-modal='get-consultation').js-popup-container
 	.modal-container.consultation-modal
 		.modal-container-inner
-			i.small-link.pop-close.closePopup CLOSE
+			.pop-close.closePopup CLOSE
 			.modal-container-header
 				h2.title.h2 Получить консультацию
 			.modal-container-content

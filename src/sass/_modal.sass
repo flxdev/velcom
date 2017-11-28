@@ -1,0 +1,126 @@
+/* modal */
+.modal-layout
+	position: fixed
+	left: 0
+	right: 0
+	bottom: 0
+	top: 0
+	width: 100%
+	height: 100%
+	margin: 0
+	background: transparent
+	z-index: 200
+	opacity: 0
+	visibility: hidden
+	transition: opacity .5s .1s, visibility .5s .1s, background-color .5s .1s
+	contain: paint 
+	overflow-y: auto
+	+vertical
+	contain: paint 
+	overflow-y: auto
+	&.active
+		background: rgba(0,0,0, .3)
+		visibility: visible
+		opacity: 1
+		transition-delay: 0s
+		& .modal-container
+			transform: translateY(0)
+			opacity: 1
+			transition-delay: .2s
+		& .consultation-modal
+			animation-name: show
+			animation-duration: 0.3s
+			animation-fill-mode: forwards
+		& .application-modal
+			transform: translateX(0)
+			opacity: 1
+		
+.modal-container
+	display: inline-block
+	vertical-align: middle 
+	+rem(min-width,320px)
+	+rem(max-width,741px)
+	width: 100%
+	background-color: #ffffff
+	position: relative
+	transform: translateY(5%)
+	transition: transform .2s, opacity .2s
+	opacity: 0
+
+.modal-container-content
+	padding: 10px
+	text-align: left
+
+.consultation-modal
+	opacity: 0
+	animation-name: hide
+	animation-duration: 0.2s
+	animation-fill-mode: forwards
+
+@keyframes show
+	0%
+		opacity: 0
+		transform: scale3d(1.1, 1.1, 1)
+	100%
+		opacity: 1 
+		transform: scale3d(1, 1, 1)
+@keyframes hide
+	0%
+		opacity: 1 
+		transform: scale3d(1, 1, 1)
+	100%
+		opacity: 0 
+		transform: scale3d(0.9, 0.9, 1)
+
+.application-modal
+	background-color: #ffffff
+	position: absolute
+	top: 0
+	right: 0
+	transform: translateX(20%)
+	opacity: 0
+	transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
+	animation-name: none
+
+
+.sertificate-modal
+	display: inline-block
+	vertical-align: middle
+	max-width: 690px
+	width: 100%
+	& .sertificate-slide__info
+		background-color: #ffffff
+		font-size: 16px
+	& .pop-close
+		color: #ffffff
+		position: absolute
+		right: -40px
+		top: -40px
+	&__inner
+		position: relative
+		
+
+.sertificate-slider
+	img 
+		max-width: 100%
+	&__nav
+		position: absolute
+		top: 50%
+		left: 0
+		transform: translateY(-50%)
+		width: 100%
+	&__prev,
+	&__next
+		position: absolute
+		color: #ffffff
+		font-size: 0
+		z-index: 5
+		width: 37px
+		height: 65px
+		right: -50px
+		left: auto
+	&__prev
+		right: auto
+		left: -50px
+		transform: rotate(180deg)
+
