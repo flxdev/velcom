@@ -26,10 +26,15 @@ block content
 							+icon('arrow_down')
 					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
 			.content-inner
-				.gallery.fade-down
-					+gallery-album('gallery-1.jpg', 'Новый сервер', '18')
-					+gallery-album('gallery-2.jpg', 'Открытие отделения', '27')
-					+gallery-album('gallery-3.jpg', 'Концерт “Velcom”', '12')
-					+gallery-album('gallery-4.jpg', 'Лучшие 2017', '35')
-				+paginate
-
+				.content-inner-group.fade-down
+					h2.h2 Правила оферты
+					p.text-primary 18 фото
+					.gallery-inner
+						+gallery-photo('gallery-photo-1.jpg', 0)
+						+gallery-photo('gallery-photo-2.jpg', 1)
+						+gallery-photo('gallery-photo-3.jpg', 2)
+						+gallery-photo('gallery-photo-4.jpg', 3)
+						+gallery-photo('gallery-photo-5.jpg', 4)
+						+gallery-photo('gallery-photo-6.jpg', 5)
+						+gallery-photo('gallery-photo-7.jpg', 6)
+						+gallery-photo('gallery-photo-8.jpg', 7)

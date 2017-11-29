@@ -235,6 +235,9 @@ body
 	// 	justify-content: space-between
 	// 	+r(1024)
 	// 		flex-wrap: wrap
+	&_page
+		padding-top: 0
+		padding-bottom: 100px
 	&-title
 		font-size : 32px
 		line-height : 1
@@ -730,3 +733,17 @@ body
 	flex-wrap: wrap
 	justify-content: space-between
 	margin-bottom: -70px
+
+.gallery-inner
+	display: flex
+	flex-wrap: wrap
+	margin-bottom: -50px
+	+r(980)
+		margin-bottom: -30px
+	+r(440)
+		margin-bottom: -15px
+
+.gallery-modal
+	background-color: green
+	width: 200px
+	height: 200px

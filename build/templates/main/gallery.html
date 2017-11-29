@@ -114,7 +114,7 @@
               <div class="box">
                 <div class="header-inner header-inner_inner-page">
                   <div class="header-inner__title fade-down">
-                    <h1 class="h1">Инфраструктура</h1>
+                    <h1 class="h1">Галерея</h1>
                   </div>
                 </div>
               </div>
@@ -141,28 +141,37 @@
                   </div>
                 </aside>
                 <div class="content-inner">
-                  <div class="gallery"><a class="gallert-block" href="#">
-                                    <div class="gallert-block__image"><img src="img/gallery-1.jpg" alt="album gallery"></div>
-                                    <div class="gallert-block__info">
-                                      <div class="gallert-block__title h3">Новый сервер</div>
-                                      <div class="gallert-block__count text-primary"><span class="gallert-block__total">18</span><span>&nbsp;фото</span></div>
-                                    </div></a><a class="gallert-block" href="#">
-                                    <div class="gallert-block__image"><img src="img/gallery-2.jpg" alt="album gallery"></div>
-                                    <div class="gallert-block__info">
-                                      <div class="gallert-block__title h3">Открытие отделения</div>
-                                      <div class="gallert-block__count text-primary"><span class="gallert-block__total">27</span><span>&nbsp;фото</span></div>
-                                    </div></a><a class="gallert-block" href="#">
-                                    <div class="gallert-block__image"><img src="img/gallery-3.jpg" alt="album gallery"></div>
-                                    <div class="gallert-block__info">
-                                      <div class="gallert-block__title h3">Концерт “Velcom”</div>
-                                      <div class="gallert-block__count text-primary"><span class="gallert-block__total">12</span><span>&nbsp;фото</span></div>
-                                    </div></a><a class="gallert-block" href="#">
-                                    <div class="gallert-block__image"><img src="img/gallery-4.jpg" alt="album gallery"></div>
-                                    <div class="gallert-block__info">
-                                      <div class="gallert-block__title h3">Лучшие 2017</div>
-                                      <div class="gallert-block__count text-primary"><span class="gallert-block__total">35</span><span>&nbsp;фото</span></div>
+                  <div class="gallery fade-down"><a class="gallery-album" href="#">
+                                    <div class="gallery-album__image"><img src="img/gallery-1.jpg" alt="album gallery"></div>
+                                    <div class="gallery-album__info">
+                                      <div class="gallery-album__title h3">Новый сервер</div>
+                                      <div class="gallery-album__count text-primary"><span class="gallery-album__total">18</span><span>&nbsp;фото</span></div>
+                                    </div></a><a class="gallery-album" href="#">
+                                    <div class="gallery-album__image"><img src="img/gallery-2.jpg" alt="album gallery"></div>
+                                    <div class="gallery-album__info">
+                                      <div class="gallery-album__title h3">Открытие отделения</div>
+                                      <div class="gallery-album__count text-primary"><span class="gallery-album__total">27</span><span>&nbsp;фото</span></div>
+                                    </div></a><a class="gallery-album" href="#">
+                                    <div class="gallery-album__image"><img src="img/gallery-3.jpg" alt="album gallery"></div>
+                                    <div class="gallery-album__info">
+                                      <div class="gallery-album__title h3">Концерт “Velcom”</div>
+                                      <div class="gallery-album__count text-primary"><span class="gallery-album__total">12</span><span>&nbsp;фото</span></div>
+                                    </div></a><a class="gallery-album" href="#">
+                                    <div class="gallery-album__image"><img src="img/gallery-4.jpg" alt="album gallery"></div>
+                                    <div class="gallery-album__info">
+                                      <div class="gallery-album__title h3">Лучшие 2017</div>
+                                      <div class="gallery-album__count text-primary"><span class="gallery-album__total">35</span><span>&nbsp;фото</span></div>
                                     </div></a>
                   </div>
+                                <div class="paginate"><a class="paginate__arrow paginate__arrow_prev" href="#">
+                                                  <svg class="icon-arrow-circle">
+                                                    <use xlink:href="#arrow-circle"></use>
+                                                  </svg></a>
+                                  <div class="paginate-button"><a class="paginate__link" href="#">1</a><span class="paginate__devider">...</span><a class="paginate__link" href="#">4</a><a class="paginate__link active" href="#">5</a><a class="paginate__link" href="#">6</a><span class="paginate__devider">...</span><a class="paginate__link" href="#">12</a></div><a class="paginate__arrow paginate__arrow_next paginate__arrow_disable" href="#">
+                                                  <svg class="icon-arrow-circle">
+                                                    <use xlink:href="#arrow-circle"></use>
+                                                  </svg></a>
+                                </div>
                 </div>
               </div>
             </div>
@@ -262,8 +271,12 @@
     </div>
     <div class="modals">
       <!--TODO need modals!!!-->
-      <div class="modal-layout js-popup-container" data-modal="sertificate"></div>
-      <div class="modal-layout js-popup-container" data-modal="gallery"></div>
+      <div class="modal-layout js-popup-container" data-modal="popup-contents"></div>
+      <div class="modal-layout js-popup-container" data-modal="gallery-photo">
+        <div class="modal-container gallery-modal">
+          <div class="pop-close closePopup">CLOSE</div>
+        </div>
+      </div>
       <div class="modal-layout js-popup-container" data-modal="fast-application">
         <div class="modal-container application-modal">
           <div class="modal-container-inner">

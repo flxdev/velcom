@@ -83,44 +83,56 @@
 	animation-name: none
 
 
-.sertificate-modal
-	display: inline-block
-	vertical-align: middle
+.contents-modal
 	max-width: 690px
-	width: 100%
-	& .sertificate-slide__info
-		background-color: #ffffff
-		font-size: 16px
 	& .pop-close
 		color: #ffffff
 		position: absolute
 		right: -40px
 		top: -40px
-	&__inner
-		position: relative
-		
-
-.sertificate-slider
-	img 
-		max-width: 100%
-	&__nav
+	&__next,
+	&__prev,
+		color: #ffffff
+		width: 35px
+		height: 65px
 		position: absolute
 		top: 50%
-		left: 0
-		transform: translateY(-50%)
-		width: 100%
-	&__prev,
 	&__next
-		position: absolute
-		color: #ffffff
-		font-size: 0
-		z-index: 5
-		width: 37px
-		height: 65px
-		right: -50px
-		left: auto
+		right: -60px
+		transform: translateY(-50%)
 	&__prev
-		right: auto
-		left: -50px
-		transform: rotate(180deg)
+		left: -60px
+		transform: translateY(-50%) rotate(180deg)
+	& .modal-container-content
+		padding: 40px
+		padding-top: 0
 
+.big-image-slider
+	 margin-bottom: 50px
+	 img
+	 	display: block
+	 	margin: 0 auto
+
+.contents-slider
+	&-slide
+		//&__info
+		&__period
+			margin-bottom: 20px
+		&__title
+			font-size: 18px
+			line-height: 1
+			color: #000000
+			margin-bottom: 35px
+		//&__description
+	
+.gallery-album-modal
+	& .modal-container-content
+		display: flex
+	& .contents-count
+		width: 10%
+		line-height: 1.5
+	& .contents-slider
+		width: 90%
+
+.sertificates-modal
+	padding-bottom: 50px

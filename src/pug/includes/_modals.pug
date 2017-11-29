@@ -1,9 +1,11 @@
 //TODO need modals!!!
 include _mixins.pug
 
-.modal-layout(data-modal='sertificate').js-popup-container
+.modal-layout(data-modal='popup-contents').js-popup-container
 
-.modal-layout(data-modal='gallery').js-popup-container
+.modal-layout(data-modal='gallery-photo').js-popup-container
+	.modal-container.gallery-modal
+		.pop-close.closePopup CLOSE
 
 .modal-layout(data-modal='fast-application').js-popup-container
 	.modal-container.application-modal

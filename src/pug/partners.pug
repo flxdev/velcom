@@ -1,0 +1,84 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Партнёры 
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Партнёры
+	.box
+		+breadcrumbs(['Главная', 'Партнёры'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-banner.js-stick
+					+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
+			.content-inner
+				.content-inner-group.fade-down
+					h2.h2 Услуги по системной интеграции и проектные решения мы сможем оказать с помощью своих партнеров, уже реализовавших не один проект на базе ЦОД Velcom
+				.content-inner-group.fade-down
+					.partners
+						.partners-icon
+							.partners-icon-outer
+								.partners-icon-inner
+									.partners-icon-logo
+										img(src="img/png/sertificat-1.png", alt="partners logo")
+						.partners-info
+							.partners-info-header
+								.h4 PCI DSS Company
+							.partners-info-body
+								.partners-info-decription Предоставление в аренду серверных шкафов либо площадей в дата-центре для размещения оборудования Клиентов
+								.partners-info-using Использование: администрирование серверов, ускорение сайтов
+							.partners-info-footer
+								p.text-primary Плюсы
+								.partners-info-pluses-wrap
+									.partners-info-pluses Повышение производительности
+									.partners-info-pluses Улучшение качества
+									.partners-info-pluses Повышение производительности
+									.partners-info-pluses Улучшение качества
+									.partners-info-pluses Администрирование
+				.content-inner-group.fade-down
+					.partners
+						.partners-icon
+							.partners-icon-outer
+								.partners-icon-inner
+									.partners-icon-logo
+										img(src="img/png/partners-1.png", alt="partners logo")
+						.partners-info
+							.partners-info-header
+								.h4 IBA Group
+							.partners-info-body
+								.partners-info-decription Позволяет Позволяет быстро оптимизировать поисковые системы, получить высокие позиции и первых клиентов
+								.partners-info-using Использование: Системные помещения, дата-центры, помещения
+							.partners-info-footer
+								p.text-primary Плюсы
+								.partners-info-pluses-wrap
+									.partners-info-pluses Повышение
+									.partners-info-pluses Улучшение качества
+				.content-inner-group.fade-down
+					.partners
+						.partners-icon
+							.partners-icon-outer
+								.partners-icon-inner
+									.partners-icon-logo
+										img(src="img/png/partners-2.png", alt="partners logo")
+						.partners-info
+							.partners-info-header
+								.h4 Epam
+							.partners-info-body
+								.partners-info-decription Предоставление в аренду серверных шкафов либо площадей в дата-центре для размещения оборудования Клиентов
+								.partners-info-using Использование: администрирование серверов, ускорение сайтов
+							.partners-info-footer
+								p.text-primary Плюсы
+								.partners-info-pluses-wrap
+									.partners-info-pluses Повышение производительности
+									.partners-info-pluses Улучшение качества
+									.partners-info-pluses Администрирование

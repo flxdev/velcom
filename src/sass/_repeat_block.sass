@@ -8,7 +8,7 @@
 .h2
 	color: #000000
 	font-size: 32px
-	line-height: 1.75
+	line-height: 1.4
 	font-weight: 400
 	+r(768)
 		font-size: 30px
@@ -408,14 +408,18 @@
 	padding-bottom: 90px
 	+r(768)
 		flex-direction: column
+	+r(620)
+		padding-bottom: 50px
 
 .side-bar
 	width: 25%
+	padding-right: 20px
 	z-index: 2
 	// &__nav
 	// 	padding-bottom: 40px
 	+r(768)
 		width: 100%
+		padding-right: 0
 
 .side-bar-nav
 	&__mob-btn
@@ -490,15 +494,16 @@
 .content-inner-group
 	border-bottom: 1px solid #cccccc
 	margin-bottom: 75px
+	padding-bottom: 50px
 	&:last-child
 		border: none
 		margin-bottom: 0
+		padding-bottom: 0
 	&:last-child &__wrap
-			margin-bottom: 0
+		margin-bottom: 0
 	&__wrap
 		display: flex
 		flex-wrap: wrap
-		margin-bottom: 65px
 		&_mw
 			max-width: 714px
 	&__title
@@ -612,10 +617,12 @@
 		color: #000000
 		border-color: #000000
 
-.gallert-block
+.gallery-album
 	display: inline-block
 	width: 48%
 	margin-bottom: 70px
+	&__title
+		+tr(all .3s ease)
 	&__image
 		overflow: hidden
 		position: relative
@@ -638,6 +645,200 @@
 			transform: scale(1.1)
 		&::after
 			opacity: 1
+	&:hover &__title
+		color:#5a5a5a
+
+.gallery-photo
+	position: relative
+	overflow: hidden
+	width: 31%
+	margin-bottom: 50px
+	margin-right: 3.5%
+	&:nth-child(3n)
+		margin-right: 0
+	&::after
+		content: ''
+		display:block
+		background-color: rgba(#000000, .2)
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		opacity: 0
+		+tr(all .3s ease)
+	img
+		+tr(all .3s ease)
+	&:hover
+		img
+			transform: scale(1.1)
+		&::after
+			opacity: 1
+	+r(980)
+		margin-bottom: 30px
+	+r(768)
+		width: 49%
+		margin-right: 2%
+		&:nth-child(3n)
+			margin-right: 2%
+		&:nth-child(2n)
+			margin-right: 0
+	+r(440)
+		width: 100%
+		margin-right: 0 !important
+		margin-bottom: 15px
+
+.paginate
+	display: flex
+	justify-content: space-between
+	align-items: center
+	margin-top: 75px
+	&__arrow
+		width: 35px
+		height: 35px
+		color: #acaeb0
+		+tr(all .3s ease)
+		&_prev
+			transform: rotate(180deg)
+		&_disable
+			pointer-events: none
+			opacity: .5
+	&__link
+		color: #767a7d
+		font-size: 16px
+		line-height: 1.5
+		margin: 0 20px
+		letter-spacing: 0.02em
+		+tr(all .3s ease)
+		&.active
+			color: #000000
+			pointer-events: none
+			position: relative
+			&::after
+				content: ''
+				display: block
+				width: 35px
+				height: 35px
+				border: 2px solid #fff233
+				border-radius: 50%
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+	&__devider
+		color: #767a7d
+		margin: 0 20px
+		font-size: 16px
+		letter-spacing: 0.02em
+
+.link-banner
+	width: 100%
+	height: 100%
+	max-width: 238px
+	background-color: #f9f9f9
+	padding: 35px 10px
+	text-align: center
+	background-size: contain
+	background-repeat: no-repeat
+	&__title
+		max-width: 80%
+		margin: 0 auto
+		text-align: left
+		line-height: 1.4
+		margin-bottom: 137px
+
+.partners
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+.partners-icon
+	width: 22%
+	+r(1100)
+		width: 24%
+	+r(980)
+		width: 30%
+		margin-bottom: 35px
+	+r(480)
+		width: 50%
+.partners-icon-outer
+	width: 100%
+	height: 0
+	position: relative
+	padding-bottom: 100%
+.partners-icon-inner
+	+coverdiv
+	+vertical
+	border: 1px solid #cccccc
+.partners-icon-logo
+	display: inline-block
+	vertical-align: middle
+	width: 70%
+.partners-info
+	width: 72%
+	+r(1100)
+		width: 74%
+	+r(980)
+		width: 100%
+.partners-info-header
+	margin-bottom: 40px
+	+r(1100)
+		margin-bottom: 35px
+.partners-info-body
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+	margin-bottom: 35px
+.partners-info-decription
+	width: 57%
+	font-size: 16px
+	line-height: 1.5
+	+r(980)
+		width: 100%
+.partners-info-using
+	width: 38%
+	padding-left: 40px
+	border-left: 1px solid #cccccc
+	font-size: 14px
+	line-height: 1.714
+	+r(1100)
+		padding-left: 20px
+	+r(980)
+		width: 100%
+		padding-left: 0
+		border: none
+.partners-info-footer
+	font-size: 14px
+.partners-info-pluses-wrap
+	display: flex
+	flex-wrap: wrap
+.partners-info-pluses
+	font-size: 16px
+	width: 30%
+	padding-left: 20px
+	margin-right: 4%
+	margin-top: 18px
+	position: relative
+	&::before
+		content: ''
+		display: block
+		width: 5px
+		height: 5px
+		position: absolute
+		left: 0
+		top: 5px
+		background-color: #000000
+		border-radius: 50%
+	&:nth-child(3n)
+		margin-right: 0
+	+r(1100)
+		width: 48%
+		&:nth-child(3n)
+			margin-right: 4%
+		&:nth-child(2n)
+			margin-right: 0
+	+r(480)
+		width: 100%
+		margin-right: 0 !important
 
 
 .pop-close
@@ -646,7 +847,9 @@
 	color: #000000
 	display: inline-block
 
+
 /* sliders */
+
 .custom_dots
 	font-size: 0
 	margin-top: 10px
@@ -691,7 +894,6 @@
 
 .slider-counter
 	font-size: 0
-	+padlr(14px)
 	display: inline-block
 	vertical-align: middle
 	position: relative
@@ -713,6 +915,8 @@
 	color: #000000
 	&.slick-disabled
 		color: rgba(#000000, .5)
+
+
 /* animated block*/
 .fade-down
 	transform: translateY(100px)
