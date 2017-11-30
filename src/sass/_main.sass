@@ -747,3 +747,301 @@ body
 	background-color: green
 	width: 200px
 	height: 200px
+
+.site-map
+	display: flex
+	flex-wrap: wrap
+.site-map-wrap
+	width: 29%
+	max-width: 250px
+	margin-right: 6%
+	&:nth-child(3n)
+		margin-right: 0
+	+r(620)
+		width: 100%
+		max-width: 450px
+		margin: 0 auto
+		&:nth-child(3n)
+			margin-right: auto
+.site-map-list
+	margin-top: 10px
+.page-link
+	display: block
+	font-size: 18px
+	font-weight: bold
+	line-height: 1.5
+	padding: 0 0 20px
+	color: #000000
+	border-bottom: 1px solid #cccccc
+	&:not(:first-child)
+		margin-top: 40px
+	+r(620)
+		&:last-child
+			border: none
+.sub-page-link
+	padding: 5px 0
+	margin-bottom: 10px
+
+
+.search-wrap
+	&__head
+		border-bottom: 1px solid #cccccc
+		padding-bottom: 40px
+		margin-bottom: 50px
+	+r(768)
+		&__head
+			padding-bottom: 20px
+			margin-bottom: 30px
+.search-result
+	display: block
+	margin-bottom: 40px
+	&-head
+		margin-bottom: 5px
+		display: flex
+		align-items: flex-start
+	&__count
+		display: inline-block
+		font-weight: bold
+		font-size: 18px
+		line-height: 1.889
+		margin-right: 10px
+	&__title
+		display: inline-block
+		font-size: 18px
+		line-height: 1.889
+		color: #000000
+	& b
+		color: #000000
+		font-weight:bold
+	+r(768)
+		margin-bottom: 20px
+		&__title
+			font-size: 16px
+			line-height: 1.5
+		&__description
+			font-size: 14px
+			text-overflow: ellipsis
+
+.error-404
+	&__title
+		margin-bottom: 45px
+	&__desc
+		margin-bottom: 100px
+		a
+			color: #000000
+	+r(560)
+		&__title
+			margin-bottom: 25px
+		&__desc
+			margin-bottom: 50px
+
+.projects-body
+	margin-bottom: -50px
+.projects-wpapper
+	display: flex
+	justify-content: space-between
+	flex-wrap: wrap
+
+.projects-filters-wrap
+	display: flex
+	justify-content: space-between
+	align-items: center
+
+.projects-filters__form
+	display: flex
+
+.dropdown-target
+	position: absolute
+	right: 0
+	top: 100%
+	opacity: 0
+	visibility: hidden
+	background-color: #ffffff
+	transition: opacity .3s,visibility .3s
+
+.js-select-custom.active
+	.selects
+		border-color: blue
+		&:after
+			transform: scale(1,-1) rotate(90deg)
+	.dropdown-target
+		transform: translateY(0)
+		opacity: 1
+		visibility: visible
+	.select-carret
+		transform: rotate(90deg)
+
+.select-check
+	display: block
+	vertical-align: top
+	width: 100%
+	position: relative
+	&.disabled
+		opacity: .5
+		pointer-events: none
+	&.error
+		.selects
+			border-color: green
+	// прокрутка
+	div::-webkit-scrollbar
+		border-radius: 10px;
+		width: 4px
+		background-color: red
+	div::-webkit-scrollbar-thumb
+		box-shadow: inset 0 0 35px 35px rgba(68, 97, 119, 0.1)
+	.dropdown-inner
+		box-shadow: 0px 5px 11px 0px rgba(68, 97, 119, 0.2);
+		+rem(padding-top,20px)
+		+rem(padding-bottom,10px)
+	.dropdown-target
+		left: 0
+		z-index: 3
+	.dropdown-content
+		overflow-y: auto
+		+rem(max-height,200px)
+		+rem(margin-left,-7px)
+
+		.listed
+			b 
+				+rem(font-size,14px)
+				padding-left: 0
+				cursor: auto
+				+rem(margin-top,1px)
+				color: #6d6d6d
+	.select-carret
+		position: absolute
+		right: 10px
+		top: 20px
+		z-index: 2
+		+tr(all .3s ease)
+
+.selects
+	width: 100%
+	display: inline-block
+	position: relative
+	+tr(border .3s)
+	+padlr(15px)
+	text-align: left
+	background-color: #ffffff
+	border-width: 1px;
+	border-color: #a6a6a6
+	border-style: solid
+	+rem(font-size,14px)
+	+rem(height,50px)
+	color: #737373
+	&:active
+		color: #737373
+	.btn-text
+		+rem(margin-top,2px)
+		display: block
+		+rem(font-size,14px)
+		white-space: nowrap
+		text-overflow: ellipsis
+		overflow: hidden
+		width: 100%
+		+rem(padding-right,25px)
+		&.active
+			color: color(textblk)
+.option
+	display: block
+	width: 100%
+	cursor: pointer;
+	position: relative;
+	+rem(padding,5px 0 5px 7px);
+	+rem(font-size,16px)
+	color: color(textgray)
+	font-family: $o
+	line-height: 1.429;
+	margin-bottom: 0 !important
+	white-space: normal !important
+	&:hover
+		span
+			color: color(secondary)
+	span 
+		+tr(color .3s)
+	input
+		position: absolute;
+		opacity: 0
+		&:checked + span
+			color: color(secondary)
+			font-weight: 600
+.select-u-item
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	+rem(margin-bottom, 10px);
+	+nosel
+	&:hover,
+	&.hover
+		.input-text
+			transition: color .3s;
+		.input-checked
+			border-color: color(primary);
+			transition: border-color .3s ease;
+	.input_label
+	display: inline-block;
+	+rem(min-width, 15px)
+	cursor: pointer;
+	width: 100%;
+	.input_main
+		float: left;
+		position: relative;
+		display: inline-block;
+		+rem(padding-bottom,5px)
+		&.has-error
+			.input-checked
+				border-color: color(error)
+	.input-text
+		+rem(font-size, 14px)
+		display: block;
+		overflow: hidden;
+		cursor: pointer;
+		+rem(padding-left, 17px)
+		+rem(padding-top, 3px)
+		white-space: normal
+		
+		transition: color .3s;
+		a 
+			color: color(secondary)
+			text-decoration: underline
+			
+		+r(768)
+			+rem(font-size, 13px)
+	.input-real
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		&:checked +.input-checked:before,&.active +.input-checked:before
+			opacity: 1;
+		&:checked +.input-checked,&.active +.input-checked
+		// border: 1px solid color(primary);
+	.input-checked
+		+rem(width, 30px)
+		+rem(height, 30px)
+		display: block;
+		+rem(margin-top,1px);
+		background: #fff;
+		border: 1px solid rgba(0,0,0,.2);
+		position: relative;
+		-o-transition: all .1s ease;
+		transition: all .1s ease;
+		&:before
+			content: '';
+			+rem(width, 20px)
+			+rem(height, 20px)
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAcCAMAAADVwFZpAAAAIVBMVEVHcEwzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMzMNbuebAAAACnRSTlMAHNw38Qq+zZ4myEmdTAAAAFBJREFUeAHtysENgEAIRFHYVVH6L9gCPpPM1cR3fuHI2lZbXV5b+bePtrxPp0X1xcgW+2BkY2RjZGNE05FNRzZG1RBFQ3zmhtiiIc4NsXR7AWGZAwCPdPzeAAAAAElFTkSuQmCC);
+			background-repeat: no-repeat
+			background-position: center
+			background-size: contain
+			display: block;
+			position: absolute;
+			bottom: 4px;
+			+rem(left, 4px)
+			opacity: 0;
+			transition: all .2s ease;
+	.help-block
+		position: absolute
+		white-space: nowrap
+		color: color(error)
+		top: 100%

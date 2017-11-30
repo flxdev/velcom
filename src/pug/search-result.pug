@@ -1,0 +1,50 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Поиск 
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Поиск
+	.box
+		+breadcrumbs(['Главная', 'Поиск'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-banner.js-stick
+					+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
+			.content-inner
+				.search-wrap
+					.search-wrap__head
+						.content-inner-group-min-w
+							+search-form('search-result', 'доступность данных')
+							h2.h2 Найдено 15 результатов
+					.search-wrap__body
+						.content-inner-group-min-w
+							.search-result-links
+								a.search-result(href="#")
+									.search-result-head
+										.search-result__count 1.
+										.search-result__title ИТ-инфраструктура предполагает максимальную&ensp;
+											b доступность данных
+									.search-result__description.text-primary Современные требования к ИТ-инфраструктуре&ensp;предполагают максимальную&ensp;
+										b доступность данных
+										| &ensp;для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+								a.search-result(href="#")
+									.search-result-head
+										.search-result__count 2.
+										.search-result__title Максимальная&ensp;
+											b доступность данных
+									.search-result__description.text-primary Максимальная&ensp;
+										b доступность данных
+										| &ensp;для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+
+				+paginate

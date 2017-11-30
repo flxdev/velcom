@@ -29,6 +29,13 @@ mixin nav-menu
 				span.application-btn__mob
 					+icon('envelope')
 
+mixin search-form(add_class, value)
+	.search-form(class="search-form_"+add_class)
+		form.search-form__form(action="#")
+			input(type="search", value=""+value).search-form__field
+			button.search-form__serch-btn(type="submit")
+				+icon('search')
+
 mixin link-navigation(links)
 	ul.link-navigation
 		each link,index in links
@@ -154,3 +161,17 @@ mixin link-banner(title, link, img)
 		.link-banner__title.h3= title
 		a(href="#").link-button.link-button_small= link
 
+mixin projesct-item(img, logo, title, info, add_class)
+	a(href="").projesct-item(class=""+add_class)
+		.projesct-item__head
+			img(src="img/"+img, alt="project img")
+			.projesct-item-decor
+				.projesct-item-decor__logo
+					img(src="img/png/"+logo, alt="project logo")
+				.projesct-item-decor__experience Лучший опыт
+		.projesct-item__body
+			h4.h4.projesct-item__title
+				span.projesct-item__t-text= title
+				span.projesct-item__t-arrow
+					+icon('arrow-circle')
+			p.text-primary.projesct-item__info= info

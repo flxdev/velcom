@@ -1,0 +1,105 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Наши клиенты и проекты
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Наши клиенты и проекты
+	.box
+		+breadcrumbs(['Главная', 'Наши клиенты и проекты'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-banner.js-stick
+					+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
+			.content-inner
+				.projects
+					.projects-head
+						h2.h2.projects-head__title Аренда серверных шкафов (стоек) либо площадей, для размещения оборудования с обеспечением гарантированного
+					.projects-body
+						.projects-filters-wrap
+							.projects-filters__title Кейсы
+							.projects-filters
+								form.projects-filters__form(action="#")
+									.select-check.js-select-custom
+										.select-carret -
+										button.selects.dropdown(data-placeholder='Месяц')
+											span.btn-text Месяц
+										.dropdown-target
+											.dropdown-inner
+												.dropdown-content
+													.select-u-body.select-list
+														label.option
+															input(type='radio', name='month', value='val-1', data-validation='required')
+															span Январь
+														label.option
+															input(type='radio', name='month', value='val-2')
+															span Февраль
+														label.option
+															input(type='radio', name='month', value='val-3')
+															span Март
+														label.option
+															input(type='radio', name='month', value='val-4')
+															span Апрель
+														label.option
+															input(type='radio', name='month', value='val-5')
+															span Май
+														label.option
+															input(type='radio', name='month', value='val-6')
+															span Июнь
+														label.option
+															input(type='radio', name='month', value='val-7')
+															span Июль
+														label.option
+															input(type='radio', name='month', value='val-8')
+															span Август
+														label.option
+															input(type='radio', name='month', value='val-9')
+															span Сентябрь
+														label.option
+															input(type='radio', name='month', value='val-10')
+															span Октябрь
+														label.option
+															input(type='radio', name='month', value='val-11')
+															span Ноябрь
+														label.option
+															input(type='radio', name='month', value='val-12')
+															span Декабрь
+									.select-check.js-select-custom
+										.select-carret -
+										button.selects.dropdown(data-placeholder='Год')
+											span.btn-text Год
+										.dropdown-target
+											.dropdown-inner
+												.dropdown-content
+													.select-u-body.select-list
+														label.option
+															input(type='radio', name='yeats', value='2015', data-validation='required')
+															span 2015
+														label.option
+															input(type='radio', name='yeats', value='2016')
+															span 2016
+														label.option
+															input(type='radio', name='yeats', value='2017')
+															span 2017
+														label.option
+															input(type='radio', name='yeats', value='2018')
+															span 2018
+
+									button(type="submit").link-button Показать
+						.projects-wpapper
+							//-mixin projesct-item(img, logo, title, info)
+							+projesct-item('project-1.jpg', 'project-logo-1.png', 'Мир ЦОД 2017', 'Аренда каналов до точек присутствия на крупнейших телекоммуникационных узлах а также каналы «точка-точка» до любого адреса', 'best-exp')
+							+projesct-item('project-2.jpg', 'project-logo-2.png', 'Интернет-cлужба cервиса абонента для юридических лиц cервиса', 'Позволяет самостоятельно совершать ряд операций по обслуживанию абонентских номеров', '')
+							+projesct-item('project-3.jpg', 'project-logo-3.png', 'Интернет-cлужба cервиса абонента', 'Аренда каналов до точек присутствия на крупнейших телекоммуникационных узлах а также каналы «точка-точка» до любого адреса', 'best-exp')
+
+				+paginate

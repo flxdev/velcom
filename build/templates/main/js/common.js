@@ -96,13 +96,28 @@ document.addEventListener('DOMContentLoaded', function () {
 		$(this).toggleClass('side-bar-nav__mob-btn_visible').next().slideToggle();
 	});
 
-	stickinit();
+	var window_width = $(window).width();
+	if (window_width < 768) {
+		$(".js-stick").trigger("sticky_kit:detach");
+	} else {
+		stickinit();
+	}
+	$(window).resize(function () {
+		window_width = $(window).width();
+		if (window_width < 768) {
+			$(".js-stick").trigger("sticky_kit:detach");
+		} else {
+			stickinit();
+		}
+	});
+
 	show_video();
 	scrollAnimations();
 	Menu();
 	initServicesSlider();
 	popUpsInit();
 	initInnerPageSlider();
+	initCustomSelectList();
 
 	var ajax = new AjaxLoading($(".ajax-trigger"));
 });
@@ -443,4 +458,65 @@ function initContentsModalSlider() {
 			asNavFor: _this.closest('.modal-container').find('.big-image-slider')
 		});
 	});
+}
+
+function initCustomSelectList() {
+	var _conf = {
+			initClass: 'cs-active',
+			f: {}
+		},
+	    _items = $('.js-select-custom');
+	$.each(_items, function () {
+		var _select = $(this),
+		    _button = _select.find('button'),
+		    placeholder = _button.data('placeholder'),
+		    _list = _select.find('.select-list');
+		_select.on('reinit', function () {
+			var _active = _list.find('input:checked');
+			if (_active.length) {
+				_button.children('.btn-text').addClass('active').text('' + _active.siblings('span').text() + '').parent().addClass('is-checked');
+			} else {
+				_button.children('.btn-text').removeClass('active').text(_button.data('placeholder')).parent().removeClass('is-checked');
+			}
+			CheckForSelect($(this).parents('form'));
+		});
+
+		_button.off('click').on('click', function () {
+			$(this).parent().toggleClass('active').siblings().removeClass('active');
+			return false;
+		});
+
+		_list.off('change').on('change', 'input', function () {
+			var _input = $(this);
+			_input.prop('checked', true);
+			_button.parent().removeClass('active');
+			_select.trigger('reinit');
+		});
+
+		_select.trigger('reinit');
+		_select.addClass(_conf.initClass);
+
+		$(document).on('mouseup', function (e) {
+			if (!_select.is(e.target) && _select.has(e.target).length === 0) {
+				_select.removeClass('active');
+			}
+		});
+	});
+}
+function CheckForSelect(form) {
+	if (form.find('.select-check').length) {
+		var wrap = form.find('.select-check');
+
+		wrap.each(function () {
+			var _ = $(this),
+			    btn = _.find('.selects'),
+			    option = _.find('.option.has-error');
+			if (option.length) {
+				_.addClass('error');
+			} else {
+				_.removeClass('error');
+			}
+		});
+		wrap.hasClass('error') ? false : true;
+	}
 }

@@ -30,11 +30,7 @@ include _mixins.pug
 							+icon('social-facebook')
 						a(href="#").footer-social__link.footer-social__link_tw
 							+icon('social-twitter')
-					.footer-search
-						form.footer-search__form(action="#")
-							input(type="search").footer-search__field
-							button.footer-search__serch-btn(type="submit")
-								+icon('search')
+					+search-form('footer-search', '')
 				.footer-more-info
 					p.text-small Взаимодействие между клиентом и компанией по вопросам предоставления услуги происходит посредством электронной почты &#32;
 						strong sales@vdc.by

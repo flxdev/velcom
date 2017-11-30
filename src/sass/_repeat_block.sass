@@ -92,7 +92,7 @@
 	display: inline-block
 	color: #000000
 	font-size: 18px
-	line-height: 1.333
+	line-height: 1
 	font-weight: bold
 	position: relative
 	padding-right: 40px
@@ -108,6 +108,13 @@
 		+tr(color .3s ease)
 	&:hover &__arrow
 		color: #000000
+	&.back-link
+		padding-right: 0
+		padding-left: 40px
+	&.back-link	&__arrow
+		right: auto
+		left: 0
+		transform: translateY(-50%) rotate(180deg)
 
 .link-consultation
 	+link-btn( #000000,#ffffff, #f2db00, #edcd1c)
@@ -173,7 +180,7 @@
 		width: 25px
 		height: 25px
 		margin-right: 20px
-		color:  rgb(236, 239, 242)
+		color:  #eceff2
 		+tr(all .3s ease)
 	&__desc
 		width: 100%
@@ -501,13 +508,16 @@
 		padding-bottom: 0
 	&:last-child &__wrap
 		margin-bottom: 0
-	&__wrap
+	&-wrap
 		display: flex
 		flex-wrap: wrap
-		&_mw
-			max-width: 714px
+	&-min-w
+		max-width: 714px
 	&__title
 		line-height: 1
+	+r(980)
+		margin-bottom: 50px
+		padding-bottom: 40px
 	+r(650)
 		&__wrap
 			justify-content: space-between
@@ -707,7 +717,8 @@
 		color: #767a7d
 		font-size: 16px
 		line-height: 1.5
-		margin: 0 20px
+		margin: 0 10px
+		padding: 10px
 		letter-spacing: 0.02em
 		+tr(all .3s ease)
 		&.active
@@ -730,22 +741,49 @@
 		margin: 0 20px
 		font-size: 16px
 		letter-spacing: 0.02em
+	+r(560)
+		&__link
+			padding: 5px
+			margin: 0 10px
+			font-size: 14px
+		&__devider
+			margin: 0 7px
+			font-size: 14px
 
 .link-banner
 	width: 100%
 	height: 100%
-	max-width: 238px
-	background-color: #f9f9f9
+	max-width: 240px
+	background-color: #f2f4f6
 	padding: 35px 10px
 	text-align: center
-	background-size: contain
+	background-size: cover
 	background-repeat: no-repeat
+	background-position: 100% 100%
 	&__title
+		font-size: 20px
 		max-width: 80%
-		margin: 0 auto
 		text-align: left
 		line-height: 1.4
 		margin-bottom: 137px
+	+r(980)
+		& a
+			padding-left: 7px
+			padding-right: 7px
+			font-size: 14px
+		&__title
+			font-size: 16px
+	+r(768)
+		max-width: 450px
+		margin: 0 auto
+		padding: 35px 30px
+		background-size: contain
+		text-align: left
+		&__title
+			margin-bottom: 60px
+		& a
+			padding-left: 20px
+			padding-right: 20px
 
 .partners
 	display: flex
@@ -840,6 +878,104 @@
 		width: 100%
 		margin-right: 0 !important
 
+.projesct-item
+	display: block
+	width: 48%
+	margin-bottom: 50px
+	border: 1px solid #cccccc
+	&__head
+		overflow: hidden
+		margin: -1px
+		font-size: 0
+		position: relative
+		img
+			+tr(all .3s ease)
+		&::after
+			content: ''
+			display:block
+			background-color: rgba(#000000, .2)
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			opacity: 0
+			z-index: 1
+			+tr(all .3s ease)
+	&__body
+		background-color: #ffffff
+		padding: 35px 32px 40px 32px
+	&__title
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 20px
+		padding-bottom: 20px
+	&__t-text
+		display: block
+		width: 100%
+		max-width: 65%
+		+tr(all .3s ease)
+	&__t-arrow
+		display: block
+		width: 25px
+		height: 25px
+		color: #eceff2
+		margin-right: 15px
+		+tr(all .3s ease)
+	&__info
+		+tr(all .3s ease)
+	&:hover &__t-arrow
+		margin-right: 0
+		color: #000000
+	&:hover &__t-text
+		color: #5a5a5a
+	&:hover &__info
+		color: #2e3031
+	&:hover &__head
+		img
+			transform: scale(1.1)
+		&::after
+			opacity: 1
+	&:hover
+		.projesct-item-decor
+			&__experience
+				box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.25)
+	&.best-exp
+		.projesct-item-decor
+			&__experience
+				display: inline-block
+	+r(980)
+		width: 70%
+		margin-right: auto
+		margin-left: auto
+	+r(768)
+		width: 49%
+		margin-right: 0
+		margin-left: 0
+	+r(620)
+		width: 100%
+
+.projesct-item-decor
+	display: flex
+	align-items: flex-start
+	justify-content: space-between
+	padding: 0 32px
+	position: absolute
+	left: 0
+	top: 35px
+	z-index: 2
+	width: 100%
+	&__logo
+		max-width: 100px
+	&__experience
+		display: none
+		background-color: #fff164
+		font-size: 12px
+		line-height: 2
+		padding: 0 12px
+		+tr(all .3s ease)
 
 .pop-close
 	width: 18px
@@ -944,3 +1080,62 @@
 		.slider-animate
 			transform: translateY(0)
 			opacity: 1
+
+/* forms */
+
+.search-form
+	position: relative
+	&__form
+		width: 100%
+		position: relative
+		&:hover > *,
+			color: #000000
+			border-color: #000000
+	&__field
+		width: 100%
+		display: inline-block
+		border: 1px solid #e7e7e7
+		border-radius: 40px
+		line-height: 40px
+		padding-left: 16px
+		padding-right: 16px
+		+tr(all .3s ease)
+		&::-webkit-search-cancel-button
+			display: none
+		&::-ms-clear
+			display: none
+		&:focus
+			border-color: #000000
+	&__field:focus + &__serch-btn
+		color: #000000
+	&__serch-btn
+		width: 20px
+		height: 20px
+		position: absolute
+		top: 50%
+		right: 16px
+		color: #e7e7e7
+		transform: translateY(-50%)
+		+tr(all .3s ease)
+	/* search modificate */
+	&_footer-search
+		text-align: right
+		+r(1100)
+			text-align: left
+	&_footer-search	&__form
+		max-width: 245px
+		margin-right: 0
+		margin-left: auto
+		+r(1100)
+			margin-right: auto
+			margin-left: 0
+	&_search-result
+		margin-bottom: 50px
+		+r(768)
+			margin-bottom: 30px
+	&_search-result &__field
+		border-color: #f2db00
+		line-height: 50px
+		padding-left: 26px
+	&_search-result &__serch-btn
+		color: #000000

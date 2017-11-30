@@ -1,0 +1,54 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Карта сайта 
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Карта сайта
+	.box
+		+breadcrumbs(['Главная', 'Карта сайта'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-banner.js-stick
+					+link-banner('Бесплатный звонок в сети velcom', 'Заказать звонок', 'side-banner-3.jpg')
+			.content-inner
+				.site-map
+					.site-map-wrap 
+						a(href="#").page-link Дата-центр
+						ul.site-map-list
+							li
+								a(href="#").sub-page-link.text-primary Команда
+							li
+								a(href="#").sub-page-link.text-primary Документы
+							li
+								a(href="#").sub-page-link.text-primary Сертификаты
+							li
+								a(href="#").sub-page-link.text-primary Инфраструктура
+							li
+								a(href="#").sub-page-link.text-primary Новости
+							li
+								a(href="#").sub-page-link.text-primary Галерея
+					.site-map-wrap
+						a(href="#").page-link Приватность информации
+						a(href="#").page-link Услуги
+						ul.site-map-list
+							li
+								a(href="#").sub-page-link.text-primary Co-location
+							li
+								a(href="#").sub-page-link.text-primary Выделенный сервер
+							li
+								a(href="#").sub-page-link.text-primary IaaS
+					.site-map-wrap
+						a(href="#").page-link Наши клиенты и проекты
+						a(href="#").page-link Партнёры
+						a(href="#").page-link Контакты

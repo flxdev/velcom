@@ -1,0 +1,31 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Ошибка 404 
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Ошибка 404
+	.box
+		+breadcrumbs(['Главная', 'Ошибка 404'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-banner.js-stick
+					+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
+			.content-inner
+				.error-404.content-inner-group-min-w
+					h2.h2.error-404__title Страница не найдена
+					p.text-primary.error-404__desc Такое иногда случается. Самые вероятные причины - устаревшая ссылка или страница была удалена. Перейдите на&ensp;
+						a(href="/") главную страницу
+						| &ensp;и попробуйте начать оттуда.
+
+					+link-more('Перейти на главную', 'back-link')
