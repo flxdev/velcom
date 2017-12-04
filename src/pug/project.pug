@@ -26,12 +26,12 @@ block content
 					.projects-head
 						h2.h2.projects-head__title Аренда серверных шкафов (стоек) либо площадей, для размещения оборудования с обеспечением гарантированного
 					.projects-body
-						.projects-filters-wrap
+						.projects-filters
 							.projects-filters__title Кейсы
-							.projects-filters
-								form.projects-filters__form(action="#")
+							form.projects-filters__form(action="#")
 									.select-check.js-select-custom
-										.select-carret -
+										.select-carret
+											+icon('arrow_down')
 										button.selects.dropdown(data-placeholder='Месяц')
 											span.btn-text Месяц
 										.dropdown-target
@@ -75,7 +75,8 @@ block content
 															input(type='radio', name='month', value='val-12')
 															span Декабрь
 									.select-check.js-select-custom
-										.select-carret -
+										.select-carret
+											+icon('arrow_down')
 										button.selects.dropdown(data-placeholder='Год')
 											span.btn-text Год
 										.dropdown-target

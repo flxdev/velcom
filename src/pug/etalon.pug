@@ -1,0 +1,134 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Наши клиенты и проекты
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Наши клиенты и проекты
+	.box
+		+breadcrumbs(['Главная', 'Наши клиенты и проекты'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-banner.js-stick
+					+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
+			.content-inner
+				.content-inner-group
+					.content-block
+						h2 ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+						p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+						h3 Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных
+						p Современные требования к ИТ-инфраструктуре
+							sup предполагают 
+							|максимальную 
+							b доступность данных 
+							|для операционной 
+							sub деятельности 
+							|любого бизнеса практически 
+							del 
+							|в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+					.inner-slider
+						.inner-slider-init
+							.inner-slider__slide
+								img(src="img/inner-slide-2.jpg", alt="")
+							.inner-slider__slide
+								img(src="img/inner-slide-1.jpg", alt="")
+							.inner-slider__slide
+								img(src="img/inner-slide-2.jpg", alt="")
+						.inner-slider-nav
+							button(type="button").inner-slider__prev
+								+icon('arrow')
+							.slider-counter
+								.slider-curr . . . 
+								.slider-divider /
+								.slider-total . . .
+							button(type="button").inner-slider__next
+								+icon('arrow')
+					.content-block
+						p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+				.bg-gray
+					.content-block
+						h3 Дата-центры подключены к точкам обмена трафиком MSK-IX, DATA-IX. Точки присутствия на ММТС-9, ММТС-10. Собственная оптоволоконная сеть
+						ul 
+							li.data-center-details__item.text-primary Все активное оборудование дублируется по принципу N+1
+							li.data-center-details__item.text-primary Энергосистема организована на базе двух независимых вводов как со стороны городских сетей, так и оборудования клиента
+							li.data-center-details__item.text-primary Климатическое оборудование также построено на базе резервирования
+							li.data-center-details__item.text-primary При проведении профилактических работ функционирование ЦОД функционирует в обычном режиме не страдает
+							li.data-center-details__item.text-primary ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+				.content-inner-group
+					.content-block
+						h3 Система поддержания климата
+						dl.data-parameters
+							dt.data-parameters__title.text-small Круглосуточная охрана
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+							dt.data-parameters__title.text-small Видеонаблюдение
+							dd.data-parameters__desc.text-small 152 камеры
+							dt.data-parameters__title.text-small Глубина архива
+							dd.data-parameters__desc.text-small 60 дней
+							dt.data-parameters__title.text-small Огнестойкость
+							dd.data-parameters__desc.text-small ≥ 60 минут
+						dl.data-parameters
+							dt.data-parameters__title.text-small Пропускная система
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+							dt.data-parameters__title.text-small Уровень доступа
+							dd.data-parameters__desc.text-small 6 ступеней
+							dt.data-parameters__title.text-small Мониторинг инфраструктуры
+							dd.data-parameters__desc.text-small 24/7
+				.content-inner-group
+					.content-block
+						h3 Система
+						dl.data-parameters
+							dt.data-parameters__title.text-small Круглосуточная охрана
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+							dt.data-parameters__title.text-small Видеонаблюдение
+							dd.data-parameters__desc.text-small 152 камеры
+							dt.data-parameters__title.text-small Глубина архива
+							dd.data-parameters__desc.text-small 60 дней
+							dt.data-parameters__title.text-small Огнестойкость
+							dd.data-parameters__desc.text-small ≥ 60 минут
+						dl.data-parameters
+							dt.data-parameters__title.text-small Пропускная система
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+							dt.data-parameters__title.text-small Уровень доступа
+							dd.data-parameters__desc.text-small 6 ступеней
+							dt.data-parameters__title.text-small Мониторинг инфраструктуры
+							dd.data-parameters__desc.text-small 24/7
+						dl.data-parameters
+							dt.data-parameters__title.text-small Пропускная система
+							dd.data-parameters__desc.text-small
+								span.data-parameters__check
+									+icon('checked')
+							dt.data-parameters__title.text-small Уровень доступа
+							dd.data-parameters__desc.text-small 6 ступеней
+							dt.data-parameters__title.text-small Мониторинг инфраструктуры
+							dd.data-parameters__desc.text-small 24/7
+				.content-inner-group
+					.content-block
+						h3 Задача
+						ol
+							li Все активное оборудование дублируется по принципу N+1
+							li Энергосистема организована на базе двух независимых вводов как со стороны городских сетей, так и оборудования клиента
+							li Климатическое оборудование также построено на базе резервирования
+							li При проведении профилактических работ функционирование ЦОД функционирует в обычном режиме не страдает
+							li ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+				.content-inner-group
+					.content-block
+						h3 Наше решение
+						
