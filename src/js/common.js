@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	var slider_promo_reclame = $('.promo-reclame').slick({
+	var sliderPromoReclame = $('.promo-reclame').slick({
 		slidesToShow: 4,
 		arrows: false,
 		dots: false,
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		]
 	});
 
-	var slider_advantages = $('.advantages__slider').slick({
+	var sliderAdvantages = $('.advantages__slider').slick({
 		rows : 2,
 		slidesPerRow : 3,
 		arrows: false,
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		]
 	});
 
-	var slider_data_slider_text = $('.data-center-slider-text').slick({
+	var sliderDataSliderText = $('.data-center-slider-text').slick({
 		touchMove: false,
 		dragable: false,
 		arrows: true,
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	});
 
-	var slider_data_slider_bg = $('.data-center-slider-bg').slick({
+	var sliderDataDliderBg = $('.data-center-slider-bg').slick({
 		touchMove: false,
 		dragable: false,
 		dots: false,
@@ -103,16 +103,14 @@ document.addEventListener('DOMContentLoaded', function () {
 		$(this).toggleClass('side-bar-nav__mob-btn_visible').next().slideToggle();
 	});
 
-
-	var window_width = $( window ).width();
-	if (window_width < 768) {
+    stickinit();
+	var windowWidth = $( window ).width();
+	if (windowWidth < 768) {
 		$(".js-stick").trigger("sticky_kit:detach");
-	} else {
-		stickinit();
 	}
 	$( window ).resize(function() {
-		window_width = $( window ).width();
-		if (window_width < 768) {
+		windowWidth = $( window ).width();
+		if (windowWidth < 768) {
 		$(".js-stick").trigger("sticky_kit:detach");
 		} else {
 		stickinit();
@@ -126,6 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	popUpsInit();
 	initInnerPageSlider();
 	initCustomSelectList();
+	YoutubeVids();
 
 	var ajax = new AjaxLoading($(".ajax-trigger"));
 	
@@ -203,7 +202,7 @@ function stickinit() {
 	setTimeout(function() {
 		$('.js-stick').stick_in_parent({
 			parent: ".js-stick-parent",
-			offset_top: 90,
+			offset_top: 80,
 		});
 	}, 1);
 }
@@ -542,4 +541,34 @@ function CheckForSelect(form){
 		});
 		wrap.hasClass('error') ? false : true
 	}
+}
+
+ function YoutubeVids() {
+
+	let youtube = document.querySelectorAll( '.youtube' );
+	
+	for (let i = 0; i < youtube.length; i++) {
+		
+		let source = 'https://img.youtube.com/vi/'+ youtube[i].dataset.embed +'/maxresdefault.jpg';
+
+		let image = new Image();
+		image.src = source;
+		image.addEventListener( 'load', () => {
+			youtube[ i ].appendChild( image );
+		});
+		
+		youtube[i].addEventListener( 'click', function() {
+
+			var iframe = document.createElement( 'iframe' );
+
+			iframe.setAttribute( 'frameborder', '0' );
+			iframe.setAttribute( 'allowfullscreen', '' );
+			// iframe.setAttribute( "wmode", "Opaque" );
+			iframe.setAttribute( 'src', 'https://www.youtube.com/embed/'+ this.dataset.embed +'?wmode=opaque&rel=0&showinfo=0&autoplay=1' );
+
+			this.innerHTML = '';
+			this.appendChild( iframe );
+		});	
+	};
+	
 }

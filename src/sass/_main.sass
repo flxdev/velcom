@@ -128,7 +128,7 @@ body
 	display: flex
 	flex-direction: column
 	&_inner-page
-		padding: 170px 0 65px
+		padding: 170px 0 60px
 	&_row
 		height: auto
 		flex-direction: row
@@ -228,6 +228,7 @@ body
 			padding-right: 15px
 	
 .basic-services
+	position: relative
 	background-color: #ffffff
 	padding-top: 95px
 	// &-wrapper
@@ -485,7 +486,7 @@ body
 				width: 100%
 				height: 100%
 	&-text
-		padding: 110px 0
+		padding: 110px 0 30px
 	&__slide
 		position: relative
 		z-index: 1
@@ -515,7 +516,7 @@ body
 		transform: rotate(180deg)
 	& .custom_dots
 		position: absolute
-		bottom: 5%
+		bottom: 3%
 		left: 50%
 		transform: translateX(-50%)
 	+r(768)
@@ -570,11 +571,25 @@ body
 			max-height: 58.5px
 			vertical-align: middle
 
+
 .parameters-table
 	display: flex
 	align-items: flex-start
 	+r(620)
 		flex-wrap: wrap
+	&-wrap
+		position: relative
+	&-decor
+		position: absolute
+		top: -47px
+		right: 12px
+		width: 80px
+		height: 90px
+		color: #f2db00
+		+r(1100)
+			top: -30px
+			width: 70px
+			height: 80px
 
 .data-parameters
 	width: 50%
@@ -587,9 +602,13 @@ body
 	&__title
 		width: 70%
 		border-bottom: 1px solid #cccccc
-		padding-bottom: 21px
+		padding-bottom: 10px
 		padding-right: 50px
 		margin-bottom: 17.5px
+		&:nth-last-child(2)
+			border: none
+			padding-bottom: 0
+			margin-bottom: 0
 	&__desc
 		width: 30%
 		border-bottom: 1px solid #cccccc
@@ -597,10 +616,18 @@ body
 		margin-bottom: 17.5px
 		font-weight: bold
 		color: #000000
+		&:last-child
+			border: none
+			border: none
+			padding-bottom: 0
+			margin-bottom: 0
+		
 	&__check
 		display: block
-		width: 30px
+		width: 20px
 		height: 20px
+		padding: 4px
+		margin-left: 10px
 	&_no-mw
 		max-width: 100%
 	+r(620)
@@ -665,6 +692,8 @@ body
 .data-center-cooperation
 	max-width: 714px
 	padding: 68px 0 0
+	+r(440)
+		padding: 50px 0 0
 	&__promo
 		background-repeat: no-repeat
 		background-size: cover
@@ -672,28 +701,35 @@ body
 		display: flex
 		justify-content: flex-end
 		margin-bottom: 55.5px
+		+r(440)
+			justify-content: center
+			padding: 20px
+			margin-bottom: 30px
 
 .data-center-partner
 	display: inline-block
 	background-color: #fff233
 	padding: 33.5px 29px 33.5px 35px
 	position: relative
+	max-width: 290px
 	z-index: 1
 	box-shadow: none
 	+tr(all .3s ease)
+	+r(440)
+		padding: 20px 20px 20px 25px
 	&:hover
 		box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2)
-	&__title
+	& &__title
 		font-weight: bold
 		font-size: 22px
-		line-height: 24px
+		line-height: 1.09
 		margin-bottom: 25px
 		text-transform: uppercase
-	&__text
+	& &__text
 		max-width: 225px
-		font-size: 32px
+		font-size: 16px
 		margin-bottom: 30px
-		line-height: 24px
+		line-height: 1.5
 	&__link
 		background-color: #f2db00
 		&:hover
@@ -869,7 +905,6 @@ body
 			justify-content: flex-end
 	&__title
 		font-size: 20px
-
 
 .dropdown-target
 	position: absolute

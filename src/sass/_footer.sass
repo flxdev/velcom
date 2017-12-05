@@ -11,8 +11,10 @@ footer
 		align-items: flex-start
 		flex-wrap: wrap
 	&__nav
-		padding-left: 2.2rem
+		padding-left: 70px
 		box-sizing: border-box
+		+r(980)
+			padding-left: 35px
 	&__wrap
 		display: flex
 		width: 50%
@@ -26,13 +28,13 @@ footer
 .footer-contacts
 	width: 50%
 	&__title
-		margin-bottom: 42px
+		margin-bottom: 30px
 	&__phone
 		font-size: 21px
 		line-height: 1.714
 		font-weight: bold
 	&__working-hours
-		margin-top: 24px
+		margin-top: 10px
 	+r(1100)
 		width: 100%
 	+r(590)
@@ -51,7 +53,7 @@ footer
 
 .footer-more-info
 	width: 100%
-	margin-top: 3rem
+	margin-top: 48px
 
 .footer-logo
 	&-wrap
@@ -91,7 +93,7 @@ footer
 		height: 32px
 		padding: 6px
 		border-radius: 50%
-		margin-right: 16px
+		margin-right: 12px
 		color: #ffffff
 		cursor: pointer
 		+tr(all .3s ease)
@@ -157,10 +159,15 @@ footer
 		&:last-child
 			margin-right: 0
 	&__link
+		font-size: 14px
 		font-weight: bold
+		color: #000000
+		+tr(color .3s ease)
 		img
 			max-width: 20px
 			margin-right: 13px
+		&:hover
+			color: #ecdc00
 
 	+r(850)
 		&__list

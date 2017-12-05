@@ -1,0 +1,86 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Наши проекты
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Наши проекты
+	.box
+		+breadcrumbs(['Главная', 'Наши проекты'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-banner.js-stick
+					+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
+			.content-inner
+				.projects
+					.content-area
+						h2 Участие в панельной дискуссии в рамках Мир ЦОД 2017
+						hr
+						.partners.partners-project
+							.partners-icon
+								.partners-icon-outer
+									.partners-icon-inner
+										.partners-icon-logo
+											img(src="img/png/sertificat-1.png", alt="partners logo")
+							.partners-info
+								.partners-info-header
+									.text-small.partners-info-header-type Клиент
+									.h4.partners-info-header-title PCI DSS Company
+									a(href="#").partners-info-header-link pcidss.by
+								.partners-info-body
+									.partners-info-decription PCI DSS Company входит в состав UniCredit, одной из крупнейшей группы банков Европы. Является одним из крупнейших кредитно-финансовых учреждений Германии, имеет порядка 850 филиалов, в которых заняты почти 19 000 работников.
+						.bg-gray
+							h3 Задача
+							ul
+								li Все активное оборудование дублируется по принципу N+1
+								li Энергосистема организована на базе двух независимых вводов как со стороны городских сетей, так и оборудования клиента
+								li Климатическое оборудование также построено на базе резервирования
+								li При проведении профилактических работ функционирование ЦОД функционирует в обычном режиме не страдает
+								li ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+
+						h3 Наше решение
+						p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+						hr
+						h3 Результат
+						.inner-slider
+							.inner-slider-init
+								.inner-slider__slide
+									img(src="img/inner-slide-1.jpg", alt="")
+								.inner-slider__slide
+									img(src="img/inner-slide-2.jpg", alt="")
+								.inner-slider__slide
+									img(src="img/inner-slide-1.jpg", alt="")
+							.inner-slider-nav
+								button(type="button").inner-slider__prev
+									+icon('arrow')
+								.slider-counter
+									.slider-curr . . . 
+									.slider-divider /
+									.slider-total . . .
+								button(type="button").inner-slider__next
+									+icon('arrow')
+
+						p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+						ul.data-center-details__list
+							li.data-center-details__item.text-primary Все активное оборудование дублируется по принципу N+1
+							li.data-center-details__item.text-primary Энергосистема организована на базе двух независимых вводов как со стороны городских сетей, так и оборудования клиента
+							li.data-center-details__item.text-primary Климатическое оборудование также построено на базе резервирования
+							li.data-center-details__item.text-primary При проведении профилактических работ функционирование ЦОД функционирует в обычном режиме не страдает
+							li.data-center-details__item.text-primary ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+						hr
+						h3 Отзыв клиента
+						blockquote
+							i Дата-цент Velcom сыграл решающую роль в нашем процессе оптимизации работ.
+							span Вишневский Григорий Михайлович
+					.content-area-footer
+						+link-more('Вернуться к проектам', 'back-link')

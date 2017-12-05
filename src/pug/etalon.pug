@@ -3,7 +3,7 @@ include includes/_mixins.pug
 
 
 block title
-	title Наши клиенты и проекты
+	title Эталонная страница
 block config
 	- var main = true
 block content
@@ -13,37 +13,44 @@ block content
 		.box
 			.header-inner.header-inner_inner-page
 				.header-inner__title.fade-down
-					h1.h1 Наши клиенты и проекты
+					h1.h1 Эталонная страница
 	.box
-		+breadcrumbs(['Главная', 'Наши клиенты и проекты'])
+		+breadcrumbs(['Главная'])
 	.box
 		.content-wrap
 			aside.side-bar.js-stick-parent
 				.side-bar-banner.js-stick
 					+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
 			.content-inner
-				.content-inner-group
-					.content-block
-						h2 ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
-						p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
-						h3 Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных
-						p Современные требования к ИТ-инфраструктуре
-							sup предполагают 
-							|максимальную 
-							b доступность данных 
-							|для операционной 
-							sub деятельности 
-							|любого бизнеса практически 
-							del 
-							|в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+				.content-area
+					h2 ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+					.datacenter-characteristics.datacenter-characteristics_data
+						+datacenter-characteristics('99,982%', 'Уровень доступности сервисов')
+						+datacenter-characteristics('35000 м²', 'Общая проектная площадь')
+						+datacenter-characteristics('6620 м²', 'Площадь зданий и сооружений')
+					p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.	
+					.youtube(data-embed='OiLdgNA6hlM')
+						.play-button +
+					h3 Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных
+					p Современные требования к ИТ-инфраструктуре
+						sup предполагают 
+						|максимальную 
+						b доступность данных 
+						|для операционной 
+						sub деятельности 
+						|любого бизнеса практически 
+						del 
+						|в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+					hr
+					h3 Результат
 					.inner-slider
 						.inner-slider-init
-							.inner-slider__slide
-								img(src="img/inner-slide-2.jpg", alt="")
 							.inner-slider__slide
 								img(src="img/inner-slide-1.jpg", alt="")
 							.inner-slider__slide
 								img(src="img/inner-slide-2.jpg", alt="")
+							.inner-slider__slide
+								img(src="img/inner-slide-1.jpg", alt="")
 						.inner-slider-nav
 							button(type="button").inner-slider__prev
 								+icon('arrow')
@@ -53,82 +60,99 @@ block content
 								.slider-total . . .
 							button(type="button").inner-slider__next
 								+icon('arrow')
-					.content-block
-						p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
-				.bg-gray
-					.content-block
+				
+					p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
+					.bg-gray
 						h3 Дата-центры подключены к точкам обмена трафиком MSK-IX, DATA-IX. Точки присутствия на ММТС-9, ММТС-10. Собственная оптоволоконная сеть
 						ul 
-							li.data-center-details__item.text-primary Все активное оборудование дублируется по принципу N+1
-							li.data-center-details__item.text-primary Энергосистема организована на базе двух независимых вводов как со стороны городских сетей, так и оборудования клиента
-							li.data-center-details__item.text-primary Климатическое оборудование также построено на базе резервирования
-							li.data-center-details__item.text-primary При проведении профилактических работ функционирование ЦОД функционирует в обычном режиме не страдает
-							li.data-center-details__item.text-primary ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
-				.content-inner-group
-					.content-block
-						h3 Система поддержания климата
-						dl.data-parameters
-							dt.data-parameters__title.text-small Круглосуточная охрана
-							dd.data-parameters__desc.text-small
-								span.data-parameters__check
-									+icon('checked')
-							dt.data-parameters__title.text-small Видеонаблюдение
-							dd.data-parameters__desc.text-small 152 камеры
-							dt.data-parameters__title.text-small Глубина архива
-							dd.data-parameters__desc.text-small 60 дней
-							dt.data-parameters__title.text-small Огнестойкость
-							dd.data-parameters__desc.text-small ≥ 60 минут
-						dl.data-parameters
-							dt.data-parameters__title.text-small Пропускная система
-							dd.data-parameters__desc.text-small
-								span.data-parameters__check
-									+icon('checked')
-							dt.data-parameters__title.text-small Уровень доступа
-							dd.data-parameters__desc.text-small 6 ступеней
-							dt.data-parameters__title.text-small Мониторинг инфраструктуры
-							dd.data-parameters__desc.text-small 24/7
-				.content-inner-group
-					.content-block
-						h3 Система
-						dl.data-parameters
-							dt.data-parameters__title.text-small Круглосуточная охрана
-							dd.data-parameters__desc.text-small
-								span.data-parameters__check
-									+icon('checked')
-							dt.data-parameters__title.text-small Видеонаблюдение
-							dd.data-parameters__desc.text-small 152 камеры
-							dt.data-parameters__title.text-small Глубина архива
-							dd.data-parameters__desc.text-small 60 дней
-							dt.data-parameters__title.text-small Огнестойкость
-							dd.data-parameters__desc.text-small ≥ 60 минут
-						dl.data-parameters
-							dt.data-parameters__title.text-small Пропускная система
-							dd.data-parameters__desc.text-small
-								span.data-parameters__check
-									+icon('checked')
-							dt.data-parameters__title.text-small Уровень доступа
-							dd.data-parameters__desc.text-small 6 ступеней
-							dt.data-parameters__title.text-small Мониторинг инфраструктуры
-							dd.data-parameters__desc.text-small 24/7
-						dl.data-parameters
-							dt.data-parameters__title.text-small Пропускная система
-							dd.data-parameters__desc.text-small
-								span.data-parameters__check
-									+icon('checked')
-							dt.data-parameters__title.text-small Уровень доступа
-							dd.data-parameters__desc.text-small 6 ступеней
-							dt.data-parameters__title.text-small Мониторинг инфраструктуры
-							dd.data-parameters__desc.text-small 24/7
-				.content-inner-group
-					.content-block
-						h3 Задача
-						ol
 							li Все активное оборудование дублируется по принципу N+1
 							li Энергосистема организована на базе двух независимых вводов как со стороны городских сетей, так и оборудования клиента
 							li Климатическое оборудование также построено на базе резервирования
 							li При проведении профилактических работ функционирование ЦОД функционирует в обычном режиме не страдает
 							li ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
-				.content-inner-group
-					.content-block
-						h3 Наше решение
-						
+
+					h3 Система поддержания климата
+					.parameters-table-wrap
+						.parameters-table
+							dl.data-parameters
+								dt.data-parameters__title.text-small Изолированные холодные коридоры
+								dd.data-parameters__desc.text-small
+									span.data-parameters__check
+										+icon('checked')
+								dt.data-parameters__title.text-small Уровень влажности в помещении
+								dd.data-parameters__desc.text-small 45%±10%
+							dl.data-parameters
+								dt.data-parameters__title.text-small Кондиционирование
+								dd.data-parameters__desc.text-small N+1
+								dt.data-parameters__title.text-small Температура воздуха 
+								dd.data-parameters__desc.text-small 23°±2°
+						.parameters-table-decor
+								<svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 60.9 60.9"><path fill="currentcolor" d="M30.5 4.4a26 26 0 1 0 26 26 26 26 0 0 0-26-26zm17.7 43.8a25.11 25.11 0 1 1 7.3-17.7 25 25 0 0 1-7.3 17.7z"/><path fill="currentcolor" d="M0 0v60.9h60.9V0zm1 1h58.9v58.9H1z"/><path fill="currentcolor" d="M39.8 10.5l-.7-.3-.1.7a21 21 0 0 1-3.2 10 22.61 22.61 0 0 1-1.9 2.5 3.39 3.39 0 0 1-.6.6.37.37 0 0 0-.3-.1 38.19 38.19 0 0 0 1.4-10.2 23.83 23.83 0 0 0-.4-4.6l-.1-.4-.4-.1a18.29 18.29 0 0 0-3.3-.2 23.77 23.77 0 0 0-7.6 1.3l-.4.3.5.5a20.11 20.11 0 0 1 5.3 13v.2c-.1 0-.2.1-.3.1A36.83 36.83 0 0 0 18 12.6l-.3-.2-.3.2a17.14 17.14 0 0 0-2.5 2.2 22.41 22.41 0 0 0-4.4 6.3l-.3.7.7.1a21 21 0 0 1 10 3.2 22.61 22.61 0 0 1 2.5 1.9 3.39 3.39 0 0 1 .6.6c0 .1-.1.2-.1.3a38.19 38.19 0 0 0-10.2-1.4 23.83 23.83 0 0 0-4.6.4l-.4.1-.1.4a18.29 18.29 0 0 0-.2 3.3 23.77 23.77 0 0 0 1.3 7.6l.2.7.5-.5a20.11 20.11 0 0 1 13-5.3h.2c0 .1.1.2.1.3a36.83 36.83 0 0 0-11.2 9.7l-.2.3.2.3a17.14 17.14 0 0 0 2.2 2.5 22.41 22.41 0 0 0 6.3 4.4l.7.3.1-.7a21 21 0 0 1 3.2-10 22.61 22.61 0 0 1 1.9-2.5 3.39 3.39 0 0 1 .6-.6c.1 0 .2.1.3.1a38.19 38.19 0 0 0-1.4 10.2 23.83 23.83 0 0 0 .4 4.6l.1.4.4.1a18.29 18.29 0 0 0 3.3.2 23.77 23.77 0 0 0 7.6-1.3l.7-.2-.5-.5a20.11 20.11 0 0 1-5.3-13v-.2c.1 0 .2-.1.3-.1a36.83 36.83 0 0 0 9.7 11.2l.3.2.3-.2a17.14 17.14 0 0 0 2.5-2.2 22.41 22.41 0 0 0 4.4-6.3l.3-.7-.9-.4a21 21 0 0 1-10-3.2 22.61 22.61 0 0 1-2.5-1.9 3.39 3.39 0 0 1-.6-.6c0-.1.1-.2.1-.3a38.19 38.19 0 0 0 10.2 1.4 23.83 23.83 0 0 0 4.6-.4l.4-.1.1-.4a18.29 18.29 0 0 0 .2-3.3 23.77 23.77 0 0 0-1.3-7.6L51 22l-.5.5a20.11 20.11 0 0 1-13 5.3h-.2c0-.1-.1-.2-.1-.3a36.83 36.83 0 0 0 11.2-9.7l.2-.3-.2-.3a17.14 17.14 0 0 0-2.2-2.5 29.44 29.44 0 0 0-6.4-4.2zm-3.2 20a6.15 6.15 0 1 1-1.8-4.3 5.87 5.87 0 0 1 1.8 4.3zm-12.7-20a20.16 20.16 0 0 1 6.5-1.1 26.35 26.35 0 0 1 2.8.2 29.34 29.34 0 0 1 .3 4.1 36.09 36.09 0 0 1-.8 7.3c-.2.9-.4 1.7-.5 2.2 0 .1-.1.2-.1.3a9.85 9.85 0 0 0-1.7-.2c-.5 0-1 .1-1.5.1.1-1.8-.4-7.3-5-12.9zM11.7 20.9a24.61 24.61 0 0 1 3.9-5.4 16.8 16.8 0 0 1 2.1-1.8 31.74 31.74 0 0 1 6.8 7 23.33 23.33 0 0 1 1.9 2.9 5.74 5.74 0 0 1 .4.7 6.89 6.89 0 0 0-2.3 2.2 21.52 21.52 0 0 0-12.8-5.6zM10.5 37a20.16 20.16 0 0 1-1.1-6.5 26.35 26.35 0 0 1 .2-2.8 29.34 29.34 0 0 1 4.1-.3 36.09 36.09 0 0 1 7.3.8c.9.2 1.7.4 2.2.5.1 0 .3.1.4.1a9.85 9.85 0 0 0-.2 1.7 6.15 6.15 0 0 0 .1 1.4 21.14 21.14 0 0 0-13 5.1zm10.4 12.2a24.61 24.61 0 0 1-5.4-3.9 16.8 16.8 0 0 1-1.8-2.1 31.74 31.74 0 0 1 7-6.8 23.33 23.33 0 0 1 2.9-1.9 5.74 5.74 0 0 1 .7-.4 6.89 6.89 0 0 0 2.2 2.3 21.87 21.87 0 0 0-5.6 12.8zm16 1.2a20.16 20.16 0 0 1-6.5 1.1 26.35 26.35 0 0 1-2.8-.2 29.34 29.34 0 0 1-.3-4.1 36.09 36.09 0 0 1 .8-7.3c.2-.9.4-1.7.5-2.2 0-.1.1-.3.1-.4a11 11 0 0 0 1.8.2 6.6 6.6 0 0 0 1.4-.1 20.81 20.81 0 0 0 5 13zM49.2 40a24.61 24.61 0 0 1-3.9 5.4 16.8 16.8 0 0 1-2.1 1.8 31.74 31.74 0 0 1-6.8-7 23.33 23.33 0 0 1-1.9-2.9 5.74 5.74 0 0 1-.4-.7 6.89 6.89 0 0 0 2.3-2.2A21.24 21.24 0 0 0 49.2 40zm1.2-16a20.16 20.16 0 0 1 1.1 6.5 26.35 26.35 0 0 1-.2 2.8 29.34 29.34 0 0 1-4.1.3 36.09 36.09 0 0 1-7.3-.8c-.9-.2-1.7-.4-2.2-.5-.1 0-.3-.1-.4-.1a9.85 9.85 0 0 0 .2-1.7 6.15 6.15 0 0 0-.1-1.4 21.81 21.81 0 0 0 13-5.1zm-10.3.5c-1.1.8-2.1 1.5-2.8 1.9a5.74 5.74 0 0 1-.7.4 6.89 6.89 0 0 0-2.2-2.3A21.24 21.24 0 0 0 40 11.7a24.61 24.61 0 0 1 5.4 3.9 16.8 16.8 0 0 1 1.8 2.1 34.33 34.33 0 0 1-7.1 6.8zM53.8 5.6h2v1h-2zm0 48.7h2v1h-2zM5.1 5.6h2v1h-2zm0 48.7h2v1h-2z"/><path fill="currentcolor" d="M30.5 27a3.5 3.5 0 1 0 3.5 3.5 3.48 3.48 0 0 0-3.5-3.5zm0 6a2.5 2.5 0 1 1 2.5-2.5 2.61 2.61 0 0 1-2.5 2.5z"/></svg>
+					hr
+					h3 Система
+					.parameters-table-wrap
+						.parameters-table
+							dl.data-parameters
+								dt.data-parameters__title.text-small Изолированные холодные коридоры
+								dd.data-parameters__desc.text-small
+									span.data-parameters__check
+										+icon('checked')
+								dt.data-parameters__title.text-small Уровень влажности в помещении
+								dd.data-parameters__desc.text-small 45%±10%
+							dl.data-parameters
+								dt.data-parameters__title.text-small Кондиционирование
+								dd.data-parameters__desc.text-small
+									span.data-parameters__check
+										+icon('checked')
+								dt.data-parameters__title.text-small Температура воздуха 
+								dd.data-parameters__desc.text-small 23°±2°
+							dl.data-parameters
+								dt.data-parameters__title.text-small Кондиционирование
+								dd.data-parameters__desc.text-small
+									span.data-parameters__check
+										+icon('checked')
+								dt.data-parameters__title.text-small Температура воздуха 
+								dd.data-parameters__desc.text-small 23°±2°
+					hr
+					h3 Задача
+					ol
+						li Все активное оборудование дублируется по принципу N+1
+						li Энергосистема организована на базе двух независимых вводов как со стороны городских сетей, так и оборудования клиента
+						li Климатическое оборудование также построено на базе резервирования
+						li При проведении профилактических работ функционирование ЦОД функционирует в обычном режиме не страдает
+						li ЦОД обеспечен двумя независимыми оптическими подключениями, что гарантирует доступность каналов связи
+					hr
+					h3 Наше решение
+					p 
+						img(src="img/etalon-1.jpg", alt="etalon", align="left")
+						| Унитарное предприятие «Велком» оказывает услуги мобильной связи под торговыми марками velcom и ПРИВЕТ, а также услуги фиксированного интернета на базе собственной оптоволоконной сети. Название бренда velcom – это сочетание двух слов: velocity (от англ. быстрота, скорость) и communications (от англ. коммуникации). В марте 2010 года velcom приступил к разворачиванию 3G-сети. В декабре 2015 года оператор во всей зоне покрытия 3G-сети velcom запустил в эксплуатацию технологию Dual Carrier-HSDPA (DC-HSDPA), позволяющую развить максимальную скорость мобильного интернета до 42 Мбит/с, а в феврале 2016 года – первым запустил передовую технологию передачи данных UMTS-900, позволяющую кардинально расширить зону покрытия и повысить качество мобильного интернета по всей стране. Компания velcom большое внимание уделяет качеству связи.
+						img(src="img/etalon-2.jpg", alt="etalon", align="right")
+						| Для этого проводится частотное планирование, постоянный мониторинг качества сети и своевременная модернизация. Все работы выполняют высококвалифицированные специалисты velcom, прошедшие стажировки в ведущих европейских компаниях. По итогам 2 квартала 2016 года число абонентов компании достигло 4,9 миллиона человек. Все работы выполняют высококвалифицированные специалисты velcom, прошедшие стажировки в ведущих европейских компаниях.
+
+					hr
+					.data-center-cooperation
+						.data-center-cooperation__promo(style="background-image:url('img/partner-bg.jpg')")
+							.data-center-partner
+								p.data-center-partner__title Сотрудничество
+								p.data-center-partner__text Мы открыты к сотрудничеству и всегда рады найти новых деловых партнеров
+								a(href="#").data-center-partner__link.link-button.link-button_small Стать партнёром
+
+					p
+						small
+							|Позвоните нам&#32;
+							a(href="tel:+375 29 600 04 11")
+								strong +375 29 600 04 11
+							|, отправьте заявку по электронной почте&#32;
+							a(href="mailto:sales@vdc.by")
+								strong sales@vdc.by
+							|&#32;или заполните&#32;
+							a(href="#")
+								strong форму обратной связи
+							|, и консультант свяжется с вами для разработки индивидуального предложения
+					hr
+					h3 Отзывы клиента
+					blockquote
+						i Дата-цент Velcom сыграл решающую роль в нашем процессе оптимизации работ.
+						span Вишневский Григорий Михайлович
+				.content-area-footer
+					+link-more('Вернуться назад', 'back-link')
