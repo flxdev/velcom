@@ -118,6 +118,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	initInnerPageSlider();
 	initCustomSelectList();
 	YoutubeVids();
+	listhide();
+	Accordeon();
 
 	var ajax = new AjaxLoading($(".ajax-trigger"));
 });
@@ -552,4 +554,71 @@ function YoutubeVids() {
 	for (var i = 0; i < youtube.length; i++) {
 		_loop(i);
 	}
+}
+function listhide() {
+	var target = $('.js-slidelist');
+	target.each(function () {
+		var _t = $(this),
+		    len = _t.data('items'),
+		    items = _t.find('li'),
+		    itemsl = items.length,
+		    text = 'Свернуть',
+		    trigger = _t.parent().find('.js-list-more');
+
+		console.log(trigger + ' trigger');
+		if (len >= itemsl) {
+			trigger.css('display', 'none');
+		} else {
+			items.slice(len).slideUp();
+			initclick();
+		}
+		function initclick() {
+			trigger.off('click').on('click', function (e) {
+				e.preventDefault();
+				items.slice(len).slideToggle(500);
+				$(this).toggleText();
+			});
+		}
+	});
+}
+jQuery.fn.toggleText = function () {
+	var altText = this.data("alt-text");
+
+	if (altText) {
+		this.data("alt-text", this.text());
+		this.toggleClass('visible');
+		this.find('.link-view-all').text(altText);
+	}
+};
+
+function Accordeon() {
+	var triggers = $('.js-accordeon-trigger');
+	triggers.each(function () {
+		var _ = $(this);
+		_.off('click').on('click', function () {
+			var head = _.closest('.accordeon-head');
+			var parent = _.closest('.accordeon-wrapper');
+			var target = parent.find('.accordeon-body');
+			var text = _.find('.js-toggle-text');
+			if (!_.hasClass('anim')) {
+				_.addClass('anim');
+				if (target.hasClass('active')) {
+					head.add(_).removeClass('active');
+					parent.add(_).removeClass('active');
+					target.removeClass('active').slideUp('normal');
+				} else {
+					head.add(_).addClass('active');
+					parent.add(_).addClass('active');
+					target.addClass('active').slideDown('normal', function () {
+						var offset = target.offset().top;
+						$('html:not(:animated), body:not(:animated), .out:not(:animated)').animate({ scrollTop: offset - 220 }, 500);
+					});
+				}
+				text.toggleText();
+				setTimeout(function () {
+					_.removeClass('anim');
+				}, 500);
+			}
+		});
+	});
 }

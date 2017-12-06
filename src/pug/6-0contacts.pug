@@ -1,0 +1,62 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Контакты
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Контакты
+	.box
+		+breadcrumbs(['Главная', 'Контакты'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-banner.js-stick
+					+link-banner('Бесплатный звонок в сети velcom 411', 'Заказать звонок', 'side-banner-1.jpg')
+			.content-inner
+				.contats-page
+					.contacts-page__title
+						h2.h2 Дата-центр velcom
+						+link-more('Все новости', 'main-news__more-news')
+					.contacts-wrap
+						.contacts-item
+							p.text-small.contacts-item__title Справочно-информационная служба
+							.contacts-item__link.contacts-item__link_big
+								a(href="tel:+375 29 600 04 11") +375 29 600 04 11
+								| , доб.&nbsp;6
+							.contacts-item__link
+								a(href="mailto:info@velcom.by") info@velcom.by
+							p.text-small.contacts-item__subtitle Тел./факс
+							.contacts-item__link.contacts-item__link_big
+								a(href="tel:+375 29 600 04 12") +375 29 600 04 12
+						.contacts-item
+							p.text-small.contacts-item__title Техническая поддержка
+							.contacts-item__link.contacts-item__link_big
+								a(href="tel:+375 29 600 20 20") +375 29 600 20 20
+							.contacts-item__link.contacts-item__link_big
+								a(href="tel:+375 29 600 20 20") +375 29 600 20 20
+							.contacts-item__link
+								a(href="mailto:support@velcom.by") support@velcom.by
+						.contacts-item
+							p.text-small.contacts-item__title Адрес
+							.text-primary.text-primary_black ул. Новорязанская, д. 26, стр. 1 220056, Республика Беларусь, г. Минск
+							ul.text-primary.contacts-item__subtitle
+								li Пн–пт: 8:00–21:00
+								li Сб–вс: выходной
+							.contacts-item__link
+								a(href="#") Схема проезда
+									span.contacts-item__link-icon
+										+icon('download')
+						.contacts-item
+							p.text-small.contacts-item__title Реквизиты
+							.text-primary.text-primary_black УП «Велком» Юридический адрес: 220030, Республика Беларусь, г.Минск, ул. Интернациональная, 36-2. Почтовый адрес: 220141, г. Минск, пр. Независимости, д. 168, корп. 2, к. 12
+					.maps
+						h4 Карта

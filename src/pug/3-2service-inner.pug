@@ -1,0 +1,342 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title Co-location
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 Co-location
+	.box
+		+breadcrumbs(['Главная', 'Услуги'])
+	.box
+		.services-inner-page
+			.content-wrap
+				aside.side-bar.js-stick-parent
+					.side-bar-nav.js-stick
+						a(href="#").side-bar-nav__mob-btn.show-sidebar-menu
+							span.link-value ...
+							span.link-i-arrow
+								+icon('arrow_down')
+						+link-navigation(['Co-location', 'Выделенные сервера', 'IaaS'])
+				.content-inner
+					h2.h2.content-inner__title.fade-up Аренда серверных шкафов (стоек) либо площадей, для размещения оборудования с обеспечением гарантированного электропитания, климатического режима и доступа в Интернет
+					.bg-gray.fade-down
+						.services-inner-details
+							h3.h3 Преимущества
+							ul.services-inner-details__list.js-slidelist(data-items='5')
+								li.services-inner-details__item.text-primary Индивидуальный подход и гибкие решения
+								li.services-inner-details__item.text-primary Широкий диапазон выбора вариантов энергопотребления 
+								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
+								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
+								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
+								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
+								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
+								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
+							.services-inner-view-all.more.js-list-more(data-alt-text='Скрыть')
+								a(href="#").link-view-all Все приемущества
+								.link-view-carret
+									+icon('arrow_down')
+			.content-wrap
+				aside.side-bar.js-stick-parent
+					.side-bar-banner.js-stick
+						+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
+				.content-inner
+					form(action="#").services-config
+						h3.h3 Предлагаем вам воспользоваться стандартными конфигурациями:
+						.services-config-wrap
+							.accordeon-wrapper
+								.accordeon-head
+									label.accordeon-head-check
+										input(type="checkbox")
+										.accordeon-head-custom
+											.accordeon-checked
+												+icon('checked')
+									.accordeon-head-content.js-accordeon-trigger
+										.accordeon-head-name
+											.h4 Стойка
+											.text-small Стандартные конфигурации
+										.accordeon-head-info
+											.text-primary.text-primary_black.text-primary_bold до 12
+											.text-small Мбит/с
+										.accordeon-head-icon
+											span
+												+icon('arrow_down')
+								.accordeon-body(style='display: none;')
+									.accordeon-body-content
+										dl
+											dt.text-small Канал в интернет, Мбит/с
+											dd.text-small.text-small_black.text-small_bold до 6
+											dt.text-small Бесплатный внутренний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Бесплатный внешний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold 1
+											dt.text-small Бесплатный IP-адрес IPv6
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Стандартный SLA
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Карты доступа
+											dd.text-small.text-small_black.text-small_bold до 3
+											dt.text-small Круглосуточный доступ
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Порт, 1 Гбит/c
+											dd.text-small.text-small_black.text-small_bold 2
+											dt.text-small Отчеты ежемесячные стандартные
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+							.accordeon-wrapper
+								.accordeon-head
+									label.accordeon-head-check
+										input(type="checkbox")
+										.accordeon-head-custom
+											.accordeon-checked
+												+icon('checked')
+									.accordeon-head-content.js-accordeon-trigger
+										.accordeon-head-name
+											.h4 Юнит
+											.text-small Стандартные конфигурации
+										.accordeon-head-info
+											.text-primary.text-primary_black.text-primary_bold до 6
+											.text-small Мбит/с
+										.accordeon-head-icon
+											span
+												+icon('arrow_down')
+								.accordeon-body(style='display: none;')
+									.accordeon-body-content
+										dl
+											dt.text-small Канал в интернет, Мбит/с
+											dd.text-small.text-small_black.text-small_bold до 6
+											dt.text-small Бесплатный внутренний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Бесплатный внешний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold 1
+											dt.text-small Бесплатный IP-адрес IPv6
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Стандартный SLA
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Карты доступа
+											dd.text-small.text-small_black.text-small_bold до 3
+											dt.text-small Круглосуточный доступ
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Порт, 1 Гбит/c
+											dd.text-small.text-small_black.text-small_bold 2
+											dt.text-small Отчеты ежемесячные стандартные
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+						h3.h3 Или мы разработаем для вас индивидуальное решение:
+						.services-config-wrap
+							.accordeon-wrapper
+								.accordeon-head
+									label.accordeon-head-check
+										input(type="checkbox")
+										.accordeon-head-custom
+											.accordeon-checked
+												+icon('checked')
+									.accordeon-head-content.js-accordeon-trigger
+										.accordeon-head-name
+											.h4 Стойка
+											.text-small Стойко-место
+										.accordeon-head-info
+											.text-primary.text-primary_black.text-primary_bold
+											.text-small
+										.accordeon-head-icon
+											span
+												+icon('arrow_down')
+								.accordeon-body(style='display: none;')
+									.accordeon-body-content
+										dl
+											dt.text-small Канал в интернет, Мбит/с
+											dd.text-small.text-small_black.text-small_bold до 6
+											dt.text-small Бесплатный внутренний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Бесплатный внешний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold 1
+											dt.text-small Бесплатный IP-адрес IPv6
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Стандартный SLA
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Карты доступа
+											dd.text-small.text-small_black.text-small_bold до 3
+											dt.text-small Круглосуточный доступ
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Порт, 1 Гбит/c
+											dd.text-small.text-small_black.text-small_bold 2
+											dt.text-small Отчеты ежемесячные стандартные
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+							.accordeon-wrapper
+								.accordeon-head
+									label.accordeon-head-check
+										input(type="checkbox")
+										.accordeon-head-custom
+											.accordeon-checked
+												+icon('checked')
+									.accordeon-head-content.js-accordeon-trigger
+										.accordeon-head-name
+											.h4 Выделенная зона
+											.text-small Огороженный периметр
+										.accordeon-head-info
+											.text-primary.text-primary_black.text-primary_bold
+											.text-small
+										.accordeon-head-icon
+											span
+												+icon('arrow_down')
+								.accordeon-body(style='display: none;')
+									.accordeon-body-content
+										dl
+											dt.text-small Канал в интернет, Мбит/с
+											dd.text-small.text-small_black.text-small_bold до 6
+											dt.text-small Бесплатный внутренний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Бесплатный внешний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold 1
+											dt.text-small Бесплатный IP-адрес IPv6
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Стандартный SLA
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Карты доступа
+											dd.text-small.text-small_black.text-small_bold до 3
+											dt.text-small Круглосуточный доступ
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Порт, 1 Гбит/c
+											dd.text-small.text-small_black.text-small_bold 2
+											dt.text-small Отчеты ежемесячные стандартные
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+							.accordeon-wrapper
+								.accordeon-head
+									label.accordeon-head-check
+										input(type="checkbox")
+										.accordeon-head-custom
+											.accordeon-checked
+												+icon('checked')
+									.accordeon-head-content.js-accordeon-trigger
+										.accordeon-head-name
+											.h4 Машинный зал
+											.text-small Полная изоляция
+										.accordeon-head-info
+											.text-primary.text-primary_black.text-primary_bold
+											.text-small
+										.accordeon-head-icon
+											span
+												+icon('arrow_down')
+								.accordeon-body(style='display: none;')
+									.accordeon-body-content
+										dl
+											dt.text-small Канал в интернет, Мбит/с
+											dd.text-small.text-small_black.text-small_bold до 6
+											dt.text-small Бесплатный внутренний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Бесплатный внешний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold 1
+											dt.text-small Бесплатный IP-адрес IPv6
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Стандартный SLA
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Карты доступа
+											dd.text-small.text-small_black.text-small_bold до 3
+											dt.text-small Круглосуточный доступ
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Порт, 1 Гбит/c
+											dd.text-small.text-small_black.text-small_bold 2
+											dt.text-small Отчеты ежемесячные стандартные
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+						h3.h3 Дополнительные услуги:
+						.services-config-wrap
+							.accordeon-wrapper.accordeon-wrapper_no-check
+								.accordeon-head
+									.accordeon-head-content.js-accordeon-trigger
+										.accordeon-head-name
+											.h4 18 услуг
+											.text-small Стойко-место
+										.accordeon-head-info
+											.text-primary.text-primary_black.text-primary_bold до 12
+											.text-small Мбит/с
+										.accordeon-head-icon
+											span
+												+icon('arrow_down')
+								.accordeon-body(style='display: none;')
+									.accordeon-body-content
+										dl
+											dt.text-small Канал в интернет, Мбит/с
+											dd.text-small.text-small_black.text-small_bold до 6
+											dt.text-small Бесплатный внутренний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Бесплатный внешний IP-адрес IPv4
+											dd.text-small.text-small_black.text-small_bold 1
+											dt.text-small Бесплатный IP-адрес IPv6
+											dd.text-small.text-small_black.text-small_bold ∞
+											dt.text-small Стандартный SLA
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Карты доступа
+											dd.text-small.text-small_black.text-small_bold до 3
+											dt.text-small Круглосуточный доступ
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+											dt.text-small Порт, 1 Гбит/c
+											dd.text-small.text-small_black.text-small_bold 2
+											dt.text-small Отчеты ежемесячные стандартные
+											dd.text-small.text-small_black.text-small_bold
+												.accordeon-checked
+													+icon('checked')
+						.services-config-ordering
+							.services-config-ordering__count
+								.h4 Стойка
+								.text-small.text-small_black Стандартные конфигурации
+							a(href="#").services-config-ordering__link.link-button Заказать 
+						.data-center-cooperation.fade-down
+							.data-center-cooperation__promo(style="background-image:url('img/services-page.jpg')")
+								.data-center-partner
+									p.data-center-partner__title Стоимость
+									p.data-center-partner__text Тарифы разрабатываются индивидуально для каждого клиента — вы платите только за фактически оказанные услуги, экономя бюджет
+							.data-center-cooperation__details
+								p.text-small Позвоните нам&#32;
+									a(href="tel:+375 29 600 04 11")
+										strong +375 29 600 04 11
+									|, отправьте заявку по электронной почте&#32;
+									a(href="mailto:sales@vdc.by")
+										strong sales@vdc.by
+									|&#32;или заполните&#32;
+									a(href="#")
+										strong форму обратной связи
+									|, и консультант свяжется с вами для разработки индивидуального предложения
+
+						.services-form
+							.h2 Форма заказа услуги
+						+link-more('Вернуться к услугам', 'back-link')

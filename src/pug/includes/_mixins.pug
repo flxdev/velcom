@@ -24,13 +24,13 @@ mixin nav-menu
 			li.nav-menu__item
 				a.nav-menu__link(href="#") Контакты
 		.nav-menu__btn-wrap
-			button(type="button").application-btn.link-border.js-popup-button(data-modal='fast-application')
+			button.application-btn.link-border.js-popup-button(type="button", data-modal='fast-application')
 				span.application-btn__desc Оставить заявку
 				span.application-btn__mob
 					+icon('envelope')
 
 mixin search-form(add_class, value)
-	.search-form(class="search-form_"+add_class)
+	div(class="search-form search-form_"+add_class)
 		form.search-form__form(action="#")
 			input(type="search", value=""+value).search-form__field
 			button.search-form__serch-btn(type="submit")
@@ -60,7 +60,7 @@ mixin contacts-header
 				span Техническая поддержка
 
 mixin link-more(text, add_class)
-	a.link-more(href="#", class=""+add_class)= text
+	a(href="#", class="link-more "+add_class)= text
 		span.link-more__arrow
 			+icon('arrow-circle')
 
@@ -74,11 +74,11 @@ mixin v-style-text(text)
 
 mixin news-item(img, short_text, date, add_class, tags)
 	if(add_class)
-		.news-item(class=""+add_class)
+		div(class="news-item "+add_class)
 			a(href="").news-item__inner
-				.news-item__img(class=""+add_class)
+				div(class="news-item__img "+add_class)
 					img(src="img/"+img, alt="")
-				.news-item__short(class=""+add_class)
+				div(class="news-item__short "+add_class)
 					p.text-primary.news-item__text= short_text
 					p.text-primary.news-item__date= date
 						span.news-item__tags= tags
@@ -113,7 +113,7 @@ mixin document-item(date, title)
 			+icon('documents')
 
 mixin sertificate(date, title, min_img, i)
-	a(href="#").sertificate-item.js-popup-button.ajax-trigger(data-modal='popup-contents', data-href='sertificate-popup.html', data-slideto=''+i).ajax-trigger
+	a.sertificate-item.js-popup-button.ajax-trigger(href="#", data-modal='popup-contents', data-href='sertificate-popup.html', data-slideto=''+i)
 		.sertificate-item__img
 			img(src="img/"+min_img, alt="sertificate")
 		.sertificate-item__info
@@ -128,7 +128,7 @@ mixin infrastructure-links-item(links)
 			a(href="").infrastructure-links__item= link
 
 mixin gallery-album(img, title, count)
-	a(href="#").gallery-album
+	a.gallery-album(href="#")
 		.gallery-album__image
 			img(src="img/"+img, alt="album gallery")
 		.gallery-album__info
@@ -137,9 +137,9 @@ mixin gallery-album(img, title, count)
 				span.gallery-album__total= count
 				span &nbsp;фото
 
-mixin gallery-photo(img, i)
+mixin gallery-photo(image, i)
 	a.gallery-photo.js-popup-button.ajax-trigger(href="#", data-modal="popup-contents", data-href='gallery-album-1.html', data-slideto=''+i)
-		img(src="img/"+img, alt="gallery-photo")
+		img(src="img/"+image, alt="gallery-photo")
 
 mixin paginate
 	.paginate
@@ -162,7 +162,7 @@ mixin link-banner(title, link, img)
 		a(href="#").link-button.link-button_small= link
 
 mixin projesct-item(img, logo, title, info, add_class)
-	a(href="").projesct-item(class=""+add_class)
+	a(href="", class="projesct-item "+add_class)
 		.projesct-item__head
 			img(src="img/"+img, alt="project img")
 			.projesct-item-decor

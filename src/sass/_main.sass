@@ -663,7 +663,8 @@ body
 		left: 100%
 		z-index: -1
 
-.data-center-details
+.data-center-details,
+.services-inner-details
 	position: relative
 	max-width: 714px
 	padding: 70px 0
@@ -705,6 +706,9 @@ body
 			justify-content: center
 			padding: 20px
 			margin-bottom: 30px
+	&:hover
+		.data-center-partner
+			box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2)
 
 .data-center-partner
 	display: inline-block
@@ -717,8 +721,6 @@ body
 	+tr(all .3s ease)
 	+r(440)
 		padding: 20px 20px 20px 25px
-	&:hover
-		box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2)
 	& &__title
 		font-weight: bold
 		font-size: 22px
@@ -1025,3 +1027,243 @@ body
 		visibility: visible
 	.select-carret
 		transform: rotate(-180deg)
+
+.services-inner-page
+	.content-wrap
+		padding-bottom: 70px
+	.content-wrap
+		.bg-gray
+			margin-bottom: 0
+	.services-inner-details
+		&__item
+			&:last-child
+				margin-bottom: 32px
+	.services-inner-view-all
+		font-size: 16px
+		line-height: 1.5
+		display: inline-block
+		position: relative
+		padding-right: 15px
+		padding-left: 35px
+		margin-top: 15px
+		.link-view-all
+			color: #000000
+			font-weight: bold
+		.link-view-carret
+			display: block
+			position: absolute
+			width: 8px
+			height: 4px
+			right: 0
+			top: 50%
+			transform: translateY(-50%)
+			+tr(all .3s ease)
+			svg
+				position: absolute
+				top: 0
+				left: 0
+		&.visible
+			.link-view-carret
+				transform: translateY(-50%) rotate(180deg)
+	.bg-gray
+		margin-top: 60px
+
+.services-config
+	width: 100%
+	max-width: 714px
+	.h3
+		margin-bottom: 47px
+	&-wrap
+		margin-bottom: 65px
+.accordeon-wrapper
+	margin-top: -1px
+	border: 1px solid #cccccc
+	+tr(all .3s ease)
+	&:first-child
+		border-top: 2px solid #fff233
+	&_no-check
+		.accordeon-head
+			&-content
+				padding-left: 20px
+		.accordeon-body
+			&-content
+				padding-left: 0
+	&.active
+		box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2)
+
+
+.accordeon-checked
+	width: 16px
+	height: 12px
+	color: #000000
+
+.accordeon-head
+	display: flex
+	align-items: center
+	+tr(all .3s ease)
+	&-check
+		padding: 35px 20px 35px 30px
+		+r(520)
+			padding: 35px 10px 35px 10px
+		input
+			display: none
+			&:checked + .accordeon-head-custom .accordeon-checked
+				opacity: 1
+		.accordeon-checked
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			opacity: 0
+			+tr(all .3s ease)
+		.accordeon-head-custom
+			width: 25px
+			height: 25px
+			border: 1px solid #cccccc
+			border-radius: 3px
+			background-color: #ffffff
+			+tr(all .3s ease)
+			position: relative
+			&:hover
+				background-color: #fafafa
+				border-color: #000000
+				cursor: pointer
+	&-content
+		padding: 15px 30px 15px 0
+		width: 100%
+		display: flex
+		align-items: center
+		&:hover
+			cursor: pointer
+		+r(520)
+			padding: 15px 10px 15px 0
+	&-name
+		padding: 10px
+		width: 70%
+		+r(520)
+			width: 60%
+	&-info
+		padding: 10px
+		width: 20%
+		+r(520)
+			width: 30%
+	&-icon
+		padding-left: 10px
+		width: 15%
+		+r(768)
+			width: 10%
+			padding-left: 0
+		span
+			display: block
+			margin-right: 0
+			margin-left: auto
+			width: 20px
+			height: 16px
+			+tr(all .7s ease)
+	&.active &-icon
+		span
+			transform: rotate(-180deg)
+.accordeon-body
+	border-top: none
+	padding: 0 30px
+	+r(520)
+		padding: 0 15px
+	&-content
+		border-top: 1px solid #cccccc
+		padding-left: 55px
+		padding-right: 45px
+		+r(520)
+			padding: 0
+		dl
+			display: flex
+			flex-wrap: wrap
+			dt
+				width: 77%
+				padding: 20px 20px 20px 0
+				border-bottom: 1px solid #e5e5e5
+				&:nth-last-child(2)
+					border: none
+			dd
+				width: 23%
+				padding: 20px 0
+				border-bottom: 1px solid #e5e5e5
+				&:last-child
+					border: none
+
+.services-config-ordering
+	background-color: #fff233
+	padding: 20px 34px
+	display: flex
+	justify-content: space-between
+	align-items: flex-start
+	flex-wrap: wrap
+	&__link
+		background-color: #f2db00
+		&:hover
+			background-color: #ffffff
+		+r(520)
+			margin-right: 0
+			margin-left: auto
+	&__count
+		+r(520)
+			width: 100%
+			margin-bottom: 20px
+		.h4
+			margin-bottom: 15px
+
+.services-form
+	background-color: #f5f5f5
+
+
+.contacts-page
+	&__title
+		display: flex
+		justify-content: space-between
+		align-items: center
+		padding-bottom: 60px
+		border-bottom: 1px solid #cccccc
+		margin-bottom: 55px
+
+.contacts-wrap
+	display: flex
+	flex-wrap: wrap
+
+.contacts-item
+	width: 41%
+	margin-bottom: 45px
+	padding-top: 55px
+	padding-right: 20px
+	margin-right: 40px
+	border-top: 1px solid #cccccc
+	&:first-child,
+	&:nth-child(2)
+		padding-top: 0
+		border-top: none
+	&__link
+		font-weight: bold
+		color: #000000
+		font-size: 16px
+		margin-bottom: 14px
+		&_big
+			font-size: 20px
+			letter-spacing: -0.02
+		&-icon
+			display: inline-block
+			width: 18px
+			height: 16px
+			margin-left: 10px
+	&__title
+		margin-bottom: 23px
+	&__subtitle
+		margin-top: 30px
+		margin-bottom: 15px
+
+.maps
+	background-color: #cccccc
+	width: 100%
+	height: 470px
+	display: flex
+	justify-content: center
+	align-items: center
+	font-size: 50px
+	color: #ffffff
