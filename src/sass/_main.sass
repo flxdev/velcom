@@ -706,9 +706,9 @@ body
 			justify-content: center
 			padding: 20px
 			margin-bottom: 30px
-	&:hover
-		.data-center-partner
-			box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2)
+		&:hover
+			.data-center-partner
+				box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2)
 
 .data-center-partner
 	display: inline-block
@@ -1257,13 +1257,30 @@ body
 	&__subtitle
 		margin-top: 30px
 		margin-bottom: 15px
+	+r(980)
+		width: 45%
+		margin-bottom: 30px
+		padding-top: 40px
+		padding-right: 10px
+		margin-right: 4%
+	+r(620)
+		width: 100%
+		&:nth-child(2)
+			padding-top: 40px
+			border-top: 1px solid #cccccc
 
-.maps
-	background-color: #cccccc
+.map-container
+	background-color: #ffffff
 	width: 100%
 	height: 470px
 	display: flex
 	justify-content: center
 	align-items: center
-	font-size: 50px
-	color: #ffffff
+	padding-bottom: 77px
+	border-bottom: 1px solid #cccccc
+	margin-top: 45px
+
+.map-elem
+	width: 100%
+	height: 100%
+	background-color: #cccccc

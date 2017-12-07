@@ -127,6 +127,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	YoutubeVids();
 	listhide();
 	Accordeon();
+	validateForms();
+	inputValEdit();
 
 	var ajax = new AjaxLoading($(".ajax-trigger"));
 	
@@ -642,3 +644,304 @@ function Accordeon() {
 	});
   });
 }
+
+function initMap() {
+	var map;
+	var trel = $('#map');
+	if(trel.length){
+		var element = document.getElementById('map');
+		var latcord = parseFloat(element.getAttribute('data-lat'));
+		var loncord = parseFloat(element.getAttribute('data-lon'));
+		var imgpath = element.getAttribute('data-icon');
+		var centercords = {lat: latcord, lng: loncord};
+		map = new google.maps.Map(element, {
+			zoom: 13,
+			center: centercords,
+			fullscreenControl: true,
+			scrollwheel: false,
+			mapTypeControl: false,
+			scaleControl: false,
+			streetViewControl: false,
+			gestureHandling: "greedy",
+			zoomControlOptions: {
+				position: google.maps.ControlPosition.RIGHT_CENTER
+			},
+			 styles:[
+				{
+					"featureType": "all",
+					"elementType": "labels.text.fill",
+					"stylers": [
+						{
+							"saturation": 36
+						},
+						{
+							"color": "#333333"
+						},
+						{
+							"lightness": 40
+						}
+					]
+				},
+				{
+					"featureType": "all",
+					"elementType": "labels.text.stroke",
+					"stylers": [
+						{
+							"visibility": "on"
+						},
+						{
+							"color": "#ffffff"
+						},
+						{
+							"lightness": 16
+						}
+					]
+				},
+				{
+					"featureType": "all",
+					"elementType": "labels.icon",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "administrative",
+					"elementType": "geometry.fill",
+					"stylers": [
+						{
+							"color": "#fefefe"
+						},
+						{
+							"lightness": 20
+						}
+					]
+				},
+				{
+					"featureType": "administrative",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"color": "#fefefe"
+						},
+						{
+							"lightness": 17
+						},
+						{
+							"weight": 1.2
+						}
+					]
+				},
+				{
+					"featureType": "landscape",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#f5f5f5"
+						},
+						{
+							"lightness": 20
+						}
+					]
+				},
+				{
+					"featureType": "landscape.man_made",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"color": "#bebebe"
+						}
+					]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"visibility": "on"
+						},
+						{
+							"color": "#f5f5f5"
+						},
+						{
+							"lightness": 21
+						}
+					]
+				},
+				{
+					"featureType": "poi.park",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#dedede"
+						},
+						{
+							"lightness": 21
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry.fill",
+					"stylers": [
+						{
+							"color": "#c6c6c6"
+						},
+						{
+							"lightness": 17
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"color": "#b3b3b3"
+						},
+						{
+							"lightness": 29
+						},
+						{
+							"weight": 0.2
+						}
+					]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#e9e9e9"
+						},
+						{
+							"lightness": 18
+						}
+					]
+				},
+				{
+					"featureType": "road.local",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#e9e9e9"
+						},
+						{
+							"lightness": 16
+						}
+					]
+				},
+				{
+					"featureType": "transit",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#d2d2d2"
+						},
+						{
+							"lightness": 19
+						}
+					]
+				},
+				 {
+		"featureType": "transit.station.rail",
+		"elementType": "labels",
+		"stylers": [
+			{
+				"visibility": "on"
+					}
+				]
+			},
+				{
+					"featureType": "water",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"color": "#8fbfe6"
+						},
+						{
+							"lightness": 17
+						}
+					]
+				}
+			]
+		});
+		var img = {
+			url: imgpath,
+			// This marker is 20 pixels wide by 32 pixels high.
+			size: new google.maps.Size(37, 48),
+			// The origin for this image is (0, 0).
+			origin: new google.maps.Point(0, 0),
+			// The anchor for this image is the base of the flagpole at (0, 32).
+			anchor: new google.maps.Point(0, 48),
+			// scaledSize: new google.maps.Size(74, 96)
+
+		};
+		var marker = new google.maps.Marker({
+			position: centercords,
+			map: map,
+			icon: img,
+			zIndex: 99999
+		});
+
+	}
+}
+function validateForms() {
+	
+	let _form = $('.js-validate');
+	if (_form.length) {
+		_form.each(function() {
+		let FormThis = $(this);
+
+		$.validate({
+			form: FormThis,
+			modules: 'logic',
+			borderColorOnError: true,
+			scrollToTopOnError: true,
+			inlineErrorMessageCallback:  function($input, errorMessage) {
+				if (errorMessage) {
+					singleErrorMessages($input, errorMessage);
+				} else {
+					singleRemoveErrorMessages($input);
+				}
+				return false; // prevent default behaviour
+			},
+			onValidate: () => {
+			  // CheckForSelect(form_this);
+			},
+			onSuccess: () => {
+			  // formResponse(form_this);
+			  // resetForm(form_this);
+			  return false;
+			},
+		});
+	});
+		function singleErrorMessages(item, errorMessage)
+		{
+			var currentElementParentObject = item.parent().parent();
+			currentElementParentObject.find('.form-error').remove();
+			currentElementParentObject.append(`<div class='help-block form-error'>${errorMessage}</div>`);
+		}
+
+		function singleRemoveErrorMessages(item)
+		{
+			var currentElementParentObject = item.parent().parent();
+			currentElementParentObject.find('.form-error').remove();
+		}
+	}
+}
+
+	function inputValEdit () {
+		var _input = $('.input-main');
+		_input.each(function(){
+			$(this).on('input change',function(){
+				var _val = $(this).val().length;
+				if(_val<=0){
+					$(this).removeClass('editing');
+				} else {
+					$(this).addClass('editing');
+				}
+			});
+		});
+	}	

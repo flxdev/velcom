@@ -46,6 +46,7 @@
   "main": "gulpfile.babel.js",
   "license": "ISC",
   "dependencies": {
-    "gulp-install": "^1.1.0"
+    "gulp-install": "^1.1.0",
+    "jquery-form-validator": "^2.3.77"
   }
 }

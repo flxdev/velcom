@@ -1,0 +1,131 @@
+.form-block
+	padding: 50px 34px 0 34px
+	max-width: 714px
+	background-color: #f5f5f5
+.form-content
+	.form-content-head
+		font-size: 16px
+		color: #000000
+		font-weight: bold
+		margin-bottom: 25px
+.input
+	&-row
+		font-size: 0
+		margin: 0 -3px
+		position: relative
+	&-item
+		display: inline-block
+		vertical-align: top
+		width: 100%
+		padding-left: 3px
+		padding-right: 3px
+		padding-bottom: 20px
+		&.w50
+			width: 50%
+			+r(640)
+				width: 100%
+	&-wrapper
+		position: relative
+	&-main
+		display: block
+		width: 100%
+		border: 1px solid #a6a6a6
+		box-sizing: border-box
+		+tr(all .3s ease)
+		font-size: 16px
+		line-height: 1
+		padding: 30px 10px 10px 25px
+		&:hover
+			border-color: #000000
+		&:focus
+			border-color: #000000
+			& ~ label,& ~ .label,& ~ .input-label
+				opacity: .7
+				font-size: 14px
+				top: 5px
+		&.error
+			border-color: #ed1c24
+		&.valid
+			& ~ label,& ~ .label,& ~ .input-label
+				opacity: .7
+				font-size: 14px
+				top: 5px
+		&.editing
+			& ~ label,& ~ .label,& ~ .input-label
+				opacity: .7
+				font-size: 14px
+				top: 5px
+	&-label
+		position: absolute
+		top: 22px
+		left: 25px
+		color: #737373
+		font-size: 16px
+		+tr(all .3s ease)
+
+.radio
+	&-group
+		display: inline-block
+		vertical-align: top
+		width: 100%
+		padding-left: 3px
+		padding-right: 3px
+		padding-bottom: 20px
+	&-wrapper
+		display: inline-block
+		font-size: 14px
+		color: #000000
+	&-input
+		display: none
+		&:checked ~ .radio-label
+			background-color: #fdfcd5
+			border-color: #cdc115
+			.radio-label__custom
+				background-color: #ffffff
+				box-shadow: none
+			.radio-label__check
+				opacity: 1
+
+	&-label
+		display: inline-block
+		padding: 10px 15px
+		border: 1px solid #cccccc
+		+tr(all .3s ease)
+		&:hover
+			cursor: pointer
+			background-color: #ffffff
+		&:hover &__custom
+			background-color: #f5f5f5
+		&__text
+			display: inline-block
+			vertical-align: middle
+		&__custom
+			display: inline-block
+			vertical-align: middle
+			width: 18px
+			height: 18px
+			border: 1px solidcccccc
+			background-color: #ffffff
+			border-radius: 50%
+			box-shadow: inset 0px 2px 10px 0px rgba(0, 0, 0, 0.13)
+			margin-right: 15px
+			position: relative
+			+tr(all .3s ease)
+		&__check
+			display: block
+			width: 10px
+			height: 10px
+			border-radius: 50%
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			background-color: #f2db00
+			opacity: 0
+			+tr(all .3s ease)
+
+.help-block.form-error
+	font-size: 12px
+	color: #ed1c24
+	padding: 5px 0
+

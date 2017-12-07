@@ -1,0 +1,133 @@
+extends _layout
+include includes/_mixins.pug
+
+
+block title
+	title INPUT
+block config
+	- var main = true
+block content
+	.header-wrapper
+		+contacts-header
+		.wrapper-bg(style="background-image:url('img/promo.jpg')")
+		.box
+			.header-inner.header-inner_inner-page
+				.header-inner__title.fade-down
+					h1.h1 INPUT
+	.box
+		+breadcrumbs(['Главная', 'Команда'])
+	.box
+		.content-wrap
+			aside.side-bar.js-stick-parent
+				.side-bar-nav.js-stick
+					a(href="#").side-bar-nav__mob-btn.show-sidebar-menu
+						span.link-value ...
+						span.link-i-arrow
+							+icon('arrow_down')
+					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
+			.content-inner
+				form(action="#").js-validate
+					.form-block
+						.form-block-head
+							.h2 Форма заказа услуги
+						.form-block-body
+							.form-content
+								.form-content-head Контактные данные
+								.input-row
+									.input-item.w100
+										.input-wrapper
+											input.input-main(
+												type="text",
+												data-validation="required",
+												data-validation-error-msg="Поле обязательно для заполнения",
+												name="clieentName",
+												id="clieentName"
+											)
+											label.input-label(for="clieentName") ФИО*
+									.input-item.w50
+										.input-wrapper
+											input.input-main(
+												type="text",
+												name="clieentFrim",
+												id="clieentFrim")
+											label.input-label(for="clieentFrim") Организация
+									.input-item.w50
+										.input-wrapper
+											input.input-main(
+												type="text",
+												data-validation="email",
+												name="clieentEmail",
+												id="clieentEmail"
+											)
+											label.input-label(for="clieentEmail") Email*
+									.input-item.w50
+										.input-wrapper
+											input.input-main(
+												type="phone",
+												data-validation="custom",
+												data-validation-regexp="^[-0-9()+ ]+$",
+												data-validation-error-msg="Введите корректный номер телефона",
+												name="clieentPhone",
+												id="clieentPhone")
+											label.input-label(for="clieentPhone") Телефон*
+									.input-item.w50
+										.input-wrapper
+											input.input-main(type="text")
+											label.input-label Должность
+									.input-item.w100
+										.input-wrapper
+											textarea.input-main(type="text")
+											label.input-label Вопрос
+									.radio-group
+										.radio-wrapper
+											input.radio-input(
+												type="radio", 
+												name="radio-group", 
+												id="radio-1")
+											label.radio-label(for="radio-1")
+												.radio-label__custom
+													.radio-label__check
+												.radio-label__text Вопрос по услугам
+										.radio-wrapper
+											input.radio-input(
+												type="radio", 
+												name="radio-group", 
+												id="radio-2")
+											label.radio-label(for="radio-2")
+												.radio-label__custom
+													.radio-label__check
+												.radio-label__text Общие вопросы		
+										.radio-wrapper
+											input.radio-input(
+												type="radio", 
+												name="radio-group", 
+												id="radio-3")
+											label.radio-label(for="radio-3")
+												.radio-label__custom
+													.radio-label__check
+												.radio-label__text Общие вопросы
+												
+							.form-content
+								.form-content-head Технические характеристики
+								.input-row
+									.input-item.w100
+										.input-wrapper
+											input.input-main(type="text")
+											label.input-label ФИО
+									.input-item.w50
+										.input-wrapper
+											input.input-main(type="text")
+											label.input-label Организация
+									.input-item.w50
+										.input-wrapper
+											input.input-main(type="text")
+											label.input-label Должность
+									.input-item.w50
+										.input-wrapper
+											input.input-main(type="text")
+											label.input-label Организация
+									.input-item.w50
+										.input-wrapper
+											input.input-main(type="text")
+											label.input-label Должность
+						.form-block-footer
