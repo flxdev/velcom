@@ -30,7 +30,10 @@ block content
 					.form-block
 						.form-block-head
 							.h2 Форма заказа услуги
+							.text-small Заполните форму и мы перезвоним вам в течение 
+								strong 30 минут
 						.form-block-body
+							hr.form-content-devider
 							.form-content
 								.form-content-head Контактные данные
 								.input-row
@@ -76,7 +79,9 @@ block content
 											label.input-label Должность
 									.input-item.w100
 										.input-wrapper
-											textarea.input-main(type="text")
+											textarea.input-main(
+												type="text",
+												rows="6")
 											label.input-label Вопрос
 									.radio-group
 										.radio-wrapper
@@ -96,7 +101,7 @@ block content
 											label.radio-label(for="radio-2")
 												.radio-label__custom
 													.radio-label__check
-												.radio-label__text Общие вопросы		
+												.radio-label__text Общие вопросы
 										.radio-wrapper
 											input.radio-input(
 												type="radio", 
@@ -106,28 +111,203 @@ block content
 												.radio-label__custom
 													.radio-label__check
 												.radio-label__text Общие вопросы
-												
+							hr.form-content-devider
 							.form-content
-								.form-content-head Технические характеристики
+								.form-content-head Аренда дополнительного оборудования
+								.input-row
+									.radio-group
+										.radio-wrapper
+											input.radio-input(
+												type="radio", 
+												name="dob-ob", 
+												id="dob-ob-1",
+												data-trigger="field-target",
+												data-dis="0")
+											label.radio-label(for="dob-ob-1")
+												.radio-label__custom
+													.radio-label__check
+												.radio-label__text Да
+										.radio-wrapper
+											input.radio-input(
+												type="radio", 
+												name="dob-ob", 
+												id="dob-ob-2",
+												data-trigger="field-target",
+												data-dis="1")
+											label.radio-label(for="dob-ob-2")
+												.radio-label__custom
+													.radio-label__check
+												.radio-label__text Нет
+									.input-item.w100
+										.input-wrapper
+											textarea.input-main(
+												type="text",
+												rows="6",
+												id="textar",
+												data-target="field-target")
+											label.input-label(for="textar") Комментарий
+								.input-row
+									.input-item.w100
+										label.check-label
+											input(
+												type="checkbox",
+												data-trigger="group-field",
+												name="check-disable")
+											.check-label__custom
+												.check-label__checked
+													+icon('checked')
+											span.check-label__text Даю согласие
+								
+									.input-item.w50
+										.input-wrapper
+											input.input-main.disabled-field(
+												type="text",
+												name="clieentFrim",
+												id="clieentFrim",
+												data-target="group-field")
+											label.input-label(for="clieentFrim") Организация
+									.input-item.w50
+										.input-wrapper
+											input.input-main.disabled-field(
+												type="text",
+												data-validation="email",
+												data-validation-depends-on="check-disable",
+												name="clieentEmail",
+												id="clieentEmail",
+												data-target="group-field"
+											)
+											label.input-label(for="clieentEmail") Email*
+							hr.form-content-devider
+							.form-content
 								.input-row
 									.input-item.w100
 										.input-wrapper
-											input.input-main(type="text")
-											label.input-label ФИО
+											.select-check.js-select-custom
+												.select-carret
+													+icon('arrow_down')
+												button.selects.dropdown(data-placeholder='Год')
+													span.btn-text Год
+												.dropdown-target
+													.dropdown-inner
+														.dropdown-content
+															.select-u-body.select-list
+																label.option
+																	input(type='radio', name='yeats', value='2015')
+																	span 2015
+																label.option
+																	input(type='radio', name='yeats', value='2016')
+																	span 2016
+																label.option
+																	input(type='radio', name='yeats', value='2017')
+																	span 2017
+																label.option
+																	input(type='radio', name='yeats', value='2018')
+																	span 2018
 									.input-item.w50
 										.input-wrapper
-											input.input-main(type="text")
-											label.input-label Организация
+											.select-check.js-select-custom
+												.select-carret
+													+icon('arrow_down')
+												button.selects.dropdown(data-placeholder='Год')
+													span.btn-text Год
+												.dropdown-target
+													.dropdown-inner
+														.dropdown-content
+															.select-u-body.select-list
+																label.option
+																	input(type='radio', name='yeats', value='2015')
+																	span 2015
+																label.option
+																	input(type='radio', name='yeats', value='2016')
+																	span 2016
+																label.option
+																	input(type='radio', name='yeats', value='2017')
+																	span 2017
+																label.option
+																	input(type='radio', name='yeats', value='2018')
+																	span 2018
+																label.option
+																	input(type='radio', name='yeats', value='2015')
+																	span 2015
+																label.option
+																	input(type='radio', name='yeats', value='2016')
+																	span 2016
+																label.option
+																	input(type='radio', name='yeats', value='2017')
+																	span 2017
+																label.option
+																	input(type='radio', name='yeats', value='2018')
+																	span 2018
 									.input-item.w50
 										.input-wrapper
-											input.input-main(type="text")
-											label.input-label Должность
+											.select-check.js-select-custom
+												.select-carret
+													+icon('arrow_down')
+												button.selects.dropdown(data-placeholder='Год')
+													span.btn-text Год
+												.dropdown-target
+													.dropdown-inner
+														.dropdown-content
+															.select-u-body.select-list
+																label.option
+																	input(type='radio', name='yeats', value='2015')
+																	span 2015
+																label.option
+																	input(type='radio', name='yeats', value='2016')
+																	span 2016
+																label.option
+																	input(type='radio', name='yeats', value='2017')
+																	span 2017
+																label.option
+																	input(type='radio', name='yeats', value='2018')
+																	span 2018
+																label.option
+																	input(type='radio', name='yeats', value='2015')
+																	span 2015
+																label.option
+																	input(type='radio', name='yeats', value='2016')
+																	span 2016
+																label.option
+																	input(type='radio', name='yeats', value='2017')
+																	span 2017
+																label.option
+																	input(type='radio', name='yeats', value='2018')
+																	span 2018			
 									.input-item.w50
 										.input-wrapper
-											input.input-main(type="text")
-											label.input-label Организация
+											.input-counter-nav
+												button(type="button", class="input-counter-btn inc")
+													+icon('arrow_down')
+												button(type="button", class="input-counter-btn dec")
+													+icon('arrow_down')
+											input.input-main.input-counter(
+												id="count-1",
+												type="number",
+												data-min="1", 
+												data-max="20")
+											label.input-label(for="count-1") Количество разъёмов (шт)
 									.input-item.w50
 										.input-wrapper
-											input.input-main(type="text")
-											label.input-label Должность
+											.input-counter-nav
+												button(type="button", class="input-counter-btn inc")
+													+icon('arrow_down')
+												button(type="button", class="input-counter-btn dec")
+													+icon('arrow_down')
+											input.input-main.input-counter(
+												id="count-2",
+												type="number",
+												data-min="1",
+												data-max="20",
+												data-step="3")
+											label.input-label(for="count-2") Количество стоек (шт)
 						.form-block-footer
+							.input-row
+								.input-item.w100
+									label.check-label
+										input(type="checkbox")
+										.check-label__custom
+											.check-label__checked
+												+icon('checked')
+										span.check-label__text Даю согласие на обработку моих 
+											a(href="#") персональных данных
+							input.input-submit(type="submit", value="Оставить заявку")

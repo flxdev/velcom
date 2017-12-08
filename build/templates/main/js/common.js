@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 
+	autosize($('textarea'));
 	show_video();
 	scrollAnimations();
 	Menu();
@@ -122,6 +123,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	Accordeon();
 	validateForms();
 	inputValEdit();
+	inputValIncDecr('.input-counter');
+	ToggleDisabled();
 
 	var ajax = new AjaxLoading($(".ajax-trigger"));
 });
@@ -854,5 +857,117 @@ function inputValEdit() {
 				$(this).addClass('editing');
 			}
 		});
+	});
+}
+
+function inputValIncDecr(field) {
+
+	var fieldCount = function fieldCount(el) {
+		var parent = el.parent(),
+		    min = el.data('min') || false,
+		    max = el.data('max') || false,
+		    step = el.data('step'),
+		    dec = parent.find('.dec'),
+		    inc = parent.find('.inc');
+		if (!step) {
+			step = 1;
+		}
+		el.on('input change', function () {
+			var _val = $(this).val();
+			if (_val > max) {
+				$(this).val(max);
+			}
+			if (_val == 0) {
+				$(this).val('');
+				el.removeClass('editing');
+			}
+		});
+		function init(el) {
+			if (!el.attr('disabled')) {
+				dec.on('click', decrement);
+				inc.on('click', increment);
+			}
+			function decrement() {
+				var value = parseInt(el[0].value);
+				value = value - step;
+				if (!min || value >= min) {
+					el[0].value = value;
+				} else {
+					el[0].value = '';
+					el.removeClass('editing');
+				}
+			}
+			function increment() {
+				el.addClass('editing');
+				var value = parseInt(el[0].value);
+				if (!value) {
+					value = 0;
+				}
+				value = value + step;
+
+				if (!max || value <= max) {
+					el[0].value = value;
+				}
+			}
+		}
+		el.each(function () {
+			init($(this));
+		});
+	};
+	$(field).each(function () {
+		fieldCount($(this));
+	});
+}
+
+function ToggleDisabled() {
+
+	var trigger = $('[data-trigger]');
+
+	trigger.each(function () {
+		var _t = $(this),
+		    type = _t.attr('type'),
+		    target = _t.data('trigger');
+
+		switch (type) {
+		case 'radio':
+			console.log(type + ' type.' + target + ' triger');
+			radioDisable(_t, target);
+			break;
+		case 'checkbox':
+			console.log(type + ' type.' + target + ' triger');
+			checkBoxDisable(_t, target);
+			break;
+		}
+	});
+}
+
+function radioDisable(el, target) {
+	var _target = $("[data-target='" + target + "']");
+	el.off('click').on('click', function () {
+		var _dis = $(this).data('dis');
+		if (_dis) {
+			_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true);
+		} else {
+			_target.removeClass('disabled-field').prop('disabled', false);
+		}
+	});
+}
+
+function checkBoxDisable(el, target) {
+	var _target = $("[data-target='" + target + "']");
+	el.off('click').on('click', function () {
+		if ($(this).prop('checked')) {
+			if (_target.hasClass('disabled-field')) {
+				_target.removeClass('disabled-field').prop('disabled', false);
+			} else {
+				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true);
+			}
+		} else {
+			if (_target.hasClass('disabled-field')) {
+				_target.removeClass('disabled-field').prop('disabled', false);
+			} else {
+				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true);
+			}
+		}
 	});
 }
