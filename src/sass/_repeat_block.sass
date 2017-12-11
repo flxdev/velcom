@@ -263,7 +263,7 @@ blockquote
 	&_small
 		font-size: 14px
 .link-border
-	+link-btn(#000000,$main-decor-color , #fff164)
+	+link-btn(#000000,$main-decor-color , #f2db00, #edcd1c)
 	border: 2px solid #000000
 
 .link-navigation
@@ -280,6 +280,7 @@ blockquote
 		position: relative
 		+tr(color .3s ease)
 		&_active
+			pointer-events: none
 			&::after
 				content: ''
 				display: block
@@ -375,15 +376,14 @@ blockquote
 	background-color: #ffffff
 	position: relative
 	z-index: 1
-	margin-right: 20px
+	margin-right: 30px
 	+tr(all .3s ease)
 	&__title
 		width: 100%
-		position: relative
 		margin-bottom: 32px
 		display: flex
 		justify-content: space-between
-		align-items: center
+		align-items: flex-start
 	&__t-arrow
 		width: 25px
 		height: 25px
@@ -1401,6 +1401,8 @@ blockquote
 		+r(1100)
 			margin-right: auto
 			margin-left: 0
+	&_footer-search	&__serch-btn
+		color: #000000
 	&_search-result
 		margin-bottom: 50px
 		+r(768)

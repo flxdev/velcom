@@ -28,11 +28,11 @@ block content
 			.content-inner
 				form(action="#").js-validate
 					.form-block
-						.form-block-head
-							.h2 Форма заказа услуги
+						.form-block__head
+							.h2.form-block__title Форма заказа услуги
 							.text-small Заполните форму и мы перезвоним вам в течение 
 								strong 30 минут
-						.form-block-body
+						.form-block__body
 							hr.form-content-devider
 							.form-content
 								.form-content-head Контактные данные
@@ -156,7 +156,7 @@ block content
 											.check-label__custom
 												.check-label__checked
 													+icon('checked')
-											span.check-label__text Даю согласие
+											| Даю согласие
 								
 									.input-item.w50
 										.input-wrapper
@@ -183,96 +183,144 @@ block content
 									.input-item.w100
 										.input-wrapper
 											.select-check.js-select-custom
-												.select-carret
-													+icon('arrow_down')
-												button.selects.dropdown(data-placeholder='Год')
-													span.btn-text Год
-												.dropdown-target
-													.dropdown-inner
-														.dropdown-content
-															.select-u-body.select-list
-																label.option
-																	input(type='radio', name='yeats', value='2015')
-																	span 2015
-																label.option
-																	input(type='radio', name='yeats', value='2016')
-																	span 2016
-																label.option
-																	input(type='radio', name='yeats', value='2017')
-																	span 2017
-																label.option
-																	input(type='radio', name='yeats', value='2018')
-																	span 2018
+													.select-carret
+														+icon('arrow_down')
+													button.selects.dropdown(data-placeholder='Категория вопроса *')
+														span.btn-text Категория вопроса *
+													.dropdown-target
+														.dropdown-inner
+															.dropdown-content
+																.select-u-body.select-list
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 1',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 1
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 2',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 2
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 3',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 3
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 4',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 4
 									.input-item.w50
 										.input-wrapper
 											.select-check.js-select-custom
-												.select-carret
-													+icon('arrow_down')
-												button.selects.dropdown(data-placeholder='Год')
-													span.btn-text Год
-												.dropdown-target
-													.dropdown-inner
-														.dropdown-content
-															.select-u-body.select-list
-																label.option
-																	input(type='radio', name='yeats', value='2015')
-																	span 2015
-																label.option
-																	input(type='radio', name='yeats', value='2016')
-																	span 2016
-																label.option
-																	input(type='radio', name='yeats', value='2017')
-																	span 2017
-																label.option
-																	input(type='radio', name='yeats', value='2018')
-																	span 2018
-																label.option
-																	input(type='radio', name='yeats', value='2015')
-																	span 2015
-																label.option
-																	input(type='radio', name='yeats', value='2016')
-																	span 2016
-																label.option
-																	input(type='radio', name='yeats', value='2017')
-																	span 2017
-																label.option
-																	input(type='radio', name='yeats', value='2018')
-																	span 2018
+													.select-carret
+														+icon('arrow_down')
+													button.selects.dropdown(data-placeholder='Категория вопроса *')
+														span.btn-text Категория вопроса *
+													.dropdown-target
+														.dropdown-inner
+															.dropdown-content
+																.select-u-body.select-list
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 1',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 1
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 2',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 2
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 3',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 3
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 4',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 4
 									.input-item.w50
 										.input-wrapper
 											.select-check.js-select-custom
-												.select-carret
-													+icon('arrow_down')
-												button.selects.dropdown(data-placeholder='Год')
-													span.btn-text Год
-												.dropdown-target
-													.dropdown-inner
-														.dropdown-content
-															.select-u-body.select-list
-																label.option
-																	input(type='radio', name='yeats', value='2015')
-																	span 2015
-																label.option
-																	input(type='radio', name='yeats', value='2016')
-																	span 2016
-																label.option
-																	input(type='radio', name='yeats', value='2017')
-																	span 2017
-																label.option
-																	input(type='radio', name='yeats', value='2018')
-																	span 2018
-																label.option
-																	input(type='radio', name='yeats', value='2015')
-																	span 2015
-																label.option
-																	input(type='radio', name='yeats', value='2016')
-																	span 2016
-																label.option
-																	input(type='radio', name='yeats', value='2017')
-																	span 2017
-																label.option
-																	input(type='radio', name='yeats', value='2018')
-																	span 2018			
+													.select-carret
+														+icon('arrow_down')
+													button.selects.dropdown(data-placeholder='Категория вопроса *')
+														span.btn-text Категория вопроса *
+													.dropdown-target
+														.dropdown-inner
+															.dropdown-content
+																.select-u-body.select-list
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 1',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 1
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 2',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 2
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 3',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 3
+																	label.option
+																		input(
+																			type='radio',
+																			name='yeats',
+																			value='Категория вопроса 4',
+																			data-validation="required",
+																			data-validation-error-msg="Выберите тему обращения"
+																			)
+																		span Категория вопроса 4
 									.input-item.w50
 										.input-wrapper
 											.input-counter-nav
@@ -300,14 +348,19 @@ block content
 												data-max="20",
 												data-step="3")
 											label.input-label(for="count-2") Количество стоек (шт)
-						.form-block-footer
+						.form-block__footer
 							.input-row
 								.input-item.w100
 									label.check-label
-										input(type="checkbox")
+										input(
+											type="checkbox",
+											data-trigger="btn-submit")
 										.check-label__custom
 											.check-label__checked
 												+icon('checked')
-										span.check-label__text Даю согласие на обработку моих 
-											a(href="#") персональных данных
-							input.input-submit(type="submit", value="Оставить заявку")
+										| Даю согласие на обработку моих 
+										a(href="#") персональных данных
+							button.button-submit.disabled-field(
+							type="submit",
+							data-target="btn-submit",
+							value="Оставить заявку") Оставить заявку

@@ -289,9 +289,6 @@ function popUpsInit() {
 		e.preventDefault();
 		var _b = $(this),
 			_popup = _this.c.popup.filter('[data-modal="' + _b.data('modal') + '"]');
-
-		console.log(_popup);
-
 		_this.f.openPopup(_popup);
 		return false;
 	});
@@ -337,13 +334,21 @@ function Menu() {
 
 function initServicesSlider(){
 	var services_slider = $('.basic-services-wrapper');
-	var children = services_slider.find('.service-card').length;
-	children > 3 ? services_slider.addClass('serv_offset'): false;
+	// var children = services_slider.find('.service-card').length;
+	// // children > 3 ? services_slider.parent().addClass('serv_offset'): false;
+	// if(children > 3) {
+	//	services_slider.parent().addClass('serv_offset');
+	//	services_slider.children().last().after('<div></div>');
+	// }
 	services_slider.slick({
-		slidesToShow: children > 3 ? 4: 3,
-		arrows: false,
+		slidesToShow: 3,
+		slidesToScroll: 3,
 		dots: true,
+		infinite: false,
 		dotsClass: 'custom_dots custom_dots_black',
+		arrows: true,
+		prevArrow: '<button class="slick-prev basic-services__prev slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
+		nextArrow: '<button class="slick-next basic-services__next slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
 		touchMove: true,
 		dragable: true,
 		adaptiveHeight : false,
@@ -351,13 +356,15 @@ function initServicesSlider(){
 			{
 				breakpoint: 1200,
 				settings: {
-					slidesToShow : children > 3 ? 3: 2,
+					slidesToShow : 2,
+					slidesToScroll: 2
 				}
 			},
 			{
 				breakpoint: 768,
 				settings: {
-					slidesToShow : 2,
+					slidesToShow : 1,
+					slidesToScroll: 1
 				}
 			}
 		]
@@ -911,25 +918,25 @@ function validateForms() {
 				return false; // prevent default behaviour
 			},
 			onValidate: () => {
-			  // CheckForSelect(form_this);
+				// CheckForSelect(form_this);
 			},
 			onSuccess: () => {
-			  // formResponse(form_this);
-			  // resetForm(form_this);
-			  return false;
+				// formResponse(form_this);
+				// resetForm(form_this);
+				return false;
 			},
 		});
 	});
 		function singleErrorMessages(item, errorMessage)
 		{
-			var currentElementParentObject = item.parent().parent();
+			var currentElementParentObject = item.parents('.input-wrapper');
 			currentElementParentObject.find('.form-error').remove();
 			currentElementParentObject.append(`<div class='help-block form-error'>${errorMessage}</div>`);
 		}
 
 		function singleRemoveErrorMessages(item)
 		{
-			var currentElementParentObject = item.parent().parent();
+			var currentElementParentObject = item.parents('.input-wrapper');
 			currentElementParentObject.find('.form-error').remove();
 		}
 	}

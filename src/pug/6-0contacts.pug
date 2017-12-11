@@ -61,3 +61,116 @@ block content
 
 					.map-container
 						#map.map-elem(data-lat='53.943744', data-lon='27.521280', data-icon='img/svg/point.svg')
+					.contacts-form
+						form(action="#").js-validate
+							.form-block
+								.form-block__head
+									.h2.form-block__title Форма заказа услуги
+									.text-small Заполните форму и мы перезвоним вам в течение 
+										strong 30 минут
+								.form-block__body
+									hr.form-content-devider
+									.form-content
+										.form-content-head Контактные данные
+										.input-row
+											.input-item.w100
+												.input-wrapper
+													input.input-main(
+														type="text",
+														data-validation="required",
+														data-validation-error-msg="Поле обязательно для заполнения",
+														name="clieentName",
+														id="clieentName"
+													)
+													label.input-label(for="clieentName") ФИО*
+											.input-item.w50
+												.input-wrapper
+													input.input-main(
+														type="phone",
+														data-validation="custom",
+														data-validation-regexp="^[-0-9()+ ]+$",
+														data-validation-error-msg="Введите корректный номер телефона",
+														name="clieentPhone",
+														id="clieentPhone")
+													label.input-label(for="clieentPhone") Телефон*
+											.input-item.w50
+												.input-wrapper
+													input.input-main(
+														type="text",
+														data-validation="email",
+														data-validation-error-msg="Введите корректный e-mail",
+														name="clieentEmail",
+														id="clieentEmail"
+													)
+													label.input-label(for="clieentEmail") Email*
+									hr.form-content-devider
+									.form-content
+										.form-content-head Тема обращения
+										.input-row
+											.input-item.w100
+												.input-wrapper
+													.select-check.js-select-custom
+														.select-carret
+															+icon('arrow_down')
+														button.selects.dropdown(data-placeholder='Категория вопроса *')
+															span.btn-text Категория вопроса *
+														.dropdown-target
+															.dropdown-inner
+																.dropdown-content
+																	.select-u-body.select-list
+																		label.option
+																			input(
+																				type='radio',
+																				name='yeats',
+																				value='Категория вопроса 1',
+																				data-validation="required",
+																				data-validation-error-msg="Выберите тему обращения"
+																				)
+																			span Категория вопроса 1
+																		label.option
+																			input(
+																				type='radio',
+																				name='yeats',
+																				value='Категория вопроса 2',
+																				data-validation="required",
+																				data-validation-error-msg="Выберите тему обращения"
+																				)
+																			span Категория вопроса 2
+																		label.option
+																			input(
+																				type='radio',
+																				name='yeats',
+																				value='Категория вопроса 3',
+																				data-validation="required",
+																				data-validation-error-msg="Выберите тему обращения"
+																				)
+																			span Категория вопроса 3
+																		label.option
+																			input(
+																				type='radio',
+																				name='yeats',
+																				value='Категория вопроса 4',
+																				data-validation="required",
+																				data-validation-error-msg="Выберите тему обращения"
+																				)
+																			span Категория вопроса 4
+											.input-item.w100
+												.input-wrapper
+													textarea.input-main(
+														type="text",
+														rows="9",
+														data-validation="required")
+													label.input-label Вопрос *
+								.form-block__footer
+									.input-row
+										.input-item.w100
+											label.check-label
+												input(
+													type="checkbox",
+													data-trigger="btn-submit")
+												.check-label__custom
+													.check-label__checked
+														+icon('checked')
+												| Даю согласие на обработку моих 
+												a(href="#") персональных данных
+									button.button-submit.disabled-field(type="submit", data-target="btn-submit", value="Оставить заявку") Оставить заявку

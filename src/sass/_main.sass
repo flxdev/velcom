@@ -231,6 +231,7 @@ body
 	position: relative
 	background-color: #ffffff
 	padding-top: 95px
+
 	// &-wrapper
 	// 	display: flex
 	// 	justify-content: space-between
@@ -238,38 +239,60 @@ body
 	// 		flex-wrap: wrap
 	&_page
 		padding-top: 0
-		padding-bottom: 100px
+		margin-bottom: 100px
 	&-title
 		font-size : 32px
 		line-height : 1
 		margin-bottom: 45px
+	&-outer
+		margin-right: -30px
+		+r(1400)
+			padding: 0 50px 0 50px
+		+r(500)
+			padding: 0
 	&-wrapper
+		width: 100%
 		position: relative
-		&.serv_offset
-			margin-right: -30vw
 		& .slick-track,
 		& .slick-list
 			display: flex
 			align-items: stretch
-		& .slick-slide 
-			// margin-right: 30px
-			display: flex
-			align-items: stretch
-			height: 100%
-			float: none
-		+r(768)
-			margin-right: -80vw
-			&.serv_offset
-				margin-right: -80vw
-		// &::after
-		// 	content: ''
-		// 	display: block
-		// 	height: 100%
-		// 	width: 20vw
-		// 	position: absolute
-		// 	right: 0
-		// 	top: 0
-
+	&__nav
+		width: 100%
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		width: 100%
+		max-width: 1256px
+		margin: 0 auto
+		+r(500)
+			display: none
+	&__prev,
+	&__next
+		position: absolute
+		color: #000000
+		font-size: 0
+		z-index: 5
+		width: 20px
+		height: 40px
+		right: -20px
+		left: auto
+		top: 50%
+		+tr(all .3s ease)
+		transform: translateY(-50%)
+		+r(1400)
+			right: 20px
+	&__prev
+		right: auto
+		left: -20px
+		transform: rotate(180deg) translateY(50%)
+		+r(1400)
+			right: auto
+			left: 20px
+	&__prev.slick-disabled,
+	&__next.slick-disabled
+		opacity: .4
 .services-slider
 	width: 100%
 
@@ -510,10 +533,15 @@ body
 		height: 65px
 		right: 16px
 		left: auto
+		top: 50%
+		transform: translateY(-50%)
 	&__prev
 		right: auto
 		left: 16px
-		transform: rotate(180deg)
+		transform: rotate(180deg) translateY(50%)
+	&__prev.slick-disabled,
+	&__next.slick-disabled
+		opacity: .4
 	& .custom_dots
 		position: absolute
 		bottom: 3%
@@ -1070,11 +1098,15 @@ body
 
 .services-config
 	width: 100%
-	max-width: 714px
 	.h3
 		margin-bottom: 47px
 	&-wrap
 		margin-bottom: 65px
+	&-inner
+		width: 100%
+	max-width: 714px
+	.form-block
+		margin-top: 34px
 .accordeon-wrapper
 	margin-top: -1px
 	border: 1px solid #cccccc
@@ -1212,7 +1244,8 @@ body
 			margin-bottom: 15px
 
 .services-form
-	background-color: #f5f5f5
+	width: 100%
+	max-width: 714px
 
 
 .contacts-page
@@ -1279,8 +1312,13 @@ body
 	padding-bottom: 77px
 	border-bottom: 1px solid #cccccc
 	margin-top: 45px
+	margin-bottom: 100px
 
 .map-elem
 	width: 100%
 	height: 100%
 	background-color: #cccccc
+
+.contacts-form
+	width: 100%
+	max-width: 714px

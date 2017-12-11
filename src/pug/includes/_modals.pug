@@ -3,75 +3,378 @@ include _mixins.pug
 
 .modal-layout(data-modal='popup-contents').js-popup-container
 
+
 .modal-layout(data-modal='gallery-photo').js-popup-container
 	.modal-container.gallery-modal
 		.pop-close.closePopup CLOSE
 
+.modal-layout(data-modal='modal-menu').js-popup-container
+	.modal-container.modal-menu
+		.pop-close.closePopup
+			+icon('close')
+		.modal-menu-inner
+			.modal-menu__header
+				a.header-logo(href="/")
+					span.header-logo__icon
+						+icon('velcom-logo')
+					span.header-logo__text DataCenter
+			.modal-menu-body
+				.modal-menu__nav
+					.modal-menu__menu
+						a(href="#") Главная
+						a(href="#") Приватность информации
+						a(href="#") Наши клиенты и проекты
+						a(href="#") Партнёры
+						a(href="#") Контакты
+					.modal-menu__menu.modal-menu__menu_lvl
+						a(href="#") Дата-центр
+						.modal-menu__sub-menu
+							a(href="#").text-primary Команда
+							a(href="#").text-primary Документы
+							a(href="#").text-primary Сертификаты
+							a(href="#").text-primary Инфраструктура
+							a(href="#").text-primary Новости
+							a(href="#").text-primary Галерея
+					.modal-menu__menu.modal-menu__menu_lvl
+						a(href="#") Услуги
+						.modal-menu__sub-menu
+							a(href="#").text-primary Co-location
+							a(href="#").text-primary Выделенный сервер
+							a(href="#").text-primary IaaS
+				.modal-menu__contacts
+					.modal-menu__info
+						p.text-small.modal-menu__c-title Справочно-информационная служба
+						p.modal-menu__link-wrap
+							a(href="tel:+375 29 600 04 11") +375 29 600 04 11
+							| , доб.&nbsp;6
+						p.modal-menu__mail-wrap
+							a(href="mailto:info@velcom.by") info@velcom.by
+						p.text-small.modal-menu__c-title_inner Тел./факс
+						p.modal-menu__link-wrap
+							a(href="tel:+375 29 600 04 12") +375 29 600 04 12
+					.modal-menu__info.modal-menu__info_lvl
+						p.text-small.modal-menu__c-title Техническая поддержка
+						p.modal-menu__link-wrap
+							a(href="tel:+375 29 600 20 20") +375 29 600 20 20
+						p.modal-menu__link-wrap
+							a(href="tel:+375 29 600 20 20") +375 29 600 20 20
+						p.modal-menu__mail-wrap
+							a(href="mailto:support@velcom.by") support@velcom.by
+					.modal-menu__info.modal-menu__info_empty
+
 .modal-layout(data-modal='fast-application').js-popup-container
 	.modal-container.application-modal
 		.modal-container-inner
-			.pop-close.closePopup CLOSE
-			.modal-container-header
-				h2.title.h2 Заявка в техподдержку
-				p.text-small Укажите минимум данных и мы перезвоним вам в течение 
-					strong 30 минут в рабочее время (с 8:30 до 17:30),
-					| чтобы уточнить требования по телефону
-			.modal-container-content
-				form.form.js-validate
-					p.h4 Контактные данные
-					input(type="text", placeholder="ФИО")
-					input(type="mail", placeholder="email")
-					input(type="text", placeholder="region")
-					input(type="text", placeholder="phone")
-					p.h4 Тема обращения
-					.wrapp-radio-btn
-						label Вопрос по услугам
-							input(type="radio", name='theme')
-						label Общие вопросы
-							input(type="radio", name='theme')
-					select
-						option(value='') Co-location
-						option(value='') Выделенные сервера
-						option(value='') IaaS
-						option(value='') Другое
-					textarea
-					.form-footer
-						input(type="checkbox", name="agreement")
-						label(for="agreement").text-small Даю согласие на обработку моих 
-							stong персональных данных*
-						button(type="submit")
+			.pop-close.closePopup
+				+icon('close')
+			form(action="#").js-validate
+				.form-block
+					.form-block__head
+						.h2.form-block__title Получить консультацию
+						.text-small Укажите минимум данных и мы перезвоним вам в течение 
+							strong 30 минут в рабочее время (с 8:30 до 17:30), 
+							| чтобы уточнить требования по телефону
+					.form-block__body
+						hr.form-content-devider
+						.form-content
+							.form-content-head Контактные данные
+							.input-row
+								.input-item.w100
+									.input-wrapper
+										input.input-main(
+											type="text",
+											data-validation="required",
+											data-validation-error-msg="Поле обязательно для заполнения",
+											name="clieentName",
+											id="clieentName"
+										)
+										label.input-label(for="clieentName") ФИО*
+								.input-item.w50
+									.input-wrapper
+										input.input-main(
+											type="text",
+											data-validation="email",
+											data-validation-error-msg="Введите корректный e-mail",
+											name="clieentEmail",
+											id="clieentEmail"
+										)
+										label.input-label(for="clieentEmail") Email*
+								.input-item.w50
+									.input-wrapper
+										input.input-main(
+											type="phone",
+											data-validation="custom",
+											data-validation-regexp="^[-0-9()+ ]+$",
+											data-validation-error-msg="Введите корректный номер телефона",
+											name="clieentPhone",
+											id="clieentPhone")
+										label.input-label(for="clieentPhone") Телефон*
+						hr.form-content-devider
+						.form-content
+							.form-content-head Тема обращения
+							.input-row
+								.radio-group
+									.radio-wrapper
+										input.radio-input(
+											type="radio", 
+											name="radio-group", 
+											id="radio-1")
+										label.radio-label(for="radio-1", data-validation="required")
+											.radio-label__custom
+												.radio-label__check
+											.radio-label__text Вопрос по услугам
+									.radio-wrapper
+										input.radio-input(
+											type="radio", 
+											name="radio-group", 
+											id="radio-2")
+										label.radio-label(for="radio-2", data-validation="required")
+											.radio-label__custom
+												.radio-label__check
+											.radio-label__text Общие вопросы
+									.radio-wrapper
+										input.radio-input(
+											type="radio", 
+											name="radio-group", 
+											id="radio-3")
+										label.radio-label(for="radio-3", data-validation="required")
+											.radio-label__custom
+												.radio-label__check
+											.radio-label__text Регистрация инцидента
+								.input-item.w100
+									.input-wrapper
+										.select-check.js-select-custom
+											.select-carret
+												+icon('arrow_down')
+											button.selects.dropdown(data-placeholder='Категория вопроса *')
+												span.btn-text Категория вопроса *
+											.dropdown-target
+												.dropdown-inner
+													.dropdown-content
+														.select-u-body.select-list
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='Co-location',
+																	data-validation="required"
+																	)
+																span Co-location
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='Выделенные сервера',
+																	data-validation="required"
+																	)
+																span Выделенные сервера
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='Категория вопроса 3',
+																	data-validation="required"
+																	)
+																span Категория вопроса 3
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='IaaS',
+																	data-validation="required"
+																	)
+																span IaaS
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='Другое',
+																	data-validation="required"
+																	)
+																span Другое
+								.input-item.w100(style="display: none;")
+									.input-wrapper
+										textarea.input-main(
+											type="text",
+											rows="9",
+											data-validation="length",
+											data-validation-length="50-200")
+										label.input-label Вопрос *
+					.form-block__footer
+						.input-row
+							.input-item.w100
+								label.check-label
+									input(
+										type="checkbox",
+										data-trigger="btn-submit")
+									.check-label__custom
+										.check-label__checked
+											+icon('checked')
+									| Даю согласие на обработку моих 
+									a(href="#") персональных данных
+						button.button-submit.disabled-field(
+						type="submit",
+						data-target="btn-submit",
+						value="Отправить") Отправить
 
 .modal-layout(data-modal='get-consultation').js-popup-container
 	.modal-container.consultation-modal
 		.modal-container-inner
-			.pop-close.closePopup CLOSE
-			.modal-container-header
-				h2.title.h2 Получить консультацию
-			.modal-container-content
-				form.form.js-validate
-					p.h4 Контактные данные
-					input(type="text", placeholder="ФИО")
-					input(type="text", placeholder="region")
-					input(type="text", placeholder="phone")
-					input(type="mail", placeholder="email")
-					input(type="text", placeholder="Организация")
-					input(type="text", placeholder="Должность")
-					p.h4 Тема обращения
-					.wrapp-radio-btn
-						label Вопрос по услугам
-							input(type="radio", name='theme')
-						label Общие вопросы
-							input(type="radio", name='theme')
-						label Регистрация инцидента
-							input(type="radio", name='theme')
-					select
-						option(value='') Co-location
-						option(value='') Выделенные сервера
-						option(value='') IaaS
-						option(value='') Другое
-					textarea
-					.form-footer
-						input(type="checkbox", name="agreement")
-						label(for="agreement").text-small Даю согласие на обработку моих 
-							stong персональных данных*
-						button(type="submit")
+			.pop-close.closePopup
+				+icon('close')
+			form(action="#").js-validate
+				.form-block
+					.form-block__head
+						.h2.form-block__title Получить консультацию
+					.form-block__body
+						hr.form-content-devider
+						.form-content
+							.form-content-head Контактные данные
+							.input-row
+								.input-item.w100
+									.input-wrapper
+										input.input-main(
+											type="text",
+											data-validation="required",
+											data-validation-error-msg="Поле обязательно для заполнения",
+											name="clieentName",
+											id="clieentName"
+										)
+										label.input-label(for="clieentName") ФИО*
+								.input-item.w50
+									.input-wrapper
+										input.input-main(
+											type="phone",
+											data-validation="custom",
+											data-validation-regexp="^[-0-9()+ ]+$",
+											data-validation-error-msg="Введите корректный номер телефона",
+											name="clieentPhone",
+											id="clieentPhone")
+										label.input-label(for="clieentPhone") Телефон*
+								.input-item.w50
+									.input-wrapper
+										input.input-main(
+											type="text",
+											data-validation="email",
+											data-validation-error-msg="Введите корректный e-mail",
+											name="clieentEmail",
+											id="clieentEmail"
+										)
+										label.input-label(for="clieentEmail") Email*
+								.input-item.w50
+										.input-wrapper
+											input.input-main(
+												type="text",
+												name="clieentFrim",
+												id="clieentFrim")
+											label.input-label(for="clieentFrim") Организация
+								.input-item.w50
+										.input-wrapper
+											input.input-main(
+												type="text",
+												name="clieentPosition",
+												id="clieentPosition")
+											label.input-label(for="clieentPosition") Должность
+						hr.form-content-devider
+						.form-content
+							.form-content-head Тема обращения
+							.input-row
+								.radio-group
+									.radio-wrapper
+										input.radio-input(
+											type="radio", 
+											name="radio-group", 
+											id="radio-1")
+										label.radio-label(for="radio-1")
+											.radio-label__custom
+												.radio-label__check
+											.radio-label__text Вопрос по услугам
+									.radio-wrapper
+										input.radio-input(
+											type="radio", 
+											name="radio-group", 
+											id="radio-2")
+										label.radio-label(for="radio-2")
+											.radio-label__custom
+												.radio-label__check
+											.radio-label__text Общие вопросы
+								.input-item.w100
+									.input-wrapper
+										.select-check.js-select-custom
+											.select-carret
+												+icon('arrow_down')
+											button.selects.dropdown(data-placeholder='Категория вопроса *')
+												span.btn-text Категория вопроса *
+											.dropdown-target
+												.dropdown-inner
+													.dropdown-content
+														.select-u-body.select-list
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='Co-location',
+																	data-validation="checkbox_group",data-validation-qty="min1",
+																	data-validation-error-msg="Выберите тему обращения"
+																	)
+																span Co-location
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='Выделенные сервера',
+																	data-validation="checkbox_group",data-validation-qty="min1",
+																	data-validation-error-msg="Выберите тему обращения"
+																	)
+																span Выделенные сервера
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='Категория вопроса 3',
+																	data-validation="checkbox_group",data-validation-qty="min1",
+																	data-validation-error-msg="Выберите тему обращения"
+																	)
+																span Категория вопроса 3
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='IaaS',
+																	data-validation="checkbox_group",data-validation-qty="min1",
+																	data-validation-error-msg="Выберите тему обращения"
+																	)
+																span IaaS
+															label.option
+																input(
+																	type='radio',
+																	name='yeats',
+																	value='Другое',
+																	data-validation="checkbox_group",data-validation-qty="min1",
+																	data-validation-error-msg="Выберите тему обращения"
+																	)
+																span Другое
+								.input-item.w100(style="display: none;")
+									.input-wrapper
+										textarea.input-main(
+											type="text",
+											rows="9",
+											data-validation="length",
+											data-validation-length="50-200")
+										label.input-label Вопрос *
+					.form-block__footer
+						.input-row
+							.input-item.w100
+								label.check-label
+									input(
+										type="checkbox",
+										data-trigger="btn-submit")
+									.check-label__custom
+										.check-label__checked
+											+icon('checked')
+									| Даю согласие на обработку моих 
+									a(href="#") персональных данных
+						button.button-submit.disabled-field(
+						type="submit",
+						data-target="btn-submit",
+						value="Отправить") Отправить

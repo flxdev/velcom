@@ -4,7 +4,7 @@ mixin icon(name)
 
 mixin nav-menu
 	nav.nav-menu
-		button(type="button").nav-burger.js-menu
+		button(type="button" data-modal='modal-menu').nav-burger.js-popup-button
 			span.nav-burger__line
 			span.nav-burger__line
 			span.nav-burger__line
@@ -39,7 +39,7 @@ mixin search-form(add_class, value)
 mixin link-navigation(links)
 	ul.link-navigation
 		each link,index in links
-			if index == 1
+			if index == 0
 				li.link-navigation__item
 					a.link-navigation__link.link-navigation__link_active(href="#")= link
 			else 
