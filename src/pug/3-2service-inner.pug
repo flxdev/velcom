@@ -49,405 +49,790 @@ block content
 					.side-bar-banner.js-stick
 						+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
 				.content-inner
-					form(action="#").services-config.js-validate
-						.services-config-inner
-						h3.h3 Предлагаем вам воспользоваться стандартными конфигурациями:
-						.services-config-wrap
-							.accordeon-wrapper
-								.accordeon-head
-									label.accordeon-head-check
-										input(type="checkbox")
-										.accordeon-head-custom
-											.accordeon-checked
-												+icon('checked')
-									.accordeon-head-content.js-accordeon-trigger
-										.accordeon-head-name
-											.h4 Стойка
-											.text-small Стандартные конфигурации
-										.accordeon-head-info
-											.text-primary.text-primary_black.text-primary_bold до 12
-											.text-small Мбит/с
-										.accordeon-head-icon
-											span
-												+icon('arrow_down')
-								.accordeon-body(style='display: none;')
-									.accordeon-body-content
-										dl
-											dt.text-small Канал в интернет, Мбит/с
-											dd.text-small.text-small_black.text-small_bold до 6
-											dt.text-small Бесплатный внутренний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Бесплатный внешний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold 1
-											dt.text-small Бесплатный IP-адрес IPv6
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Стандартный SLA
-											dd.text-small.text-small_black.text-small_bold
+					.services-config-inner
+						form(action="#").services-config
+						
+							h3.h3.fade-down Предлагаем вам воспользоваться стандартными конфигурациями:
+							.services-config-wrap.fade-down
+								.accordeon-wrapper
+									.accordeon-head
+										label.accordeon-head-check
+											input(type="checkbox")
+											.accordeon-head-custom
 												.accordeon-checked
 													+icon('checked')
-											dt.text-small Карты доступа
-											dd.text-small.text-small_black.text-small_bold до 3
-											dt.text-small Круглосуточный доступ
-											dd.text-small.text-small_black.text-small_bold
+										.accordeon-head-content.js-accordeon-trigger
+											.accordeon-head-name
+												.h4 Стойка
+												.text-small Стандартные конфигурации
+											.accordeon-head-info
+												.text-primary.text-primary_black.text-primary_bold до 12
+												.text-small Мбит/с
+											.accordeon-head-icon
+												span
+													+icon('arrow_down')
+									.accordeon-body(style='display: none;')
+										.accordeon-body-content
+											dl
+												dt.text-small Канал в интернет, Мбит/с
+												dd.text-small.text-small_black.text-small_bold до 6
+												dt.text-small Бесплатный внутренний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Бесплатный внешний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold 1
+												dt.text-small Бесплатный IP-адрес IPv6
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Стандартный SLA
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Карты доступа
+												dd.text-small.text-small_black.text-small_bold до 3
+												dt.text-small Круглосуточный доступ
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Порт, 1 Гбит/c
+												dd.text-small.text-small_black.text-small_bold 2
+												dt.text-small Отчеты ежемесячные стандартные
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+								.accordeon-wrapper
+									.accordeon-head
+										label.accordeon-head-check
+											input(type="checkbox")
+											.accordeon-head-custom
 												.accordeon-checked
 													+icon('checked')
-											dt.text-small Порт, 1 Гбит/c
-											dd.text-small.text-small_black.text-small_bold 2
-											dt.text-small Отчеты ежемесячные стандартные
-											dd.text-small.text-small_black.text-small_bold
+										.accordeon-head-content.js-accordeon-trigger
+											.accordeon-head-name
+												.h4 Юнит
+												.text-small Стандартные конфигурации
+											.accordeon-head-info
+												.text-primary.text-primary_black.text-primary_bold до 6
+												.text-small Мбит/с
+											.accordeon-head-icon
+												span
+													+icon('arrow_down')
+									.accordeon-body(style='display: none;')
+										.accordeon-body-content
+											dl
+												dt.text-small Канал в интернет, Мбит/с
+												dd.text-small.text-small_black.text-small_bold до 6
+												dt.text-small Бесплатный внутренний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Бесплатный внешний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold 1
+												dt.text-small Бесплатный IP-адрес IPv6
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Стандартный SLA
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Карты доступа
+												dd.text-small.text-small_black.text-small_bold до 3
+												dt.text-small Круглосуточный доступ
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Порт, 1 Гбит/c
+												dd.text-small.text-small_black.text-small_bold 2
+												dt.text-small Отчеты ежемесячные стандартные
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+							h3.h3.fade-down Или мы разработаем для вас индивидуальное решение:
+							.services-config-wrap.fade-down
+								.accordeon-wrapper
+									.accordeon-head
+										label.accordeon-head-check
+											input(type="checkbox")
+											.accordeon-head-custom
 												.accordeon-checked
 													+icon('checked')
-							.accordeon-wrapper
-								.accordeon-head
-									label.accordeon-head-check
-										input(type="checkbox")
-										.accordeon-head-custom
-											.accordeon-checked
-												+icon('checked')
-									.accordeon-head-content.js-accordeon-trigger
-										.accordeon-head-name
-											.h4 Юнит
-											.text-small Стандартные конфигурации
-										.accordeon-head-info
-											.text-primary.text-primary_black.text-primary_bold до 6
-											.text-small Мбит/с
-										.accordeon-head-icon
-											span
-												+icon('arrow_down')
-								.accordeon-body(style='display: none;')
-									.accordeon-body-content
-										dl
-											dt.text-small Канал в интернет, Мбит/с
-											dd.text-small.text-small_black.text-small_bold до 6
-											dt.text-small Бесплатный внутренний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Бесплатный внешний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold 1
-											dt.text-small Бесплатный IP-адрес IPv6
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Стандартный SLA
-											dd.text-small.text-small_black.text-small_bold
+										.accordeon-head-content.js-accordeon-trigger
+											.accordeon-head-name
+												.h4 Стойка
+												.text-small Стойко-место
+											.accordeon-head-info
+												.text-primary.text-primary_black.text-primary_bold
+												.text-small
+											.accordeon-head-icon
+												span
+													+icon('arrow_down')
+									.accordeon-body(style='display: none;')
+										.accordeon-body-content
+											dl
+												dt.text-small Канал в интернет, Мбит/с
+												dd.text-small.text-small_black.text-small_bold до 6
+												dt.text-small Бесплатный внутренний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Бесплатный внешний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold 1
+												dt.text-small Бесплатный IP-адрес IPv6
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Стандартный SLA
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Карты доступа
+												dd.text-small.text-small_black.text-small_bold до 3
+												dt.text-small Круглосуточный доступ
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Порт, 1 Гбит/c
+												dd.text-small.text-small_black.text-small_bold 2
+												dt.text-small Отчеты ежемесячные стандартные
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+								.accordeon-wrapper
+									.accordeon-head
+										label.accordeon-head-check
+											input(type="checkbox")
+											.accordeon-head-custom
 												.accordeon-checked
 													+icon('checked')
-											dt.text-small Карты доступа
-											dd.text-small.text-small_black.text-small_bold до 3
-											dt.text-small Круглосуточный доступ
-											dd.text-small.text-small_black.text-small_bold
+										.accordeon-head-content.js-accordeon-trigger
+											.accordeon-head-name
+												.h4 Выделенная зона
+												.text-small Огороженный периметр
+											.accordeon-head-info
+												.text-primary.text-primary_black.text-primary_bold
+												.text-small
+											.accordeon-head-icon
+												span
+													+icon('arrow_down')
+									.accordeon-body(style='display: none;')
+										.accordeon-body-content
+											dl
+												dt.text-small Канал в интернет, Мбит/с
+												dd.text-small.text-small_black.text-small_bold до 6
+												dt.text-small Бесплатный внутренний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Бесплатный внешний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold 1
+												dt.text-small Бесплатный IP-адрес IPv6
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Стандартный SLA
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Карты доступа
+												dd.text-small.text-small_black.text-small_bold до 3
+												dt.text-small Круглосуточный доступ
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Порт, 1 Гбит/c
+												dd.text-small.text-small_black.text-small_bold 2
+												dt.text-small Отчеты ежемесячные стандартные
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+								.accordeon-wrapper
+									.accordeon-head
+										label.accordeon-head-check
+											input(type="checkbox")
+											.accordeon-head-custom
 												.accordeon-checked
 													+icon('checked')
-											dt.text-small Порт, 1 Гбит/c
-											dd.text-small.text-small_black.text-small_bold 2
-											dt.text-small Отчеты ежемесячные стандартные
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-						h3.h3 Или мы разработаем для вас индивидуальное решение:
-						.services-config-wrap
-							.accordeon-wrapper
-								.accordeon-head
-									label.accordeon-head-check
-										input(type="checkbox")
-										.accordeon-head-custom
-											.accordeon-checked
-												+icon('checked')
-									.accordeon-head-content.js-accordeon-trigger
-										.accordeon-head-name
-											.h4 Стойка
-											.text-small Стойко-место
-										.accordeon-head-info
-											.text-primary.text-primary_black.text-primary_bold
-											.text-small
-										.accordeon-head-icon
-											span
-												+icon('arrow_down')
-								.accordeon-body(style='display: none;')
-									.accordeon-body-content
-										dl
-											dt.text-small Канал в интернет, Мбит/с
-											dd.text-small.text-small_black.text-small_bold до 6
-											dt.text-small Бесплатный внутренний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Бесплатный внешний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold 1
-											dt.text-small Бесплатный IP-адрес IPv6
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Стандартный SLA
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-											dt.text-small Карты доступа
-											dd.text-small.text-small_black.text-small_bold до 3
-											dt.text-small Круглосуточный доступ
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-											dt.text-small Порт, 1 Гбит/c
-											dd.text-small.text-small_black.text-small_bold 2
-											dt.text-small Отчеты ежемесячные стандартные
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-							.accordeon-wrapper
-								.accordeon-head
-									label.accordeon-head-check
-										input(type="checkbox")
-										.accordeon-head-custom
-											.accordeon-checked
-												+icon('checked')
-									.accordeon-head-content.js-accordeon-trigger
-										.accordeon-head-name
-											.h4 Выделенная зона
-											.text-small Огороженный периметр
-										.accordeon-head-info
-											.text-primary.text-primary_black.text-primary_bold
-											.text-small
-										.accordeon-head-icon
-											span
-												+icon('arrow_down')
-								.accordeon-body(style='display: none;')
-									.accordeon-body-content
-										dl
-											dt.text-small Канал в интернет, Мбит/с
-											dd.text-small.text-small_black.text-small_bold до 6
-											dt.text-small Бесплатный внутренний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Бесплатный внешний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold 1
-											dt.text-small Бесплатный IP-адрес IPv6
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Стандартный SLA
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-											dt.text-small Карты доступа
-											dd.text-small.text-small_black.text-small_bold до 3
-											dt.text-small Круглосуточный доступ
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-											dt.text-small Порт, 1 Гбит/c
-											dd.text-small.text-small_black.text-small_bold 2
-											dt.text-small Отчеты ежемесячные стандартные
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-							.accordeon-wrapper
-								.accordeon-head
-									label.accordeon-head-check
-										input(type="checkbox")
-										.accordeon-head-custom
-											.accordeon-checked
-												+icon('checked')
-									.accordeon-head-content.js-accordeon-trigger
-										.accordeon-head-name
-											.h4 Машинный зал
-											.text-small Полная изоляция
-										.accordeon-head-info
-											.text-primary.text-primary_black.text-primary_bold
-											.text-small
-										.accordeon-head-icon
-											span
-												+icon('arrow_down')
-								.accordeon-body(style='display: none;')
-									.accordeon-body-content
-										dl
-											dt.text-small Канал в интернет, Мбит/с
-											dd.text-small.text-small_black.text-small_bold до 6
-											dt.text-small Бесплатный внутренний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Бесплатный внешний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold 1
-											dt.text-small Бесплатный IP-адрес IPv6
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Стандартный SLA
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-											dt.text-small Карты доступа
-											dd.text-small.text-small_black.text-small_bold до 3
-											dt.text-small Круглосуточный доступ
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-											dt.text-small Порт, 1 Гбит/c
-											dd.text-small.text-small_black.text-small_bold 2
-											dt.text-small Отчеты ежемесячные стандартные
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-						h3.h3 Дополнительные услуги:
-						.services-config-wrap
-							.accordeon-wrapper.accordeon-wrapper_no-check
-								.accordeon-head
-									.accordeon-head-content.js-accordeon-trigger
-										.accordeon-head-name
-											.h4 18 услуг
-											.text-small Стойко-место
-										.accordeon-head-info
-											.text-primary.text-primary_black.text-primary_bold до 12
-											.text-small Мбит/с
-										.accordeon-head-icon
-											span
-												+icon('arrow_down')
-								.accordeon-body(style='display: none;')
-									.accordeon-body-content
-										dl
-											dt.text-small Канал в интернет, Мбит/с
-											dd.text-small.text-small_black.text-small_bold до 6
-											dt.text-small Бесплатный внутренний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Бесплатный внешний IP-адрес IPv4
-											dd.text-small.text-small_black.text-small_bold 1
-											dt.text-small Бесплатный IP-адрес IPv6
-											dd.text-small.text-small_black.text-small_bold ∞
-											dt.text-small Стандартный SLA
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-											dt.text-small Карты доступа
-											dd.text-small.text-small_black.text-small_bold до 3
-											dt.text-small Круглосуточный доступ
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-											dt.text-small Порт, 1 Гбит/c
-											dd.text-small.text-small_black.text-small_bold 2
-											dt.text-small Отчеты ежемесячные стандартные
-											dd.text-small.text-small_black.text-small_bold
-												.accordeon-checked
-													+icon('checked')
-						.services-config-ordering
-							.services-config-ordering__count
-								.h4 Стойка
-								.text-small.text-small_black Стандартные конфигурации
-							a(href="#").services-config-ordering__link.link-button Заказать 
-						.data-center-cooperation.fade-down
-							.data-center-cooperation__promo(style="background-image:url('img/services-page.jpg')")
-								.data-center-partner
-									p.data-center-partner__title Стоимость
-									p.data-center-partner__text Тарифы разрабатываются индивидуально для каждого клиента — вы платите только за фактически оказанные услуги, экономя бюджет
-							.data-center-cooperation__details
-								p.text-small Позвоните нам&#32;
-									a(href="tel:+375 29 600 04 11")
-										strong +375 29 600 04 11
-									|, отправьте заявку по электронной почте&#32;
-									a(href="mailto:sales@vdc.by")
-										strong sales@vdc.by
-									|&#32;или заполните&#32;
-									a(href="#")
-										strong форму обратной связи
-									|, и консультант свяжется с вами для разработки индивидуального предложения
-						hr
-						.services-config-inner
-						.form-block.fade-down
+										.accordeon-head-content.js-accordeon-trigger
+											.accordeon-head-name
+												.h4 Машинный зал
+												.text-small Полная изоляция
+											.accordeon-head-info
+												.text-primary.text-primary_black.text-primary_bold
+												.text-small
+											.accordeon-head-icon
+												span
+													+icon('arrow_down')
+									.accordeon-body(style='display: none;')
+										.accordeon-body-content
+											dl
+												dt.text-small Канал в интернет, Мбит/с
+												dd.text-small.text-small_black.text-small_bold до 6
+												dt.text-small Бесплатный внутренний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Бесплатный внешний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold 1
+												dt.text-small Бесплатный IP-адрес IPv6
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Стандартный SLA
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Карты доступа
+												dd.text-small.text-small_black.text-small_bold до 3
+												dt.text-small Круглосуточный доступ
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Порт, 1 Гбит/c
+												dd.text-small.text-small_black.text-small_bold 2
+												dt.text-small Отчеты ежемесячные стандартные
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+							h3.h3.fade-down Дополнительные услуги:
+							.services-config-wrap.fade-down
+								.accordeon-wrapper.accordeon-wrapper_no-check
+									.accordeon-head
+										.accordeon-head-content.js-accordeon-trigger
+											.accordeon-head-name
+												.h4 18 услуг
+												.text-small Стойко-место
+											.accordeon-head-info
+												.text-primary.text-primary_black.text-primary_bold до 12
+												.text-small Мбит/с
+											.accordeon-head-icon
+												span
+													+icon('arrow_down')
+									.accordeon-body(style='display: none;')
+										.accordeon-body-content
+											dl
+												dt.text-small Канал в интернет, Мбит/с
+												dd.text-small.text-small_black.text-small_bold до 6
+												dt.text-small Бесплатный внутренний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Бесплатный внешний IP-адрес IPv4
+												dd.text-small.text-small_black.text-small_bold 1
+												dt.text-small Бесплатный IP-адрес IPv6
+												dd.text-small.text-small_black.text-small_bold ∞
+												dt.text-small Стандартный SLA
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Карты доступа
+												dd.text-small.text-small_black.text-small_bold до 3
+												dt.text-small Круглосуточный доступ
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+												dt.text-small Порт, 1 Гбит/c
+												dd.text-small.text-small_black.text-small_bold 2
+												dt.text-small Отчеты ежемесячные стандартные
+												dd.text-small.text-small_black.text-small_bold
+													.accordeon-checked
+														+icon('checked')
+							.services-config-ordering.fade-down
+								.services-config-ordering__count
+									.h4 Стойка
+									.text-small.text-small_black Стандартные конфигурации
+								a(href="#").services-config-ordering__link.link-button Заказать 
+							.data-center-cooperation.fade-down
+								.data-center-cooperation__promo(style="background-image:url('img/services-page.jpg')")
+									.data-center-partner
+										p.data-center-partner__title Стоимость
+										p.data-center-partner__text Тарифы разрабатываются индивидуально для каждого клиента — вы платите только за фактически оказанные услуги, экономя бюджет
+								.data-center-cooperation__details
+									p.text-small Позвоните нам&#32;
+										a(href="tel:+375 29 600 04 11")
+											strong +375 29 600 04 11
+										|, отправьте заявку по электронной почте&#32;
+										a(href="mailto:sales@vdc.by")
+											strong sales@vdc.by
+										|&#32;или заполните&#32;
+										a(href="#")
+											strong форму обратной связи
+										|, и консультант свяжется с вами для разработки индивидуального предложения
+					hr
+					.services-config-inner
+						.form-block
 							.form-block__head
 								.h2.form-block__title Форма заказа услуги
-								.text-small Заполните форму и мы перезвоним вам в течение 
-									strong 30 минут
-							.form-block__body
-								hr.form-content-devider
-								.form-content
-									.form-content-head Контактные данные
-									.input-row
-										.input-item.w100
-											.input-wrapper
-												input.input-main(
-													type="text",
-													data-validation="required",
-													data-validation-error-msg="Поле обязательно для заполнения",
-													name="clieentName",
-													id="clieentName"
-												)
-												label.input-label(for="clieentName") ФИО*
-										.input-item.w50
-											.input-wrapper
-												input.input-main(
-													type="phone",
-													data-validation="custom",
-													data-validation-regexp="^[-0-9()+ ]+$",
-													data-validation-error-msg="Введите корректный номер телефона",
-													name="clieentPhone",
-													id="clieentPhone")
-												label.input-label(for="clieentPhone") Телефон*
-										.input-item.w50
-											.input-wrapper
-												input.input-main(
-													type="text",
-													data-validation="email",
-													data-validation-error-msg="Введите корректный e-mail",
-													name="clieentEmail",
-													id="clieentEmail"
-												)
-												label.input-label(for="clieentEmail") Email*
-								hr.form-content-devider
-								.form-content
-									.form-content-head Тема обращения
-									.input-row
-										.input-item.w100
-											.input-wrapper
-												.select-check.js-select-custom
-													.select-carret
-														+icon('arrow_down')
-													button.selects.dropdown(data-placeholder='Категория вопроса *')
-														span.btn-text Категория вопроса *
-													.dropdown-target
-														.dropdown-inner
-															.dropdown-content
-																.select-u-body.select-list
-																	label.option
-																		input(
-																			type='radio',
-																			name='yeats',
-																			value='Категория вопроса 1',
-																			data-validation="required",
-																			data-validation-error-msg="Выберите тему обращения"
-																			)
-																		span Категория вопроса 1
-																	label.option
-																		input(
-																			type='radio',
-																			name='yeats',
-																			value='Категория вопроса 2',
-																			data-validation="required",
-																			data-validation-error-msg="Выберите тему обращения"
-																			)
-																		span Категория вопроса 2
-																	label.option
-																		input(
-																			type='radio',
-																			name='yeats',
-																			value='Категория вопроса 3',
-																			data-validation="required",
-																			data-validation-error-msg="Выберите тему обращения"
-																			)
-																		span Категория вопроса 3
-																	label.option
-																		input(
-																			type='radio',
-																			name='yeats',
-																			value='Категория вопроса 4',
-																			data-validation="required",
-																			data-validation-error-msg="Выберите тему обращения"
-																			)
-																		span Категория вопроса 4
-										.input-item.w100
-											.input-wrapper
-												textarea.input-main(
-													type="text",
-													rows="9",
-													data-validation="required")
-												label.input-label Вопрос *
-							.form-block__footer
-								.input-row
-									.input-item.w100
-										label.check-label
-											input(
-												type="checkbox",
-												data-trigger="btn-submit")
-											.check-label__custom
-												.check-label__checked
-													+icon('checked')
-											| Даю согласие на обработку моих 
-											a(href="#") персональных данных
-								button.button-submit.disabled-field(type="submit", data-target="btn-submit", value="Оставить заявку") Оставить заявку
+							.tabs.js-tabs-wrap
+								.tabs-head
+									.tabs-item.js-tab-trigger.active
+										.tabs-item__custom
+											.tabs-item__check
+										span.tabs-item__text Экспресс-запрос
+									.tabs-item.js-tab-trigger
+										.tabs-item__custom
+											.tabs-item__check
+										span.tabs-item__text Полная форма
+								.tabs-body
+									.tabs-cont
+										form(action="#").js-validate
+											.form-block__body
+												.text-small Укажите минимум данных и мы перезвоним вам в течение 
+													strong 30 минут, с 8:30 до 17:30, 
+													| чтобы уточнить требования по телефону
+												hr.form-content-devider
+												.form-content
+													.form-content-head Контактные данные
+													.input-row
+														.input-item.w100
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	data-validation="required",
+																	data-validation-error-msg="Поле обязательно для заполнения",
+																	name="expressClieentName",
+																	id="expressClieentName"
+																)
+																label.input-label(for="expressClieentName") ФИО*
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="phone",
+																	data-validation="custom",
+																	data-validation-regexp="^[-0-9()+ ]+$",
+																	data-validation-error-msg="Введите корректный номер телефона",
+																	name="expressClieentPhone",
+																	id="expressClieentPhone")
+																label.input-label(for="expressClieentPhone") Телефон*
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	data-validation="email",
+																	data-validation-error-msg="Введите корректный e-mail",
+																	name="expressClieentEmail",
+																	id="expressClieentEmail"
+																)
+																label.input-label(for="expressClieentEmail") Email*
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	name="expressClieentFrim",
+																	id="expressClieentFrim")
+																label.input-label(for="expressClieentFrim") Организация
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	name="expressClieentPosition",
+																	id="expressClieentPosition")
+																label.input-label(for="expressClieentPosition") Должность
+											.form-block__footer
+												.input-row
+													.input-item.w100
+														label.check-label
+															input(
+																type="checkbox",
+																data-trigger="btn-submit-express")
+															.check-label__custom
+																.check-label__checked
+																	+icon('checked')
+															| Даю согласие на обработку моих 
+															a(href="#") персональных данных
+												button.button-submit.disabled-field(type="submit", data-target="btn-submit-express", value="Оставить заявку") Оставить заявку
+									.tabs-cont
+										form(action="#").js-validate
+											.form-block__body
+												.text-small Заполните форму и мы перезвоним вам в течение 
+													strong 30 минут
+												hr.form-content-devider
+												.form-content
+													.form-content-head Контактные данные
+													.input-row
+														.input-item.w100
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	data-validation="required",
+																	data-validation-error-msg="Поле обязательно для заполнения",
+																	name="completeСlieentName",
+																	id="completeСlieentName"
+																)
+																label.input-label(for="completeСlieentName") ФИО*
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="phone",
+																	data-validation="custom",
+																	data-validation-regexp="^[-0-9()+ ]+$",
+																	data-validation-error-msg="Введите корректный номер телефона",
+																	name="completeСlieentPhone",
+																	id="completeСlieentPhone")
+																label.input-label(for="completeСlieentPhone") Телефон*
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	data-validation="email",
+																	data-validation-error-msg="Введите корректный e-mail",
+																	name="completeСlieentEmail",
+																	id="completeСlieentEmail"
+																)
+																label.input-label(for="completeСlieentEmail") Email*
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	name="completeСlieentFrim",
+																	id="completeСlieentFrim")
+																label.input-label(for="completeСlieentFrim") Организация
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	name="completeСlieentPosition",
+																	id="completeСlieentPosition")
+																label.input-label(for="completeСlieentPosition") Должность
+												hr.form-content-devider
+												.form-content
+													.form-content-head Технические характеристики
+													.input-row
+														.input-item.w50
+															.input-wrapper
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
+																input.input-main.input-counter(
+																	id="complete-count-stoik",
+																	name="complete-kol-stoek"
+																	type="number",
+																	data-min="1", 
+																	data-max="20",
+																	data-validation="required",
+																	data-validation-error-msg="Поле обязательно для заполнения")
+																label.input-label(for="complete-count-stoik") Количество стоек (шт) *
+														.input-item.w50
+															.input-wrapper
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
+																input.input-main.input-counter(
+																	id="complete-count-unit",
+																	name="complete-kol-unit"
+																	type="number",
+																	data-min="1",
+																	data-max="20",
+																	data-step="3",
+																	data-validation="required",
+																	data-validation-error-msg="Поле обязательно для заполнения",)
+																label.input-label(for="complete-count-unit") Количество юнитов (шт) *
+														.input-item.w100
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	name="power",
+																	id="completePower"
+																)
+																label.input-label(for="completePower") Требуемая мощность оборудования на 1 стойку (кВт)
+														.input-item.w100
+															.text-small Дополнительные меры по физической безопасности
+														.radio-group
+															.radio-wrapper
+																input.radio-input(
+																	type="radio", 
+																	name="physical-security", 
+																	id="physical-security-1",
+																	data-trigger="physical-security-comment",
+																	data-dis="0",
+																	checked)
+																label.radio-label(for="physical-security-1")
+																	.radio-label__custom
+																		.radio-label__check
+																	.radio-label__text Да
+															.radio-wrapper
+																input.radio-input(
+																	type="radio", 
+																	name="physical-security", 
+																	id="physical-security-2",
+																	data-trigger="physical-security-comment",
+																	data-dis="1")
+																label.radio-label(for="physical-security-2")
+																	.radio-label__custom
+																		.radio-label__check
+																	.radio-label__text Нет
+														.input-item.w100
+															.input-wrapper
+																textarea.input-main(
+																	type="text",
+																	rows="6",
+																	id="security-comment",
+																	data-target="physical-security-comment")
+																label.input-label(for="security-comment") Комментарий
+														.input-item.w50
+															.input-wrapper
+																.select-check.js-select-custom
+																	.select-carret
+																		+icon('arrow_down')
+																	button.selects.dropdown(data-placeholder='Тип электропитания')
+																		span.btn-text Тип электропитания
+																	.dropdown-target
+																		.dropdown-inner
+																			.dropdown-content
+																				.select-u-body.select-list
+																					label.option
+																						input(
+																							type='radio',
+																							name='power-type',
+																							value='Однофазное',
+																							)
+																						span Однофазное
+																					label.option
+																						input(
+																							type='radio',
+																							name='power-type',
+																							value='Трехфазное',
+																							)
+																						span Трехфазное
+																					label.option
+																						input(
+																							type='radio',
+																							name='power-type',
+																							value='Другое'
+																							)
+																						span Другое
+														.input-item.w50
+															.input-wrapper
+																.select-check.js-select-custom
+																	.select-carret
+																		+icon('arrow_down')
+																	button.selects.dropdown(data-placeholder='Разъёмы электропитания')
+																		span.btn-text Разъёмы электропитания
+																	.dropdown-target
+																		.dropdown-inner
+																			.dropdown-content
+																				.select-u-body.select-list
+																					label.option
+																						input(
+																							type='radio',
+																							name='power-сonnectors',
+																							value='С13',
+																							)
+																						span С13
+																					label.option
+																						input(
+																							type='radio',
+																							name='power-сonnectors',
+																							value='C19',
+																							)
+																						span C19
+																					label.option
+																						input(
+																							type='radio',
+																							name='power-сonnectors',
+																							value='Другое',
+																							)
+																						span Другое
+													.input-row
+														.input-item.w50
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	name="power",
+																	id="complete-сonnectors-text"
+																)
+																label.input-label(for="complete-сonnectors-text") Требуемые разъёмы
+													.input-row
+														.input-item.w50
+															.input-wrapper
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
+																input.input-main.input-counter(
+																	id="complete-count-сonnectors",
+																	type="number",
+																	data-min="1",
+																	data-max="20",
+																	data-step="3",)
+																label.input-label(for="complete-count-сonnectors") Количество разъёмов (шт)
+													.input-row
+														.input-item.w100
+															.input-wrapper
+																input.input-main(
+																	type="text",
+																	name="complete-PO",
+																	id="complete-PO"
+																)
+																label.input-label(for="complete-PO") Требования к подключаемому ПО
+													.input-item.w100
+														.text-small Аренда дополнительного оборудования
+													.radio-group
+														.radio-wrapper
+															input.radio-input(
+																type="radio", 
+																name="add-equipment", 
+																id="add-equipment-1",
+																data-trigger="add-equipment-comment",
+																data-dis="0"
+																)
+															label.radio-label(for="add-equipment-1")
+																.radio-label__custom
+																	.radio-label__check
+																.radio-label__text Да
+														.radio-wrapper
+															input.radio-input(
+																type="radio", 
+																name="add-equipment", 
+																id="add-equipment-2",
+																data-trigger="add-equipment-comment",
+																data-dis="1",
+																checked)
+															label.radio-label(for="add-equipment-2")
+																.radio-label__custom
+																	.radio-label__check
+																.radio-label__text Нет
+													.input-item.w100
+														.input-wrapper
+															textarea.input-main.disabled-field(
+																type="text",
+																rows="6",
+																id="add-equipment-comment",
+																data-target="add-equipment-comment")
+															label.input-label(for="add-equipment-comment") Комментарий
+													.input-item.w100
+														.input-wrapper
+															input.input-main(
+																type="text",
+																name="complete-data-reserv",
+																id="complete-data-reserv"
+															)
+															label.input-label(for="complete-data-reserv") Требования к архивированию/резервированию данных
+												.form-content
+													.form-content-head Требования к каналам связи
+													.input-row
+														.input-item.w100
+															label.check-label
+																input(
+																	type="checkbox",
+																	data-trigger="require-channel",
+																	name="check-disable")
+																.check-label__custom
+																	.check-label__checked
+																		+icon('checked')
+																| Доступ к Интернет
+														.input-item.w100
+															.text-small Гарантированный канал
+														.radio-group
+															.radio-wrapper.disabled-field(data-target="require-channel")
+																input.radio-input(
+																	type="radio", 
+																	name="require-channel-check", 
+																	id="require-channel-check-1",
+																	data-dis="0"
+																	)
+																label.radio-label(for="require-channel-check-1")
+																	.radio-label__custom
+																		.radio-label__check
+																	.radio-label__text Да
+															.radio-wrapper.disabled-field(data-target="require-channel")
+																input.radio-input(
+																	type="radio", 
+																	name="require-channel-check", 
+																	id="require-channel-check-2",
+																	data-dis="1",
+																	)
+																label.radio-label(for="require-channel-check-2")
+																	.radio-label__custom
+																		.radio-label__check
+																	.radio-label__text Нет
+														.input-item.w50
+															.input-wrapper
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
+																input.input-main.input-counter(
+																	id="require-channel-speed",
+																	name="require-channel-speed"
+																	type="number",
+																	data-min="1",
+																	data-max="100",
+																	data-step="5",
+																	data-target="require-channel")
+																label.input-label(for="require-channel-speed") Пропускная способность (Mbps)
+														.input-item.w50
+															.input-wrapper
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
+																input.input-main.input-counter(
+																	id="require-channel-protocol",
+																	name="require-channel-protocol",
+																	type="number",
+																	data-min="1",
+																	data-max="20",
+																	data-step="3",
+																	data-target="require-channel")
+																label.input-label(for="require-channel-protocol") Публичных IPv4 адресов (шт)
+														.input-item.w100
+															label.check-label
+																input(
+																	type="checkbox",
+																	data-trigger="protected-channel",
+																	name="check-disable")
+																.check-label__custom
+																	.check-label__checked
+																		+icon('checked')
+																| Защищённый канал VPN (IPSec)
+														.input-item.w50
+															.input-wrapper.disabled-field
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
+																input.input-main.input-counter(
+																	id="protected-channel-vpn",
+																	name="protected-channel-vpn",
+																	type="number",
+																	data-min="1",
+																	data-max="20",
+																	data-step="3",
+																	data-target="protected-channel",)
+																label.input-label(for="protected-channel-vpn") Количество VPN (шт)
+														.input-item.w50
+															.input-wrapper.disabled-field
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
+																input.input-main.input-counter(
+																	id="protected-channel-speed",
+																	name="protected-channel-speed",
+																	type="number",
+																	data-min="1",
+																	data-max="20",
+																	data-step="3",
+																	data-target="protected-channel")
+																label.input-label(for="protected-channel-speed") Пропускная способность (Mbps)
+
+											.form-block__footer
+												.input-row
+													.input-item.w100
+														label.check-label
+															input(
+																type="checkbox",
+																data-trigger="btn-submit-complete")
+															.check-label__custom
+																.check-label__checked
+																	+icon('checked')
+															| Даю согласие на обработку моих 
+															a(href="#") персональных данных
+												button.button-submit.disabled-field(type="submit", data-target="btn-submit-complete", value="Оставить заявку") Позвонить
 					+link-more('Вернуться к услугам', 'back-link')
+
+
+
+//- .tabs.js-tabs-wrap
+//- 	 //во всех табах кидаешь класс .active на триггер и нужная вкладка открывается , иначе будет открыта первая вкладка
+//- 	.tabs-head.w3.slider-tabs
+//- 		.tabs-item.js-tab-trigger.active
+//- 			span Популярное
+//- 		.tabs-item.js-tab-trigger
+//- 			span Новинки
+//- 		.tabs-item.js-tab-trigger
+//- 			span Акции
+//- 	.tabs-body
+//- 		.tabs-cont
+//- 		.tabs-cont
+//- 		.tabs-cont

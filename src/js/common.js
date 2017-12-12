@@ -132,6 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	inputValEdit();
 	inputValIncDecr('.input-counter');
 	ToggleDisabled();
+	initTabs();
 
 	var ajax = new AjaxLoading($(".ajax-trigger"));
 	
@@ -345,10 +346,11 @@ function initServicesSlider(){
 		slidesToScroll: 3,
 		dots: true,
 		infinite: false,
-		dotsClass: 'custom_dots custom_dots_black',
+		dotsClass: 'custom_dots custom_dots_black basic-services__dots',
 		arrows: true,
 		prevArrow: '<button class="slick-prev basic-services__prev slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
 		nextArrow: '<button class="slick-next basic-services__next slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
+		appendArrows: '.basic-services__nav',
 		touchMove: true,
 		dragable: true,
 		adaptiveHeight : false,
@@ -1026,11 +1028,9 @@ function ToggleDisabled() {
 
 		switch (type) {
 		case 'radio':
-			console.log(type +' type.' + target + ' triger');
 			radioDisable(_t, target);
 			break;
 		case 'checkbox' :
-			console.log(type +' type.' + target + ' triger');
 			checkBoxDisable(_t, target);
 			break;
 		}
@@ -1067,4 +1067,36 @@ function checkBoxDisable (el, target) {
 			}
 		}
 	});
+}
+
+function initTabs(){
+	if($('.js-tabs-wrap').length){
+		
+		var parent = $('.js-tabs-wrap');
+			parent.each(function(){
+				var _ = $(this),
+					trigger = _.find('.js-tab-trigger'),
+					tabbody = _.find('.tabs-body'),
+					tabcont = tabbody.find('.tabs-cont'),
+					triggerCur = _.find(trigger).filter('.active'),
+					triggerIndex = triggerCur.index();
+
+			if(!triggerCur.length){
+				tabcont.not(':first').hide();
+				trigger.first().addClass('active');
+			}else{
+				tabcont.hide().eq(triggerIndex).show();
+			}
+
+			trigger.on('click',function(e){
+				var _ = $(this);
+				e.preventDefault();
+				if(!_.hasClass('active')){
+					_.addClass('active').siblings().removeClass('active')
+					var triggerA = parent.find(trigger).filter('.active');
+					tabcont.hide().eq($(triggerA).index()).fadeIn().find('.slick-slider').slick('setPosition');
+				}
+			});
+		});
+	}
 }

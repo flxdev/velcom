@@ -76,6 +76,7 @@ body
 	font-family: $o
 	width: 100%
 	min-width: 320px
+	min-width: calc(320px-32px)
 	height: auto
 	min-height: 100%
 	-webkit-overflow-scrolling: touch
@@ -231,19 +232,15 @@ body
 	position: relative
 	background-color: #ffffff
 	padding-top: 95px
-
-	// &-wrapper
-	// 	display: flex
-	// 	justify-content: space-between
-	// 	+r(1024)
-	// 		flex-wrap: wrap
 	&_page
-		padding-top: 0
+		padding-top: 10px
 		margin-bottom: 100px
 	&-title
 		font-size : 32px
 		line-height : 1
 		margin-bottom: 45px
+	&-slider
+		position: relative
 	&-outer
 		margin-right: -30px
 		+r(1400)
@@ -276,7 +273,7 @@ body
 		z-index: 5
 		width: 20px
 		height: 40px
-		right: -20px
+		right: -50px
 		left: auto
 		top: 50%
 		+tr(all .3s ease)
@@ -285,7 +282,7 @@ body
 			right: 20px
 	&__prev
 		right: auto
-		left: -20px
+		left: -50px
 		transform: rotate(180deg) translateY(50%)
 		+r(1400)
 			right: auto
@@ -293,6 +290,10 @@ body
 	&__prev.slick-disabled,
 	&__next.slick-disabled
 		opacity: .4
+	&__dots
+		position: absolute
+		left: 0
+		bottom: -50px
 .services-slider
 	width: 100%
 
@@ -373,6 +374,12 @@ body
 		margin-left: auto
 		margin-right: 0
 		margin-top: 65px
+		.datacenter-characteristics
+			&__value
+				color: #000000
+			&__desc
+				color: #767a7d
+				
 	&__link
 		margin-top: 65px
 		max-width: 244px
@@ -469,6 +476,7 @@ body
 	padding-bottom: 90px
 	position: relative
 	background-color: #ffffff
+	box-sizing: border-box
 	&__title
 		display: flex
 		justify-content: space-between
@@ -478,10 +486,12 @@ body
 		display: flex
 		flex-wrap: wrap
 	+r(980)
-		padding-top: 55px
 		&__title
 			margin-bottom: 30px
 	+r(620)
+		&__title
+			display: block
+			position: static
 		&__more-news
 			position: absolute
 			bottom: 35px
@@ -1095,6 +1105,13 @@ body
 				transform: translateY(-50%) rotate(180deg)
 	.bg-gray
 		margin-top: 60px
+	hr
+		display: block
+		width: 100%
+		height: 1px
+		background-color: #cccccc
+		border: none
+		margin-bottom: 70px
 
 .services-config
 	width: 100%
@@ -1104,9 +1121,10 @@ body
 		margin-bottom: 65px
 	&-inner
 		width: 100%
-	max-width: 714px
+		max-width: 714px
+		margin-bottom: 70px
 	.form-block
-		margin-top: 34px
+		margin-top: 60px
 .accordeon-wrapper
 	margin-top: -1px
 	border: 1px solid #cccccc
@@ -1277,6 +1295,7 @@ body
 		color: #000000
 		font-size: 16px
 		margin-bottom: 14px
+		+tr(all .3s ease)
 		&_big
 			font-size: 20px
 			letter-spacing: -0.02
@@ -1285,6 +1304,8 @@ body
 			width: 18px
 			height: 16px
 			margin-left: 10px
+		&:hover
+			color: #ecdc00
 	&__title
 		margin-bottom: 23px
 	&__subtitle
