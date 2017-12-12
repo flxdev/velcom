@@ -733,12 +733,7 @@ block content
 																	.radio-label__text Нет
 														.input-item.w50
 															.input-wrapper
-																.input-counter-nav
-																	button(type="button", class="input-counter-btn inc")
-																		+icon('arrow_down')
-																	button(type="button", class="input-counter-btn dec")
-																		+icon('arrow_down')
-																input.input-main.input-counter(
+																input.input-main.input-counter.disabled-field(
 																	id="require-channel-speed",
 																	name="require-channel-speed"
 																	type="number",
@@ -747,14 +742,14 @@ block content
 																	data-step="5",
 																	data-target="require-channel")
 																label.input-label(for="require-channel-speed") Пропускная способность (Mbps)
-														.input-item.w50
-															.input-wrapper
 																.input-counter-nav
 																	button(type="button", class="input-counter-btn inc")
 																		+icon('arrow_down')
 																	button(type="button", class="input-counter-btn dec")
 																		+icon('arrow_down')
-																input.input-main.input-counter(
+														.input-item.w50
+															.input-wrapper
+																input.input-main.input-counter.disabled-field(
 																	id="require-channel-protocol",
 																	name="require-channel-protocol",
 																	type="number",
@@ -763,6 +758,11 @@ block content
 																	data-step="3",
 																	data-target="require-channel")
 																label.input-label(for="require-channel-protocol") Публичных IPv4 адресов (шт)
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
 														.input-item.w100
 															label.check-label
 																input(
@@ -774,13 +774,8 @@ block content
 																		+icon('checked')
 																| Защищённый канал VPN (IPSec)
 														.input-item.w50
-															.input-wrapper.disabled-field
-																.input-counter-nav
-																	button(type="button", class="input-counter-btn inc")
-																		+icon('arrow_down')
-																	button(type="button", class="input-counter-btn dec")
-																		+icon('arrow_down')
-																input.input-main.input-counter(
+															.input-wrapper
+																input.input-main.input-counter.disabled-field(
 																	id="protected-channel-vpn",
 																	name="protected-channel-vpn",
 																	type="number",
@@ -789,14 +784,14 @@ block content
 																	data-step="3",
 																	data-target="protected-channel",)
 																label.input-label(for="protected-channel-vpn") Количество VPN (шт)
-														.input-item.w50
-															.input-wrapper.disabled-field
 																.input-counter-nav
 																	button(type="button", class="input-counter-btn inc")
 																		+icon('arrow_down')
 																	button(type="button", class="input-counter-btn dec")
 																		+icon('arrow_down')
-																input.input-main.input-counter(
+														.input-item.w50
+															.input-wrapper
+																input.input-main.input-counter.disabled-field(
 																	id="protected-channel-speed",
 																	name="protected-channel-speed",
 																	type="number",
@@ -805,6 +800,11 @@ block content
 																	data-step="3",
 																	data-target="protected-channel")
 																label.input-label(for="protected-channel-speed") Пропускная способность (Mbps)
+																.input-counter-nav
+																	button(type="button", class="input-counter-btn inc")
+																		+icon('arrow_down')
+																	button(type="button", class="input-counter-btn dec")
+																		+icon('arrow_down')
 
 											.form-block__footer
 												.input-row
@@ -818,21 +818,5 @@ block content
 																	+icon('checked')
 															| Даю согласие на обработку моих 
 															a(href="#") персональных данных
-												button.button-submit.disabled-field(type="submit", data-target="btn-submit-complete", value="Оставить заявку") Позвонить
+												button.button-submit.disabled-field(type="submit", data-target="btn-submit-complete", value="Оставить заявку") Оставить заявку
 					+link-more('Вернуться к услугам', 'back-link')
-
-
-
-//- .tabs.js-tabs-wrap
-//- 	 //во всех табах кидаешь класс .active на триггер и нужная вкладка открывается , иначе будет открыта первая вкладка
-//- 	.tabs-head.w3.slider-tabs
-//- 		.tabs-item.js-tab-trigger.active
-//- 			span Популярное
-//- 		.tabs-item.js-tab-trigger
-//- 			span Новинки
-//- 		.tabs-item.js-tab-trigger
-//- 			span Акции
-//- 	.tabs-body
-//- 		.tabs-cont
-//- 		.tabs-cont
-//- 		.tabs-cont

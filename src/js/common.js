@@ -931,14 +931,14 @@ function validateForms() {
 	});
 		function singleErrorMessages(item, errorMessage)
 		{
-			var currentElementParentObject = item.parents('.input-wrapper');
+			var currentElementParentObject = item.parent();
 			currentElementParentObject.find('.form-error').remove();
 			currentElementParentObject.append(`<div class='help-block form-error'>${errorMessage}</div>`);
 		}
 
 		function singleRemoveErrorMessages(item)
 		{
-			var currentElementParentObject = item.parents('.input-wrapper');
+			var currentElementParentObject = item.parent();
 			currentElementParentObject.find('.form-error').remove();
 		}
 	}
@@ -1057,13 +1057,19 @@ function checkBoxDisable (el, target) {
 			if(_target.hasClass('disabled-field')){
 				_target.removeClass('disabled-field').prop('disabled', false);
 			} else {
-				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true);
+				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true).prop('checked' , false);
+				if(_target.hasClass('radio-wrapper')){
+					_target.find('input').prop('checked' , false);
+				}
 			}
 		} else {
 			if(_target.hasClass('disabled-field')){
 				_target.removeClass('disabled-field').prop('disabled', false);
 			} else {
-				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true);
+				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true).prop('checked' , false);
+				if(_target.hasClass('radio-wrapper')){
+					_target.find('input').prop('checked' , false);
+				}
 			}
 		}
 	});
