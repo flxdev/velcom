@@ -26,10 +26,22 @@
 		margin-top: 20px !important
 		margin-bottom: 34px !important
 .input
+	&-col 
+		display: inline-block
+		vertical-align: top
+		width: 50%
+
+		+r(640)
+			width: 100%
 	&-row
 		font-size: 0
 		margin: 0 -3px
 		position: relative
+		&>.text-small,&>div>.text-small
+			padding-left: 3px
+			padding-right: 3px
+			margin-bottom: 10px
+
 	&-item
 		display: inline-block
 		vertical-align: top
@@ -41,6 +53,52 @@
 			width: 50%
 			+r(640)
 				width: 100%
+		&.telwrapper
+			font-size: 0
+			display: inline-flex
+			flex-flow: row nowrap
+			align-items: flex-start
+			.input-wrapper
+				width: auto
+				// margin: 0!important
+				.select2,.input-main
+					height: 60px
+				&:first-child
+					// max-width: 135px
+					width: 53%
+					min-width: 115px
+					max-width: 150px
+					.select2,.input-main
+						border-top-right-radius: 0
+						border-bottom-right-radius: 0
+						border-right: 0
+						padding-left: 20%
+						padding-top: 18px
+						
+					.tel-image
+						display: inline-block
+						vertical-align: bottom
+						width: 18px
+					.tel-text
+						display: inline-block
+						vertical-align: bottom
+						line-height: 1
+						margin-bottom: -2px
+						padding-left: 10px
+						color: #000
+						font-size: 14px
+					.input-label
+						left: 20%
+				&:last-child
+					border-top-left-radius: 0
+					border-bottom-left-radius: 0
+					flex-grow: 1
+					.help-block
+						left: -53%
+			.countryTels
+
+
+
 	&-wrapper
 		position: relative
 		+tr(all .5s linear)
@@ -64,38 +122,70 @@
 				border-top: 1px solid #ccc
 		&.has-error
 			margin-bottom: 20px
-
-	&-main
-		display: block
-		width: 100%
-		border: 1px solid #a6a6a6
-		border-radius: 2px
-		box-sizing: border-box
-		+tr(all .3s ease)
-		font-size: 16px
-		line-height: 1
-		padding: 30px 10px 10px 25px
-		resize: none
-		&:hover
-			border-color: #000000
-		&:focus
-			border-color: #000000
-			& ~ label,& ~ .label,& ~ .input-label
-				opacity: .7
-				font-size: 14px
-				top: 5px
-		&.error
-			border-color: #ed1c24
-		&.valid
-			& ~ label,& ~ .label,& ~ .input-label
-				opacity: .7
-				font-size: 14px
-				top: 5px
-		&.editing
-			& ~ label,& ~ .label,& ~ .input-label
-				opacity: .7
-				font-size: 14px
-				top: 5px
+		.input-main
+			display: block
+			width: 100% 
+			border: 1px solid #a6a6a6
+			border-radius: 2px
+			box-sizing: border-box
+			+tr(all .3s ease)
+			font-size: 16px
+			line-height: 1
+			padding: 30px 10px 10px 25px
+			resize: none
+			background-color: #FFF
+			&:hover
+				border-color: #000000
+			&:focus
+				border-color: #000000
+				& ~ label,& ~ .label,& ~ .input-label
+					opacity: .7
+					font-size: 14px
+					top: 5px
+					&.sm,&.fixed
+						font-size: 12px
+						top: 10px
+			&.error
+				border-color: #ed1c24
+			&.valid
+				& ~ label,& ~ .label,& ~ .input-label
+					opacity: .7
+					font-size: 14px
+					top: 5px
+					&.sm,&.fixed
+						font-size: 12px
+						top: 10px
+			&.editing
+				& ~ label,& ~ .label,& ~ .input-label
+					opacity: .7
+					font-size: 14px
+					top: 5px
+					&.sm,&.fixed
+						font-size: 12px
+						top: 10px
+		&>.select2
+			padding-top: 15px
+			padding-bottom: 15px
+			padding-left: 25px
+			width: 100% !important
+			width: 100% 
+			border: 1px solid #a6a6a6
+			border-radius: 2px
+			box-sizing: border-box
+			font-size: 16px
+			line-height: 1
+			resize: none
+			background-color: #FFF
+			+tr(all .3s ease)
+			&.select2-container--open
+				border: 2px solid #000;
+				margin-top: -1px
+			.select2-selection
+				border: none
+				line-height: 1.1
+				padding-left: 0
+			.select2-selection__rendered
+				padding-left: 0
 	&-label
 		position: absolute
 		top: 22px
@@ -104,6 +194,12 @@
 		font-size: 16px
 		line-height: 1.3
 		+tr(all .3s ease)
+		&.fixed
+			opacity: .7
+			font-size: 12px
+			top: 10px
+		&.sm 
+			font-size: 14px
 	&-counter
 		&-nav
 			position: absolute
@@ -122,6 +218,28 @@
 				left: 0
 			&.inc
 				transform: rotate(180deg)
+.select2-dropdown
+	box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.2)
+	border: 2px solid #000;
+	.select2-results__option
+		display: block
+		width: 100%
+		cursor: pointer;
+		position: relative;
+		padding: 15px 10px 15px 20px
+		font-size: 14px
+		color: #737373
+		line-height: 1.429;
+		background-color: #ffffff
+		margin-bottom: 0 !important
+		white-space: normal !important
+		+tr(background-color .3s)
+		color: #000000
+		&[aria-selected=true]
+			background-color: #ffffff
+		&:hover,&.select2-results__option--highlighted
+			background-color: #f5f7f8
+			color: #000000
 .radio
 	&-group
 		display: inline-block
@@ -274,7 +392,8 @@
 	font-size: 12px
 	color: #ed1c24
 	position: absolute
-	bottom: -20px
+	top: 100%
+	margin-top: 5px
 	left: 0
 
 .button-submit

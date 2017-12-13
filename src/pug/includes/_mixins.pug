@@ -156,9 +156,11 @@ mixin paginate
 		a(href="#").paginate__arrow.paginate__arrow_next.paginate__arrow_disable
 			+icon('arrow-circle')
 
-mixin link-banner(title, link, img)
+mixin link-banner(title, link, img, strong)
 	.link-banner(style="background-image:url('img/"+img+"')")
 		.link-banner__title.h3= title
+		if strong
+			.link-banner__strong= strong
 		a(href="#").link-button.link-button_small= link
 
 mixin projesct-item(img, logo, title, info, add_class)

@@ -70,7 +70,7 @@ block content
 												.text-small Мбит/с
 											.accordeon-head-icon
 												span
-													+icon('arrow_down')
+													+icon('arrow_services')
 									.accordeon-body(style='display: none;')
 										.accordeon-body-content
 											dl
@@ -114,7 +114,7 @@ block content
 												.text-small Мбит/с
 											.accordeon-head-icon
 												span
-													+icon('arrow_down')
+													+icon('arrow_services')
 									.accordeon-body(style='display: none;')
 										.accordeon-body-content
 											dl
@@ -160,7 +160,7 @@ block content
 												.text-small
 											.accordeon-head-icon
 												span
-													+icon('arrow_down')
+													+icon('arrow_services')
 									.accordeon-body(style='display: none;')
 										.accordeon-body-content
 											dl
@@ -204,7 +204,7 @@ block content
 												.text-small
 											.accordeon-head-icon
 												span
-													+icon('arrow_down')
+													+icon('arrow_services')
 									.accordeon-body(style='display: none;')
 										.accordeon-body-content
 											dl
@@ -248,7 +248,7 @@ block content
 												.text-small
 											.accordeon-head-icon
 												span
-													+icon('arrow_down')
+													+icon('arrow_services')
 									.accordeon-body(style='display: none;')
 										.accordeon-body-content
 											dl
@@ -289,7 +289,7 @@ block content
 												.text-small Мбит/с
 											.accordeon-head-icon
 												span
-													+icon('arrow_down')
+													+icon('arrow_services')
 									.accordeon-body(style='display: none;')
 										.accordeon-body-content
 											dl
@@ -440,16 +440,22 @@ block content
 																	id="completeСlieentName"
 																)
 																label.input-label(for="completeСlieentName") ФИО*
-														.input-item.w50
+														.input-item.w50.telwrapper
+															.input-wrapper
+																select.input-main.js-select.countryTels(name='telCountry',id='telCountry')
+																	option(value="+375", data-img='img/png/blr.png') +375
+																	option(value="+776", data-img='img/png/blr.png') +776
+																	option(value="8 099", data-img='img/png/blr.png') 8 099
+																label.input-label.fixed(for="clieentPhone") Регион
 															.input-wrapper
 																input.input-main(
-																	type="phone",
+																	type="tel",
 																	data-validation="custom",
 																	data-validation-regexp="^[-0-9()+ ]+$",
 																	data-validation-error-msg="Введите корректный номер телефона",
-																	name="completeСlieentPhone",
-																	id="completeСlieentPhone")
-																label.input-label(for="completeСlieentPhone") Телефон*
+																	name="clieentPhone",
+																	id="clieentPhone")
+																label.input-label.sm(for="clieentPhone") Контактный телефон
 														.input-item.w50
 															.input-wrapper
 																input.input-main(
@@ -553,94 +559,68 @@ block content
 																	id="security-comment",
 																	data-target="physical-security-comment")
 																label.input-label(for="security-comment") Комментарий
-														.input-item.w50
-															.input-wrapper
-																.select-check.js-select-custom
-																	.select-carret
-																		+icon('arrow_down')
-																	button.selects.dropdown(data-placeholder='Тип электропитания')
-																		span.btn-text Тип электропитания
-																	.dropdown-target
-																		.dropdown-inner
-																			.dropdown-content
-																				.select-u-body.select-list
-																					label.option
-																						input(
-																							type='radio',
-																							name='power-type',
-																							value='Однофазное',
-																							)
-																						span Однофазное
-																					label.option
-																						input(
-																							type='radio',
-																							name='power-type',
-																							value='Трехфазное',
-																							)
-																						span Трехфазное
-																					label.option
-																						input(
-																							type='radio',
-																							name='power-type',
-																							value='Другое'
-																							)
-																						span Другое
-														.input-item.w50
-															.input-wrapper
-																.select-check.js-select-custom
-																	.select-carret
-																		+icon('arrow_down')
-																	button.selects.dropdown(data-placeholder='Разъёмы электропитания')
-																		span.btn-text Разъёмы электропитания
-																	.dropdown-target
-																		.dropdown-inner
-																			.dropdown-content
-																				.select-u-body.select-list
-																					label.option
-																						input(
-																							type='radio',
-																							name='power-сonnectors',
-																							value='С13',
-																							)
-																						span С13
-																					label.option
-																						input(
-																							type='radio',
-																							name='power-сonnectors',
-																							value='C19',
-																							)
-																						span C19
-																					label.option
-																						input(
-																							type='radio',
-																							name='power-сonnectors',
-																							value='Другое',
-																							)
-																						span Другое
+												hr.form-content-devider
+												.form-content
+													.form-content-head Тип электропитания
 													.input-row
-														.input-item.w50
+														.input-item.w100
 															.input-wrapper
-																input.input-main(
-																	type="text",
-																	name="power",
-																	id="complete-сonnectors-text"
-																)
-																label.input-label(for="complete-сonnectors-text") Требуемые разъёмы
+																select.input-main.js-select(name='PowerType', 
+																				id='PowerType',
+																				data-validation='length', 
+																				data-validation-length='min1',
+																				data-validation-event="change",
+																				data-placeholder='Тип электропитания',
+																				data-display-trigger='PowerType',
+																				data-display-trigger-value='Other')
+																	option()
+																	option(value="1") Однофазное
+																	option(value="2") Трехфазное
+																	option(value="Other") Другое
+													/// контейнер для блоков
+													.input-row(data-display-container='PowerType')
+												hr.form-content-devider
+												.form-content
+													.form-content-head Разъемы электропитания
 													.input-row
-														.input-item.w50
+														.input-item.w100
 															.input-wrapper
-																.input-counter-nav
-																	button(type="button", class="input-counter-btn inc")
-																		+icon('arrow_down')
-																	button(type="button", class="input-counter-btn dec")
-																		+icon('arrow_down')
-																input.input-main.input-counter(
-																	id="complete-count-сonnectors",
-																	type="number",
-																	data-min="1",
-																	data-max="20",
-																	data-step="3",)
-																label.input-label(for="complete-count-сonnectors") Количество разъёмов (шт)
+																select.input-main.js-select(name='power-сonnectors', 
+																				id='power-сonnectors',
+																				data-validation='length', 
+																				data-validation-length='min1',
+																				data-validation-event="change",
+																				data-placeholder='Разъемы электропитания'
+																				data-display-trigger='power-сonnectors',
+																				data-display-trigger-value='Other')
+																	option()
+																	option(value="1") С13
+																	option(value="2") C19
+																	option(value="Other") Другое
+													/// контейнер для блоков
+													.input-row(data-display-container='power-сonnectors')
+														
+														//- .form-content
+														//- /// контейнер для блоков
+														//- .form-content(data-display-container='power-сonnectors')
+
+													//- .input-row
+													//- 	.input-item.w50
+													//- 		.input-wrapper
+													//- 			.input-counter-nav
+													//- 				button(type="button", class="input-counter-btn inc")
+													//- 					+icon('arrow_down')
+													//- 				button(type="button", class="input-counter-btn dec")
+													//- 					+icon('arrow_down')
+													//- 			input.input-main.input-counter(
+													//- 				id="complete-count-сonnectors",
+													//- 				type="number",
+													//- 				data-min="1",
+													//- 				data-max="20",
+													//- 				data-step="3",)
+													//- 			label.input-label(for="complete-count-сonnectors") Количество разъёмов (шт)
+												hr.form-content-devider
+												.form-content
 													.input-row
 														.input-item.w100
 															.input-wrapper
@@ -650,7 +630,7 @@ block content
 																	id="complete-PO"
 																)
 																label.input-label(for="complete-PO") Требования к подключаемому ПО
-													.input-item.w100
+														//- .input-item.w100
 														.text-small Аренда дополнительного оборудования
 													.radio-group
 														.radio-wrapper
@@ -819,4 +799,29 @@ block content
 															| Даю согласие на обработку моих 
 															a(href="#") персональных данных
 												button.button-submit.disabled-field(type="submit", data-target="btn-submit-complete", value="Оставить заявку") Оставить заявку
+										// сюда кладем блоки, которые надо вставить
+										.form-appended-els(style='display: none;')
+											/// блок PowerType
+											.form-content(data-display-target='PowerType',data-display-trigger-value='Other')
+												.text-small Опишите необходимые вам характеристики питания
+												.input-item.w100
+													.input-wrapper
+														textarea.input-main(
+															rows='5',
+															name="power",
+															id="complete-сonnectors-text"
+														)
+														label.input-label(for="complete-сonnectors-text") Характеристики электропитания
+											/// блок PowerType
+											//- .input-row
+											.form-content(data-display-target='power-сonnectors',data-display-trigger-value='Other')
+												.text-small Опишите необходимые вам характеристики и количество разьемов питания
+												.input-item.w100
+													.input-wrapper
+														textarea.input-main(
+															rows='5',
+															name="power",
+															id="complete-count-сonnectors"
+														)
+														label.input-label(for="complete-count-сonnectors") Тип и количество разьемов
 					+link-more('Вернуться к услугам', 'back-link')

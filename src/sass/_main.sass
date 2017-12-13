@@ -138,6 +138,9 @@ body
 	&__title
 		display: inline-block
 		max-width: 750px
+		-webkit-hyphens: manual
+		-ms-hyphens: manual
+		hyphens: manual
 		&_offset
 			margin-top: auto
 			margin-bottom: auto
@@ -147,9 +150,6 @@ body
 			width: 50%
 			padding: 20px 20px 20px 150px
 			box-sizing: content-box
-			-webkit-hyphens: manual
-			-ms-hyphens: manual
-			hyphens: manual
 		a
 			margin-top: 70px
 	&__desc
@@ -765,11 +765,13 @@ body
 		line-height: 1.09
 		margin-bottom: 25px
 		text-transform: uppercase
+		color: #000000
 	& &__text
 		max-width: 225px
 		font-size: 16px
 		margin-bottom: 30px
 		line-height: 1.5
+		color: #000000
 	&__link
 		background-color: #f2db00
 		&:hover
@@ -851,6 +853,9 @@ body
 	padding: 0 0 20px
 	color: #000000
 	border-bottom: 1px solid #cccccc
+	+tr(all .3s ease)
+	&:hover
+		color: #ecdc00
 	&:not(:first-child)
 		margin-top: 40px
 	+r(620)
@@ -859,6 +864,9 @@ body
 .sub-page-link
 	padding: 5px 0
 	margin-bottom: 10px
+	+tr(all .3s ease)
+	&:hover
+		color: #000000
 
 
 .search-wrap
@@ -907,6 +915,10 @@ body
 		margin-bottom: 100px
 		a
 			color: #000000
+			+tr(color .3s ease)
+			&:hover
+				color: #cccccc
+
 	+r(560)
 		&__title
 			margin-bottom: 25px
@@ -918,6 +930,7 @@ body
 		padding-bottom: 75px
 		margin-bottom: 60px
 		border-bottom: 1px solid #cccccc
+		max-width: 714px
 		+r(980)
 			padding-bottom: 40px
 			margin-bottom: 40px
@@ -1067,8 +1080,11 @@ body
 		transform: rotate(-180deg)
 
 .services-inner-page
+	position: relative
 	.content-wrap
 		padding-bottom: 70px
+		+r(768)
+			padding-bottom: 40px
 	.content-wrap
 		.bg-gray
 			margin-bottom: 0
@@ -1076,6 +1092,8 @@ body
 		&__item
 			&:last-child
 				margin-bottom: 32px
+		+r(768)
+			padding: 40px 0
 	.services-inner-view-all
 		font-size: 16px
 		line-height: 1.5
@@ -1090,8 +1108,8 @@ body
 		.link-view-carret
 			display: block
 			position: absolute
-			width: 8px
-			height: 4px
+			width: 10px
+			height: 5px
 			right: 0
 			top: 50%
 			transform: translateY(-50%)
@@ -1105,6 +1123,8 @@ body
 				transform: translateY(-50%) rotate(180deg)
 	.bg-gray
 		margin-top: 60px
+		+r(768)
+			margin-top: 30px
 	hr
 		display: block
 		width: 100%
@@ -1112,17 +1132,50 @@ body
 		background-color: #cccccc
 		border: none
 		margin-bottom: 70px
+		+r(768)
+			margin-bottom: 40px
+	&__decoration
+		position: absolute
+		top: 0
+		left: calc(25% + 714px)
+		display: block
+		width: 96px
+		height: 115px
+		color: #f2db00
+		+r(1200)
+			left: auto
+			right: 0
+		+r(768)
+			position: absolute
+			left: 0
+			right: auto
+	.side-bar
+		+r(768)
+			width: calc(100% - 120px)
+			margin-left: auto
+			margin-right: 0
+			margin-bottom: 40px
 
+	.content-inner__title
+		margin-right: 120px
+		+r(768)
+			margin-right: 0
 .services-config
 	width: 100%
 	.h3
 		margin-bottom: 47px
+		+r(768)
+			margin-bottom: 20px
 	&-wrap
 		margin-bottom: 65px
+		+r(768)
+			margin-bottom: 30px
 	&-inner
 		width: 100%
 		max-width: 714px
 		margin-bottom: 70px
+		+r(768)
+			margin-bottom: 40px
 	.form-block
 		margin-top: 60px
 .accordeon-wrapper
@@ -1140,7 +1193,10 @@ body
 				padding-left: 0
 	&.active
 		box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.2)
-
+		.accordeon-head 
+			&-icon
+				span
+					transform: rotate(-180deg)
 
 .accordeon-checked
 	width: 16px
@@ -1150,9 +1206,12 @@ body
 .accordeon-head
 	display: flex
 	align-items: center
+	padding: 0 30px
 	+tr(all .3s ease)
+	+r(450)
+		padding: 0 15px
 	&-check
-		padding: 35px 20px 35px 30px
+		padding: 35px 20px 35px 0
 		+r(520)
 			padding: 35px 10px 35px 10px
 		input
@@ -1179,66 +1238,120 @@ body
 				border-color: #000000
 				cursor: pointer
 	&-content
-		padding: 15px 30px 15px 0
+		padding: 15px 0
 		width: 100%
 		display: flex
 		align-items: center
 		&:hover
 			cursor: pointer
-		+r(520)
-			padding: 15px 10px 15px 0
+
 	&-name
 		padding: 10px
 		width: 70%
-		+r(520)
+		+r(450)
 			width: 60%
 	&-info
 		padding: 10px
-		width: 20%
-		+r(520)
-			width: 30%
+		width: 25%
+		+r(450)
+			width: 35%
 	&-icon
-		padding-left: 10px
-		width: 15%
-		+r(768)
-			width: 10%
-			padding-left: 0
+		width: 5%
 		span
 			display: block
 			margin-right: 0
+			font-size: 0
 			margin-left: auto
-			width: 20px
-			height: 16px
+			width: 100%
+			max-width: 18px
+			height: 10px
 			+tr(all .7s ease)
-	&.active &-icon
-		span
-			transform: rotate(-180deg)
+	
 .accordeon-body
 	border-top: none
-	padding: 0 30px
-	+r(520)
-		padding: 0 15px
+	padding-left: 75px
+	padding-right: 30px
+	+r(450)
+		padding-left: 15px
+		padding-right: 15px
 	&-content
 		border-top: 1px solid #cccccc
-		padding-left: 55px
-		padding-right: 45px
-		+r(520)
-			padding: 0
 		dl
 			display: flex
 			flex-wrap: wrap
 			dt
-				width: 77%
-				padding: 20px 20px 20px 0
+				width: 70%
+				padding: 20px 10px
 				border-bottom: 1px solid #e5e5e5
+				+r(450)
+					width: 65%
 				&:nth-last-child(2)
 					border: none
 			dd
-				width: 23%
-				padding: 20px 0
+				width: 30%
+				padding: 20px 10px
 				border-bottom: 1px solid #e5e5e5
+				+r(450)
+					width: 35%
 				&:last-child
 					border: none
+
+.accordeon-wrapper_data
+	max-width: 714px
+	border: 1px solid #cccccc
+	padding: 38px 34px 33px 34px
+	+tr(all .3s ease)
+	&:first-child
+		border-top: 1px solid #cccccc
+	&:not(:last-child)
+		margin-bottom: 70px
+	.accordeon-head
+		padding: 0
+		position: relative
+		&-content
+			padding: 0
+			flex-direction: column
+			align-items: flex-start
+			max-width: 475px
+		.h4
+			display: flex
+			align-items: center
+			width: 100%
+			margin-bottom: 40px
+		&-icon
+			margin-left: 13px
+			width: 8px
+			span
+				width: 8px
+				height: 4px
+		&-decor
+			display: block
+			width: 80px
+			height: 90px
+			color: #f2db00
+			position: absolute
+			top: 0
+			right: 0
+
+	.accordeon-body
+		padding: 0
+		max-width: 544px
+		&-content
+			border-top: none
+			margin-top: 10px
+			dl
+				dt
+					padding-left: 0
+				dd
+					font-weight: bold
+					color: #000000
+					padding-right: 0
+	.accordeon-footer
+		margin-top: 40px
+
+	.link-view-all
+		&:hover
+			cursor: pointer
 
 .services-config-ordering
 	background-color: #fff233

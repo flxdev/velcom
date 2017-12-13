@@ -126,8 +126,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	inputValIncDecr('.input-counter');
 	ToggleDisabled();
 	initTabs();
-
+	formSelects($('.js-select'));
 	var ajax = new AjaxLoading($(".ajax-trigger"));
+	var ChangeFormBlocks = new AppendedBlocks();
 });
 
 function activeSidebarLink() {
@@ -290,7 +291,7 @@ function Menu() {
 	    OpenClass = 'active';
 
 	trigger.on('click', function (e) {
-		console.log('kek');
+
 		if (!trigger.hasClass('anim')) {
 
 			trigger.addClass('anim');
@@ -398,6 +399,90 @@ function slidesCount(elem) {
 	});
 }
 
+function SetCountryFlags(data) {
+	if (!data.id) {
+		return data.text;
+	}
+	var countryEl = $('<span><img class="tel-image" src="' + data.element.dataset.img + '"></img><span class="tel-text">' + data.text + '</span></span>');
+	console.log(data.element.dataImg);
+	return countryEl;
+}
+function formSelects(elem) {
+	var trigger = elem;
+	trigger.each(function () {
+		var _ = $(this);
+		if (_.hasClass('countryTels')) {
+			_.select2({
+				minimumResultsForSearch: -1,
+				dropdownParent: _.parent(),
+				templateResult: SetCountryFlags,
+				templateSelection: SetCountryFlags
+			});
+		} else {
+			_.select2({
+				minimumResultsForSearch: -1,
+				dropdownParent: _.parent()
+
+			});
+		}
+		_.on('change', function () {
+			_.validate();
+		});
+	});
+}
+function AppendedBlocks() {
+	this.triggers = $('[data-display-trigger]');
+	this.initState();
+}
+AppendedBlocks.prototype = {
+	initState: function initState() {
+		var self = this;
+		this.triggers.each(function () {
+			var _ = $(this);
+			var name = _.data('display-trigger');
+			var type = _.attr('type') || _[0].nodeName.toLowerCase();
+			var value = _.data('display-trigger-value');
+			var elementsBlock = _.closest('form').parent().find('.form-appended-els');
+			var targetContainer = _.closest('form').find('[data-display-container]').filter('[data-display-container="' + name + '"]');
+			self.InitTriggerChange(_, name, type, value, elementsBlock, targetContainer);
+			_.trigger('change.appendBlock');
+		});
+	},
+	InitTriggerChange: function InitTriggerChange(_, name, type, value, elementsBlock, targetContainer) {
+		var _this2 = this;
+
+		_.on('change.appendBlock', function () {
+			switch (type) {
+			case 'radio':
+				var prop = _.prop('checked');
+				if (prop === true) {
+					_this2.appendElement(name, elementsBlock, targetContainer, value);
+				}
+				break;
+			case 'select':
+				var val = _.val();
+				if (val === value) {
+					_this2.appendElement(name, elementsBlock, targetContainer, value);
+				} else {
+					_this2.cleartTrgetContainer(targetContainer);
+				}
+				break;
+			}
+		});
+	},
+	appendElement: function appendElement(name, elementsBlock, targetContainer, value) {
+		var appendetEl = elementsBlock.find('[data-display-target="' + name + '"]').filter('[data-display-trigger-value="' + value + '"]').clone();
+		// appendetEl.find('select').select2('destroy');
+		targetContainer.empty().append(appendetEl);
+		// formSelects(appendetEl.find('select'))
+		formSelects(targetContainer.find('select'));
+		ToggleDisabled();
+	},
+	cleartTrgetContainer: function cleartTrgetContainer(targetContainer) {
+		targetContainer.empty();
+	}
+};
+
 function AjaxLoading(el) {
 	var _this = this;
 
@@ -475,7 +560,6 @@ function initContentsModalSlider() {
 		});
 	});
 }
-
 function initCustomSelectList() {
 	var _conf = {
 			initClass: 'cs-active',
@@ -519,6 +603,7 @@ function initCustomSelectList() {
 		});
 	});
 }
+
 function CheckForSelect(form) {
 	if (form.find('.select-check').length) {
 		var wrap = form.find('.select-check');
@@ -613,7 +698,7 @@ function Accordeon() {
 			var head = _.closest('.accordeon-head');
 			var parent = _.closest('.accordeon-wrapper');
 			var target = parent.find('.accordeon-body');
-			var text = _.find('.js-toggle-text');
+			var text = parent.find('.js-toggle-text');
 			if (!_.hasClass('anim')) {
 				_.addClass('anim');
 				if (target.hasClass('active')) {
@@ -934,23 +1019,52 @@ function ToggleDisabled() {
 
 	trigger.each(function () {
 		var _t = $(this),
-		    type = _t.attr('type'),
+		    type = _t.attr('type') || _t[0].nodeName.toLowerCase(),
 		    target = _t.data('trigger');
-
 		switch (type) {
+
 		case 'radio':
 			radioDisable(_t, target);
 			break;
 		case 'checkbox':
 			checkBoxDisable(_t, target);
 			break;
+		case 'select':
+			SelectDisable(_t, target);
+			break;
 		}
 	});
 }
+function SelectDisable(el, target) {
 
+	var _target = $("[data-target='" + target + "']");
+	var NeededValue = el.data('trigger-value');
+	el.off('change.disable').on('change.disable', function () {
+		var val = el.val();
+		if (val === NeededValue) {
+			if (_target.hasClass('disabled-field')) {
+				_target.removeClass('disabled-field').prop('disabled', false);
+			} else {
+				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true).prop('checked', false);
+				if (_target.hasClass('radio-wrapper')) {
+					_target.find('input').prop('checked', false);
+				}
+			}
+		} else {
+			if (_target.hasClass('disabled-field')) {
+				_target.removeClass('disabled-field').prop('disabled', false);
+			} else {
+				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true).prop('checked', false);
+				if (_target.hasClass('radio-wrapper')) {
+					_target.find('input').prop('checked', false);
+				}
+			}
+		}
+	});
+}
 function radioDisable(el, target) {
 	var _target = $("[data-target='" + target + "']");
-	el.off('click').on('click', function () {
+	el.off('click.disable').on('click.disable', function () {
 		var _dis = $(this).data('dis');
 		if (_dis) {
 			_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true);
@@ -962,7 +1076,7 @@ function radioDisable(el, target) {
 
 function checkBoxDisable(el, target) {
 	var _target = $("[data-target='" + target + "']");
-	el.off('click').on('click', function () {
+	el.off('click.disable').on('click.disable', function () {
 		if ($(this).prop('checked')) {
 			if (_target.hasClass('disabled-field')) {
 				_target.removeClass('disabled-field').prop('disabled', false);

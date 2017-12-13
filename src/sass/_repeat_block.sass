@@ -12,6 +12,8 @@
 		font-weight: 400
 		max-width: 714px
 		margin-bottom: 40px
+		display: flex
+		align-items: center
 	h3
 		color: #000000
 		font-size: 20px
@@ -19,6 +21,8 @@
 		font-weight: 400
 		max-width: 714px
 		margin-bottom: 22px
+		display: flex
+		align-items: center
 	h4
 		color: #000000
 		font-size: 18px
@@ -46,11 +50,14 @@
 			color: #767a7d
 			font-weight: 400
 	a
+		color: #000000
+		+tr(color .3s ease)
 		strong
 			color: #000000
 			font-weight: bold
-			+tr(all .3s ease)
+			+tr(color .3s ease)
 		&:hover
+			color: #cccccc
 			strong
 				color: #ecdc00
 	.youtube
@@ -151,17 +158,41 @@
 	height: 0
 	margin-top: 10px
 	.play-button
+		display: block
 		position: absolute
-		width: 3.125rem
-		height: 3.125rem
+		width: 90px
+		height: 90px
+		border: 1px solid #ffffff
+		border-radius: 50%
 		top: 50%
 		left: 50%
 		transform: translateX(-50%) translateY(-50%)
 		z-index: 1
 		cursor: pointer
 		transition: color .3s
-		color: #fff
+		color: rgba(#ffffff, .7)
 		font-size: 40px
+		+tr(all .3s ease)
+		&:hover
+			background-color: rgba(#000000, .5)
+			border-color: rgba(#000000, .5)
+		&:hover .play-button-icon
+			transform: translateX(-50%) translateY(-50%) scale(1.5)
+			opacity: 1
+	.play-button-icon
+		display: block
+		position: absolute
+		width: 0
+		height: 0
+		border-style: solid
+		border-width: 12.5px 0 12.5px 17px
+		border-color: transparent transparent transparent #fff233
+		opacity: .8
+		top: 50%
+		left: 55%
+		transform: translateX(-50%) translateY(-50%)
+		+tr(all .3s ease)
+			
 	iframe,
 	img
 		position: absolute
@@ -170,6 +201,10 @@
 		width: 100%
 		height: 100%
 
+.icon-arrow-circle use 
+	stroke: #eceff2
+	stroke-width: 3px
+	+tr(all .3s ease)
 blockquote
 	width: 100%
 	background-color: #f9f9f9
@@ -194,6 +229,16 @@ blockquote
 		font-size: 14px
 		line-height: 1.714
 		color: #494949
+sup
+	font-size: 0.8em
+	vertical-align: super
+sub
+	font-size: 0.8em
+	vertical-align: sub
+del 
+	font-size: inherit
+	text-decoration: line-through
+
 .h1
 	color: #ffffff
 	font-size: 48px
@@ -311,8 +356,15 @@ blockquote
 		display: inline-block
 		width: 25px
 		height: 25px
-		color: rgb(172, 174, 176);
-		+tr(color .3s ease)
+		color: rgb(172, 174, 176)
+	.icon-arrow-circle use
+		stroke: rgb(172, 174, 176)
+	&:hover
+		.icon-arrow-circle use
+			stroke: #000000
+	&:active
+		.icon-arrow-circle use
+			stroke: #edcd1c
 	&:hover &__arrow
 		color: #000000
 	&.back-link
@@ -322,6 +374,9 @@ blockquote
 		right: auto
 		left: 0
 		transform: translateY(-50%) rotate(180deg)
+	&.title-link
+		margin-right: 0
+		margin-left: auto
 
 .link-consultation
 	+link-btn( #000000,#ffffff, #f2db00, #edcd1c)
@@ -389,7 +444,7 @@ blockquote
 		height: 25px
 		margin-right: 20px
 		color:  #eceff2
-		+tr(all .3s ease)
+		+tr(margin .3s ease)
 	&__desc
 		width: 100%
 		margin-bottom: 70px
@@ -397,6 +452,9 @@ blockquote
 		position: absolute
 		bottom: 33px
 		left: 33px
+		z-index: 40
+		&:hover
+			background-color: #ffffff !important
 	&__icon
 		position: absolute
 		z-index: -1
@@ -409,6 +467,8 @@ blockquote
 	&:hover
 		background-color: #fff164
 		border-color: #fff164
+		.icon-arrow-circle use
+			stroke: #000000
 	&:hover	&__link
 		background-color: #f2db00
 	&:hover &__t-arrow
@@ -559,7 +619,7 @@ blockquote
 
 .breadcrumbs
 	padding-top: 45px
-	padding-bottom: 16px
+	padding-bottom: 10px
 	font-size: 0
 	&__link
 		display: inline-block
@@ -641,6 +701,7 @@ blockquote
 .side-bar
 	width: 25%
 	padding-right: 20px
+	padding-top: 20px
 	box-sizing: border-box
 	z-index: 2
 	// &__nav
@@ -689,7 +750,7 @@ blockquote
 	width: 75%
 	&__title
 		line-height: 1.406
-		max-width: 741px
+		max-width: 714px
 	+r(768)
 		width: 100%
 		margin-top: 30px
@@ -830,27 +891,32 @@ blockquote
 	&__title
 		font-weight: normal
 		margin-bottom: 20px
-		
-.infrastructure-links__item
-	display: inline-block
-	font-size: 14px
-	line-height: 1.714
-	padding: 9px 25px
-	border-radius: 2px
-	margin-right: 14px
-	margin-bottom: 17px
-	color: #767a7d
-	background-color: #ffffff
-	border: 1px solid #cccccc
-	+tr(all .3s ease)
-	&.active
-		color: #000000
-		background-color: #fdfcd5
-		border-color: #cdc115
-		pointer-events: none
-	&:hover
-		color: #000000
-		border-color: #000000
+
+.infrastructure-links 
+	border-bottom: 1px solid #cccccc
+	padding-bottom: 25px
+	margin-bottom: 50px
+	margin-top: 20px
+	&__item
+		display: inline-block
+		font-size: 14px
+		line-height: 1.714
+		padding: 9px 25px
+		border-radius: 2px
+		margin-right: 14px
+		margin-bottom: 17px
+		color: #767a7d
+		background-color: #ffffff
+		border: 1px solid #cccccc
+		+tr(all .3s ease)
+		&.active
+			color: #000000
+			background-color: #fdfcd5
+			border-color: #cdc115
+			pointer-events: none
+		&:hover
+			color: #000000
+			border-color: #000000
 
 .gallery-album
 	display: inline-block
@@ -932,12 +998,21 @@ blockquote
 		width: 35px
 		height: 35px
 		color: #acaeb0
-		+tr(all .3s ease)
 		&_prev
 			transform: rotate(180deg)
 		&_disable
 			pointer-events: none
 			opacity: .5
+		.icon-arrow-circle use 
+			stroke: #acaeb0
+		&:hover
+			.icon-arrow-circle use 
+				stroke: #000000
+			color: #000000
+		&:active
+			.icon-arrow-circle use 
+				stroke: #edcd1c
+
 	&__link
 		color: #767a7d
 		font-size: 16px
@@ -946,21 +1021,29 @@ blockquote
 		padding: 10px
 		letter-spacing: 0.02em
 		+tr(all .3s ease)
+		position: relative
+		&::after
+			content: ''
+			display: block
+			width: 35px
+			height: 35px
+			border: 2px solid transparent
+			border-radius: 50%
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+			+tr(all .3s ease)
+		&:hover
+			color: #000000
+			&::after
+				border-color: #eceff2
 		&.active
 			color: #000000
 			pointer-events: none
-			position: relative
 			&::after
-				content: ''
-				display: block
-				width: 35px
-				height: 35px
-				border: 2px solid #fff233
-				border-radius: 50%
-				position: absolute
-				top: 50%
-				left: 50%
-				transform: translate(-50%, -50%)
+				border-color: #fff233
+			
 	&__devider
 		color: #767a7d
 		margin: 0 20px
@@ -990,22 +1073,23 @@ blockquote
 		max-width: 80%
 		text-align: left
 		line-height: 1.4
-		margin-bottom: 137px
+		margin-bottom: 25px
+	&__strong
+		font-size: 48px
+		text-align: left
+	& a
+		margin-top: 61px
 	+r(980)
 		& a
 			padding-left: 7px
 			padding-right: 7px
 			font-size: 14px
-		&__title
-			font-size: 16px
 	+r(768)
 		max-width: 450px
 		margin: 0 auto
 		padding: 35px 30px
 		background-size: contain
 		text-align: left
-		&__title
-			margin-bottom: 60px
 		& a
 			padding-left: 20px
 			padding-right: 20px
@@ -1051,6 +1135,9 @@ blockquote
 				font-size: 16px
 				margin-top: 10px
 				color: #000000
+				+tr(all .3s ease)
+				&:hover
+					color: #cccccc
 			+r(1100)
 				margin-bottom: 35px
 		&-body
@@ -1176,7 +1263,8 @@ blockquote
 	&__t-text
 		display: block
 		width: 100%
-		max-width: 65%
+		max-width: 85%
+		padding-right: 5px
 		+tr(all .3s ease)
 	&__t-arrow
 		display: block
@@ -1184,9 +1272,12 @@ blockquote
 		height: 25px
 		color: #eceff2
 		margin-right: 15px
-		+tr(all .3s ease)
+		+tr(margin-right .3s ease)
 	&__info
 		+tr(all .3s ease)
+	&:hover
+		.icon-arrow-circle use 
+			stroke: #000000
 	&:hover &__t-arrow
 		margin-right: 0
 		color: #000000
@@ -1317,12 +1408,16 @@ blockquote
 	vertical-align: middle
 	position: relative
 	color: #000000
+	+tr(all .2s ease)
 	&.slick-disabled
 		color: rgba(#000000, .5)
+		pointer-events: none
 	&>svg
 		position: absolute
 		top: 0
 		left: 0
+	&:active
+		color: #edcd1c
 .inner-slider__prev
 	transform: rotate(180deg)
 

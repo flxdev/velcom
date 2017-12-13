@@ -6,3 +6,4 @@
 //=include lib/jquery.form-validator.min.js
 //=include lib/logic.js
 //=include lib/autosize.min.js
+//=include lib/select2.min.js

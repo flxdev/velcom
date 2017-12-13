@@ -133,8 +133,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	inputValIncDecr('.input-counter');
 	ToggleDisabled();
 	initTabs();
-
+	formSelects($('.js-select'));
 	var ajax = new AjaxLoading($(".ajax-trigger"));
+	var ChangeFormBlocks = new AppendedBlocks();
 	
 });
 
@@ -300,8 +301,7 @@ function Menu() {
 		target = $('.mob-menu'),
 		OpenClass = 'active';
 
-	trigger.on('click', function(e) {
-		console.log('kek');
+	trigger.on('click', function(e) {;
 		if (!trigger.hasClass('anim')) {
 
 			trigger.addClass('anim');
@@ -394,7 +394,6 @@ function initInnerPageSlider(){
 				nextArrow: parent.find('.inner-slider__next'),
 			});
 	});
-
 }
 
 function slidesCount(elem){
@@ -413,6 +412,86 @@ function slidesCount(elem){
 		totatSlideCont.text(slidesShown == 1 ? totalSlides : totalPages)
 		curSlideCont.text(curPage + 1)
 	});
+}
+
+function SetCountryFlags(data){
+	if (!data.id) { return data.text; }
+	var countryEl = $('<span><img class="tel-image" src="'+data.element.dataset.img+'"></img><span class="tel-text">' + data.text + '</span></span>');
+	console.log(data.element.dataImg)
+	return countryEl
+}
+function formSelects(elem){
+	let trigger = elem;
+	trigger.each(function(){
+		let _ = $(this);
+		if(_.hasClass('countryTels')){
+			_.select2({
+				minimumResultsForSearch: -1,
+				dropdownParent: _.parent(),
+				templateResult: SetCountryFlags,
+				templateSelection: SetCountryFlags  
+			});
+		}else{
+			_.select2({
+				minimumResultsForSearch: -1,
+				dropdownParent: _.parent(),
+
+			});
+		}
+		_.on('change',()=>{
+			_.validate();
+		});
+	});
+}
+function AppendedBlocks() {
+	this.triggers = $('[data-display-trigger]');
+	this.initState();
+}
+AppendedBlocks.prototype = {
+	initState(){
+		const self = this;
+		this.triggers.each(function(){
+			let _ = $(this);
+			let name = _.data('display-trigger');
+			let type = _.attr('type') || _[0].nodeName.toLowerCase();
+			let value = _.data('display-trigger-value');
+			let elementsBlock = _.closest('form').parent().find('.form-appended-els');
+			let targetContainer = _.closest('form').find('[data-display-container]').filter(`[data-display-container="${name}"]`);
+			self.InitTriggerChange(_,name,type,value,elementsBlock,targetContainer);
+			_.trigger('change.appendBlock')
+		});
+	},
+	InitTriggerChange(_,name,type,value,elementsBlock,targetContainer){
+		_.on('change.appendBlock',()=>{
+			switch (type) {
+				case 'radio':
+					let prop = _.prop('checked');
+					if(prop === true) {
+						this.appendElement(name,elementsBlock,targetContainer,value)
+					}
+					break;
+				case 'select' :
+					let val = _.val();
+					if(val === value){
+						this.appendElement(name,elementsBlock,targetContainer,value)
+					}else{
+						this.cleartTrgetContainer(targetContainer)
+					}
+					break;
+			}
+		});
+	},
+	appendElement(name,elementsBlock,targetContainer,value){
+		let appendetEl = elementsBlock.find(`[data-display-target="${name}"]`).filter(`[data-display-trigger-value="${value}"]`).clone();
+		// appendetEl.find('select').select2('destroy');
+		targetContainer.empty().append(appendetEl)
+		// formSelects(appendetEl.find('select'))
+		formSelects(targetContainer.find('select'));
+		ToggleDisabled();
+	},
+	cleartTrgetContainer(targetContainer){
+		targetContainer.empty();
+	}
 }
 
 function AjaxLoading(el){
@@ -493,7 +572,6 @@ function initContentsModalSlider(){
 		});
 	});
 }
-
 function initCustomSelectList() {
 	var _conf = {
 			initClass: 'cs-active',
@@ -540,6 +618,7 @@ function initCustomSelectList() {
 		});
 	});
 }
+
 function CheckForSelect(form){
 	if(form.find('.select-check').length){
 		var wrap = form.find('.select-check');
@@ -559,7 +638,7 @@ function CheckForSelect(form){
 	}
 }
 
- function YoutubeVids() {
+function YoutubeVids() {
 
 	let youtube = document.querySelectorAll( '.youtube' );
 	
@@ -633,7 +712,7 @@ function Accordeon() {
 		let head = _.closest('.accordeon-head');
 	  let parent = _.closest('.accordeon-wrapper');
 	  let target = parent.find('.accordeon-body');
-	  let text = _.find('.js-toggle-text');
+	  let text = parent.find('.js-toggle-text');
 	  if(!_.hasClass('anim')) {
 		 _.addClass('anim');
 		  if(target.hasClass('active')) {
@@ -1023,23 +1102,53 @@ function ToggleDisabled() {
 	
 	trigger.each(function() {
 		var _t = $(this),
-			type = _t.attr('type'),
+			type = _t.attr('type') || _t[0].nodeName.toLowerCase(),
 			target = _t.data('trigger');
-
 		switch (type) {
+
 		case 'radio':
 			radioDisable(_t, target);
 			break;
 		case 'checkbox' :
 			checkBoxDisable(_t, target);
 			break;
+		case 'select' :
+			SelectDisable(_t, target);
+			break;
 		}
 	});
 }
+function SelectDisable(el, target) {
 
+	let _target = $("[data-target='"+ target+"']");
+	const NeededValue = el.data('trigger-value');
+	el.off('change.disable').on('change.disable',()=>{
+		let val = el.val();
+		if(val === NeededValue){
+			if(_target.hasClass('disabled-field')){
+				_target.removeClass('disabled-field').prop('disabled', false);
+			} else {
+				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true).prop('checked' , false);
+				if(_target.hasClass('radio-wrapper')){
+					_target.find('input').prop('checked' , false);
+				}
+			}
+		} else {
+			if(_target.hasClass('disabled-field')){
+				_target.removeClass('disabled-field').prop('disabled', false);
+			} else {
+				_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true).prop('checked' , false);
+				if(_target.hasClass('radio-wrapper')){
+					_target.find('input').prop('checked' , false);
+				}
+			}
+		}
+	});
+
+}
 function radioDisable (el, target) {
 	var _target = $("[data-target='"+ target+"']");
-	el.off('click').on('click', function() {
+	el.off('click.disable').on('click.disable', function() {
 		var _dis = $(this).data('dis');
 		if(_dis){
 			_target.addClass('disabled-field').removeClass('editing').val('').prop('disabled', true);
@@ -1052,7 +1161,7 @@ function radioDisable (el, target) {
 
 function checkBoxDisable (el, target) {
 	var _target = $("[data-target='"+ target+"']");
-	el.off('click').on('click', function() {
+	el.off('click.disable').on('click.disable', function() {
 		if($(this).prop('checked')){
 			if(_target.hasClass('disabled-field')){
 				_target.removeClass('disabled-field').prop('disabled', false);
