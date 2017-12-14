@@ -534,8 +534,34 @@ del
 		width: 90%
 	&__img
 		width: 30%
+		position: relative
+		overflow: hidden
+		&::after
+			content: ''
+			display:block
+			background-color: rgba(#000000, .2)
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			opacity: 0
+			z-index: 1
+			+tr(all .3s ease)
+		img
+			+tr(transform .3s ease)
 		&.top-news
 			width: 100%
+			max-height: 323px
+			// +r(1100)
+			// 	height: 280px
+			// +r(980)
+			// 	height: 250px
+			// +r(850)
+			// 	height: 220px
+			// img
+			// 	width: auto
+			// 	height: 100%
 	&__short
 		max-width: 70%
 		padding-left: 30px
@@ -547,16 +573,38 @@ del
 	&__text
 		color: #000000
 		margin-bottom: 17px
+		+tr(color .3s ease)
+	&__info
+		+tr(color .3s ease)
+	&__date
+		margin-right: 10px
 	&__tags
 		display: inline-block
 		&::before
 			content: '|'
-			margin: 0 10px
+			margin-right: 10px
 	&.news-index
 		width: 50%
 		margin-bottom: 0
 	&.top-news
-		width: 49%
+		width: 48%
+		.news-item__inner
+			width: 100%
+	&.more-news
+		width: 80%
+		.news-item__inner
+			width: 100%
+		+r(980)
+			width: 100%
+	&:hover &__text
+		color: #5a5a5a
+	&:hover &__info
+		color: #2e3031
+	&:hover &__img
+		img
+			transform: scale(1.1)
+		&::after
+			opacity: 1
 	+r(980)
 		width: 100%
 		margin-bottom: 40px
@@ -589,10 +637,6 @@ del
 			margin-top: 25px
 		&__text
 			margin-bottom: 10px
-
-.news-item.news-index
-	& .news-item__tags
-		display: none
 .v-style-text
 	display: inline-block
 	position: relative
@@ -1490,7 +1534,7 @@ del
 	transform: translateY(100px)
 	opacity: 0
 	+tr(all .3s ease .35s)
-	&.active
+	&.animated-it
 		transform: translateY(0)
 		opacity: 1
 
@@ -1498,7 +1542,7 @@ del
 	transform: translateY(-50px)
 	opacity: 0
 	+tr(all .3s ease .55s)
-	&.active
+	&.animated-it
 		transform: translateY(0)
 		opacity: 1
 

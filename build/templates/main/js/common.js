@@ -66,11 +66,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		touchMove: false,
 		dragable: false,
 		arrows: true,
+		infinite: false,
 		prevArrow: '.data-center-slider__prev',
 		nextArrow: '.data-center-slider__next',
 		dots: true,
-		dotsClass: 'custom_dots data-dots',
+		appendDots: $('.data-center-slider__dots'),
 		asNavFor: '.data-center-slider-bg',
+		customPaging: function customPaging(slider, i) {
+			return '<a href="#">' + slider.$slides.eq(i).data('slide-text') + '</a>';
+			// return console.log(slider.$slides.eq(i).data('slide-text'));
+		},
 		responsive: [{
 			breakpoint: 768,
 			settings: {
@@ -83,6 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var sliderDataDliderBg = $('.data-center-slider-bg').slick({
 		touchMove: false,
 		dragable: false,
+		infinite: false,
 		dots: false,
 		arrows: false,
 		asNavFor: '.data-center-slider-text'
@@ -182,14 +188,14 @@ function scrollAnimations() {
 	// block fade-in and down->top 
 	inView('.fade-down').on('enter', function (el) {
 		if (!el.done) {
-			el.classList.add('active');
+			el.classList.add('animated-it');
 		}
 	}).on('exit', function (el) {
 		el.done = true;
 	});
 	inView('.fade-up').on('enter', function (el) {
 		if (!el.done) {
-			el.classList.add('active');
+			el.classList.add('animated-it');
 		}
 	}).on('exit', function (el) {
 		el.done = true;

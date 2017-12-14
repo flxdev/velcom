@@ -71,11 +71,16 @@ document.addEventListener('DOMContentLoaded', function () {
 		touchMove: false,
 		dragable: false,
 		arrows: true,
+		infinite: false,
 		prevArrow: '.data-center-slider__prev',
 		nextArrow: '.data-center-slider__next',
 		dots: true,
-		dotsClass: 'custom_dots data-dots',
+		appendDots: $('.data-center-slider__dots'),
 		asNavFor: '.data-center-slider-bg',
+		customPaging : function(slider, i) {
+			return '<a href="#">'+ slider.$slides.eq(i).data('slide-text') +'</a>';
+			// return console.log(slider.$slides.eq(i).data('slide-text'));
+		},
 		responsive: [
 			{
 				breakpoint: 768,
@@ -90,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var sliderDataDliderBg = $('.data-center-slider-bg').slick({
 		touchMove: false,
 		dragable: false,
+		infinite: false,
 		dots: false,
 		arrows: false,
 		asNavFor: '.data-center-slider-text',
@@ -192,7 +198,7 @@ function scrollAnimations(){
 	inView('.fade-down')
 		.on('enter', function(el){
 			if(!el.done) {
-				el.classList.add('active');
+				el.classList.add('animated-it');
 			}
 		}).on('exit', function(el){
 			el.done = true;
@@ -200,7 +206,7 @@ function scrollAnimations(){
 	inView('.fade-up')
 		.on('enter', function(el){
 			if(!el.done) {
-				el.classList.add('active');
+				el.classList.add('animated-it');
 			}
 		}).on('exit', function(el){
 			el.done = true;
@@ -705,35 +711,35 @@ function listhide(){
 	};
 
 function Accordeon() {
-  let triggers = $('.js-accordeon-trigger');
-  triggers.each(function() {
-	let _ = $(this);
-	_.off('click').on('click',() => {
-		let head = _.closest('.accordeon-head');
-	  let parent = _.closest('.accordeon-wrapper');
-	  let target = parent.find('.accordeon-body');
-	  let text = parent.find('.js-toggle-text');
-	  if(!_.hasClass('anim')) {
-		 _.addClass('anim');
-		  if(target.hasClass('active')) {
-			head.add(_).removeClass('active');
-			parent.add(_).removeClass('active');
-			target.removeClass('active').slideUp('normal');
-		  }else{
-			head.add(_).addClass('active');
-			parent.add(_).addClass('active');
-			target.addClass('active').slideDown('normal',() => {
-			let offset = target.offset().top;
-			$('html:not(:animated), body:not(:animated), .out:not(:animated)').animate({scrollTop: offset - 220}, 500);
-		  });
-		  }
-		  text.toggleText();
-		  setTimeout(() => {
-			_.removeClass('anim');
-		  },500);
-	  }
+	let triggers = $('.js-accordeon-trigger');
+	triggers.each(function() {
+		let _ = $(this);
+		_.off('click').on('click',() => {
+			let head = _.closest('.accordeon-head');
+			let parent = _.closest('.accordeon-wrapper');
+			let target = parent.find('.accordeon-body');
+			let text = parent.find('.js-toggle-text');
+			if(!_.hasClass('anim')) {
+				_.addClass('anim');
+				if(target.hasClass('active')) {
+					head.add(_).removeClass('active');
+					parent.add(_).removeClass('active');
+					target.removeClass('active').slideUp('normal');
+				}else{
+					head.add(_).addClass('active');
+					parent.add(_).addClass('active');
+					target.addClass('active').slideDown('normal',() => {
+						let offset = target.offset().top;
+						$('html:not(:animated), body:not(:animated), .out:not(:animated)').animate({scrollTop: offset - 220}, 500);
+					});
+			  	}
+				text.toggleText();
+				setTimeout(() => {
+					_.removeClass('anim');
+				},500);
+			}
+		});
 	});
-  });
 }
 
 function initMap() {

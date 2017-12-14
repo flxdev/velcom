@@ -77,26 +77,24 @@ block content
 									.select-check.js-select-custom
 										.select-carret
 											+icon('arrow_down')
-										button.selects.dropdown(data-placeholder='Год')
-											span.btn-text Год
+										button.selects.dropdown(data-placeholder='2017')
+											span.btn-text 2017
 										.dropdown-target
 											.dropdown-inner
 												.dropdown-content
 													.select-u-body.select-list
 														label.option
-															input(type='radio', name='yeats', value='2015', data-validation='required')
+															input(type='radio', name='years', value='2015', data-validation='required')
 															span 2015
 														label.option
-															input(type='radio', name='yeats', value='2016')
+															input(type='radio', name='years', value='2016')
 															span 2016
 														label.option
-															input(type='radio', name='yeats', value='2017')
+															input(type='radio', name='years', value='2017')
 															span 2017
 														label.option
-															input(type='radio', name='yeats', value='2018')
+															input(type='radio', name='years', value='2018')
 															span 2018
-
-									button(type="submit").link-button Показать
 						.projects-wpapper
 							//-mixin projesct-item(img, logo, title, info)
 							+projesct-item('project-1.jpg', 'project-logo-1.png', 'Мир ЦОД 2017', 'Аренда каналов до точек присутствия на крупнейших телекоммуникационных узлах а также каналы «точка-точка» до любого адреса', 'best-exp')

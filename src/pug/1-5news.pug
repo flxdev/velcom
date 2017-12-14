@@ -26,8 +26,37 @@ block content
 							+icon('arrow_down')
 					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
 			.content-inner
+				form(action="#").news-filter
+					.select-check.js-select-custom
+						.select-carret
+							+icon('arrow_down')
+						button.selects.dropdown(data-placeholder='Все')
+							span.btn-text Все
+						.dropdown-target
+							.dropdown-inner
+								.dropdown-content
+									.select-u-body.select-list
+										label.option
+											input(type='radio', name='news-filter', value='Акции', data-validation='required')
+											span Акции
+										label.option
+											input(type='radio', name='news-filter', value='Мероприятия')
+											span Мероприятия
+										label.option
+											input(type='radio', name='news-filter', value='Сми о нас ')
+											span Сми о нас 
+										label.option
+											input(type='radio', name='news-filter', value='Дата-центр')
+											span Дата-центр
+										label.option
+											input(type='radio', name='news-filter', value='Все')
+											span Все
+										label.option
+											input(type='radio', name='news-filter', value='Клиентам')
+											span Клиентам
 				.news-wrap.fade-down
-					+news-item('news-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', 'top-news', 'Сми о нас')
-					+news-item('news-2.jpg', '#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон', '23 августа 2017', 'top-news', 'Мероприятие')
-					+news-item('news-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', '','Сми о нас')
-					+news-item('news-2.jpg', '#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон', '23 августа 2017','', 'Мероприятие')
+					+news-item('news-bg-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', 'top-news', 'Сми о нас')
+					+news-item('news-bg-2.jpg', '#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон', '23 августа 2017', 'top-news', 'Мероприятие')
+					+news-item('news-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', 'more-news','Сми о нас')
+					+news-item('news-2.jpg', '#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон', '23 августа 2017','more-news', 'Мероприятие')
+				+paginate

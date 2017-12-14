@@ -80,7 +80,8 @@ mixin news-item(img, short_text, date, add_class, tags)
 					img(src="img/"+img, alt="")
 				div(class="news-item__short "+add_class)
 					p.text-primary.news-item__text= short_text
-					p.text-primary.news-item__date= date
+					p.text-primary.news-item__info
+						span.news-item__date= date
 						span.news-item__tags= tags
 	else
 		.news-item
@@ -89,7 +90,8 @@ mixin news-item(img, short_text, date, add_class, tags)
 					img(src="img/"+img, alt="")
 				.news-item__short
 					p.text-primary.news-item__text= short_text
-					p.text-primary.news-item__date= date
+					p.text-primary.news-item__info
+						span.news-item__date= date
 						span.news-item__tags= tags
 
 mixin breadcrumbs(crumbs)

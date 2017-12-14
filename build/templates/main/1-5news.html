@@ -99,32 +99,77 @@
                   </div>
                 </aside>
                 <div class="content-inner">
+                  <form class="news-filter" action="#">
+                    <div class="select-check js-select-custom">
+                      <div class="select-carret">
+                                      <svg class="icon-arrow_down">
+                                        <use xlink:href="#arrow_down"></use>
+                                      </svg>
+                      </div>
+                      <button class="selects dropdown" data-placeholder="Все"><span class="btn-text">Все</span></button>
+                      <div class="dropdown-target">
+                        <div class="dropdown-inner">
+                          <div class="dropdown-content">
+                            <div class="select-u-body select-list">
+                              <label class="option">
+                                <input type="radio" name="news-filter" value="Акции" data-validation="required"><span>Акции</span>
+                              </label>
+                              <label class="option">
+                                <input type="radio" name="news-filter" value="Мероприятия"><span>Мероприятия</span>
+                              </label>
+                              <label class="option">
+                                <input type="radio" name="news-filter" value="Сми о нас "><span>Сми о нас </span>
+                              </label>
+                              <label class="option">
+                                <input type="radio" name="news-filter" value="Дата-центр"><span>Дата-центр</span>
+                              </label>
+                              <label class="option">
+                                <input type="radio" name="news-filter" value="Все"><span>Все</span>
+                              </label>
+                              <label class="option">
+                                <input type="radio" name="news-filter" value="Клиентам"><span>Клиентам</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                   <div class="news-wrap fade-down">
                                   <div class="news-item top-news"><a class="news-item__inner" href="">
-                                      <div class="news-item__img top-news"><img src="img/news-1.jpg" alt=""></div>
+                                      <div class="news-item__img top-news"><img src="img/news-bg-1.jpg" alt=""></div>
                                       <div class="news-item__short top-news">
                                         <p class="text-primary news-item__text">«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля</p>
-                                        <p class="text-primary news-item__date">25 августа 2017<span class="news-item__tags">Сми о нас</span></p>
+                                        <p class="text-primary news-item__info"><span class="news-item__date">25 августа 2017</span><span class="news-item__tags">Сми о нас</span></p>
                                       </div></a></div>
                                   <div class="news-item top-news"><a class="news-item__inner" href="">
-                                      <div class="news-item__img top-news"><img src="img/news-2.jpg" alt=""></div>
+                                      <div class="news-item__img top-news"><img src="img/news-bg-2.jpg" alt=""></div>
                                       <div class="news-item__short top-news">
                                         <p class="text-primary news-item__text">#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон</p>
-                                        <p class="text-primary news-item__date">23 августа 2017<span class="news-item__tags">Мероприятие</span></p>
+                                        <p class="text-primary news-item__info"><span class="news-item__date">23 августа 2017</span><span class="news-item__tags">Мероприятие</span></p>
                                       </div></a></div>
-                                  <div class="news-item"><a class="news-item__inner" href="">
-                                      <div class="news-item__img"><img src="img/news-1.jpg" alt=""></div>
-                                      <div class="news-item__short">
+                                  <div class="news-item more-news"><a class="news-item__inner" href="">
+                                      <div class="news-item__img more-news"><img src="img/news-1.jpg" alt=""></div>
+                                      <div class="news-item__short more-news">
                                         <p class="text-primary news-item__text">«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля</p>
-                                        <p class="text-primary news-item__date">25 августа 2017<span class="news-item__tags">Сми о нас</span></p>
+                                        <p class="text-primary news-item__info"><span class="news-item__date">25 августа 2017</span><span class="news-item__tags">Сми о нас</span></p>
                                       </div></a></div>
-                                  <div class="news-item"><a class="news-item__inner" href="">
-                                      <div class="news-item__img"><img src="img/news-2.jpg" alt=""></div>
-                                      <div class="news-item__short">
+                                  <div class="news-item more-news"><a class="news-item__inner" href="">
+                                      <div class="news-item__img more-news"><img src="img/news-2.jpg" alt=""></div>
+                                      <div class="news-item__short more-news">
                                         <p class="text-primary news-item__text">#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон</p>
-                                        <p class="text-primary news-item__date">23 августа 2017<span class="news-item__tags">Мероприятие</span></p>
+                                        <p class="text-primary news-item__info"><span class="news-item__date">23 августа 2017</span><span class="news-item__tags">Мероприятие</span></p>
                                       </div></a></div>
                   </div>
+                                <div class="paginate"><a class="paginate__arrow paginate__arrow_prev" href="#">
+                                                  <svg class="icon-arrow-circle">
+                                                    <use xlink:href="#arrow-circle"></use>
+                                                  </svg></a>
+                                  <div class="paginate-button"><a class="paginate__link" href="#">1</a><span class="paginate__devider">...</span><a class="paginate__link" href="#">4</a><a class="paginate__link active" href="#">5</a><a class="paginate__link" href="#">6</a><span class="paginate__devider">...</span><a class="paginate__link" href="#">12</a></div><a class="paginate__arrow paginate__arrow_next paginate__arrow_disable" href="#">
+                                                  <svg class="icon-arrow-circle">
+                                                    <use xlink:href="#arrow-circle"></use>
+                                                  </svg></a>
+                                </div>
                 </div>
               </div>
             </div>
