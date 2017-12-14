@@ -169,6 +169,10 @@ body
 		&.active
 			transform: translateY(0)
 			opacity: 1
+	+r(1024)
+		&__title
+			&_offset
+				margin-left : 0
 	+r(980)
 		&_row
 			flex-wrap: wrap
@@ -182,8 +186,6 @@ body
 	+r(768)
 		padding: 90px 0 20px
 		&__title
-			&_offset
-				margin-left : 0
 			a
 				margin-top: 35px
 			&_col
@@ -221,7 +223,6 @@ body
 			width: 80%
 	+r(768)
 		width: auto
-		margin-right: -500px
 		&__item
 			margin-bottom: 0px
 		&__body
@@ -359,12 +360,15 @@ body
 		width: 50%
 		display: flex
 		flex-direction: column
+		padding-right: 20px
+		h2
+			margin-bottom: 20px
 		p
 			margin-top: auto
 			margin-bottom: 0
 	&__info
 		width: 50%
-		+r(980)
+		+r(950)
 			width: 100%
 	&__desc
 		position: relative
@@ -384,18 +388,22 @@ body
 		margin-top: 65px
 		max-width: 244px
 	&__build
-		max-width: 560px
+		width: 47%
 		position: absolute
 		bottom: -100px
 		left: -32px
 		z-index: -1
+		+r(950)
+			width: 70%
+		+r(768)
+			width: 90%
 	&__clouds
 		position: absolute
 		top: 10%
 		left: 0
 		width: 70%
 		z-index: -2
-	+r(980)
+	+r(950)
 		padding-top: 55px
 		padding-bottom: 0
 		&__title
@@ -485,6 +493,8 @@ body
 	&__wrap
 		display: flex
 		flex-wrap: wrap
+	&_bt
+		border-top: 1px solid #cccccc
 	+r(980)
 		&__title
 			margin-bottom: 30px
@@ -1405,25 +1415,12 @@ body
 		font-size: 0
 
 .services-config-ordering
-	background-color: #fff233
-	padding: 20px 34px
-	display: flex
-	justify-content: space-between
-	align-items: flex-start
-	flex-wrap: wrap
+	text-align: right
 	&__link
-		background-color: #f2db00
-		&:hover
-			background-color: #ffffff
-		+r(520)
-			margin-right: 0
-			margin-left: auto
-	&__count
-		+r(520)
-			width: 100%
-			margin-bottom: 20px
-		.h4
-			margin-bottom: 15px
+		padding-left: 47px
+		padding-right: 47px
+		margin-right: 0
+		margin-left: auto
 
 .services-form
 	width: 100%

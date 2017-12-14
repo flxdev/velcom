@@ -212,11 +212,6 @@
     <div class="modals">
       <!--TODO need modals!!!-->
       <div class="modal-layout js-popup-container" data-modal="popup-contents"></div>
-      <div class="modal-layout js-popup-container" data-modal="gallery-photo">
-        <div class="modal-container gallery-modal">
-          <div class="pop-close closePopup">CLOSE</div>
-        </div>
-      </div>
       <div class="modal-layout js-popup-container" data-modal="modal-menu">
         <div class="modal-container modal-menu">
           <div class="pop-close closePopup">
@@ -405,7 +400,7 @@
                     <select class="input-main" name="Category" id="Category" data-validation="length" data-validation-length="min1" data-validation-event="change" data-placeholder="Разъёмы электропитания">
                       <option value="1">Критический</option>
                       <option value="2">Высокий</option>
-                      <option value="3" selected>Обычный	</option>
+                      <option value="3" selected>Обычный</option>
                     </select>
                   </div>
                 </div>
@@ -470,7 +465,7 @@
                     <div class="input-row">
                       <div class="radio-group">
                         <div class="radio-wrapper">
-                          <input class="radio-input" type="radio" name="radio-group" id="radio-4" data-display-trigger="Call-type">
+                          <input class="radio-input" type="radio" name="radio-group" id="radio-4" data-validation="required" data-display-trigger="theme-question" data-display-trigger-value="1" checked>
                           <label class="radio-label" for="radio-4">
                             <div class="radio-label__custom">
                               <div class="radio-label__check"></div>
@@ -479,7 +474,7 @@
                           </label>
                         </div>
                         <div class="radio-wrapper">
-                          <input class="radio-input" type="radio" name="radio-group" id="radio-5">
+                          <input class="radio-input" type="radio" name="radio-group" id="radio-5" data-validation="required" data-display-trigger="theme-question" data-display-trigger-value="2">
                           <label class="radio-label" for="radio-5">
                             <div class="radio-label__custom">
                               <div class="radio-label__check"></div>
@@ -488,48 +483,8 @@
                           </label>
                         </div>
                       </div>
-                      <div class="input-item w100">
-                        <div class="input-wrapper">
-                          <div class="select-check js-select-custom">
-                            <div class="select-carret">
-                                    <svg class="icon-arrow_down">
-                                      <use xlink:href="#arrow_down"></use>
-                                    </svg>
-                            </div>
-                            <button class="selects dropdown" data-placeholder="Категория вопроса *"><span class="btn-text">Категория вопроса *</span></button>
-                            <div class="dropdown-target">
-                              <div class="dropdown-inner">
-                                <div class="dropdown-content">
-                                  <div class="select-u-body select-list">
-                                    <label class="option">
-                                      <input type="radio" name="yeats" value="Co-location" data-validation="checkbox_group" data-validation-qty="min1" data-validation-error-msg="Выберите тему обращения"><span>Co-location</span>
-                                    </label>
-                                    <label class="option">
-                                      <input type="radio" name="yeats" value="Выделенные сервера" data-validation="checkbox_group" data-validation-qty="min1" data-validation-error-msg="Выберите тему обращения"><span>Выделенные сервера</span>
-                                    </label>
-                                    <label class="option">
-                                      <input type="radio" name="yeats" value="Категория вопроса 3" data-validation="checkbox_group" data-validation-qty="min1" data-validation-error-msg="Выберите тему обращения"><span>Категория вопроса 3</span>
-                                    </label>
-                                    <label class="option">
-                                      <input type="radio" name="yeats" value="IaaS" data-validation="checkbox_group" data-validation-qty="min1" data-validation-error-msg="Выберите тему обращения"><span>IaaS</span>
-                                    </label>
-                                    <label class="option">
-                                      <input type="radio" name="yeats" value="Другое" data-validation="checkbox_group" data-validation-qty="min1" data-validation-error-msg="Выберите тему обращения"><span>Другое</span>
-                                    </label>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="input-item w100" style="display: none;">
-                        <div class="input-wrapper">
-                          <textarea class="input-main" type="text" rows="9" data-validation="length" data-validation-length="50-200"></textarea>
-                          <label class="input-label">Вопрос *</label>
-                        </div>
-                      </div>
                     </div>
+                    <div class="form-content" data-display-container="theme-question"></div>
                   </div>
                 </div>
                 <div class="form-block__footer">
@@ -547,10 +502,44 @@
                       </label>
                     </div>
                   </div>
-                  <button class="button-submit disabled-field" type="submit" data-target="btn-submit" value="Отправить">Отправит</button>
+                  <button class="button-submit disabled-field" type="submit" data-target="btn-submit" value="Отправить">Отправить</button>
                 </div>
               </div>
             </form>
+            <div class="form-appended-els" style="display: none;">
+              <!--/ блок 1-->
+              <div class="input-row" data-display-target="theme-question" data-display-trigger-value="1">
+                <div class="input-item w100">
+                  <div class="input-wrapper">
+                    <!-- у селектов в конейнере для добавление не должно быть класса .js-select-->
+                    <select class="input-main" name="Category" id="Category" data-validation="length" data-validation-length="min1" data-validation-event="change" data-placeholder="Разъёмы электропитания" data-trigger="otherQuestions" data-trigger-value="5">
+                      <option value="1">Co-location</option>
+                      <option value="2">Выделенные сервера</option>
+                      <option value="3">Категория 3</option>
+                      <option value="4">IaaS</option>
+                      <option value="5">Другое</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="input-item w100">
+                  <div class="input-wrapper">
+                    <textarea class="input-main disabled-field" type="text" rows="4" disabled="true" data-validation="length" data-validation-length="50-200" data-target="otherQuestions"></textarea>
+                    <label class="input-label">Вопрос *</label>
+                  </div>
+                </div>
+              </div>
+              <!--/ конец блок 1-->
+              <!--/ блок 2-->
+              <div class="input-row" data-display-target="theme-question" data-display-trigger-value="2">
+                <div class="input-item w100">
+                  <div class="input-wrapper">
+                    <textarea class="input-main" type="text" rows="4"></textarea>
+                    <label class="input-label">Вопрос *</label>
+                  </div>
+                </div>
+              </div>
+              <!--/ конец блок 2-->
+            </div>
           </div>
         </div>
       </div>

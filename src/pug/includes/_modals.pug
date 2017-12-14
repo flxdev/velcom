@@ -4,9 +4,9 @@ include _mixins.pug
 .modal-layout(data-modal='popup-contents').js-popup-container
 
 
-.modal-layout(data-modal='gallery-photo').js-popup-container
-	.modal-container.gallery-modal
-		.pop-close.closePopup CLOSE
+//- .modal-layout(data-modal='gallery-photo').js-popup-container
+//- 	.modal-container.gallery-modal
+//- 		.pop-close.closePopup CLOSE
 
 .modal-layout(data-modal='modal-menu').js-popup-container
 	.modal-container.modal-menu
@@ -227,7 +227,8 @@ include _mixins.pug
 														data-placeholder='Разъёмы электропитания')
 								option(value="1") Критический
 								option(value="2") Высокий
-								option(value="3",selected) Обычный	
+								option(value="3",selected) Обычный
+
 .modal-layout(data-modal='get-consultation').js-popup-container
 	.modal-container.consultation-modal
 		.modal-container-inner
@@ -296,8 +297,11 @@ include _mixins.pug
 											type="radio", 
 											name="radio-group", 
 											id="radio-4",
-											data-display-trigger='Call-type')
-										label.radio-label(for="radio-4")
+											data-validation="required",
+											data-display-trigger='theme-question',
+											data-display-trigger-value='1',
+											checked)
+										label.radio-label(for="radio-4",)
 											.radio-label__custom
 												.radio-label__check
 											.radio-label__text Вопрос по услугам
@@ -305,75 +309,17 @@ include _mixins.pug
 										input.radio-input(
 											type="radio", 
 											name="radio-group", 
-											id="radio-5")
+											id="radio-5",
+											data-validation="required",
+											data-display-trigger='theme-question',
+											data-display-trigger-value='2',
+											)
 										label.radio-label(for="radio-5")
 											.radio-label__custom
 												.radio-label__check
 											.radio-label__text Общие вопросы
-								.input-item.w100
-									.input-wrapper
-										.select-check.js-select-custom
-											.select-carret
-												+icon('arrow_down')
-											button.selects.dropdown(data-placeholder='Категория вопроса *')
-												span.btn-text Категория вопроса *
-											.dropdown-target
-												.dropdown-inner
-													.dropdown-content
-														.select-u-body.select-list
-															label.option
-																input(
-																	type='radio',
-																	name='yeats',
-																	value='Co-location',
-																	data-validation="checkbox_group",data-validation-qty="min1",
-																	data-validation-error-msg="Выберите тему обращения"
-																	)
-																span Co-location
-															label.option
-																input(
-																	type='radio',
-																	name='yeats',
-																	value='Выделенные сервера',
-																	data-validation="checkbox_group",data-validation-qty="min1",
-																	data-validation-error-msg="Выберите тему обращения"
-																	)
-																span Выделенные сервера
-															label.option
-																input(
-																	type='radio',
-																	name='yeats',
-																	value='Категория вопроса 3',
-																	data-validation="checkbox_group",data-validation-qty="min1",
-																	data-validation-error-msg="Выберите тему обращения"
-																	)
-																span Категория вопроса 3
-															label.option
-																input(
-																	type='radio',
-																	name='yeats',
-																	value='IaaS',
-																	data-validation="checkbox_group",data-validation-qty="min1",
-																	data-validation-error-msg="Выберите тему обращения"
-																	)
-																span IaaS
-															label.option
-																input(
-																	type='radio',
-																	name='yeats',
-																	value='Другое',
-																	data-validation="checkbox_group",data-validation-qty="min1",
-																	data-validation-error-msg="Выберите тему обращения"
-																	)
-																span Другое
-								.input-item.w100(style="display: none;")
-									.input-wrapper
-										textarea.input-main(
-											type="text",
-											rows="9",
-											data-validation="length",
-											data-validation-length="50-200")
-										label.input-label Вопрос *
+							.form-content(data-display-container='theme-question')
+							
 					.form-block__footer
 						.input-row
 							.input-item.w100
@@ -389,4 +335,42 @@ include _mixins.pug
 						button.button-submit.disabled-field(
 						type="submit",
 						data-target="btn-submit",
-						value="Отправить") Отправит
+						value="Отправить") Отправить
+			.form-appended-els(style='display: none;')
+				/// блок 1
+				.input-row(data-display-target='theme-question',data-display-trigger-value='1')
+					.input-item.w100
+						.input-wrapper
+							// у селектов в конейнере для добавление не должно быть класса .js-select
+							select.input-main(name='Category', 
+														id='Category',
+														data-validation='length', 
+														data-validation-length='min1',
+														data-validation-event="change",
+														data-placeholder='Разъёмы электропитания',
+														data-trigger='otherQuestions',data-trigger-value='5')
+								option(value="1") Co-location
+								option(value="2") Выделенные сервера
+								option(value="3") Категория 3
+								option(value="4") IaaS
+								option(value="5") Другое
+					.input-item.w100
+						.input-wrapper
+							textarea.input-main.disabled-field(
+								type="text",
+								rows="4",
+								disabled='true',
+								data-validation="length",
+								data-validation-length="50-200",
+								data-target='otherQuestions')
+							label.input-label Вопрос *
+				/// конец блок 1
+				/// блок 2
+				.input-row(data-display-target='theme-question',data-display-trigger-value='2')
+					.input-item.w100
+						.input-wrapper
+							textarea.input-main(
+								type="text",
+								rows="4")
+							label.input-label Вопрос *
+				/// конец блок 2

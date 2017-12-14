@@ -40,6 +40,7 @@
 			opacity: 1
 .modal-container
 	margin-top: 50px
+	margin-bottom: 50px
 	display: inline-block
 	// vertical-align: middle
 	text-align: left
@@ -74,6 +75,8 @@
 	animation-name: hide
 	animation-duration: 0.5s
 	animation-fill-mode: forwards
+	+r(768)
+		margin-top: 0
 
 @keyframes show
 	0%
@@ -113,13 +116,31 @@
 		padding: 20px 30px 70px 30px
 	+r(640)
 		padding: 20px 0 70px 0
+
 .contents-modal
+	width: 100%
 	max-width: 690px
 	& .pop-close
 		color: #ffffff
 		position: absolute
 		right: -40px
 		top: -40px
+		+tr(transform .5s ease)
+		+r(850)
+			right: 0
+			top: -30px
+		&:hover
+			transform: rotate(180deg)
+	&__nav 
+		position: absolute
+		width: 100%
+		top: 50%
+		left: 0
+		height: 1px
+		background: red
+		+r(850)
+			top: auto
+			bottom: 50px
 	&__next,
 	&__prev,
 		color: #ffffff
@@ -127,21 +148,34 @@
 		height: 65px
 		position: absolute
 		top: 50%
+		+tr(opacity .3s ease)
+		+r(850)
+			width: 20px
+			height: 50px
+			color: #000000
 	&__next
 		right: -60px
 		transform: translateY(-50%)
+		+r(850)
+			right: 10px
 	&__prev
 		left: -60px
 		transform: translateY(-50%) rotate(180deg)
+		+r(850)
+			left: 10px
+	&__next.slick-disabled,
+	&__prev.slick-disabled,
+		opacity: .5
 	& .modal-container-content
-		padding: 40px
-		padding-top: 0
+		padding: 0 50px 40px 50px
 
 .big-image-slider
-	 margin-bottom: 50px
-	 img
-	 	display: block
-	 	margin: 0 auto
+	margin-bottom: 50px
+	img
+		max-width: 100%
+		height: auto
+		display: block
+		margin: 0 auto
 
 .contents-slider
 	&-slide
@@ -154,15 +188,26 @@
 			color: #000000
 			margin-bottom: 35px
 		//&__description
-	
+
+.sertificates-modal
+	max-width: 600px
+
 .gallery-album-modal
 	& .modal-container-content
 		display: flex
+		+r(480)
+			flex-direction: column
 	& .contents-count
-		width: 10%
+		width: 15%
 		line-height: 1.5
+		+r(480)
+			width: 100%
 	& .contents-slider
-		width: 90%
+		width: 85%
+		+r(480)
+			width: 100%
+	& .slider-counter
+		padding: 0
 
 .modal-menu
 	background-color: #ffffff

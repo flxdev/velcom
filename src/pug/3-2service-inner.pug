@@ -318,10 +318,7 @@ block content
 													.accordeon-checked
 														+icon('checked')
 							.services-config-ordering.fade-down
-								.services-config-ordering__count
-									.h4 Стойка
-									.text-small.text-small_black Стандартные конфигурации
-								a(href="#").services-config-ordering__link.link-button Заказать 
+								a(href="#", data-scroll-to="#form-order").services-config-ordering__link.link-button.btn-scrl Заказать 
 							.data-center-cooperation.fade-down
 								.data-center-cooperation__promo(style="background-image:url('img/services-page.jpg')")
 									.data-center-partner
@@ -340,7 +337,7 @@ block content
 										|, и консультант свяжется с вами для разработки индивидуального предложения
 					hr
 					.services-config-inner
-						.form-block
+						.form-block#form-order
 							.form-block__head
 								.h2.form-block__title Форма заказа услуги
 							.tabs.js-tabs-wrap
