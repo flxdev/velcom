@@ -61,6 +61,11 @@
           </header>
           <main class="page__content">
             <div class="header-wrapper header-wrapper_full-page">
+              <div class="wrapper-bg wrapper-bg_video" style="background-image:url('img/video.jpg');">
+                <div class="video-container">
+                  <video class="fillWidth" autoplay="" loop="" data-src="img/video.mp4" type="video/mp4"></video>
+                </div>
+              </div>
                             <div class="contacts-header">
                               <div class="contacts-header__logo"><a class="header-logo" href="/"><span class="header-logo__icon">
                                                   <svg class="icon-velcom-logo">
@@ -68,11 +73,6 @@
                                                   </svg></span><span class="header-logo__text">DataCenter</span></a></div>
                               <div class="contacts-header__phones"><a class="contacts-header__link" href="tel:411">411<span>Бесплатно в сети velcom</span></a><a class="contacts-header__link" href="te:+375 29 600 20 20">+375 29 600 20 20<span>Техническая поддержка</span></a></div>
                             </div>
-              <div class="wrapper-bg wrapper-bg_video" style="background-image:url('img/video.jpg');">
-                <div class="video-container">
-                  <video class="fillWidth" autoplay="" loop="" data-src="img/video.mp4" type="video/mp4"></video>
-                </div>
-              </div>
               <div class="box">
                 <div class="header-inner header-inner_animate">
                   <div class="header-inner__title header-inner__title_offset">
@@ -112,7 +112,7 @@
                 <h2 class="basic-services-title h2 fade-up">Основные услуги</h2>
                 <div class="basic-services-slider">
                   <div class="basic-services-outer">
-                    <div class="basic-services-wrapper fade-down"><a class="service-card" href="#">
+                    <div class="basic-services-wrapper"><a class="service-card" href="#">
                         <h4 class="service-card__title h4">Co-location<span class="service-card__t-arrow">
                                           <svg class="icon-arrow-circle">
                                             <use xlink:href="#arrow-circle"></use>
@@ -165,22 +165,23 @@
                   </div>
                   <div class="about-center__characteristic">
                     <div class="datacenter-characteristics">
-                                    <div class="datacenter-characteristics__item">
+                                    <div class="datacenter-characteristics__item" style="undefined;">
                                       <div class="datacenter-characteristics__value">6 620</div>
                                       <div class="datacenter-characteristics__desc text-primary">кв.м. площадь ЦОД</div>
                                     </div>
-                                    <div class="datacenter-characteristics__item">
+                                    <div class="datacenter-characteristics__item" style="undefined;">
                                       <div class="datacenter-characteristics__value">800</div>
                                       <div class="datacenter-characteristics__desc text-primary">Серверных стоек</div>
                                     </div>
-                                    <div class="datacenter-characteristics__item">
+                                    <div class="datacenter-characteristics__item" style="undefined;">
                                       <div class="datacenter-characteristics__value">4</div>
                                       <div class="datacenter-characteristics__desc text-primary">Машинных зала</div>
                                     </div>
-                    </div><a class="link-more about-center__link" href="#">Больше о дата-центре<span class="link-more__arrow">
-                                                    <svg class="icon-arrow-circle">
-                                                      <use xlink:href="#arrow-circle"></use>
-                                                    </svg></span></a>
+                    </div>
+                                  <div class="link-more about-center__link"><a href="#">Больше о дата-центре<span class="link-more__arrow">
+                                                      <svg class="icon-arrow-circle">
+                                                        <use xlink:href="#arrow-circle"></use>
+                                                      </svg></span></a></div>
                   </div>
                   <div class="about-center__build"><img src="img/data-canter.png" alt="clouds"></div>
                 </div>
@@ -246,27 +247,40 @@
               <div class="advantages-decor fade-up" style="background-image:url('img/advantages-man-1.png');"></div>
             </div>
             <div class="main-news">
-              <div class="box">
+              <div class="box box_inner">
                 <div class="main-news__title fade-up">
-                  <h2 class="h2">Новости дата-центра</h2><a class="link-more main-news__more-news" href="#">Все новости<span class="link-more__arrow">
-                                                  <svg class="icon-arrow-circle">
-                                                    <use xlink:href="#arrow-circle"></use>
-                                                  </svg></span></a>
+                  <h2 class="h2">Новости дата-центра</h2>
                 </div>
                 <div class="main-news__wrap fade-down">
                                 <div class="news-item news-index"><a class="news-item__inner" href="">
-                                    <div class="news-item__img news-index"><img src="img/news-1.jpg" alt=""></div>
-                                    <div class="news-item__short news-index">
+                                    <div class="news-item-img">
+                                      <div class="news-item-img-outer">
+                                        <div class="news-item-img-inner">
+                                          <div class="news-item-img-el"><img src="img/news-1.jpg" alt=""></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="news-item__short">
                                       <p class="text-primary news-item__text">«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля</p>
                                       <p class="text-primary news-item__info"><span class="news-item__date">25 августа 2017</span><span class="news-item__tags">Сми о нас</span></p>
                                     </div></a></div>
                                 <div class="news-item news-index"><a class="news-item__inner" href="">
-                                    <div class="news-item__img news-index"><img src="img/news-2.jpg" alt=""></div>
-                                    <div class="news-item__short news-index">
+                                    <div class="news-item-img">
+                                      <div class="news-item-img-outer">
+                                        <div class="news-item-img-inner">
+                                          <div class="news-item-img-el"><img src="img/news-2.jpg" alt=""></div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="news-item__short">
                                       <p class="text-primary news-item__text">#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон</p>
                                       <p class="text-primary news-item__info"><span class="news-item__date">23 августа 2017</span><span class="news-item__tags">Мероприятие</span></p>
                                     </div></a></div>
                 </div>
+                              <div class="link-more main-news__more-news"><a href="#">Все новости<span class="link-more__arrow">
+                                                  <svg class="icon-arrow-circle">
+                                                    <use xlink:href="#arrow-circle"></use>
+                                                  </svg></span></a></div>
               </div>
             </div>
           </main>

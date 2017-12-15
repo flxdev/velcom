@@ -8,10 +8,11 @@ block config
 	- var main = true
 block content
 	.header-wrapper.header-wrapper_full-page
-		+contacts-header
 		.wrapper-bg.wrapper-bg_video(style="background-image:url('img/video.jpg')")
 			.video-container
 				video.fillWidth(autoplay='', loop='',data-src='img/video.mp4', type='video/mp4')
+		+contacts-header
+		
 		.box
 			.header-inner.header-inner_animate
 				.header-inner__title.header-inner__title_offset
@@ -43,7 +44,7 @@ block content
 			h2.basic-services-title.h2.fade-up Основные услуги
 			.basic-services-slider
 				.basic-services-outer
-					.basic-services-wrapper.fade-down
+					.basic-services-wrapper
 						a(href="#").service-card
 							h4.service-card__title.h4 Co-location
 								span.service-card__t-arrow
@@ -141,11 +142,11 @@ block content
 			.advantages__slider-dots
 		.advantages-decor.fade-up(style="background-image:url('img/advantages-man-1.png')")
 	.main-news
-		.box
+		.box.box_inner
 			.main-news__title.fade-up
 				h2.h2 Новости дата-центра
-				+link-more('Все новости', 'main-news__more-news')
 			.main-news__wrap.fade-down
 				//-news-item(img, short_text, date, add_class, tags)
 				+news-item('news-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', 'news-index', 'Сми о нас')
 				+news-item('news-2.jpg', '#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон', '23 августа 2017', 'news-index', 'Мероприятие')
+			+link-more('Все новости', 'main-news__more-news')

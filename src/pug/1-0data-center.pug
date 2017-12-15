@@ -18,36 +18,36 @@ block content
 				.data-center-slider-text.fade-down
 					.data-center-slider__slide(data-slide-text='Электроснабжение')
 						.data-center-slider__slide-wrap
-							.header-inner.header-inner_row.slider-animate
-								.header-inner__title.header-inner__title_col
+							.header-inner.header-inner_row
+								.header-inner__title.header-inner__title_col.slider-title-animate
 									h1.h1 Система электросбере&shy;жения
 								.header-inner__desc.header-inner__desc_col
-									p.text-increased.header-inner__text Независимое от городских сетей электропитание на базе ДГУ, также по принципу N+1, что превосходит требования Tier III
-									.datacenter-characteristics
-										+datacenter-characteristics('6 620', 'кв.м. площадь ЦОД')
-										+datacenter-characteristics('800', 'Серверных стоек')
-										+datacenter-characteristics('4', 'Машинных зала')
+									p.text-increased.header-inner__text.slider-text-animate Независимое от городских сетей электропитание на базе ДГУ, также по принципу N+1, что превосходит требования Tier III
+									.datacenter-characteristics.slider-characteristics-animate
+										+datacenter-characteristics('6 620', 'кв.м. площадь ЦОД', 'transition: opacity .3s ease .6s, transform .7s ease .6s')
+										+datacenter-characteristics('800', 'Серверных стоек', 'transition: opacity .3s ease .8s, transform .7s ease .8s')
+										+datacenter-characteristics('4', 'Машинных зала', 'transition: opacity .3s ease 1s, transform .7s ease 1s')
 					.data-center-slider__slide(data-slide-text='Кондиционирование')
 						.data-center-slider__slide-wrap
-							.header-inner.header-inner_row.slider-animate
-								.header-inner__title.header-inner__title_col
+							.header-inner.header-inner_row
+								.header-inner__title.header-inner__title_col.slider-title-animate
 									h1.h1 Дата-центр
 								.header-inner__desc.header-inner__desc_col
-									p.text-increased.header-inner__text ЦОД нашего уровня имеют собственную территорию, что исключает форс-мажорных ситуаций с окончанием сроков аренды у самого владельца ЦОД
-									.datacenter-characteristics
-										+datacenter-characteristics('35 000', 'Общая проектная площадь кв.м.')
-										+datacenter-characteristics('6620', 'Площадь зданий и сооружений кв.м.')
+									p.text-increased.header-inner__text.slider-text-animate ЦОД нашего уровня имеют собственную территорию, что исключает форс-мажорных ситуаций с окончанием сроков аренды у самого владельца ЦОД
+									.datacenter-characteristics.slider-characteristics-animate
+										+datacenter-characteristics('35 000', 'Общая проектная площадь кв.м.', 'transition: opacity .3s ease .6s, transform .7s ease .6s')
+										+datacenter-characteristics('6620', 'Площадь зданий и сооружений кв.м.', 'transition: opacity .3s ease .8s, transform .7s ease .8s')
 					.data-center-slider__slide(data-slide-text='Безопасность')
 						.data-center-slider__slide-wrap
-							.header-inner.header-inner_row.slider-animate
-								.header-inner__title.header-inner__title_col
+							.header-inner.header-inner_row
+								.header-inner__title.header-inner__title_col.slider-title-animate
 									h1.h1 Система электросбере&shy;жения
 								.header-inner__desc.header-inner__desc_col
-									p.text-increased.header-inner__text Независимое от городских сетей электропитание на базе ДГУ, также по принципу N+1, что превосходит требования Tier III
-									.datacenter-characteristics
-										+datacenter-characteristics('6 620', 'кв.м. площадь ЦОД')
-										+datacenter-characteristics('800', 'Серверных стоек')
-										+datacenter-characteristics('4', 'Машинных зала')
+									p.text-increased.header-inner__text.slider-text-animate Независимое от городских сетей электропитание на базе ДГУ, также по принципу N+1, что превосходит требования Tier III
+									.datacenter-characteristics.slider-characteristics-animate
+										+datacenter-characteristics('6 620', 'кв.м. площадь ЦОД', 'transition: opacity .3s ease .6s, transform .7s ease .6s')
+										+datacenter-characteristics('800', 'Серверных стоек', 'transition: opacity .3s ease .8s, transform .7s ease .8s')
+										+datacenter-characteristics('4', 'Машинных зала', 'transition: opacity .3s ease 1s, transform .7s ease 1s')
 				.data-center-slider__nav
 					button(type="button",class="slick-prev").data-center-slider__prev
 						+icon('arrow-light')

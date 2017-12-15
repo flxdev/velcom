@@ -28,27 +28,36 @@ document.addEventListener('DOMContentLoaded', function () {
 		touchMove: false,
 		dragable: false,
 		adaptiveHeight: true,
+		infinite: false,
 		responsive: [{
-			breakpoint: 1024,
+			breakpoint: 1200,
+			settings: {
+				slidesToShow: 3,
+				dots: true,
+				autoplay: true,
+				autoplaySpeed: 3500,
+				pauseOnDotsHover: true,
+				dotsClass: 'custom_dots'
+			}
+		}, {
+			breakpoint: 980,
 			settings: {
 				slidesToShow: 2,
 				dots: true,
 				autoplay: true,
 				autoplaySpeed: 3500,
-				dotsClass: 'custom_dots',
-				touchMove: true,
-				dragable: true
+				pauseOnDotsHover: true,
+				dotsClass: 'custom_dots'
 			}
 		}, {
-			breakpoint: 768,
+			breakpoint: 620,
 			settings: {
 				slidesToShow: 1,
 				dots: true,
 				autoplay: true,
 				autoplaySpeed: 3500,
-				dotsClass: 'custom_dots',
-				touchMove: true,
-				dragable: true
+				pauseOnDotsHover: true,
+				dotsClass: 'custom_dots'
 			}
 		}]
 	});
@@ -101,7 +110,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	});
 
-	var sliderDataDliderBg = $('.data-center-slider-bg').slick({
+	var services_slider = $('.basic-services-wrapper').slick({
+		slidesToShow: 3,
+		slidesToScroll: 3,
+		infinite: false,
+		arrows: true,
+		prevArrow: '<button class="slick-prev basic-services__prev slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
+		nextArrow: '<button class="slick-next basic-services__next slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
+		appendArrows: '.basic-services__nav',
+		adaptiveHeight: false,
+		dots: true,
+		dotsClass: 'custom_dots custom_dots_black basic-services__dots',
+		responsive: [{
+			breakpoint: 1250,
+			settings: {
+				slidesToShow: 2,
+				slidesToScroll: 2
+			}
+		}, {
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1
+			}
+		}]
+	});
+	$('.data-center-slider-text').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+		console.log(event);
+	});
+	var sliderDataSliderBg = $('.data-center-slider-bg').slick({
 		touchMove: false,
 		dragable: false,
 		infinite: false,
@@ -136,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	show_video();
 	scrollAnimations();
 	Menu();
-	initServicesSlider();
+	// initServicesSlider();
 	popUpsInit();
 	initInnerPageSlider();
 	initCustomSelectList();
@@ -209,6 +246,7 @@ function scrollAnimations() {
 	}).on('exit', function (el) {
 		el.done = true;
 	});
+	// block fade-in and top->down 
 	inView('.fade-up').on('enter', function (el) {
 		if (!el.done) {
 			el.classList.add('animated-it');
@@ -264,13 +302,13 @@ function popUpsInit() {
 		/**
    * Close buttons.
    */
-		$(_popup).on('click', '.modal-container', function (e) {
+		$(_popup).on('click touchstart ', '.modal-container', function (e) {
 			if (!$(_this.conf.close_selector).is(e.target)) {
 				e.stopPropagation();
 			}
 		});
 
-		_popup.find(_this.conf.close_selector).add(_popup).off('click.popup').on('click.popup', function () {
+		_popup.find(_this.conf.close_selector).add(_popup).off('click.popup').on('click.popup touchstart ', function () {
 			_this.f.closePopup(_popup);
 		});
 	};
@@ -343,42 +381,40 @@ function Menu() {
 	});
 }
 
-function initServicesSlider() {
-	var services_slider = $('.basic-services-wrapper');
-	// var children = services_slider.find('.service-card').length;
-	// // children > 3 ? services_slider.parent().addClass('serv_offset'): false;
-	// if(children > 3) {
-	//	services_slider.parent().addClass('serv_offset');
-	//	services_slider.children().last().after('<div></div>');
-	// }
-	services_slider.slick({
-		slidesToShow: 3,
-		slidesToScroll: 3,
-		dots: true,
-		infinite: false,
-		dotsClass: 'custom_dots custom_dots_black basic-services__dots',
-		arrows: true,
-		prevArrow: '<button class="slick-prev basic-services__prev slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
-		nextArrow: '<button class="slick-next basic-services__next slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
-		appendArrows: '.basic-services__nav',
-		touchMove: true,
-		dragable: true,
-		adaptiveHeight: false,
-		responsive: [{
-			breakpoint: 1200,
-			settings: {
-				slidesToShow: 2,
-				slidesToScroll: 2
-			}
-		}, {
-			breakpoint: 768,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1
-			}
-		}]
-	});
-}
+// function initServicesSlider(){
+// 	var services_slider = $('.basic-services-wrapper');
+// 	services_slider.slick({
+// 		slidesToShow: 3,
+// 		slidesToScroll: 3,
+// 		infinite: false,
+// 		arrows: true,
+// 		prevArrow: '<button class="slick-prev basic-services__prev slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
+// 		nextArrow: '<button class="slick-next basic-services__next slick-arrow slick-hidden" type="button" aria-disabled="true" tabindex="-1"><svg class="icon-arrow-light"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-light"></use></svg></button>',
+// 		appendArrows: '.basic-services__nav',
+// 		touchMove: true,
+// 		dragable: true,
+// 		adaptiveHeight : false,
+// 		responsive: [
+// 			{
+// 				breakpoint: 1250,
+// 				settings: {
+// 					slidesToShow : 2,
+// 					slidesToScroll: 2,
+// 					adaptiveHeight : false,
+// 					dots: true,
+// 					dotsClass: 'custom_dots custom_dots_black basic-services__dots',
+// 				}
+// 			},
+// 			{
+// 				breakpoint: 768,
+// 				settings: {
+// 					slidesToShow : 1,
+// 					slidesToScroll: 1
+// 				}
+// 			}
+// 		]
+// 	});
+// }
 
 function initInnerPageSlider() {
 
