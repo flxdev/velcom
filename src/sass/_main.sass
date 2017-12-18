@@ -24,6 +24,7 @@ input
 	font-size: 16px
 	+placeholder
 		font-family: $o
+	-webkit-appearance: none
 	&::-ms-clear
 		display: none
 
@@ -82,21 +83,12 @@ body
 	min-height: 100%
 	-webkit-overflow-scrolling: touch
 	overflow-x: hidden
+	overflow-y: auto
 	&.menu-stuck:not(.mobile)
 		overflow: hidden !important
 	&.menu-mobile
 		overflow: hidden !important
 		position: fixed
-
-//::-webkit-scrollbar-track
-//	background-color: #fff
-//
-//::-webkit-scrollbar
-//	width: 5px
-//	background-color: transparent
-//
-//::-webkit-scrollbar-thumb
-//	background-color: $green
 
 .hidden
 	display: none !important
@@ -260,12 +252,12 @@ body
 			padding: 0
 	&-wrapper
 		width: 100%
-		& .slick-track
-			display: flex
-			align-items: stretch
-		& .slick-list
-			display: flex
-			align-items: stretch
+		// & .slick-track
+		// 	display: flex
+		// 	align-items: stretch
+		// & .slick-list
+		// 	display: flex
+		// 	align-items: stretch
 	&__nav
 		width: 100%
 		position: absolute
@@ -509,6 +501,7 @@ body
 		align-items: center
 		margin-bottom: 63px
 	&__wrap
+		font-size: 0
 		display: flex
 		flex-wrap: wrap
 	&_bt

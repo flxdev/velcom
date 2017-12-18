@@ -13,8 +13,8 @@
 	right: 0
 	bottom: 0
 	top: 0
-	width: 100%
-	height: 100%
+	width: 0%
+	height: 0%
 	margin: 0
 	background: transparent
 	z-index: 200
@@ -28,13 +28,15 @@
 	contain: paint 
 	overflow-y: auto
 	&.active
-		background: rgba(0,0,0, .6)
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0, .6)
 		visibility: visible
 		opacity: 1
 		transition-delay: 0s
 		& .modal-container
 			opacity: 1
-			transition-delay: .2s
+			transition-delay: .2smodal-layout
 		& .consultation-modal
 			animation-name: show
 			animation-duration: 0.3s

@@ -507,17 +507,18 @@ del
 		color: #e8e8e8
 		+tr(all .3s ease)
 	&:hover
-		background-color: #fff164
-		border-color: #fff164
-		.icon-arrow-circle use
-			stroke: #000000
-	&:hover	&__link
-		background-color: #f2db00
-	&:hover &__t-arrow
-		margin-right: 0
-		color: #000000
-	&:hover &__icon
-		color: #f2db00
+		+notouch
+			background-color: #fff164
+			border-color: #fff164
+			.icon-arrow-circle use
+				stroke: #000000
+			.service-card__link
+				background-color: #f2db00
+			.service-card__t-arrow
+				margin-right: 0
+				color: #000000
+			.service-card__icon
+				color: #f2db00
 	&:active &__link
 		background-color: #edcd1c
 	+r(1100)
@@ -571,11 +572,15 @@ del
 	width: 100%
 	margin-bottom: 60px
 	&__inner
-		display: flex
-		flex-wrap: wrap
-		align-items: flex-start
+		display: inline-block
+		vertical-align: top
+		// display: flex
+		// flex-wrap: wrap
+		// align-items: flex-start
 		width: 90%
 	&-img
+		display: inline-block
+		vertical-align: top
 		width: 30%
 		overflow: hidden
 		+r(620)
@@ -606,6 +611,8 @@ del
 				+r(620)
 					width: 100%
 	&__short
+		display: inline-block
+		vertical-align: top
 		max-width: 70%
 		padding-left: 30px
 	&__text
@@ -810,7 +817,7 @@ del
 // .side-bar-banner
 // 	margin-top: 20px
 .side-bar-nav
-
+	position: relative
 	&__mob-btn
 		display: none
 		font-size: 16px
@@ -832,18 +839,27 @@ del
 				top: 0
 				left: 0
 		&_visible
+			box-shadow: 0 0.75rem 1.875rem 0 rgba(0,0,0,.2)
 			span.link-i-arrow
 				transform: translateY(-50%) rotate(180deg)
+
 	+r(768)
-		border: 1px solid #a6a6a6
 		width: 80%
 		&__mob-btn
 			padding: 18px 30px 18px 15px
 			display: block
+			border: 1px solid #a6a6a6
 		& .link-navigation
-			padding-left: 15px
-			padding-bottom: 18px
+			padding: 20px 15px
 			display: none
+			border: 1px solid #a6a6a6
+			position: absolute
+			left: 0
+			top: 60px
+			width: 100%
+			z-index: 10
+			background-color: #ffffff
+			box-shadow: 0 0.75rem 1.875rem 0 rgba(0,0,0,.2)
 	+r(450)
 		width: 100%
 
