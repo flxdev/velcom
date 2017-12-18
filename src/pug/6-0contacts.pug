@@ -25,7 +25,7 @@ block content
 				.contats-page
 					.contacts-page__title.fade-up
 						h2.h2 Дата-центр velcom
-						+link-more('Обратная связь', 'main-news__more-news')
+						+link-more('Обратная связь', 'title-link')
 					.contacts-wrap.fade-down
 						.contacts-item
 							p.text-small.contacts-item__title Справочно-информационная служба
@@ -109,57 +109,27 @@ block content
 										.input-row
 											.input-item.w100
 												.input-wrapper
-													.select-check.js-select-custom
-														.select-carret
-															+icon('arrow_down')
-														button.selects.dropdown(data-placeholder='Категория вопроса *')
-															span.btn-text Категория вопроса *
-														.dropdown-target
-															.dropdown-inner
-																.dropdown-content
-																	.select-u-body.select-list
-																		label.option
-																			input(
-																				type='radio',
-																				name='yeats',
-																				value='Категория вопроса 1',
-																				data-validation="required",
-																				data-validation-error-msg="Выберите тему обращения"
-																				)
-																			span Категория вопроса 1
-																		label.option
-																			input(
-																				type='radio',
-																				name='yeats',
-																				value='Категория вопроса 2',
-																				data-validation="required",
-																				data-validation-error-msg="Выберите тему обращения"
-																				)
-																			span Категория вопроса 2
-																		label.option
-																			input(
-																				type='radio',
-																				name='yeats',
-																				value='Категория вопроса 3',
-																				data-validation="required",
-																				data-validation-error-msg="Выберите тему обращения"
-																				)
-																			span Категория вопроса 3
-																		label.option
-																			input(
-																				type='radio',
-																				name='yeats',
-																				value='Категория вопроса 4',
-																				data-validation="required",
-																				data-validation-error-msg="Выберите тему обращения"
-																				)
-																			span Категория вопроса 4
+													select.input-main.js-select(name='Category', 
+																				id='Category',
+																				data-validation='length', 
+																				data-validation-length='min1',
+																				data-validation-event="change",
+																				data-placeholder='Разъёмы электропитания',
+																				data-trigger='otherQuestions',data-trigger-value='5')
+														option(value="1") Co-location
+														option(value="2") Выделенные сервера
+														option(value="3") Категория 3
+														option(value="4") IaaS
+														option(value="5") Другое
 											.input-item.w100
 												.input-wrapper
 													textarea.input-main(
 														type="text",
-														rows="9",
-														data-validation="required")
+														rows="4",
+														disabled='true',
+														data-validation="length",
+														data-validation-length="50-200",
+														data-target='otherQuestions')
 													label.input-label Вопрос *
 								.form-block__footer
 									.input-row

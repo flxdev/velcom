@@ -101,35 +101,6 @@ mixin news-item(img, short_text, date, add_class, tags)
 						span.news-item__date= date
 						span.news-item__tags= tags
 
-
-//- .partners-icon
-//- 	.partners-icon-outer
-//- 		.partners-icon-inner
-//- 			.partners-icon-logo
-//- 				img(src="img/png/sertificat-1.png", alt="partners logo")
-
-//- &-icon
-//- 	width: 22%
-//- 	+r(1100)
-//- 		width: 24%
-//- 	+r(980)
-//- 		width: 30%
-//- 		margin-bottom: 35px
-//- 	+r(480)
-//- 		width: 50%
-//- 	&-outer
-//- 		width: 100%
-//- 		height: 0
-//- 		position: relative
-//- 		padding-bottom: 100%
-//- 	&-inner
-//- 		+coverdiv
-//- 		+vertical
-//- 		border: 1px solid #cccccc
-//- 	&-logo
-//- 		display: inline-block
-//- 		vertical-align: middle
-//- 		width: 70%
 mixin breadcrumbs(crumbs)
 	.breadcrumbs
 		each crumb in crumbs
@@ -204,7 +175,10 @@ mixin link-banner(title, link, img, strong)
 mixin project-item(img, logo, title, info, add_class)
 	a(href="", class="project-item "+add_class)
 		.project-item__head
-			img(src="img/"+img, alt="project img")
+			.project-item-img-outer
+				.project-item-img-inner
+					.project-item-img-el
+						img(src="img/"+img, alt="project img")
 			.project-item-decor
 				.project-item-decor__logo
 					img(src="img/png/"+logo, alt="project logo")

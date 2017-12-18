@@ -833,7 +833,7 @@ function initMap() {
 			mapTypeControl: false,
 			scaleControl: false,
 			streetViewControl: false,
-			gestureHandling: "greedy",
+			gestureHandling: "cooperative",
 			zoomControlOptions: {
 				position: google.maps.ControlPosition.RIGHT_CENTER
 			},

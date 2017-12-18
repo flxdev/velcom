@@ -3,12 +3,12 @@
   <head>
     <meta charset="utf-8">
     <title>Контакты</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,  user-scalable=no">
     <meta name="format-detection" content="telephone=no">
     <meta content="True" name="HandheldFriendly">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="theme-color" content="#80baa6">
-    <meta name="apple-mobile-web-app-status-bar-style" content="#d56c72">
+    <meta name="theme-color" content="#fff233">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#fff233">
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
     <link rel="shortcut icon" href="img/fav/48x48.png" type="image/x-icon">
@@ -25,7 +25,7 @@
     <link rel="icon" type="image/png" sizes="194x194" href="img/fav/favicon-194x194.png">
     <link rel="icon" type="image/png" sizes="192x192" href="img/fav/android-chrome-192x192.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
-    <meta name="msapplication-TileColor" content="#d56c72">
+    <meta name="msapplication-TileColor" content="#fff233">
     <meta name="msapplication-TileImage" content="img/fav/mstile-144x144.png">
     <link rel="stylesheet" media="all" href="css/screen.min.css">
   </head>
@@ -94,7 +94,7 @@
                   <div class="contats-page">
                     <div class="contacts-page__title fade-up">
                       <h2 class="h2">Дата-центр velcom</h2>
-                                    <div class="link-more main-news__more-news"><a href="#">Обратная связь<span class="link-more__arrow">
+                                    <div class="link-more title-link"><a href="#">Обратная связь<span class="link-more__arrow">
                                                         <svg class="icon-arrow-circle">
                                                           <use xlink:href="#arrow-circle"></use>
                                                         </svg></span></a></div>
@@ -171,39 +171,18 @@
                               <div class="input-row">
                                 <div class="input-item w100">
                                   <div class="input-wrapper">
-                                    <div class="select-check js-select-custom">
-                                      <div class="select-carret">
-                                                      <svg class="icon-arrow_down">
-                                                        <use xlink:href="#arrow_down"></use>
-                                                      </svg>
-                                      </div>
-                                      <button class="selects dropdown" data-placeholder="Категория вопроса *"><span class="btn-text">Категория вопроса *</span></button>
-                                      <div class="dropdown-target">
-                                        <div class="dropdown-inner">
-                                          <div class="dropdown-content">
-                                            <div class="select-u-body select-list">
-                                              <label class="option">
-                                                <input type="radio" name="yeats" value="Категория вопроса 1" data-validation="required" data-validation-error-msg="Выберите тему обращения"><span>Категория вопроса 1</span>
-                                              </label>
-                                              <label class="option">
-                                                <input type="radio" name="yeats" value="Категория вопроса 2" data-validation="required" data-validation-error-msg="Выберите тему обращения"><span>Категория вопроса 2</span>
-                                              </label>
-                                              <label class="option">
-                                                <input type="radio" name="yeats" value="Категория вопроса 3" data-validation="required" data-validation-error-msg="Выберите тему обращения"><span>Категория вопроса 3</span>
-                                              </label>
-                                              <label class="option">
-                                                <input type="radio" name="yeats" value="Категория вопроса 4" data-validation="required" data-validation-error-msg="Выберите тему обращения"><span>Категория вопроса 4</span>
-                                              </label>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
+                                    <select class="input-main js-select" name="Category" id="Category" data-validation="length" data-validation-length="min1" data-validation-event="change" data-placeholder="Разъёмы электропитания" data-trigger="otherQuestions" data-trigger-value="5">
+                                      <option value="1">Co-location</option>
+                                      <option value="2">Выделенные сервера</option>
+                                      <option value="3">Категория 3</option>
+                                      <option value="4">IaaS</option>
+                                      <option value="5">Другое</option>
+                                    </select>
                                   </div>
                                 </div>
                                 <div class="input-item w100">
                                   <div class="input-wrapper">
-                                    <textarea class="input-main" type="text" rows="9" data-validation="required"></textarea>
+                                    <textarea class="input-main" type="text" rows="4" disabled="true" data-validation="length" data-validation-length="50-200" data-target="otherQuestions"></textarea>
                                     <label class="input-label">Вопрос *</label>
                                   </div>
                                 </div>
@@ -384,7 +363,7 @@
             <form class="js-validate" action="#">
               <div class="form-block">
                 <div class="form-block__head">
-                  <div class="h2 form-block__title">Получить консультацию</div>
+                  <div class="h2 form-block__title">Заявка в техподдержку</div>
                 </div>
                 <div class="form-block__body">
                   <div class="form-content">

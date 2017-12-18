@@ -23,6 +23,7 @@
 		margin-bottom: 22px
 		display: flex
 		align-items: center
+		flex-wrap: wrap
 	h4
 		color: #000000
 		font-size: 18px
@@ -80,16 +81,34 @@
 		max-width: 714px
 	.datacenter-characteristics
 		width: 100%
+		display: block
 		margin-top: 40px
 		margin-bottom: 40px
-		display: flex
-		flex-wrap: wrap
+		font-size: 0
 		&__item
-			width: 31%
-			margin-right: 2%
+			display: inline-block
+			font-size: 0
+			vertical-align: top
+			width: 30%
+			margin-right: 5%
 			margin-bottom: 20px
 			&:last-child
-				margin-right: 2%
+				margin-right: 0
+			+r(980)
+				width: 40%
+				&:nth-child(2n)
+					margin-right: 0
+			+r(768)
+				width: 30%
+				&:nth-child(2n)
+					margin-right: 5%
+			+r(620)
+				width: 40%
+				&:nth-child(2n)
+					margin-right: 0
+			+r(450)
+				width: 100%
+				margin-right: 0
 
 	.inner-slider
 		width: 100%
@@ -212,6 +231,10 @@
 		left: 0
 		width: 100%
 		height: 100%
+		margin: 0
+	img
+		object-fit: cover
+		max-height: 100%
 
 .icon-arrow-circle use 
 	stroke: #eceff2
@@ -257,7 +280,9 @@ del
 	line-height: 1.042
 	font-weight: 400
 	+r(768)
-		font-size: 30px
+		font-size: 40px
+	+r(620)
+		font-size: 32px
 .h2
 	color: #000000
 	font-size: 32px
@@ -393,6 +418,9 @@ del
 	&.title-link
 		margin-right: 0
 		margin-left: auto
+		+r(620)
+			margin: 10px 0 0 0
+			width: 100%
 
 .link-consultation
 	+link-btn( #000000,#ffffff, #f2db00, #edcd1c)
@@ -808,6 +836,7 @@ del
 				transform: translateY(-50%) rotate(180deg)
 	+r(768)
 		border: 1px solid #a6a6a6
+		width: 80%
 		&__mob-btn
 			padding: 18px 30px 18px 15px
 			display: block
@@ -815,6 +844,8 @@ del
 			padding-left: 15px
 			padding-bottom: 18px
 			display: none
+	+r(450)
+		width: 100%
 
 .content-inner
 	width: 75%
@@ -1127,7 +1158,9 @@ del
 		&__devider
 			margin: 0 7px
 			font-size: 14px
-
+	+r(420)
+		&__link
+			margin: 0 7px
 .link-banner
 	width: 100%
 	height: 100%
@@ -1297,20 +1330,25 @@ del
 				width: 100%
 
 .project-item
-	display: block
+	display: flex
+	flex-direction: column
+	justify-content: space-between
 	width: 48%
-	height: 580px
 	margin-bottom: 50px
 	border: 1px solid #cccccc
 	&__head
 		overflow: hidden
-		margin: -1px
 		font-size: 0
 		position: relative
-		height: 55%
-		img
-			transform: scale(1.2)
-			+tr(all .3s ease)
+	&-img-outer
+		width: 100%
+		height: 0
+		position: relative
+		padding-bottom: 70%
+	&-img-inner
+		+coverdiv
+	&-img-el
+		width: 100%
 		&::after
 			content: ''
 			display:block
@@ -1323,8 +1361,14 @@ del
 			opacity: 0
 			z-index: 1
 			+tr(all .3s ease)
+		img
+			max-height: 100%
+			object-fit: cover
+			+tr(transform .3s ease)
+			+r(620)
+				width: 100%
 	&__body
-		height: 45%
+		flex-grow: 1
 		background-color: #ffffff
 		padding: 35px 32px 40px 32px
 		display: flex
@@ -1362,9 +1406,9 @@ del
 		color: #5a5a5a
 	&:hover &__info
 		color: #2e3031
-	&:hover &__head
+	&:hover &-img-el
 		img
-			transform: scale(1.3)
+			transform: scale(1.1)
 		&::after
 			opacity: 1
 	&:hover
@@ -1405,13 +1449,6 @@ del
 		line-height: 2
 		padding: 0 12px
 		+tr(all .3s ease)
-
-.pop-close
-	width: 18px
-	height: 18px
-	color: #000000
-	display: inline-block
-
 
 /* sliders */
 
@@ -1560,8 +1597,11 @@ del
 			border-color: #cdc115
 		.tabs-item__check
 			opacity: 1
-
-
+	+r(768)
+		border-radius: 5px
+		margin-right: 10px
+		margin-bottom: 10px
+ 
 /* animated block*/
 .fade-down
 	transform: translateY(100px)
