@@ -70,8 +70,8 @@
                             </div>
               <div class="wrapper-bg" style="background-image:url('img/promo.jpg');"></div>
               <div class="box">
-                <div class="header-inner header-inner_inner-page">
-                  <div class="header-inner__title fade-down">
+                <div class="header-inner header-inner_inner-page header-inner_animate">
+                  <div class="header-inner__title">
                     <h1 class="h1">Контакты</h1>
                   </div>
                 </div>
@@ -92,14 +92,14 @@
                 </aside>
                 <div class="content-inner">
                   <div class="contats-page">
-                    <div class="contacts-page__title fade-up">
+                    <div class="contacts-page__title">
                       <h2 class="h2">Дата-центр velcom</h2>
                                     <div class="link-more title-link"><a href="#">Обратная связь<span class="link-more__arrow">
                                                         <svg class="icon-arrow-circle">
                                                           <use xlink:href="#arrow-circle"></use>
                                                         </svg></span></a></div>
                     </div>
-                    <div class="contacts-wrap fade-down">
+                    <div class="contacts-wrap">
                       <div class="contacts-item">
                         <p class="text-small contacts-item__title">Справочно-информационная служба</p>
                         <div class="contacts-item__link contacts-item__link_big"><a href="tel:+375 29 600 04 11">+375 29 600 04 11</a>, доб.&nbsp;6</div>
@@ -130,10 +130,10 @@
                         <div class="text-primary text-primary_black">УП «Велком» Юридический адрес: 220030, Республика Беларусь, г.Минск, ул. Интернациональная, 36-2. Почтовый адрес: 220141, г. Минск, пр. Независимости, д. 168, корп. 2, к. 12</div>
                       </div>
                     </div>
-                    <div class="map-container fade-down">
+                    <div class="map-container">
                       <div class="map-elem" id="map" data-lat="53.943744" data-lon="27.521280" data-icon="img/svg/point.svg"></div>
                     </div>
-                    <div class="contacts-form fade-down">
+                    <div class="contacts-form">
                       <form class="js-validate" action="#">
                         <div class="form-block">
                           <div class="form-block__head">
@@ -238,7 +238,7 @@
                   <div class="footer-info__wrap">
                     <div class="footer-contacts">
                       <p class="footer-contacts__title text-small">Справочно-информационная служба</p>
-                      <h5 class="footer-contacts__phone">+375 29 600 04 11, доб. 6</h5>
+                      <h5 class="footer-contacts__phone"><a href="tel:+375 29 600 04 11">+375 29 600 04 11</a>, доб.&nbsp;6</h5>
                       <p class="text-primary text-primary_black">с мобильного телефона velcom по номеру 411, бесплатно в сети velcom</p>
                       <div class="footer-contacts__working-hours">
                         <p class="text-primary">Пн–пт: 8:00–21:00</p>
@@ -274,8 +274,10 @@
                                   </div>
                     </div>
                     <div class="footer-more-info">
-                      <p class="text-small">Взаимодействие между клиентом и компанией по вопросам предоставления услуги происходит посредством электронной почты &#32;<strong>sales@vdc.by</strong>&nbsp;и мобильного номера &#32;<strong>411-6</strong>.</p>
-                      <p class="text-small">При отправлении сообщений на данный адрес в теме письма необходимо указывать номер договора.</p>
+                      <div class="content-area">
+                        <p>Взаимодействие между клиентом и компанией по вопросам предоставления услуги происходит посредством электронной почты &#32;<a href="mailto:sales@vdc.by"><strong>sales@vdc.by</strong></a>&nbsp;и мобильного номера &#32;<a href="tel:411"><strong>411-6</strong></a>.</p>
+                        <p>При отправлении сообщений на данный адрес в теме письма необходимо указывать номер договора.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -299,7 +301,7 @@
               <div class="box">
                 <div class="footer-copyright__wrap">
                   <div class="footer-copyright__item"><span class="text-small">&copy; 2017, Унитарное предприятие «Велком».</span></div>
-                  <div class="footer-copyright__map"><a class="text-small" href="#">Карта сайта</a><span class="text-small site-dev">Разработка сайта:&#32;<a href="#">FLEX.MEDIA</a></span></div>
+                  <div class="footer-copyright__map"><a class="text-small" href="#">Карта сайта</a><a class="text-small site-dev" href="#"><span>Разработка сайта:&#32;</span>FLEX.MEDIA</a></div>
                 </div>
               </div>
             </div>
@@ -310,6 +312,7 @@
     <div class="modals">
       <!--TODO need modals!!!-->
       <div class="modal-layout js-popup-container" data-modal="popup-contents"></div>
+      <div class="modal-layout js-popup-container" data-modal="popup-gallery"></div>
       <div class="modal-layout js-popup-container" data-modal="modal-menu">
         <div class="modal-container modal-menu">
           <div class="pop-close closePopup">
@@ -463,7 +466,7 @@
                 <div class="input-item w100">
                   <div class="input-wrapper">
                     <!-- у селектов в конейнере для добавление не должно быть класса .js-select-->
-                    <select class="input-main" name="Category" id="Category" data-validation="length" data-validation-length="min1" data-validation-event="change" data-placeholder="Разъёмы электропитания" data-trigger="otherQuestions" data-trigger-value="5">
+                    <select class="input-main" name="Category" id="Category" data-validation="length" data-validation-length="min1" data-placeholder="Разъёмы электропитания">
                       <option value="1">Co-location</option>
                       <option value="2">Выделенные сервера</option>
                       <option value="3">Категория 3</option>
@@ -474,8 +477,8 @@
                 </div>
                 <div class="input-item w100">
                   <div class="input-wrapper">
-                    <textarea class="input-main disabled-field" type="text" rows="4" disabled="true" data-validation="length" data-validation-length="50-200" data-target="otherQuestions"></textarea>
-                    <label class="input-label">Вопрос *</label>
+                    <textarea class="input-main" id="quest-0" type="text" rows="4" data-validation="length" data-validation-length="50-200"></textarea>
+                    <label class="input-label" for="quest-0">Вопрос *</label>
                   </div>
                 </div>
               </div>

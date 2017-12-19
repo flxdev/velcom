@@ -70,8 +70,8 @@
                             </div>
               <div class="wrapper-bg" style="background-image:url('img/promo.jpg');"></div>
               <div class="box">
-                <div class="header-inner header-inner_inner-page">
-                  <div class="header-inner__title fade-down">
+                <div class="header-inner header-inner_inner-page header-inner_animate">
+                  <div class="header-inner__title">
                     <h1 class="h1">Документация</h1>
                   </div>
                 </div>
@@ -89,9 +89,9 @@
                                         <use xlink:href="#arrow_down"></use>
                                       </svg></span></a>
                                   <ul class="link-navigation">
-                                    <li class="link-navigation__item"><a class="link-navigation__link link-navigation__link_active" href="#">Команда</a></li>
+                                    <li class="link-navigation__item"><a class="link-navigation__link link-navigation__link_active" href="#">Сертификаты</a></li>
+                                    <li class="link-navigation__item"><a class="link-navigation__link" href="#">Команда</a></li>
                                     <li class="link-navigation__item"><a class="link-navigation__link" href="#">Документация</a></li>
-                                    <li class="link-navigation__item"><a class="link-navigation__link" href="#">Сертификаты</a></li>
                                     <li class="link-navigation__item"><a class="link-navigation__link" href="#">Инфраструктура</a></li>
                                     <li class="link-navigation__item"><a class="link-navigation__link" href="#">Новости</a></li>
                                     <li class="link-navigation__item"><a class="link-navigation__link" href="#">Галерея</a></li>
@@ -99,7 +99,7 @@
                   </div>
                 </aside>
                 <div class="content-inner">
-                  <div class="data-sertificate fade-down"><a class="sertificate-item js-popup-button ajax-trigger" href="#" data-modal="popup-contents" data-href="sertificate-popup.html" data-slideto="0">
+                  <div class="data-sertificate"><a class="sertificate-item js-popup-button ajax-trigger" href="#" data-modal="popup-contents" data-href="sertificate-popup.html" data-slideto="0">
                                     <div class="sertificate-item__img"><img src="img/sertificate-2-min.jpg" alt="sertificate"></div>
                                     <div class="sertificate-item__info">
                                       <h4 class="h4 sertificate-item__title">Uptime Institute Tier III Certified</h4>
@@ -154,7 +154,7 @@
                   <div class="footer-info__wrap">
                     <div class="footer-contacts">
                       <p class="footer-contacts__title text-small">Справочно-информационная служба</p>
-                      <h5 class="footer-contacts__phone">+375 29 600 04 11, доб. 6</h5>
+                      <h5 class="footer-contacts__phone"><a href="tel:+375 29 600 04 11">+375 29 600 04 11</a>, доб.&nbsp;6</h5>
                       <p class="text-primary text-primary_black">с мобильного телефона velcom по номеру 411, бесплатно в сети velcom</p>
                       <div class="footer-contacts__working-hours">
                         <p class="text-primary">Пн–пт: 8:00–21:00</p>
@@ -190,8 +190,10 @@
                                   </div>
                     </div>
                     <div class="footer-more-info">
-                      <p class="text-small">Взаимодействие между клиентом и компанией по вопросам предоставления услуги происходит посредством электронной почты &#32;<strong>sales@vdc.by</strong>&nbsp;и мобильного номера &#32;<strong>411-6</strong>.</p>
-                      <p class="text-small">При отправлении сообщений на данный адрес в теме письма необходимо указывать номер договора.</p>
+                      <div class="content-area">
+                        <p>Взаимодействие между клиентом и компанией по вопросам предоставления услуги происходит посредством электронной почты &#32;<a href="mailto:sales@vdc.by"><strong>sales@vdc.by</strong></a>&nbsp;и мобильного номера &#32;<a href="tel:411"><strong>411-6</strong></a>.</p>
+                        <p>При отправлении сообщений на данный адрес в теме письма необходимо указывать номер договора.</p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -215,7 +217,7 @@
               <div class="box">
                 <div class="footer-copyright__wrap">
                   <div class="footer-copyright__item"><span class="text-small">&copy; 2017, Унитарное предприятие «Велком».</span></div>
-                  <div class="footer-copyright__map"><a class="text-small" href="#">Карта сайта</a><span class="text-small site-dev">Разработка сайта:&#32;<a href="#">FLEX.MEDIA</a></span></div>
+                  <div class="footer-copyright__map"><a class="text-small" href="#">Карта сайта</a><a class="text-small site-dev" href="#"><span>Разработка сайта:&#32;</span>FLEX.MEDIA</a></div>
                 </div>
               </div>
             </div>
@@ -226,6 +228,7 @@
     <div class="modals">
       <!--TODO need modals!!!-->
       <div class="modal-layout js-popup-container" data-modal="popup-contents"></div>
+      <div class="modal-layout js-popup-container" data-modal="popup-gallery"></div>
       <div class="modal-layout js-popup-container" data-modal="modal-menu">
         <div class="modal-container modal-menu">
           <div class="pop-close closePopup">
@@ -379,7 +382,7 @@
                 <div class="input-item w100">
                   <div class="input-wrapper">
                     <!-- у селектов в конейнере для добавление не должно быть класса .js-select-->
-                    <select class="input-main" name="Category" id="Category" data-validation="length" data-validation-length="min1" data-validation-event="change" data-placeholder="Разъёмы электропитания" data-trigger="otherQuestions" data-trigger-value="5">
+                    <select class="input-main" name="Category" id="Category" data-validation="length" data-validation-length="min1" data-placeholder="Разъёмы электропитания">
                       <option value="1">Co-location</option>
                       <option value="2">Выделенные сервера</option>
                       <option value="3">Категория 3</option>
@@ -390,8 +393,8 @@
                 </div>
                 <div class="input-item w100">
                   <div class="input-wrapper">
-                    <textarea class="input-main disabled-field" type="text" rows="4" disabled="true" data-validation="length" data-validation-length="50-200" data-target="otherQuestions"></textarea>
-                    <label class="input-label">Вопрос *</label>
+                    <textarea class="input-main" id="quest-0" type="text" rows="4" data-validation="length" data-validation-length="50-200"></textarea>
+                    <label class="input-label" for="quest-0">Вопрос *</label>
                   </div>
                 </div>
               </div>

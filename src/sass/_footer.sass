@@ -41,6 +41,10 @@ footer
 		font-size: 21px
 		line-height: 1.714
 		font-weight: bold
+		a
+			+tr(color .1s ease-in-out)
+			&:hover
+				color: #ecdc00
 	&__working-hours
 		margin-top: 10px
 	+r(1100)
@@ -135,7 +139,7 @@ footer
 			&:after
 				background-color: #55acee
 		&:hover
-			background-color: #ffffff
+			background-color: rgba(#000000, 0)
 			color: #ffffff
 			&:after
 				opacity: 1
@@ -174,14 +178,15 @@ footer
 		font-size: 14px
 		font-weight: bold
 		color: #000000
-		+tr(color .3s ease)
+		+tr(color .1s ease-in-out)
 		img
 			max-width: 35px
 			margin-right: 8px
 			display: inline-block
 			vertical-align: middle
 		&:hover
-			color: #ecdc00
+			+notouch
+				color: #ecdc00
 
 	+r(850)
 		&__list
@@ -207,7 +212,7 @@ footer
 		font-weight: bold
 		font-size: 14px
 		line-height: 1.714
-		+tr(color .3s ease)
+		+tr(color .1s ease-in-out)
 		&::after
 			content: '|'
 			display: inline-block
@@ -218,7 +223,8 @@ footer
 			&::after
 				display: none
 		&:hover
-			color: #ecdc00
+			+notouch
+				color: #ecdc00
 
 .footer-copyright
 	&__wrap
@@ -231,9 +237,10 @@ footer
 		width: 50%
 
 		a
-			+tr(color .3s ease)
+			+tr(color .1s ease-in-out)
 			&:hover
-				color: #000000
+				+notouch
+					color: #000000
 	+r(768)
 		&__item
 			width: 100%
@@ -242,18 +249,20 @@ footer
 			width: 100%
 
 
-.site-dev
+a.site-dev
 	margin-left: auto
 	padding-left: 20px
-	+tr(color .3s ease)
+	color: #000000
+	font-weight: bold
+	+tr(color .1s ease-in-out)
+	span
+		font-weight: normal
+		+tr(color .1s ease-in-out)
 	&:hover
-		color: #000000
-	a
-		color: #000000
-		font-weight: bold
-		+tr(color .3s ease)
-		&:hover
+		+notouch
 			color: #ecdc00
+			span
+				color: #000000
 	+r(400)
 		padding-left: 0
 		width: 50%

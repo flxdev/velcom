@@ -94,7 +94,7 @@ body
 	display: none !important
 
 .header-logo
-	display: flex
+	display: inline-flex
 	align-items: center
 	&__icon
 		display: inline-block
@@ -159,13 +159,6 @@ body
 		color: rgba(#ffffff, .8)
 		margin-bottom: 60px
 		max-width: 90%
-	&_animate
-		transform: translateY(40px)
-		opacity: 0
-		+tr(all .5s ease .8s)
-		&.active
-			transform: translateY(0)
-			opacity: 1
 	+r(1024)
 		&__title
 			&_offset
@@ -200,6 +193,12 @@ body
 	margin-bottom: 0
 	margin-top: auto
 	width: 100%
+	transform: translateY(50px)
+	opacity: 0
+	+tr(all .5s ease-in-out 1s)
+	&.active
+		transform: translateY(0)
+		opacity: 1
 	&__item
 		display: inline-block
 		margin-right: 35px
@@ -514,11 +513,17 @@ body
 			display: block
 			position: static
 .news-filter
-	display: flex
-	justify-content: flex-end
 	margin-bottom: 50px
-	+r(480)
-		margin-bottom: 30px
+	.select-check
+		margin-right: 0
+		margin-left: auto
+		+r(768)
+			margin-right: auto
+			margin-left: 0
+		+r(450)
+			margin-right: 0
+			margin-left: auto
+			margin-bottom: 30px
 .news-wrap
 	display: flex
 	flex-wrap: wrap
@@ -904,9 +909,10 @@ body
 	padding: 0 0 20px
 	color: #000000
 	border-bottom: 1px solid #cccccc
-	+tr(all .3s ease)
+	+tr(color .1s ease-in-out)
 	&:hover
-		color: #ecdc00
+		+notouch
+			color: #ecdc00
 	&:not(:first-child)
 		margin-top: 40px
 	+r(620)
@@ -915,9 +921,10 @@ body
 .sub-page-link
 	padding: 5px 0
 	margin-bottom: 10px
-	+tr(all .3s ease)
+	+tr(color .1s ease-in-out)
 	&:hover
-		color: #000000
+		+notouch
+			color: #000000
 
 
 .search-wrap
@@ -966,9 +973,10 @@ body
 		margin-bottom: 100px
 		a
 			color: #000000
-			+tr(color .3s ease)
+			+tr(color .1s ease-in-out)
 			&:hover
-				color: #cccccc
+				+notouch
+					color: #cccccc
 
 	+r(560)
 		&__title
@@ -1081,7 +1089,7 @@ body
 		position: absolute
 		right: 20px
 		top: 23px
-		z-index: 2
+		z-index: 1
 		+tr(all .5s ease)
 		svg
 			position: absolute
@@ -1129,9 +1137,10 @@ body
 	white-space: normal !important
 	+tr(background-color .3s)
 	&:hover
-		background-color: #f5f7f8
-		span
-			color: #000000
+		+notouch
+			background-color: #f5f7f8
+			span
+				color: #000000
 	span 
 		+tr(all .3s)
 	input
@@ -1491,7 +1500,7 @@ body
 		color: #000000
 		font-size: 16px
 		margin-bottom: 14px
-		+tr(all .3s ease)
+		+tr(color .1s ease-in-out)
 		&_big
 			font-size: 20px
 			letter-spacing: -0.02
@@ -1501,7 +1510,8 @@ body
 			height: 16px
 			margin-left: 10px
 		&:hover
-			color: #ecdc00
+			+notouch
+				color: #ecdc00
 	&__title
 		margin-bottom: 23px
 	&__subtitle

@@ -12,7 +12,9 @@ include _mixins.pug
 			.footer-info__wrap
 				.footer-contacts
 					p.footer-contacts__title.text-small Справочно-информационная служба
-					h5.footer-contacts__phone +375 29 600 04 11, доб. 6
+					h5.footer-contacts__phone
+						a(href="tel:+375 29 600 04 11") +375 29 600 04 11
+						| , доб.&nbsp;6
 					p.text-primary.text-primary_black с мобильного телефона velcom по номеру 411, бесплатно в сети velcom
 					.footer-contacts__working-hours
 						p.text-primary Пн–пт: 8:00–21:00
@@ -31,12 +33,15 @@ include _mixins.pug
 							+icon('social-twitter')
 					+search-form('footer-search', '')
 				.footer-more-info
-					p.text-small Взаимодействие между клиентом и компанией по вопросам предоставления услуги происходит посредством электронной почты &#32;
-						strong sales@vdc.by
-						|&nbsp;и мобильного номера &#32;
-						strong 411-6
-						|.
-					p.text-small При отправлении сообщений на данный адрес в теме письма необходимо указывать номер договора.
+					.content-area
+						p Взаимодействие между клиентом и компанией по вопросам предоставления услуги происходит посредством электронной почты &#32;
+							a(href="mailto:sales@vdc.by")
+								strong sales@vdc.by
+							|&nbsp;и мобильного номера &#32;
+							a(href="tel:411")
+								strong 411-6
+							|.
+						p При отправлении сообщений на данный адрес в теме письма необходимо указывать номер договора.
 .footer-links
 	.box
 		.footer-services
@@ -77,5 +82,6 @@ include _mixins.pug
 				span.text-small &copy; 2017, Унитарное предприятие «Велком».
 			.footer-copyright__map
 				a.text-small(href="#") Карта сайта
-				span.text-small.site-dev Разработка сайта:&#32;
-					a(href="#") FLEX.MEDIA
+				a(href="#").text-small.site-dev
+					span Разработка сайта:&#32;
+					|FLEX.MEDIA

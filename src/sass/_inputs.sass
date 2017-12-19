@@ -60,6 +60,18 @@
 			display: inline-flex
 			flex-flow: row nowrap
 			align-items: flex-start
+			position: relative
+			.select2,
+			.input-main
+				border: 1px solid transparent
+				&:hover,
+				&:focus
+					border: 1px solid transparent
+			.input-main.error
+				border: 1px solid transparent
+			.select2-container--open
+				border: 1px solid transparent !important
+				margin-top: 0 !important
 			.input-wrapper
 				width: auto
 				// margin: 0!important
@@ -67,16 +79,15 @@
 					height: 60px
 				&:first-child
 					// max-width: 135px
+					margin-left: -1px
 					width: 53%
 					min-width: 115px
 					max-width: 150px
 					.select2,.input-main
 						border-top-right-radius: 0
 						border-bottom-right-radius: 0
-						border-right: 0
 						padding-left: 20%
 						padding-top: 18px
-						
 					.tel-image
 						display: inline-block
 						vertical-align: bottom
@@ -97,8 +108,12 @@
 					flex-grow: 1
 					.help-block
 						left: -53%
-			.countryTels
-
+					.input-main
+						border-top-left-radius: 0
+						border-bottom-left-radius: 0
+						border-left: 1px solid #a6a6a6
+			//.countryTels
+			
 	&-wrapper
 		position: relative
 		+tr(all .5s linear)
@@ -137,6 +152,7 @@
 			&:hover
 				border-color: #000000
 			&:focus
+				border-width: 2px
 				border-color: #000000
 				& ~ label,& ~ .label,& ~ .input-label
 					opacity: .7
@@ -177,6 +193,8 @@
 			resize: none
 			background-color: #FFF
 			+tr(all .3s ease)
+			&:hover
+				border-color: #000000
 			.select2-selection__arrow
 				width: 10px
 				height: 5px
@@ -189,7 +207,8 @@
 				b
 					display: none
 			&.select2-container--open
-				border: 2px solid #000;
+				border: 2px solid #000
+				border-bottom-color: #cccccc
 				margin-top: -1px
 				.select2-selection__arrow
 					transform: translateY(-50%) rotate(180deg)
@@ -249,13 +268,12 @@
 		position: relative;
 		padding: 15px 10px 15px 20px
 		font-size: 14px
-		color: #737373
 		line-height: 1.429;
 		background-color: #ffffff
 		margin-bottom: 0 !important
 		white-space: normal !important
 		+tr(background-color .3s)
-		color: #000000
+		color: #737373
 		&[aria-selected=true]
 			background-color: #ffffff
 		&:hover,&.select2-results__option--highlighted

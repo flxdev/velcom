@@ -208,7 +208,6 @@ function scrollAnimations(){
 		bottom: 0,
 	});
 	inView.threshold(0.1);
-	// 1st-block info slide down->top
 	inView('.header-inner_animate')
 		.on('enter', function(el){
 			if(!el.done) {
@@ -217,8 +216,6 @@ function scrollAnimations(){
 		}).on('exit', function(el){
 			el.done = true;
 		});
-
-	// 1st-block contact slide top->down
 	inView('.contacts-header')
 		.on('enter', function(el){
 			if(!el.done) {
@@ -227,20 +224,18 @@ function scrollAnimations(){
 		}).on('exit', function(el){
 			el.done = true;
 		});
-	// block fade-in and down->top 
-	inView('.fade-down')
+	inView('.promo-reclame')
 		.on('enter', function(el){
 			if(!el.done) {
-				el.classList.add('animated-it');
+				el.classList.add('active');
 			}
 		}).on('exit', function(el){
 			el.done = true;
-		});
-	// block fade-in and top->down 
-	inView('.fade-up')
+		});	
+	inView('.data-center-slider-text')
 		.on('enter', function(el){
 			if(!el.done) {
-				el.classList.add('animated-it');
+				el.classList.add('active');
 			}
 		}).on('exit', function(el){
 			el.done = true;
@@ -581,13 +576,23 @@ function AjaxLoading(el){
 				var mainContent = $(content).html();
 				_this.appendMain.html(mainContent).promise().done(function(){
 					_this.initEvents();
-					setTimeout(function(){
-						initContentsModalSlider();
-					}, 100);
+					if(_this.ajaxLink.hasClass('gallery-photo')){
+						setTimeout(function(){
+							initGalleryModalSlider();
+						}, 100);
+					} else {
+						setTimeout(function(){
+							initContentsModalSlider();
+						}, 100);
+					}
+					
+					// initModalActions(_this.appendMain);
 					_this.appendMain.addClass('active').trigger('reinit');
 					if(typeof slide != 'undefined'){
-						console.log(slide);
-						_this.appendMain.find('.contents-slider').slick('slickGoTo',slide);
+						setTimeout(function(){
+							_this.appendMain.find('.contents-slider').slick('slickGoTo',slide);
+							console.log(slide);
+						}, 100);
 					}
 				});
 			}
@@ -598,7 +603,7 @@ function AjaxLoading(el){
 
 function initContentsModalSlider(){
 
-	$(".big-image-slider").each(function() {
+	$(".image-slider").each(function() {
 		var _this = $(this);
 		var parent = _this.parent();
 		_this.slick({
@@ -626,8 +631,7 @@ function initContentsModalSlider(){
 
 	$(".contents-slider").each(function() {
 		var _this = $(this);
-		var parent = _this.parent();
-		slidesCount(_this)
+		slidesCount(_this);
 		_this.slick({
 			accessibility: false,
 			arrows: true,
@@ -641,7 +645,7 @@ function initContentsModalSlider(){
 			slidesToScroll: 1,
 			prevArrow: '.contents-modal__prev',
 			nextArrow: '.contents-modal__next',
-			asNavFor: _this.closest('.modal-container').find('.big-image-slider'),
+			asNavFor: _this.closest('.modal-container').find('.image-slider'),
 			responsive: [
 				{
 					breakpoint: 768,
@@ -650,14 +654,53 @@ function initContentsModalSlider(){
 					}
 				}
 			],
-			// customPaging : function(slider, i) {
-			// 	console.log(parent + ;);
-			// 	return '<a href="#">'+ slider.$slides.eq(i).data('slide-text') +'</a>';
-			// 	// return console.log(slider.$slides.eq(i).data('slide-text'));
-			// },
 		});
 	});
 }
+function initGalleryModalSlider(){
+
+	$(".image-paginate-slider").each(function() {
+		var _this = $(this);
+		var parent = _this.parent();
+		_this.slick({
+			accessibility: false,
+			arrows: false,
+			draggable: false,
+			autoplay: false,
+			dots: false,
+			fade: false,
+			infinite: false,
+			slidesToShow: 8,
+			slidesToScroll: 1,
+			vertical: true,
+			verticalSwiping: true,
+			focusOnSelect: true,
+			adaptiveHeight: true,
+			asNavFor: parent.find('.contents-slider'),
+		});
+	});
+
+	$(".contents-slider").each(function() {
+		var _this = $(this);
+		slidesCount(_this);
+		_this.slick({
+			accessibility: false,
+			arrows: true,
+			draggable: false,
+			autoplay: false,
+			dots: false,
+			fade: false,
+			touchMove: false,
+			infinite: false,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			prevArrow: '.contents-modal__prev',
+			nextArrow: '.contents-modal__next',
+			asNavFor: _this.closest('.modal-container').find('.image-paginate-slider'),
+		});
+	});
+}
+		
 function initCustomSelectList() {
 	var _conf = {
 			initClass: 'cs-active',
@@ -809,8 +852,8 @@ function Accordeon() {
 					head.add(_).addClass('active');
 					parent.add(_).addClass('active');
 					target.addClass('active').slideDown('normal',() => {
-						let offset = target.offset().top;
-						$('html:not(:animated), body:not(:animated), .out:not(:animated)').animate({scrollTop: offset - 220}, 500);
+						let offset = parent.offset().top;
+						$('html:not(:animated), body:not(:animated), .out:not(:animated)').animate({scrollTop: offset - 150}, 500);
 					});
 			  	}
 				text.toggleText();
@@ -1299,5 +1342,37 @@ function initTabs(){
 				}
 			});
 		});
+	}
+}
+
+function phoneSelectChange(){
+
+	if($('.telwrapper').length){
+
+		var t_wrap = $('.telwrapper');
+
+		t_wrap.each(function(){
+
+			var t_select = t_wrap.find('select'),
+				t_input = t_wrap.find('input');
+
+			t_select.each(function(){
+
+				$(this).on('focus',function(){
+
+					this.closest('.telwrapper').addClass('telwrapper_hover');
+					console.log('qq');
+				});
+			});
+			t_input.each(function(){
+
+				$(this).on('focus',function(){
+
+					this.closest('.telwrapper').addClass('telwrapper_hover');
+					console.log('pp');
+				});
+			});
+		});
+			
 	}
 }

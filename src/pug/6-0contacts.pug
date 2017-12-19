@@ -11,8 +11,8 @@ block content
 		+contacts-header
 		.wrapper-bg(style="background-image:url('img/promo.jpg')")
 		.box
-			.header-inner.header-inner_inner-page
-				.header-inner__title.fade-down
+			.header-inner.header-inner_inner-page.header-inner_animate
+				.header-inner__title
 					h1.h1 Контакты
 	.box
 		+breadcrumbs(['Главная', 'Контакты'])
@@ -23,10 +23,10 @@ block content
 					+link-banner('Бесплатный звонок в сети velcom 411', 'Заказать звонок', 'side-banner-1.jpg')
 			.content-inner
 				.contats-page
-					.contacts-page__title.fade-up
+					.contacts-page__title
 						h2.h2 Дата-центр velcom
 						+link-more('Обратная связь', 'title-link')
-					.contacts-wrap.fade-down
+					.contacts-wrap
 						.contacts-item
 							p.text-small.contacts-item__title Справочно-информационная служба
 							.contacts-item__link.contacts-item__link_big
@@ -59,9 +59,9 @@ block content
 							p.text-small.contacts-item__title Реквизиты
 							.text-primary.text-primary_black УП «Велком» Юридический адрес: 220030, Республика Беларусь, г.Минск, ул. Интернациональная, 36-2. Почтовый адрес: 220141, г. Минск, пр. Независимости, д. 168, корп. 2, к. 12
 
-					.map-container.fade-down
+					.map-container
 						#map.map-elem(data-lat='53.943744', data-lon='27.521280', data-icon='img/svg/point.svg')
-					.contacts-form.fade-down
+					.contacts-form
 						form(action="#").js-validate
 							.form-block
 								.form-block__head

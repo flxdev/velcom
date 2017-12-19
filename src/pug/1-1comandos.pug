@@ -11,8 +11,8 @@ block content
 		+contacts-header
 		.wrapper-bg(style="background-image:url('img/promo.jpg')")
 		.box
-			.header-inner.header-inner_inner-page
-				.header-inner__title.fade-down
+			.header-inner.header-inner_inner-page.header-inner_animate
+				.header-inner__title
 					h1.h1 Команда
 	.box
 		+breadcrumbs(['Главная', 'Команда'])
@@ -24,11 +24,11 @@ block content
 						span.link-value ...
 						span.link-i-arrow
 							+icon('arrow_down')
-					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
+					+link-navigation(['Команда', 'О Дата-центре', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
 			.content-inner
 				.content-inner-group
-					h2.h2.content-inner-group__title.fade-up Руководство
-					.content-inner-group-wrap.fade-down
+					h2.h2.content-inner-group__title Руководство
+					.content-inner-group-wrap
 						+worker-item('worker-1.jpg', 'Юлия Самойлова', 'Генеральный директор')
 						+worker-item('worker-2.jpg', 'Анастасия Севастьянова', 'Первый заместитель генерального директора')
 						+worker-item('worker-3.jpg', 'Сергей Мищук', 'Технический директор')
@@ -36,8 +36,8 @@ block content
 						+worker-item('worker-5.jpg', 'Жанна Федута', 'Генеральный директор')
 						+worker-item('worker-6.jpg', 'Валентина Самойлова', 'Первый заместитель')
 				.content-inner-group
-					h2.h2.content-inner-group__title.fade-up Менеджмент
-					.content-inner-group-wrap.fade-down
+					h2.h2.content-inner-group__title Менеджмент
+					.content-inner-group-wrap
 						+worker-item('worker-1.jpg', 'Юлия Самойлова', 'Генеральный директор')
 						+worker-item('worker-2.jpg', 'Анастасия Севастьянова', 'Первый заместитель генерального директора')
 						+worker-item('worker-3.jpg', 'Сергей Мищук', 'Технический директор')

@@ -26,9 +26,10 @@
 		font-weight: bold
 		line-height: 3.75
 		color: #000000
-		+tr(color .3s ease)
+		+tr(color .1s ease-in-out)
 		&:hover
-			color:#917d12
+			+notouch
+				color:#917d12
 	&_scrolled
 		& .nav-home-btn
 			opacity: 1

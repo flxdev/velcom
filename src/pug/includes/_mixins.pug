@@ -65,8 +65,8 @@ mixin link-more(text, add_class)
 			span.link-more__arrow
 				+icon('arrow-circle')
 
-mixin datacenter-characteristics(val, text, style)
-	.datacenter-characteristics__item(style=""+style)
+mixin datacenter-characteristics(val, text)
+	.datacenter-characteristics__item
 		.datacenter-characteristics__value= val
 		.datacenter-characteristics__desc.text-primary= text
 
@@ -146,8 +146,12 @@ mixin gallery-album(img, title, count)
 				span.gallery-album__total= count
 				span &nbsp;фото
 
+//- mixin gallery-photo(image, i)
+//- 	a.gallery-photo.js-popup-button.ajax-trigger(href="#", data-modal="popup-contents", data-href='gallery-album-1.html', data-slideto=''+i)
+//- 		img(src="img/"+image, alt="gallery-photo")
+
 mixin gallery-photo(image, i)
-	a.gallery-photo.js-popup-button.ajax-trigger(href="#", data-modal="popup-contents", data-href='gallery-album-1.html', data-slideto=''+i)
+	a.gallery-photo.js-popup-button.ajax-trigger(href="#", data-modal="popup-gallery", data-href='gallery-album-2.html', data-slideto=''+i)
 		img(src="img/"+image, alt="gallery-photo")
 
 mixin paginate

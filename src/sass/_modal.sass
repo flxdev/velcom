@@ -6,15 +6,20 @@
 	display: inline-block
 	padding: 5px
 	box-sizing: content-box
-
+.modals
+	visibility: hidden
+	pointer-events: none
+	position: absolute
+	top: -2000px
+	left: -2000px
 .modal-layout
 	position: fixed
 	left: 0
 	right: 0
 	bottom: 0
 	top: 0
-	width: 0%
-	height: 0%
+	width: 100%
+	height: 100%
 	margin: 0
 	background: transparent
 	z-index: 200
@@ -27,16 +32,15 @@
 	text-align: center
 	contain: paint 
 	overflow-y: auto
+	pointer-events: all
 	&.active
-		width: 100%
-		height: 100%
 		background-color: rgba(0,0,0, .6)
 		visibility: visible
 		opacity: 1
 		transition-delay: 0s
 		& .modal-container
 			opacity: 1
-			transition-delay: .2smodal-layout
+			transition-delay: .2s
 		& .consultation-modal
 			animation-name: show
 			animation-duration: 0.3s
@@ -180,7 +184,7 @@
 	& .modal-container-content
 		padding: 0 50px 40px 50px
 
-.big-image-slider
+.image-slider
 	margin-bottom: 50px
 	img
 		max-width: 100%
@@ -204,22 +208,91 @@
 	max-width: 600px
 
 .gallery-album-modal
-	& .modal-container-content
-		display: flex
-		+r(480)
-			flex-direction: column
-	& .contents-count
-		width: 15%
-		line-height: 1.5
-		+r(480)
-			width: 100%
-	& .contents-slider
-		width: 85%
-		+r(480)
-			width: 100%
-	& .slider-counter
-		padding: 0
-
+	.modal-container-content
+		padding-right: 0
+		padding-left: 0
+		position: relative
+		overflow: hidden
+	.image-paginate-slider
+		width: 100%
+		max-width: 70px
+		height: 520px
+		overflow: hidden
+		position: absolute
+		left: 0
+		right: 0
+		z-index: 20
+		.slick-list
+			padding: 0 !important
+		+r(620)
+			height: 430px
+		+r(520)
+			height: 360px
+		+r(450)
+			height: 310px
+	.image-paginate-slide
+		&__inner
+			position: relative
+			max-width: 90px
+			max-height: 70px
+			margin: 5px 0
+			border: 2px solid transparent
+			+tr(border-color .3s ease)
+			&::after
+				content: ''
+				display: block
+				width: 100%
+				height: 100%
+				position: absolute
+				top: 0
+				left: 0
+				background-color: #000000
+				opacity: .3
+				+tr(opacity .3s ease)
+		&.slick-current
+			.image-paginate-slide__inner
+				border-color: #ffed00
+				&::after
+					opacity: 0
+	.contents-slider-slide
+		&__img
+			height: 520px
+			margin-bottom: 20px
+			.image-slide-inner
+				height: 100%
+				img
+					height: 100%
+					width: auto
+					object-fit: cover
+			+r(620)
+				height: 430px
+			+r(520)
+				height: 360px
+			+r(450)
+				height: 310px
+		&__content
+			padding: 0 130px
+			+r(620)
+				padding: 0 70px 0 130px
+			+r(520)
+				padding: 0 50px 0 110px
+			+r(450)
+				padding: 0 30px 0 70px
+	.contents-count
+		position: absolute
+		left: 0
+		top: 530px
+		height: 100%
+		background-color: #ffffff
+		z-index: 1
+		+r(620)
+			top: 440px
+		+r(520)
+			top: 370px
+		+r(450)
+			top: 320px
+			.slider-counter
+				padding: 0 10px
 .modal-menu
 	background-color: #ffffff
 	width: 100%
@@ -243,7 +316,7 @@
 		height: 100%
 		padding: 0 68px 35px 130px
 		margin-top: 59px
-		overflow-y: auto
+		//overflow-y: auto
 	&-body
 		+vertical
 		width: 100%
@@ -280,9 +353,10 @@
 			font-size: 18px
 			line-height: 1.5
 			margin-bottom: 30px
-			+tr(color .3s ease)
+			+tr(color .1s ease-in-out)
 			&:hover
-				color: #ecdc00
+				+notouch
+					color: #ecdc00
 		&_lvl
 			padding-left: 32px
 			a
@@ -297,9 +371,10 @@
 			font-size: 16px
 			line-height: 1.5
 			margin-bottom: 16px
-			+tr(color .3s ease)
+			+tr(color .1s ease-in-out)
 			&:hover
-				color: #000000
+				+notouch
+					color: #000000
 	&__contacts
 		width: 100%
 		display: flex
@@ -317,11 +392,19 @@
 		margin-bottom: 10px
 		a
 			color: #000000
+			+tr(color .1s ease-in-out)
+			&:hover
+				+notouch
+					color: #ecdc00
 	&__mail-wrap
 		font-size: 16px
 		line-height: 1.5
 		a
 			color: #000000
+			+tr(color .1s ease-in-out)
+			&:hover
+				+notouch
+					color: #ecdc00
 	&__c-title
 		margin-bottom: 15px
 		&_inner

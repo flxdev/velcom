@@ -60,15 +60,16 @@
 			font-weight: 400
 	a:not([class])
 		color: #000000
-		+tr(color .3s ease)
+		+tr(color .1s ease-in-out)
 		strong
 			color: #000000
 			font-weight: bold
-			+tr(color .3s ease)
+			+tr(color .1s ease-in-out)
 		&:hover
-			color: #cccccc
-			strong
-				color: #ecdc00
+			+notouch
+				color: #cccccc
+				strong
+					color: #ecdc00
 	.youtube
 		display: block
 		width: 100%
@@ -173,6 +174,7 @@
 				top: 0
 	.data-center-cooperation
 		padding: 0
+
 	blockquote
 		max-width: 714px
 
@@ -205,11 +207,12 @@
 		font-size: 40px
 		+tr(all .3s ease)
 		&:hover
-			background-color: rgba(#000000, .5)
-			border-color: rgba(#000000, .5)
-		&:hover .play-button-icon
-			transform: translateX(-50%) translateY(-50%) scale(1.5)
-			opacity: 1
+			+notouch
+				background-color: rgba(#000000, .5)
+				border-color: rgba(#000000, .5)
+				.play-button-icon
+					transform: translateX(-50%) translateY(-50%) scale(1.5)
+					opacity: 1
 	.play-button-icon
 		display: block
 		position: absolute
@@ -360,7 +363,7 @@ del
 		color: #000000
 		width: auto
 		position: relative
-		+tr(color .3s ease)
+		+tr(color .1s ease-in-out)
 		&_active
 			pointer-events: none
 			&::after
@@ -373,7 +376,8 @@ del
 				left: 0
 				bottom: -8px
 		&:hover
-			color: #ecdc00
+			+notouch
+				color: #ecdc00
 	+r(440)
 		&__link
 			max-width: 110px;
@@ -386,9 +390,17 @@ del
 		font-weight: bold
 		position: relative
 		padding-right: 40px
+		&:hover
+			+notouch
+				color: #000000
+				.icon-arrow-circle use
+					stroke: #000000
+				.link-more__arrow
+					color: #000000
 		&:active
-			.icon-arrow-circle use
-				stroke: #edcd1c
+			+notouch
+				.icon-arrow-circle use
+					stroke: #edcd1c
 	&__arrow
 		position: absolute
 		top: 50%
@@ -400,13 +412,6 @@ del
 		color: rgb(172, 174, 176)
 	.icon-arrow-circle use
 		stroke: rgb(172, 174, 176)
-	&:hover
-		a
-			color: #000000
-		.icon-arrow-circle use
-			stroke: #000000
-	&:hover &__arrow
-		color: #000000
 	&.back-link
 		a
 			padding-right: 0
@@ -439,9 +444,9 @@ del
 	z-index: 7
 	top: 97px
 	left: 50%
-	transform: translate(-50%, -40px)
+	transform: translate(-50%, -50px)
 	opacity: 0
-	+tr(all .5s ease .5s)
+	+tr(all .5s ease-in-out 1s)
 	&__phones
 		display: flex
 		padding-right: 10px
@@ -594,18 +599,18 @@ del
 			+coverdiv
 		&-el
 			width: 100%
-			&::after
-				content: ''
-				display:block
-				background-color: rgba(#000000, .2)
-				position: absolute
-				top: 0
-				left: 0
-				right: 0
-				bottom: 0
-				opacity: 0
-				z-index: 1
-				+tr(all .3s ease)
+			// &::after
+			// 	content: ''
+			// 	display:block
+			// 	background-color: rgba(#000000, .2)
+			// 	position: absolute
+			// 	top: 0
+			// 	left: 0
+			// 	right: 0
+			// 	bottom: 0
+			// 	opacity: 0
+			// 	z-index: 1
+			// 	+tr(all .3s ease)
 			img
 				+tr(transform .3s ease)
 				+r(620)
@@ -618,9 +623,9 @@ del
 	&__text
 		color: #000000
 		margin-bottom: 17px
-		+tr(color .3s ease)
+		+tr(color .3s ease-in-out)
 	&__info
-		+tr(color .3s ease)
+		+tr(color .3s ease-in-out)
 	&__date
 		margin-right: 10px
 	&__tags
@@ -649,19 +654,18 @@ del
 			width: 100%
 		+r(980)
 			width: 100%
-	&:hover &__text
-		color: #5a5a5a
-	&:hover &__info
-		color: #2e3031
 	&:hover
-		img
-			transform: scale(1.1)
-	&:hover &-img
-		&-el
-			img
-				transform: scale(1.1)
-			&::after
-				opacity: 1
+		+notouch
+			.news-item__text
+				color: #5a5a5a
+			.news-item__info
+				color: #2e3031
+			.news-item-img
+				&-el
+					img
+						transform: scale(1.1)
+					// &::after
+					// 	opacity: 1
 	+r(980)
 		&__short
 			max-width: 70%
@@ -727,6 +731,7 @@ del
 		font-size: 9px
 		line-height: 1
 		color: rgba(#000000, .5)
+		+tr(color .1s ease-in-out)
 		text-transform: uppercase
 		&::after
 			content: '/'
@@ -737,6 +742,7 @@ del
 			&::after
 				display: none
 		&:hover
+			color: rgba(#000000, 1)
 			&::after
 				color: rgba(#000000, .5)
 
@@ -824,7 +830,7 @@ del
 		line-height: 1.5
 		font-weight: bold
 		position: relative
-		+tr(all .3s ease)
+		+tr(all .3s ease-in-out)
 		span.link-i-arrow
 			display: block
 			height: 5px
@@ -997,10 +1003,12 @@ del
 	&:last-child
 		border: none
 		padding: 0
-	&:hover &__title
-		color: #5a5a5a
-	&:hover &__icon
-		color: #000000
+	&:hover
+		+notouch
+			.document-item__title
+				color: #5a5a5a
+			.document-item__icon
+				color: #000000
 
 .sertificate-item
 	&__img
@@ -1025,15 +1033,16 @@ del
 		color: #767a7d
 		background-color: #ffffff
 		border: 1px solid #cccccc
-		+tr(all .3s ease)
+		+tr(all .1s ease-in-out)
 		&.active
 			color: #000000
 			background-color: #fdfcd5
 			border-color: #cdc115
 			pointer-events: none
 		&:hover
-			color: #000000
-			border-color: #000000
+			+notouch
+				color: #000000
+				border-color: #000000
 
 .gallery-album
 	display: inline-block
@@ -1058,13 +1067,15 @@ del
 			bottom: 0
 			opacity: 0
 			+tr(all .3s ease)
-	&:hover	&__image
-		img
-			transform: scale(1.1)
-		&::after
-			opacity: 1
-	&:hover &__title
-		color:#5a5a5a
+	&:hover
+		+notouch
+			.gallery-album__image
+				img
+					transform: scale(1.1)
+				&::after
+					opacity: 1
+			.gallery-album__title
+				color:#5a5a5a
 
 .gallery-photo
 	position: relative
@@ -1088,10 +1099,11 @@ del
 	img
 		+tr(all .3s ease)
 	&:hover
-		img
-			transform: scale(1.1)
-		&::after
-			opacity: 1
+		+notouch
+			img
+				transform: scale(1.1)
+			&::after
+				opacity: 1
 	+r(980)
 		margin-bottom: 30px
 	+r(768)
@@ -1123,9 +1135,10 @@ del
 		.icon-arrow-circle use 
 			stroke: #acaeb0
 		&:hover
-			.icon-arrow-circle use 
-				stroke: #000000
-			color: #000000
+			+notouch
+				.icon-arrow-circle use 
+					stroke: #000000
+				color: #000000
 		&:active
 			.icon-arrow-circle use 
 				stroke: #edcd1c
@@ -1137,7 +1150,7 @@ del
 		margin: 0 10px
 		padding: 10px
 		letter-spacing: 0.02em
-		+tr(all .3s ease)
+		+tr(all .1s ease-in-out)
 		position: relative
 		&::after
 			content: ''
@@ -1152,9 +1165,10 @@ del
 			transform: translate(-50%, -50%)
 			+tr(all .3s ease)
 		&:hover
-			color: #000000
-			&::after
-				border-color: #eceff2
+			+notouch
+				color: #000000
+				&::after
+					border-color: #eceff2
 		&.active
 			color: #000000
 			pointer-events: none
@@ -1254,9 +1268,10 @@ del
 				font-size: 16px
 				margin-top: 10px
 				color: #000000
-				+tr(all .3s ease)
+				+tr(color .1s ease-in-out)
 				&:hover
-					color: #cccccc
+					+notouch
+						color: #cccccc
 			+r(1100)
 				margin-bottom: 35px
 		&-body
@@ -1401,7 +1416,7 @@ del
 		width: 100%
 		max-width: 85%
 		padding-right: 5px
-		+tr(all .3s ease)
+		+tr(all .3s ease-in-out)
 	&__t-arrow
 		display: block
 		width: 25px
@@ -1410,27 +1425,27 @@ del
 		margin-right: 15px
 		+tr(margin-right .3s ease)
 	&__info
-		+tr(all .3s ease)
+		+tr(all .3s ease-in-out)
 		margin-top: 20px
 	&:hover
-		.icon-arrow-circle use 
-			stroke: #000000
-	&:hover &__t-arrow
-		margin-right: 0
-		color: #000000
-	&:hover &__t-text
-		color: #5a5a5a
-	&:hover &__info
-		color: #2e3031
-	&:hover &-img-el
-		img
-			transform: scale(1.1)
-		&::after
-			opacity: 1
-	&:hover
-		.project-item-decor
-			&__experience
-				box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.25)
+		+notouch
+			.icon-arrow-circle use 
+				stroke: #000000
+			.project-item__t-arrow
+				margin-right: 0
+				color: #000000
+			.project-item__t-text
+				color: #5a5a5a
+			.project-item__info
+				color: #2e3031
+			.project-item-img-el
+				img
+					transform: scale(1.1)
+				&::after
+					opacity: 1
+			.project-item-decor
+				&__experience
+					box-shadow: 0px 12px 30px 0px rgba(0, 0, 0, 0.25)
 	&.best-exp
 		.project-item-decor
 			&__experience
@@ -1538,7 +1553,7 @@ del
 	vertical-align: middle
 	position: relative
 	color: #000000
-	+tr(all .2s ease)
+	+tr(all .1s ease-in-out)
 	&.slick-disabled
 		color: rgba(#000000, .5)
 		pointer-events: none
@@ -1619,21 +1634,14 @@ del
 		margin-bottom: 10px
  
 /* animated block*/
-.fade-down
-	transform: translateY(100px)
-	opacity: 0
-	+tr(all .3s ease .35s)
-	&.animated-it
-		transform: translateY(0)
-		opacity: 1
-
-.fade-up
-	transform: translateY(-50px)
-	opacity: 0
-	+tr(all .3s ease .55s)
-	&.animated-it
-		transform: translateY(0)
-		opacity: 1
+.header-inner
+	&_animate
+		transform: translateY(30px)
+		opacity: 0
+		+tr(all .5s ease-in-out)
+		&.active
+			transform: translateY(0)
+			opacity: 1
 
 .slider-title-animate
 	transform: translateY(-40px)
@@ -1648,30 +1656,25 @@ del
 		transform: translateY(40px)
 		opacity: 0
 
-.slick-slide.slick-current.slick-active
-	.slider-characteristics-animate
-		& > div
-			transform: translateY(0)
-			opacity: 1
-	.slider-title-animate
-		transform: translateY(0)
-		opacity: 1
-	.slider-text-animate
-		transform: translateY(0)
-		opacity: 1
-
-.data-slider-animate.animated-it
+.data-center-slider-text.slick-initialized.active
 	.slick-slide.slick-current.slick-active
 		.slider-characteristics-animate
 			& > div
 				transform: translateY(0)
 				opacity: 1
+			& > div:nth-child(1)
+				transition: opacity .3s ease .6s, transform .7s ease .6s
+			& > div:nth-child(2)
+				transition: opacity .3s ease .8s, transform .7s ease .8s
+			& > div:nth-child(3)
+				transition: opacity .3s ease 1s, transform .7s ease 1s
 		.slider-title-animate
 			transform: translateY(0)
 			opacity: 1
 		.slider-text-animate
 			transform: translateY(0)
 			opacity: 1
+
 /* forms */
 
 .search-form

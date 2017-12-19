@@ -3,6 +3,8 @@ include _mixins.pug
 
 .modal-layout(data-modal='popup-contents').js-popup-container
 
+.modal-layout(data-modal='popup-gallery').js-popup-container
+
 .modal-layout(data-modal='modal-menu').js-popup-container
 	.modal-container.modal-menu
 		.pop-close.closePopup
@@ -175,13 +177,12 @@ include _mixins.pug
 					.input-item.w100
 						.input-wrapper
 							// у селектов в конейнере для добавление не должно быть класса .js-select
-							select.input-main(name='Category', 
-														id='Category',
-														data-validation='length', 
-														data-validation-length='min1',
-														data-validation-event="change",
-														data-placeholder='Разъёмы электропитания',
-														data-trigger='otherQuestions',data-trigger-value='5')
+							select.input-main(
+									name='Category', 
+									id='Category',
+									data-validation='length', 
+									data-validation-length='min1',
+									data-placeholder='Разъёмы электропитания')
 								option(value="1") Co-location
 								option(value="2") Выделенные сервера
 								option(value="3") Категория 3
@@ -189,14 +190,13 @@ include _mixins.pug
 								option(value="5") Другое
 					.input-item.w100
 						.input-wrapper
-							textarea.input-main.disabled-field(
+							textarea.input-main(
+								id="quest-0"
 								type="text",
 								rows="4",
-								disabled='true',
 								data-validation="length",
-								data-validation-length="50-200",
-								data-target='otherQuestions')
-							label.input-label Вопрос *
+								data-validation-length="50-200")
+							label.input-label(for="quest-0") Вопрос *
 				/// конец блок 1
 				/// блок 2
 				.input-row(data-display-target='theme-question',data-display-trigger-value='2')

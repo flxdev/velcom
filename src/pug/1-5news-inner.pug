@@ -11,8 +11,8 @@ block content
 		+contacts-header
 		.wrapper-bg(style="background-image:url('img/promo.jpg')")
 		.box
-			.header-inner.header-inner_inner-page
-				.header-inner__title.fade-down
+			.header-inner.header-inner_inner-page.header-inner_animate
+				.header-inner__title
 					h1.h1 Новости
 	.box
 		+breadcrumbs(['Главная', 'дата-центр', 'Новости'])
@@ -24,7 +24,7 @@ block content
 						span.link-value ...
 						span.link-i-arrow
 							+icon('arrow_down')
-					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
+					+link-navigation(['Новости', 'О Дата-центре', 'Документация', 'Сертификаты', 'Инфраструктура', 'Команда', 'Галерея'])
 			.content-inner
 				.content-area
 					h2 Приняли участие в панельной дискуссии в рамках Мир ЦОД 2017
@@ -54,7 +54,7 @@ block content
 					p Современные требования к ИТ-инфраструктуре предполагают максимальную доступность данных для операционной деятельности любого бизнеса практически в любой точке мира, что обусловлено виртуализацией ИТ-решений, которая многократно повышает скорость, масштаб и экономическую выгоду для предприятий.
 					.content-area-footer
 						+link-more('Вернуться назад', 'back-link')
-		.main-news.main-news_bt.fade-down
+		.main-news.main-news_bt
 			.main-news__wrap
 				+news-item('news-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', 'news-index', 'Сми о нас')
 				+news-item('news-2.jpg', '#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон', '23 августа 2017', 'news-index', 'События')

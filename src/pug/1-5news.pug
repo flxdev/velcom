@@ -11,8 +11,8 @@ block content
 		+contacts-header
 		.wrapper-bg(style="background-image:url('img/promo.jpg')")
 		.box
-			.header-inner.header-inner_inner-page
-				.header-inner__title.fade-down
+			.header-inner.header-inner_inner-page.header-inner_animate
+				.header-inner__title
 					h1.h1 Новости
 	.box
 		+breadcrumbs(['Главная', 'Новости'])
@@ -24,7 +24,7 @@ block content
 						span.link-value ...
 						span.link-i-arrow
 							+icon('arrow_down')
-					+link-navigation(['Команда', 'Документация', 'Сертификаты', 'Инфраструктура', 'Новости', 'Галерея'])
+					+link-navigation(['Новости', 'О Дата-центре', 'Документация', 'Сертификаты', 'Инфраструктура', 'Команда', 'Галерея'])
 			.content-inner
 				form(action="#").news-filter
 					.select-check.js-select-custom
@@ -54,7 +54,7 @@ block content
 										label.option
 											input(type='radio', name='news-filter', value='Клиентам')
 											span Клиентам
-				.news-wrap.fade-down
+				.news-wrap
 					+news-item('news-bg-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', 'top-news', 'Сми о нас')
 					+news-item('news-bg-2.jpg', '#velcombegom: минские бегуны впервые проведут 24-часовую эстафету-марафон', '23 августа 2017', 'top-news', 'Мероприятие')
 					+news-item('news-1.jpg', '«Классика у Ратуши с velcom» подарила минчанам фотовыставку с лучшими моментами фестиваля', '25 августа 2017', 'more-news','Сми о нас')
