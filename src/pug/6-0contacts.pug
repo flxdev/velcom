@@ -20,7 +20,7 @@ block content
 		.content-wrap
 			aside.side-bar.js-stick-parent
 				.side-bar-banner.js-stick
-					+link-banner('Бесплатный звонок в сети velcom 411', 'Заказать звонок', 'side-banner-1.jpg')
+					+link-banner('Бесплатный звонок в сети velcom', 'Заказать звонок', 'side-banner-3.jpg', '411')
 			.content-inner
 				.contats-page
 					.contacts-page__title
@@ -65,7 +65,7 @@ block content
 						form(action="#").js-validate
 							.form-block
 								.form-block__head
-									.h2.form-block__title Форма заказа услуги
+									.h2.form-block__title Форма обратной связи
 									.text-small Заполните форму и мы перезвоним вам в течение 
 										strong 30 минут
 								.form-block__body
@@ -83,16 +83,22 @@ block content
 														id="clieentName"
 													)
 													label.input-label(for="clieentName") ФИО*
-											.input-item.w50
+											.input-item.w50.telwrapper
+												.input-wrapper
+													select.input-main.js-select.countryTels(name='telCountry',id='telCountry')
+														option(value="+375", data-img='img/png/blr.png') +375
+														option(value="+776", data-img='img/png/blr.png') +776
+														option(value="8 099", data-img='img/png/blr.png') 8 099
+													label.input-label.fixed(for="clieentPhone") Регион
 												.input-wrapper
 													input.input-main(
-														type="phone",
+														type="tel",
 														data-validation="custom",
 														data-validation-regexp="^[-0-9()+ ]+$",
 														data-validation-error-msg="Введите корректный номер телефона",
 														name="clieentPhone",
 														id="clieentPhone")
-													label.input-label(for="clieentPhone") Телефон*
+													label.input-label.sm(for="clieentPhone") Контактный телефон
 											.input-item.w50
 												.input-wrapper
 													input.input-main(
@@ -109,13 +115,13 @@ block content
 										.input-row
 											.input-item.w100
 												.input-wrapper
-													select.input-main.js-select(name='Category', 
-																				id='Category',
-																				data-validation='length', 
-																				data-validation-length='min1',
-																				data-validation-event="change",
-																				data-placeholder='Разъёмы электропитания',
-																				data-trigger='otherQuestions',data-trigger-value='5')
+													// у селектов в конейнере для добавление не должно быть класса .js-select
+													select.input-main.js-select(
+															name='Category-contact', 
+															id='Category-contact',
+															data-validation='length', 
+															data-validation-length='min1',
+															data-placeholder='Разъёмы электропитания')
 														option(value="1") Co-location
 														option(value="2") Выделенные сервера
 														option(value="3") Категория 3
@@ -124,13 +130,12 @@ block content
 											.input-item.w100
 												.input-wrapper
 													textarea.input-main(
+														id="quest-0"
 														type="text",
 														rows="4",
-														disabled='true',
 														data-validation="length",
-														data-validation-length="50-200",
-														data-target='otherQuestions')
-													label.input-label Вопрос *
+														data-validation-length="50-200")
+													label.input-label(for="quest-0") Вопрос *
 								.form-block__footer
 									.input-row
 										.input-item.w100

@@ -87,7 +87,7 @@ body
 	&.menu-stuck:not(.mobile)
 		overflow: hidden !important
 	&.menu-mobile
-		overflow: hidden !important
+		// overflow: hidden !important
 		position: fixed
 
 .hidden
@@ -297,6 +297,19 @@ body
 		position: absolute
 		left: 0
 		bottom: -50px
+	&-list
+		display: flex
+		justify-content: space-between
+		align-items: stretch
+		flex-wrap: wrap
+		.service-card
+			width: 32%
+			margin: 0
+			margin-bottom: 20px
+			+r(980)
+				width: 48%
+			+r(650)
+				width: 100%
 .services-slider
 	width: 100%
 
@@ -520,10 +533,6 @@ body
 		+r(768)
 			margin-right: auto
 			margin-left: 0
-		+r(450)
-			margin-right: 0
-			margin-left: auto
-			margin-bottom: 30px
 .news-wrap
 	display: flex
 	flex-wrap: wrap
@@ -974,9 +983,7 @@ body
 		a
 			color: #000000
 			+tr(color .1s ease-in-out)
-			&:hover
-				+notouch
-					color: #cccccc
+
 
 	+r(560)
 		&__title
@@ -1038,6 +1045,15 @@ body
 			margin-top: 20px
 	&__title
 		font-size: 20px
+	.select-check
+		position: relative
+		&:not(:first-child)
+			margin-left: 16px
+		+r(480)
+			width: 48%
+			margin-bottom: 16px
+			&:last-child
+				margin-right: 0
 
 .dropdown-target
 	position: absolute
@@ -1053,13 +1069,6 @@ body
 	vertical-align: top
 	width: 165px
 	position: relative
-	&:not(:first-child)
-		margin-left: 16px
-	+r(480)
-		width: 48%
-		margin-bottom: 16px
-		&:last-child
-			margin-right: 0
 	&.disabled
 		opacity: .5
 		pointer-events: none
@@ -1386,6 +1395,8 @@ body
 	+tr(all .3s ease)
 	+r(520)
 		padding: 25px 20px 20px 20px
+	&:hover
+		cursor: pointer
 	&:first-child
 		border-top: 1px solid #cccccc
 	&:not(:last-child)

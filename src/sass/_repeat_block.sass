@@ -53,6 +53,7 @@
 				margin: 0
 				margin-top: 55px
 				margin-left: 30px
+
 		small
 			font-size: 14px
 			line-height: 1.714
@@ -205,14 +206,6 @@
 		transition: color .3s
 		color: rgba(#ffffff, .7)
 		font-size: 40px
-		+tr(all .3s ease)
-		&:hover
-			+notouch
-				background-color: rgba(#000000, .5)
-				border-color: rgba(#000000, .5)
-				.play-button-icon
-					transform: translateX(-50%) translateY(-50%) scale(1.5)
-					opacity: 1
 	.play-button-icon
 		display: block
 		position: absolute
@@ -226,6 +219,21 @@
 		left: 55%
 		transform: translateX(-50%) translateY(-50%)
 		+tr(all .3s ease)
+	&::after
+		content: ''
+		display: block
+		width: 100%
+		height: 100%
+		position: absolute
+		left: 0
+		top: 0
+		background-color: #000000
+		opacity: 0
+		+tr(opacity .3s ease)
+	&:hover
+		cursor: pointer
+		&::after
+			opacity: .1
 			
 	iframe,
 	img
@@ -276,7 +284,9 @@ sub
 del 
 	font-size: inherit
 	text-decoration: line-through
-
+p 
+	a:hover
+		text-decoration: underline
 .h1
 	color: #ffffff
 	font-size: 48px
@@ -378,9 +388,6 @@ del
 		&:hover
 			+notouch
 				color: #ecdc00
-	+r(440)
-		&__link
-			max-width: 110px;
 .link-more
 	display: inline-block
 	a
@@ -472,7 +479,8 @@ del
 			display: none
 
 .service-card
-	display: block
+	display: inline-block
+	width: 30%
 	border: 1px solid #cccccc
 	padding: 38px 33px 33px 33px
 	background-color: #ffffff
@@ -812,7 +820,7 @@ del
 .side-bar
 	width: 25%
 	padding-right: 20px
-	padding-top: 20px
+	padding-top: 30px
 	box-sizing: border-box
 	z-index: 2
 	// &__nav
@@ -844,29 +852,35 @@ del
 				position: absolute
 				top: 0
 				left: 0
-		&_visible
-			box-shadow: 0 0.75rem 1.875rem 0 rgba(0,0,0,.2)
-			span.link-i-arrow
-				transform: translateY(-50%) rotate(180deg)
 
 	+r(768)
 		width: 80%
-		&__mob-btn
-			padding: 18px 30px 18px 15px
-			display: block
-			border: 1px solid #a6a6a6
 		& .link-navigation
 			padding: 20px 15px
-			display: none
 			border: 1px solid #a6a6a6
 			position: absolute
 			left: 0
 			top: 60px
 			width: 100%
 			z-index: 10
+			visibility: hidden
+			opacity: 0
+			transition: visibility .3s linear, opacity .3s ease-in-out, box-shadow .3s linear 1s
 			background-color: #ffffff
-			box-shadow: 0 0.75rem 1.875rem 0 rgba(0,0,0,.2)
-	+r(450)
+		&__mob-btn
+			padding: 18px 30px 18px 15px
+			display: block
+			border: 1px solid #a6a6a6
+			&.sidebar-menu-visible
+				box-shadow: 0 0.75rem 1.875rem 0 rgba(0,0,0,.2)
+				span.link-i-arrow
+					transform: translateY(-50%) rotate(180deg)
+				& + .link-navigation
+					transition-delay: 0s
+					visibility: visible
+					opacity: 1
+					box-shadow: 0 0.75rem 1.875rem 0 rgba(0,0,0,.2)
+	+r(620)
 		width: 100%
 
 .content-inner
@@ -1005,44 +1019,20 @@ del
 		padding: 0
 	&:hover
 		+notouch
-			.document-item__title
-				color: #5a5a5a
+			// .document-item__title
+			// 	color: #5a5a5a
 			.document-item__icon
 				color: #000000
 
 .sertificate-item
 	&__img
 		margin-bottom: 35px
+		+tr(opacity .2s ease-in-out)
 	&__title
 		font-weight: normal
 		margin-bottom: 20px
-
-.infrastructure-links 
-	border-bottom: 1px solid #cccccc
-	padding-bottom: 25px
-	margin-bottom: 50px
-	margin-top: 20px
-	&__item
-		display: inline-block
-		font-size: 14px
-		line-height: 1.714
-		padding: 9px 25px
-		border-radius: 2px
-		margin-right: 14px
-		margin-bottom: 17px
-		color: #767a7d
-		background-color: #ffffff
-		border: 1px solid #cccccc
-		+tr(all .1s ease-in-out)
-		&.active
-			color: #000000
-			background-color: #fdfcd5
-			border-color: #cdc115
-			pointer-events: none
-		&:hover
-			+notouch
-				color: #000000
-				border-color: #000000
+	&:hover &__img
+		opacity: .9
 
 .gallery-album
 	display: inline-block
@@ -1197,7 +1187,7 @@ del
 	max-width: 240px
 	background-color: #f2f4f6
 	padding: 35px 10px 30px 30px
-	text-align: center
+	text-align: left
 	background-size: cover
 	background-repeat: no-repeat
 	background-position: 100% 100%
@@ -1434,8 +1424,8 @@ del
 			.project-item__t-arrow
 				margin-right: 0
 				color: #000000
-			.project-item__t-text
-				color: #5a5a5a
+			// .project-item__t-text
+			// 	color: #5a5a5a
 			.project-item__info
 				color: #2e3031
 			.project-item-img-el
@@ -1545,29 +1535,32 @@ del
 	
 .inner-slider-nav
 	margin-top: 34px
+	margin-left: -10px
+	.slider-counter
+		padding: 0 20px
 .inner-slider__prev,
 .inner-slider__next
 	display: inline-block
 	width: 6px
 	height: 12px
+	padding: 10px
+	box-sizing: content-box
 	vertical-align: middle
 	position: relative
 	color: #000000
+	font-size: 0
 	+tr(all .1s ease-in-out)
 	&.slick-disabled
 		color: rgba(#000000, .5)
 		pointer-events: none
-	&>svg
-		position: absolute
-		top: 0
-		left: 0
+	&:hover
+		color: #767a7d
 	&:active
 		color: #edcd1c
 .inner-slider__prev
 	transform: rotate(180deg)
 
 .tabs-head
-	padding: 0 34px
 	margin-bottom: 25px
 .tabs-cont
 	display: none
@@ -1575,6 +1568,7 @@ del
 	display: inline-block
 	padding: 10px 20px 10px 10px
 	border: 1px solid #cccccc
+	background-color: #ffffff
 	margin-right: -1px
 	margin-bottom: -1px
 	font-size: 16px
@@ -1598,9 +1592,8 @@ del
 		vertical-align: middle
 		width: 18px
 		height: 18px
-		border: 1px solidcccccc
+		border: 1px solid #cccccc
 		background-color: #ffffff
-		border: 1px solid transparent
 		border-radius: 50%
 		box-shadow: inset 0px 2px 10px 0px rgba(0, 0, 0, 0.13)
 		margin-right: 12px
@@ -1616,11 +1609,11 @@ del
 		left: 50%
 		transform: translate(-50%, -50%)
 		background-color: #f2db00
-		background-image: linear-gradient(#fcf728 0%, #e9c305 100%)
+		// background-image: linear-gradient(#fcf728 0%, #e9c305 100%)
 		opacity: 0
 		+tr(all .3s ease)
 	&.active
-		background-color: #fdfcd5
+		background-color: #fff233
 		border-color: #cdc115
 		.tabs-item__custom
 			background-color: #ffffff
@@ -1690,9 +1683,10 @@ del
 		display: inline-block
 		border: 1px solid #e7e7e7
 		border-radius: 40px
-		line-height: 40px
-		padding-left: 16px
-		padding-right: 16px
+		//line-height: 40px
+		// padding-left: 16px
+		// padding-right: 16px
+		padding: 10px 48px 10px 16px
 		+tr(all .3s ease)
 		&::-webkit-search-cancel-button
 			display: none

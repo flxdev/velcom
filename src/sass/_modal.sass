@@ -21,17 +21,14 @@
 	width: 100%
 	height: 100%
 	margin: 0
-	background: transparent
+	background-color: transparent
 	z-index: 200
 	opacity: 0
 	visibility: hidden
-	transition: opacity .5s .1s, visibility .5s .1s, background-color .5s .1s
-	contain: paint 
-	overflow-y: auto
-	//+vertical
+	transition: background-color .2s, opacity .2s, visibility .2s
+	transition-delay: .1s
 	text-align: center
 	contain: paint 
-	overflow-y: auto
 	pointer-events: all
 	&.active
 		background-color: rgba(0,0,0, .6)
@@ -40,11 +37,7 @@
 		transition-delay: 0s
 		& .modal-container
 			opacity: 1
-			transition-delay: .2s
-		& .consultation-modal
-			animation-name: show
-			animation-duration: 0.3s
-			animation-fill-mode: forwards
+			transition-delay: 0s
 		& .application-modal
 			transform: translateX(0)
 			opacity: 1
@@ -62,6 +55,7 @@
 	position: relative
 	+tr(opacity .2s)
 	opacity: 0s
+	transition-delay: .2s
 	&-content
 		padding: 10px
 		text-align: left
@@ -81,43 +75,18 @@
 				cursor: pointer
 				transform: rotate(90deg)
 
-.consultation-modal
-	width: 100%
-	max-width: 714px
-	opacity: 0
-	animation-name: hide
-	animation-duration: 0.5s
-	animation-fill-mode: forwards
-	+r(768)
-		margin-top: 0
-		max-width: 100%
-
-@keyframes show
-	0%
-		opacity: 0
-		transform: scale3d(1.1, 1.1, 1)
-	100%
-		opacity: 1 
-		transform: scale3d(1, 1, 1)
-@keyframes hide
-	0%
-		opacity: 1 
-		transform: scale3d(1, 1, 1)
-	100%
-		opacity: 0 
-		transform: scale3d(0.8, 0.8, 1)
-
 .application-modal
 	width: 100%
-	height: auto
-	min-height: 100%
+	height: 100%
 	padding: 20px 70px 70px 80px
 	max-width: 873px
 	background-color: #ffffff
-	position: absolute
+	overflow-y: auto
+	position: fixed
 	top: 0
 	right: 0
 	margin-top: 0
+	margin-bottom: 0
 	transform: translateX(20%)
 	opacity: 0
 	transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
@@ -126,10 +95,16 @@
 		background-color: #ffffff
 		&__footer
 			background-color: #ffffff
+	.pop-close
+		right: -60px
+		top: -10px
 	+r(850)
 		padding: 20px 30px 70px 30px
+		.pop-close
+			right: 0
+			top: 0
 	+r(640)
-		padding: 20px 0 70px 0
+		padding: 20px 15px 70px 15px
 
 .contents-modal
 	width: 100%
@@ -305,7 +280,7 @@
 	z-index: 100
 	opacity: 0
 	transform: translateX(-20%)
-	transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
+	// transition: all 0.3s cubic-bezier(0.25, 0.5, 0.5, 0.9)
 	+r(980)
 		transform: translateX(20%)
 	&-inner
@@ -316,7 +291,7 @@
 		height: 100%
 		padding: 0 68px 35px 130px
 		margin-top: 59px
-		//overflow-y: auto
+		overflow-y: auto
 	&-body
 		+vertical
 		width: 100%
@@ -414,7 +389,6 @@
 		&-inner
 			padding: 45px 38px 15px 60px
 	+r(768)
-		overflow-y: scroll
 		&-inner
 			padding: 0 25px 15px 40px
 			margin-top: 45px

@@ -12,12 +12,15 @@ footer
 		flex-wrap: wrap
 	&__nav
 		padding-left: 70px
-		box-sizing: border-box	
+		box-sizing: border-box
 	&__wrap
 		display: flex
 		width: 50%
 		flex-wrap: wrap
 		align-content: flex-start
+		+r(440)
+		.link-navigation__link
+			max-width: 110px;
 	+r(980)
 		&__nav
 			padding-left: 35px
