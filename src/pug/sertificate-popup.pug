@@ -1,10 +1,10 @@
 include includes/_mixins.pug
 
 .wrap
-	.box
-		.modal-container.contents-modal.sertificates-modal
-			button(type="button").pop-close.closePopup
+	.modal-container.contents-modal
+		button(type="button").pop-close.closePopup
 					+icon('close')
+		.modal-container-inner
 			.image-slider
 				.big-image-slide
 					.big-image-slide-inner
@@ -40,8 +40,8 @@ include includes/_mixins.pug
 							.contents-slider-slide__period.text-primary 09.06.2017, бессрочно
 							.contents-slider-slide__title Uptime Institute Tier III Certified: Constructed Facility
 							.contents-slider-slide__description.text-primary Аренда каналов до точек присутствия на крупнейших телекоммуникационных узлах а также каналы «точка-точка» до любого адреса
-			.contents-modal__nav
-				button(type="button",class="slick-prev").contents-modal__prev
-					+icon('arrow-light')
-				button(type="button", class="slick-next").contents-modal__next
-					+icon('arrow-light')
+		.contents-modal__nav
+			button(type="button",class="slick-prev").contents-modal__prev
+				+icon('arrow-light')
+			button(type="button", class="slick-next").contents-modal__next
+				+icon('arrow-light')

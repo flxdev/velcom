@@ -298,7 +298,7 @@
       <!--TODO need modals!!!-->
       <div class="modal-layout js-popup-container" data-modal="popup-contents"></div>
       <div class="modal-layout js-popup-container" data-modal="popup-gallery"></div>
-      <div class="modal-layout js-popup-container" data-modal="modal-menu">
+      <div class="modal-layout modal-layout_fade-left js-popup-container" data-modal="modal-menu">
         <div class="modal-container modal-menu">
           <div class="pop-close closePopup">
                   <svg class="icon-close">
@@ -340,14 +340,14 @@
           </div>
         </div>
       </div>
-      <div class="modal-layout js-popup-container" data-modal="fast-application">
+      <div class="modal-layout modal-layout_fade-right js-popup-container" data-modal="fast-application">
         <div class="modal-container application-modal">
+          <div class="pop-close closePopup">
+                  <svg class="icon-close">
+                    <use xlink:href="#close"></use>
+                  </svg>
+          </div>
           <div class="modal-container-inner">
-            <div class="pop-close closePopup">
-                    <svg class="icon-close">
-                      <use xlink:href="#close"></use>
-                    </svg>
-            </div>
             <form class="js-validate" action="#">
               <div class="form-block">
                 <div class="form-block__head">
@@ -491,140 +491,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="modal-layout js-popup-container" data-modal="get-consultation">
-        <div class="modal-container consultation-modal">
-          <div class="modal-container-inner">
-            <div class="pop-close closePopup">
-                    <svg class="icon-close">
-                      <use xlink:href="#close"></use>
-                    </svg>
-            </div>
-            <form class="js-validate" action="#">
-              <div class="form-block">
-                <div class="form-block__head">
-                  <div class="h2 form-block__title">Получить консультацию</div>
-                </div>
-                <div class="form-block__body">
-                  <hr class="form-content-devider">
-                  <div class="form-content">
-                    <div class="form-content-head">Контактные данные</div>
-                    <div class="input-row">
-                      <div class="input-item w100">
-                        <div class="input-wrapper">
-                          <input class="input-main" type="text" data-validation="required" data-validation-error-msg="Поле обязательно для заполнения" name="clieentName" id="clieentName">
-                          <label class="input-label" for="clieentName">ФИО*</label>
-                        </div>
-                      </div>
-                      <div class="input-item w50">
-                        <div class="input-wrapper">
-                          <input class="input-main" type="phone" data-validation="custom" data-validation-regexp="^[-0-9()+ ]+$" data-validation-error-msg="Введите корректный номер телефона" name="clieentPhone" id="clieentPhone">
-                          <label class="input-label" for="clieentPhone">Телефон*</label>
-                        </div>
-                      </div>
-                      <div class="input-item w50">
-                        <div class="input-wrapper">
-                          <input class="input-main" type="text" data-validation="email" data-validation-error-msg="Введите корректный e-mail" name="clieentEmail" id="clieentEmail">
-                          <label class="input-label" for="clieentEmail">Email*</label>
-                        </div>
-                      </div>
-                      <div class="input-item w50">
-                        <div class="input-wrapper">
-                          <input class="input-main" type="text" name="clieentFrim" id="clieentFrim">
-                          <label class="input-label" for="clieentFrim">Организация</label>
-                        </div>
-                      </div>
-                      <div class="input-item w50">
-                        <div class="input-wrapper">
-                          <input class="input-main" type="text" name="clieentPosition" id="clieentPosition">
-                          <label class="input-label" for="clieentPosition">Должность</label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <hr class="form-content-devider">
-                  <div class="form-content">
-                    <div class="form-content-head">Тема обращения</div>
-                    <div class="input-row">
-                      <div class="radio-group">
-                        <div class="radio-wrapper">
-                          <input class="radio-input" type="radio" name="radio-group" id="radio-4" data-validation="required" data-display-trigger="theme-question" data-display-trigger-value="1" checked>
-                          <label class="radio-label" for="radio-4">
-                            <div class="radio-label__custom">
-                              <div class="radio-label__check"></div>
-                            </div>
-                            <div class="radio-label__text">Вопрос по услугам</div>
-                          </label>
-                        </div>
-                        <div class="radio-wrapper">
-                          <input class="radio-input" type="radio" name="radio-group" id="radio-5" data-validation="required" data-display-trigger="theme-question" data-display-trigger-value="2">
-                          <label class="radio-label" for="radio-5">
-                            <div class="radio-label__custom">
-                              <div class="radio-label__check"></div>
-                            </div>
-                            <div class="radio-label__text">Общие вопросы</div>
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-content" data-display-container="theme-question"></div>
-                  </div>
-                </div>
-                <div class="form-block__footer">
-                  <div class="input-row">
-                    <div class="input-item w100">
-                      <label class="check-label">
-                        <input type="checkbox" data-trigger="btn-submit">
-                        <div class="check-label__custom">
-                          <div class="check-label__checked">
-                                  <svg class="icon-checked">
-                                    <use xlink:href="#checked"></use>
-                                  </svg>
-                          </div>
-                        </div>Даю согласие на обработку моих <a href="#">персональных данных</a>
-                      </label>
-                    </div>
-                  </div>
-                  <button class="button-submit disabled-field" type="submit" data-target="btn-submit" value="Отправить">Отправить</button>
-                </div>
-              </div>
-            </form>
-            <div class="form-appended-els" style="display: none;">
-              <!--/ блок 1-->
-              <div class="input-row" data-display-target="theme-question" data-display-trigger-value="1">
-                <div class="input-item w100">
-                  <div class="input-wrapper">
-                    <!-- у селектов в конейнере для добавление не должно быть класса .js-select-->
-                    <select class="input-main" name="Category" id="Category" data-validation="length" data-validation-length="min1" data-validation-event="change" data-placeholder="Разъёмы электропитания" data-trigger="otherQuestions" data-trigger-value="5">
-                      <option value="1">Co-location</option>
-                      <option value="2">Выделенные сервера</option>
-                      <option value="3">Категория 3</option>
-                      <option value="4">IaaS</option>
-                      <option value="5">Другое</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="input-item w100">
-                  <div class="input-wrapper">
-                    <textarea class="input-main disabled-field" type="text" rows="4" disabled="true" data-validation="length" data-validation-length="50-200" data-target="otherQuestions"></textarea>
-                    <label class="input-label">Вопрос *</label>
-                  </div>
-                </div>
-              </div>
-              <!--/ конец блок 1-->
-              <!--/ блок 2-->
-              <div class="input-row" data-display-target="theme-question" data-display-trigger-value="2">
-                <div class="input-item w100">
-                  <div class="input-wrapper">
-                    <textarea class="input-main" type="text" rows="4"></textarea>
-                    <label class="input-label">Вопрос *</label>
-                  </div>
-                </div>
-              </div>
-              <!--/ конец блок 2-->
             </div>
           </div>
         </div>

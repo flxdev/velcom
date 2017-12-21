@@ -309,13 +309,13 @@ function popUpsInit() {
 	_this.f.closePopup = function (_popup) {
 		// var _cont = _popup.find('.modal-container-content:not(.response)'),
 		// 	_response = _popup.find('.response');
-		window.DOM.showScroll();
 		_popup.removeClass(_this.conf.active_class);
+		window.DOM.showScroll();
 	};
 
 	_this.f.openPopup = function (_popup) {
-		window.DOM.hideScroll();
 		_popup.addClass(_this.conf.active_class);
+		window.DOM.hideScroll();
 	};
 	/**
   * Initial.
@@ -419,10 +419,10 @@ function equalServCardHeight() {
 	if ($('.service-card').length) {
 		setTimeout(function () {
 			$('.service-card').matchHeight({
-				byRow: true,
+				byRow: false,
 				property: 'height'
 			});
-		}, 50);
+		}, 100);
 	}
 }
 

@@ -1,10 +1,10 @@
 include includes/_mixins.pug
 
 .wrap
-	.box
-		.modal-container.contents-modal.gallery-album-modal
-			button(type="button").pop-close.closePopup
-					+icon('close')
+	.modal-container.contents-modal
+		button(type="button").pop-close.closePopup
+				+icon('close')
+		.modal-container-inner
 			.modal-container-content
 				.image-paginate-slider
 					.image-paginate-slide
@@ -103,8 +103,8 @@ include includes/_mixins.pug
 						.slider-curr . . . 
 						.slider-divider /
 						.slider-total . . .
-			.contents-modal__nav
-				button(type="button",class="slick-prev").contents-modal__prev
-					+icon('arrow-light')
-				button(type="button", class="slick-next").contents-modal__next
-					+icon('arrow-light')
+		.contents-modal__nav
+			button(type="button",class="slick-prev").contents-modal__prev
+				+icon('arrow-light')
+			button(type="button", class="slick-next").contents-modal__next
+				+icon('arrow-light')

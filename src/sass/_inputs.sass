@@ -224,11 +224,12 @@
 			
 		&>.select2-container
 			.select2-results
-				ul::-webkit-scrollbar
-					width: 9px
-					background-color: #ebebeb
-				ul::-webkit-scrollbar-thumb
-					box-shadow: inset 0 0 35px 35px #f2db00
+				+notouch
+					ul::-webkit-scrollbar
+						width: 9px
+						background-color: #ebebeb
+					ul::-webkit-scrollbar-thumb
+						box-shadow: inset 0 0 35px 35px #f2db00
 	&-label
 		cursor: inherit
 		position: absolute

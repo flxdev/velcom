@@ -509,7 +509,8 @@ p
 		left: 33px
 		z-index: 40
 		&:hover
-			background-color: #ffffff !important
+			+notouch
+				background-color: #ffffff !important
 	&__icon
 		position: absolute
 		z-index: -1
@@ -533,7 +534,8 @@ p
 			.service-card__icon
 				color: #f2db00
 	&:active &__link
-		background-color: #edcd1c
+		+notouch
+			background-color: #edcd1c
 	+r(1100)
 		&__icon
 			right: 16px
