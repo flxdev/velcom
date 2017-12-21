@@ -3841,8 +3841,8 @@ body {
   padding-left: 1rem;
   position: fixed;
   z-index: 10;
-  -webkit-box-shadow: 0 0px 1rem rgba(119, 115, 18, 0.24);
-  box-shadow: 0 0px 1rem rgba(119, 115, 18, 0.24);
+  -webkit-box-shadow: 0 0px 1rem rgba(119, 115, 18, 0.4);
+  box-shadow: 0 0px 1rem rgba(119, 115, 18, 0.4);
   top: 0;
   left: 0; }
   .nav-menu__list {
@@ -3855,7 +3855,8 @@ body {
     margin-left: auto;
     margin-right: 0; }
   .nav-menu__item {
-    margin-right: 2.375rem; }
+    margin-right: 2.375rem;
+    overflow: hidden; }
     .nav-menu__item:last-child {
       margin-right: 0; }
   .nav-menu__link {
@@ -4643,15 +4644,11 @@ a.site-dev {
       .input-item.telwrapper .input-main:focus {
         border: 1px solid transparent; }
     .input-item.telwrapper .input-main.error {
-      border: 1px solid transparent; }
+      border: 1px solid #ed1c24; }
     .input-item.telwrapper .select2-container--open {
-      border: 1px solid transparent !important;
       margin-top: 0 !important; }
     .input-item.telwrapper .input-wrapper {
-      width: auto;
-      border: 1px solid #cccccc;
-      -webkit-border-radius: 2px;
-      border-radius: 2px; }
+      width: auto; }
       .input-item.telwrapper .input-wrapper .select2, .input-item.telwrapper .input-wrapper .input-main {
         height: 3.75rem; }
       .input-item.telwrapper .input-wrapper:first-child {
@@ -4660,6 +4657,8 @@ a.site-dev {
         min-width: 7.1875rem;
         max-width: 9.375rem; }
         .input-item.telwrapper .input-wrapper:first-child .select2, .input-item.telwrapper .input-wrapper:first-child .input-main {
+          border: 1px solid #a6a6a6;
+          border-right: none;
           -webkit-border-top-right-radius: 0;
           border-top-right-radius: 0;
           -webkit-border-bottom-right-radius: 0;
@@ -4696,7 +4695,22 @@ a.site-dev {
           border-top-left-radius: 0;
           -webkit-border-bottom-left-radius: 0;
           border-bottom-left-radius: 0;
-          border-left: 1px solid #a6a6a6; }
+          border: 1px solid #a6a6a6; }
+          .input-item.telwrapper .input-wrapper:last-child .input-main.error {
+            border-color: #ed1c24; }
+    .input-item.telwrapper.telwrapper_active .input-wrapper:first-child .select2, .input-item.telwrapper.telwrapper_active .input-wrapper:first-child .input-main {
+      border-width: 2px;
+      border-color: #000000;
+      border-right: none; }
+    .input-item.telwrapper.telwrapper_active .input-wrapper:last-child .input-main {
+      border: 2px solid #000000;
+      border-left: 1px solid #a6a6a6; }
+      .input-item.telwrapper.telwrapper_active .input-wrapper:last-child .input-main.error {
+        border-color: #ed1c24; }
+    .input-item.telwrapper.telwrapper_active_error .input-wrapper:first-child .select2, .input-item.telwrapper.telwrapper_active_error .input-wrapper:first-child .input-main {
+      border-color: #ed1c24; }
+    .input-item.telwrapper.telwrapper_active_error .input-wrapper:last-child .input-main {
+      border-color: #ed1c24; }
 
 .input-wrapper {
   position: relative;
@@ -4830,6 +4844,7 @@ a.site-dev {
   -o-text-overflow: ellipsis;
   text-overflow: ellipsis;
   overflow: hidden;
+  pointer-events: none;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease; }

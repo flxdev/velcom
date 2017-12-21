@@ -495,7 +495,7 @@ function slidesCount(elem){
 function SetCountryFlags(data){
 	if (!data.id) { return data.text; }
 	var countryEl = $('<span><img class="tel-image" src="'+data.element.dataset.img+'"></img><span class="tel-text">' + data.text + '</span></span>');
-	console.log(data.element.dataImg)
+	phoneSelectChange('.telwrapper');
 	return countryEl
 }
 function formSelects(elem){
@@ -1226,6 +1226,7 @@ function inputValIncDecr(field){
 					el[0].value = '';
 					el.removeClass('editing');
 				}
+				el.validate();
 			};
 			function increment() {
 				el.addClass('editing');
@@ -1238,6 +1239,7 @@ function inputValIncDecr(field){
 				if(!max || value <= max) {
 					el[0].value = value;
 				}
+				el.validate();
 			};
 		}
 		el.each(function() {
@@ -1369,34 +1371,37 @@ function initTabs(){
 	}
 }
 
-function phoneSelectChange(){
+function phoneSelectChange(wrapper){
 
-	if($('.telwrapper').length){
+	if($(wrapper).length){
 
-		var t_wrap = $('.telwrapper');
+		var t_wrap = $(wrapper);
 
 		t_wrap.each(function(){
 
-			var t_select = t_wrap.find('select'),
-				t_input = t_wrap.find('input');
+			// var t_elem = t_wrap.find('.input-wrapper');
+			// 	//t_input = t_wrap.find('input');
 
-			t_select.each(function(){
+			//t_elem.each(function(){
 
-				$(this).on('focus',function(){
-
-					this.closest('.telwrapper').addClass('telwrapper_hover');
+				$(this).on('click',function(){
+					$(this).addClass('telwrapper_active');
 					console.log('qq');
 				});
-			});
-			t_input.each(function(){
 
-				$(this).on('focus',function(){
-
-					this.closest('.telwrapper').addClass('telwrapper_hover');
-					console.log('pp');
-				});
-			});
+			//});
+			removeActiveClass();
 		});
-			
+
+		function removeActiveClass(){
+			$(document).off('mouseup.side').on('mouseup.side', function (e){
+				if (!t_wrap.is(e.target) && t_wrap.has(e.target).length === 0) {
+					if(t_wrap.hasClass('telwrapper_active')){
+						t_wrap.removeClass('telwrapper_active');
+					}
+				}
+			});
+		}
+
 	}
 }
