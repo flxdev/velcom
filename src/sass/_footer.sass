@@ -255,15 +255,17 @@ footer
 a.site-dev
 	margin-left: auto
 	padding-left: 20px
-	color: #000000
-	font-weight: bold
-	+tr(color .1s ease-in-out)
+	//font-weight: bold
 	span
-		font-weight: normal
-		+tr(color .1s ease-in-out)
+		+tr(color .3s ease)
+		color: #767a7d
+	strong
+		+tr(color .2s ease)
+		color: #000000
 	&:hover
 		+notouch
-			color: #ecdc00
+			strong
+				color: #ecdc00
 			span
 				color: #000000
 	+r(400)

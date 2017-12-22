@@ -582,11 +582,11 @@ function AjaxLoading(el) {
 					if (_this.ajaxLink.hasClass('gallery-photo')) {
 						setTimeout(function () {
 							initGalleryModalSlider();
-						}, 100);
+						}, 15);
 					} else {
 						setTimeout(function () {
 							initContentsModalSlider();
-						}, 100);
+						}, 15);
 					}
 
 					// initModalActions(_this.appendMain);
@@ -594,8 +594,7 @@ function AjaxLoading(el) {
 					if (typeof slide != 'undefined') {
 						setTimeout(function () {
 							_this.appendMain.find('.contents-slider').slick('slickGoTo', slide);
-							console.log(slide);
-						}, 100);
+						}, 10);
 					}
 				});
 			}
@@ -620,13 +619,7 @@ function initContentsModalSlider() {
 			slidesToShow: 1,
 			slidesToScroll: 1,
 			adaptiveHeight: false,
-			asNavFor: parent.find('.contents-slider'),
-			responsive: [{
-				breakpoint: 768,
-				settings: {
-					draggable: true
-				}
-			}]
+			asNavFor: parent.find('.contents-slider')
 		});
 	});
 
@@ -646,13 +639,7 @@ function initContentsModalSlider() {
 			slidesToScroll: 1,
 			prevArrow: '.contents-modal__prev',
 			nextArrow: '.contents-modal__next',
-			asNavFor: _this.closest('.modal-container').find('.image-slider'),
-			responsive: [{
-				breakpoint: 768,
-				settings: {
-					draggable: true
-				}
-			}]
+			asNavFor: _this.closest('.modal-container').find('.image-slider')
 		});
 	});
 }

@@ -566,18 +566,6 @@ b {
     color: #767a7d;
     font-weight: 400; }
 
-.content-area a:not([class]) {
-  color: #000000;
-  -webkit-transition: color 0.1s ease-in-out;
-  -o-transition: color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out; }
-  .content-area a:not([class]) strong {
-    color: #000000;
-    font-weight: bold;
-    -webkit-transition: color 0.1s ease-in-out;
-    -o-transition: color 0.1s ease-in-out;
-    transition: color 0.1s ease-in-out; }
-
 .content-area .youtube {
   display: block;
   width: 100%;
@@ -798,8 +786,26 @@ del {
   font-size: inherit;
   text-decoration: line-through; }
 
-p a:hover {
-  text-decoration: underline; }
+p a {
+  padding-bottom: 2px; }
+  p a strong {
+    padding-bottom: 2px; }
+  p a:hover {
+    border-bottom: 1px solid #000000; }
+    p a:hover strong {
+      border-bottom: 1px solid #ecdc00; }
+
+p a:not([class]) {
+  color: #000000;
+  -webkit-transition: color 0.1s ease-in-out;
+  -o-transition: color 0.1s ease-in-out;
+  transition: color 0.1s ease-in-out; }
+  p a:not([class]) strong {
+    color: #000000;
+    font-weight: bold;
+    -webkit-transition: color 0.1s ease-in-out;
+    -o-transition: color 0.1s ease-in-out;
+    transition: color 0.1s ease-in-out; }
 
 .h1 {
   color: #ffffff;
@@ -2235,24 +2241,24 @@ input {
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
-  font-family: "Arial", sans-serif;
+  font-family: "Arial", "Helvetica", "Roboto", sans-serif;
   color: #000;
   font-size: 1rem;
   -webkit-appearance: none; }
   input::-webkit-input-placeholder {
-    font-family: "Arial", sans-serif; }
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif; }
   input::-moz-placeholder {
-    font-family: "Arial", sans-serif; }
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif; }
   input:-ms-input-placeholder {
-    font-family: "Arial", sans-serif; }
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif; }
   input::-ms-input-placeholder {
-    font-family: "Arial", sans-serif; }
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif; }
   input::placeholder {
-    font-family: "Arial", sans-serif; }
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif; }
   input::-ms-input-placeholder {
-    font-family: "Arial", sans-serif; }
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif; }
   input::-webkit-input-placeholder {
-    font-family: "Arial", sans-serif; }
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif; }
   input::-ms-clear {
     display: none; }
 
@@ -2272,25 +2278,25 @@ button {
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent; }
   *::-webkit-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 1rem; }
   *::-moz-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 1rem; }
   *:-ms-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 1rem; }
   *::-ms-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 1rem; }
   *::placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 1rem; }
   *::-ms-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 1rem; }
   *::-webkit-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 1rem; }
 
 textarea {
@@ -2298,25 +2304,25 @@ textarea {
   font-family: 'Roboto';
   font-size: 1rem; }
   textarea::-webkit-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 0.875rem; }
   textarea::-moz-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 0.875rem; }
   textarea:-ms-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 0.875rem; }
   textarea::-ms-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 0.875rem; }
   textarea::placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 0.875rem; }
   textarea::-ms-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 0.875rem; }
   textarea::-webkit-input-placeholder {
-    font-family: "Arial", sans-serif;
+    font-family: "Arial", "Helvetica", "Roboto", sans-serif;
     font-size: 0.875rem; }
 
 ul li > a {
@@ -2343,7 +2349,7 @@ body {
   -ms-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-family: "Arial", sans-serif;
+  font-family: "Arial", "Helvetica", "Roboto", sans-serif;
   width: 100%;
   min-width: 20rem;
   min-width: -webkit-calc(20rem-2rem);
@@ -4170,17 +4176,17 @@ footer {
 
 a.site-dev {
   margin-left: auto;
-  padding-left: 1.25rem;
-  color: #000000;
-  font-weight: bold;
-  -webkit-transition: color 0.1s ease-in-out;
-  -o-transition: color 0.1s ease-in-out;
-  transition: color 0.1s ease-in-out; }
+  padding-left: 1.25rem; }
   a.site-dev span {
-    font-weight: normal;
-    -webkit-transition: color 0.1s ease-in-out;
-    -o-transition: color 0.1s ease-in-out;
-    transition: color 0.1s ease-in-out; }
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+    color: #767a7d; }
+  a.site-dev strong {
+    -webkit-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease;
+    color: #000000; }
 
 /* modal */
 .pop-close {
@@ -4283,7 +4289,7 @@ a.site-dev {
 .application-modal {
   width: 100%;
   height: 100%;
-  padding: 1.25rem 4.375rem 4.375rem 5rem;
+  padding: 1.25rem 4.375rem 2.5rem 5rem;
   max-width: 54.5625rem;
   margin-top: 0;
   margin-bottom: 0;
@@ -4298,7 +4304,8 @@ a.site-dev {
   .application-modal .form-block {
     background-color: #ffffff; }
     .application-modal .form-block__footer {
-      background-color: #ffffff; }
+      background-color: #ffffff;
+      padding-bottom: 10px; }
   .application-modal .pop-close {
     right: 1.5625rem;
     top: 1.25rem; }
@@ -4330,8 +4337,7 @@ a.site-dev {
     align-items: flex-start;
     width: 100%;
     height: 100%;
-    padding: 0 4.25rem 2.1875rem 8.125rem;
-    margin-top: 3.6875rem; }
+    padding: 3.6875rem 4.25rem 2.1875rem 8.125rem; }
   .modal-menu-body {
     text-align: center;
     font-size: 0;
@@ -4494,11 +4500,6 @@ a.site-dev {
     height: 100%;
     background-color: #ffffff;
     padding: 5px; }
-  .contents-modal .modal-container-content {
-    padding-right: 0;
-    padding-left: 0;
-    position: relative;
-    overflow: hidden; }
   .contents-modal .image-paginate-slider {
     width: 100%;
     max-width: 4.375rem;
@@ -4569,6 +4570,12 @@ a.site-dev {
     line-height: 1;
     color: #000000;
     margin-bottom: 2.1875rem; }
+
+.gallery-modal .modal-container-content {
+  padding-right: 0;
+  padding-left: 0;
+  position: relative;
+  overflow: hidden; }
 
 .form-block {
   padding: 2.5rem 0 0 0;
@@ -4652,7 +4659,6 @@ a.site-dev {
       .input-item.telwrapper .input-wrapper .select2, .input-item.telwrapper .input-wrapper .input-main {
         height: 3.75rem; }
       .input-item.telwrapper .input-wrapper:first-child {
-        margin-left: -1px;
         width: 53%;
         min-width: 7.1875rem;
         max-width: 9.375rem; }
@@ -4688,8 +4694,6 @@ a.site-dev {
         -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
         flex-grow: 1; }
-        .input-item.telwrapper .input-wrapper:last-child .help-block {
-          left: -53%; }
         .input-item.telwrapper .input-wrapper:last-child .input-main {
           -webkit-border-top-left-radius: 0;
           border-top-left-radius: 0;
@@ -5094,10 +5098,8 @@ a.site-dev {
   * {
     -webkit-text-size-adjust: none; } }
   @media not all and (-moz-touch-enabled: 1), not all and (pointer: coarse), not all and (-ms-high-contrast: none) and (max-width: 600px) {
-    .content-area a:not([class]):hover {
-      color: #cccccc; }
-      .content-area a:not([class]):hover strong {
-        color: #ecdc00; }
+    p a:not([class]):hover strong {
+      color: #ecdc00; }
     .link-navigation__link:hover {
       color: #ecdc00; }
       .link-more a:hover {
@@ -5198,10 +5200,10 @@ a.site-dev {
       color: #ecdc00; }
       .footer-copyright__map a:hover {
         color: #000000; }
-    a.site-dev:hover {
+    a.site-dev:hover strong {
       color: #ecdc00; }
-      a.site-dev:hover span {
-        color: #000000; }
+    a.site-dev:hover span {
+      color: #000000; }
         .modal-menu__menu a:hover {
           color: #ecdc00; }
         .modal-menu__sub-menu a:hover {
@@ -5308,7 +5310,7 @@ a.site-dev {
       background-size: cover;
       background-position: center 0; }
     .modal-menu-inner {
-      padding: 2.8125rem 2.375rem 0.9375rem 3.75rem; } }
+      padding: 3.75rem 2.375rem 0.9375rem 3.75rem; } }
   @media only screen and (max-width: 980px) {
       .content-area .datacenter-characteristics__item {
         width: 40%; }
@@ -5472,7 +5474,7 @@ a.site-dev {
       width: 30%;
       margin-bottom: 1rem; }
     .application-modal {
-      padding: 1.25rem 1.875rem 4.375rem 1.875rem; } }
+      padding: 1.25rem 1.875rem 2.5rem 1.875rem; } }
   @media only screen and (max-width: 768px) {
       .content-area .datacenter-characteristics__item {
         width: 30%; }
@@ -5697,8 +5699,7 @@ a.site-dev {
   .footer-copyright__map {
     width: 100%; }
     .modal-menu-inner {
-      padding: 0.9375rem 1.5625rem 0.9375rem 2.5rem;
-      margin-top: 2.8125rem; }
+      padding: 3.75rem 1.5625rem 0.9375rem 2.5rem; }
     .modal-menu__nav {
       width: 50%;
       padding-right: 1.25rem; }
@@ -5763,7 +5764,7 @@ a.site-dev {
           width: 100%; } }
   @media only screen and (max-width: 640px) {
     .application-modal {
-      padding: 1.25rem 0.9375rem 4.375rem 0.9375rem; }
+      padding: 1.25rem 0.9375rem 2.5rem 0.9375rem; }
     .input-col {
       width: 100%; }
       .input-item.w50 {
@@ -5885,8 +5886,7 @@ a.site-dev {
       max-width: 1.25rem;
       margin-right: 5px; }
     .modal-menu-inner {
-      padding: 0.9375rem 1rem 1.875rem 1rem;
-      margin-top: 3.25rem; }
+      padding: 3.75rem 1rem 1.875rem 1rem; }
     .modal-menu__close-btn {
       top: 1.1875rem;
       right: 1.1875rem; }

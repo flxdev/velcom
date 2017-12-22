@@ -59,18 +59,7 @@
 			line-height: 1.714
 			color: #767a7d
 			font-weight: 400
-	a:not([class])
-		color: #000000
-		+tr(color .1s ease-in-out)
-		strong
-			color: #000000
-			font-weight: bold
-			+tr(color .1s ease-in-out)
-		&:hover
-			+notouch
-				color: #cccccc
-				strong
-					color: #ecdc00
+	
 	.youtube
 		display: block
 		width: 100%
@@ -284,9 +273,27 @@ sub
 del 
 	font-size: inherit
 	text-decoration: line-through
-p 
-	a:hover
-		text-decoration: underline
+p
+	a
+		strong
+			padding-bottom: 2px
+		padding-bottom: 2px
+		&:hover
+			border-bottom: 1px solid #000000
+			strong
+				border-bottom: 1px solid #ecdc00
+
+	a:not([class])
+		color: #000000
+		+tr(color .1s ease-in-out)
+		strong
+			color: #000000
+			font-weight: bold
+			+tr(color .1s ease-in-out)
+		&:hover
+			+notouch
+				strong
+					color: #ecdc00
 .h1
 	color: #ffffff
 	font-size: 48px
