@@ -359,6 +359,7 @@ p
 	font-size: 0
 	&_inner
 		position: relative
+		z-index: 1
 	
 .link-button
 	+link-btn( #000000,$main-decor-color, #f2db00, #edcd1c)
@@ -377,6 +378,7 @@ p
 		font-size: 16px
 		line-height: 1.5
 		font-weight: bold
+		padding-left: 2px
 		color: #000000
 		width: auto
 		position: relative
@@ -1547,27 +1549,27 @@ p
 	margin-left: -10px
 	.slider-counter
 		padding: 0 20px
-.inner-slider__prev,
-.inner-slider__next
-	display: inline-block
-	width: 6px
-	height: 12px
-	padding: 10px
-	box-sizing: content-box
-	vertical-align: middle
-	position: relative
-	color: #000000
-	font-size: 0
-	+tr(all .1s ease-in-out)
-	&.slick-disabled
-		color: rgba(#000000, .5)
-		pointer-events: none
-	&:hover
-		color: #767a7d
-	&:active
-		color: #edcd1c
-.inner-slider__prev
-	transform: rotate(180deg)
+	.inner-slider__prev,
+	.inner-slider__next
+		display: inline-block
+		width: 6px
+		height: 20px
+		padding: 0 10px
+		vertical-align: middle
+		position: relative
+		box-sizing: content-box
+		color: #000000
+		font-size: 0
+		+tr(all .1s ease-in-out)
+		&.slick-disabled
+			color: rgba(#000000, .3)
+			pointer-events: none
+		&:hover
+			color: #767a7d
+		&:active
+			color: #edcd1c
+	.inner-slider__prev
+		transform: rotate(180deg)
 
 .tabs-head
 	margin-bottom: 25px
@@ -1734,7 +1736,8 @@ p
 			margin-bottom: 30px
 	&_search-result &__field
 		border-color: #f2db00
-		line-height: 50px
+		padding-top: 25px
+		padding-bottom: 25px
 		padding-left: 26px
 	&_search-result &__serch-btn
 		color: #000000

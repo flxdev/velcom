@@ -98,6 +98,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		touchMove: false,
 		dragable: false,
 		arrows: true,
+		speed: 500,
+		fade: true,
+		cssEase: 'linear',
 		infinite: false,
 		prevArrow: '.data-center-slider__prev',
 		nextArrow: '.data-center-slider__next',
@@ -106,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		asNavFor: '.data-center-slider-bg',
 		customPaging : function(slider, i) {
 			return '<a href="#">'+ slider.$slides.eq(i).data('slide-text') +'</a>';
-			// return console.log(slider.$slides.eq(i).data('slide-text'));
 		},
 		responsive: [
 			{
@@ -119,18 +121,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	});
 
-	$('.data-center-slider-text').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-		console.log(event);
-	});
-
 	var sliderDataSliderBg = $('.data-center-slider-bg').slick({
 		touchMove: false,
 		dragable: false,
 		infinite: false,
 		dots: false,
 		arrows: false,
+		speed: 1000,
+		fade: true,
+		cssEase: 'ease',
 		asNavFor: '.data-center-slider-text',
-		//fade: true
 	});
 
 	activeSidebarLink();
@@ -615,7 +615,7 @@ function AjaxLoading(el){
 					if(typeof slide != 'undefined'){
 						setTimeout(function(){
 							_this.appendMain.find('.contents-slider').slick('slickGoTo',slide);
-						}, 10);
+						}, 16);
 					}
 				});
 			}
