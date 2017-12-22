@@ -4238,13 +4238,10 @@ a.site-dev {
   z-index: 200;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: background-color .25s, opacity .25s, visibility .15s;
-  -o-transition: background-color .25s, opacity .25s, visibility .15s;
-  transition: background-color .25s, opacity .25s, visibility .15s;
+  -webkit-transition: opacity .3s .15s, visibility .15s .1s, background-color .3s .15s;
+  -o-transition: opacity .3s .15s, visibility .15s .1s, background-color .3s .15s;
+  transition: opacity .3s .15s, visibility .15s .1s, background-color .3s .15s;
   text-align: center;
-  -webkit-transition-delay: 0s;
-  -o-transition-delay: 0s;
-  transition-delay: 0s;
   contain: paint;
   pointer-events: all; }
   .modal-layout_fade-right {
@@ -4255,18 +4252,18 @@ a.site-dev {
     background-color: rgba(0, 0, 0, 0.6);
     visibility: visible;
     opacity: 1;
-    -webkit-transition-delay: .35s, .35s, .1s;
-    -o-transition-delay: .35s, .35s, .1s;
-    transition-delay: .35s, .35s, .1s; }
+    -webkit-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s; }
     .modal-layout.active .modal-container {
       opacity: 1;
-      -webkit-transition-delay: .2s;
-      -o-transition-delay: .2s;
-      transition-delay: .2s;
       -webkit-transform: none;
       -ms-transform: none;
       transform: none;
-      visibility: visible; }
+      visibility: visible;
+      -webkit-transition-delay: 0s;
+      -o-transition-delay: 0s;
+      transition-delay: 0s; }
 
 .modal-container {
   margin-top: 3.75rem;
@@ -4276,14 +4273,16 @@ a.site-dev {
   width: auto;
   background-color: #ffffff;
   position: relative;
-  -webkit-transition: opacity .3s, visibility .1s;
-  -o-transition: opacity .3s, visibility .1s;
-  transition: opacity .3s, visibility .1s;
+  -webkit-transition: visibility .3s, opacity .3s, -webkit-transform .35s;
+  transition: visibility .3s, opacity .3s, -webkit-transform .35s;
+  -o-transition: visibility .3s, opacity .3s, transform .35s;
+  transition: visibility .3s, opacity .3s, transform .35s;
+  transition: visibility .3s, opacity .3s, transform .35s, -webkit-transform .35s;
+  -webkit-transition-delay: .1s;
+  -o-transition-delay: .1s;
+  transition-delay: .1s;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition-delay: 0;
-  -o-transition-delay: 0;
-  transition-delay: 0;
   overflow-x: hidden;
   overflow-y: auto; }
   .modal-container-content {
@@ -4304,12 +4303,7 @@ a.site-dev {
   margin-bottom: 0;
   -webkit-transform: translateX(40%);
   -ms-transform: translateX(40%);
-  transform: translateX(40%);
-  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  -o-transition: transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  transition: transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  transition: transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9), -webkit-transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9); }
+  transform: translateX(40%); }
   .application-modal .form-block {
     background-color: #ffffff; }
     .application-modal .form-block__footer {
@@ -4326,12 +4320,7 @@ a.site-dev {
   max-width: 68.375rem;
   -webkit-transform: translateX(-40%);
   -ms-transform: translateX(-40%);
-  transform: translateX(-40%);
-  -webkit-transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  transition: -webkit-transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  -o-transition: transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  transition: transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9);
-  transition: transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9), -webkit-transform 0.35s cubic-bezier(0.25, 0.5, 0.5, 0.9); }
+  transform: translateX(-40%); }
   .modal-menu-inner {
     display: -webkit-box;
     display: -webkit-flex;
