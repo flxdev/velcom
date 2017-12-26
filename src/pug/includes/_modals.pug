@@ -5,6 +5,13 @@ include _mixins.pug
 
 .modal-layout(data-modal='popup-gallery').js-popup-container
 
+.modal-layout(data-modal='view-img-popup').js-popup-container
+	.modal-container.contents-modal.gallery-modal
+		button(type="button").pop-close.closePopup
+				+icon('close')
+		.modal-container-inner
+			.modal-container-img
+
 .modal-layout.modal-layout_fade-left(data-modal='modal-menu').js-popup-container
 	.modal-container.modal-menu
 		.pop-close.closePopup

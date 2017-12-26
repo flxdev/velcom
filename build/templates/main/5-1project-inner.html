@@ -165,8 +165,7 @@
                       </ul>
                       <hr>
                       <h3>Отзыв клиента</h3>
-                      <div class="feedback">
-                        <div class="feedback__img"><img src="img/blanck.jpg" alt="blanck"></div>
+                      <div class="feedback"><a class="feedback-blank js-view-img" href="#" data-view-img="blanck.jpg" data-modal="view-img-popup"><img src="img/blanck.jpg" alt="blanck"></a>
                         <blockquote><i>Дата-цент Velcom сыграл решающую роль в нашем процессе оптимизации работ.</i><span>Вишневский Григорий Михайлович</span></blockquote>
                       </div>
                     </div>
@@ -280,6 +279,18 @@
       <!--TODO need modals!!!-->
       <div class="modal-layout js-popup-container" data-modal="popup-contents"></div>
       <div class="modal-layout js-popup-container" data-modal="popup-gallery"></div>
+      <div class="modal-layout js-popup-container" data-modal="view-img-popup">
+        <div class="modal-container contents-modal gallery-modal">
+          <button class="pop-close closePopup" type="button">
+                  <svg class="icon-close">
+                    <use xlink:href="#close"></use>
+                  </svg>
+          </button>
+          <div class="modal-container-inner">
+            <div class="modal-container-img"></div>
+          </div>
+        </div>
+      </div>
       <div class="modal-layout modal-layout_fade-left js-popup-container" data-modal="modal-menu">
         <div class="modal-container modal-menu">
           <div class="pop-close closePopup">

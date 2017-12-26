@@ -13,12 +13,24 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	}
 
-	$('.btn-scrl').click(function(e){
+	$('.btn-scrl').on('click',function(e){
 		e.preventDefault();
 		var el_scroll = $(this).data('scroll-to'),
 			el_off = $(el_scroll).offset().top-80;
 		$('html, body').animate({scrollTop: el_off}, 1000);
 		return false;
+	});
+
+	$('.js-view-img').on('click',function(e){
+		e.preventDefault();
+		var el_view = $(this).data('view-img'),
+			el_data = $(this).data('modal'),
+			modal = $("body").find('.modal-layout[data-modal="'+ el_data+'"]');
+		console.log(el_view + ' el_view');
+		console.log(el_data + ' el_data');
+		
+
+		modal.addClass('active').find('.modal-container-img').html('<img src="img/'+ el_view +'" alt="blanck" />');
 	});
 
 	var sliderPromoReclame = $('.promo-reclame').slick({
