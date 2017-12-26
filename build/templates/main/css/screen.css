@@ -6029,11 +6029,12 @@ a.site-dev {
       .contents-modal .contents-slider-slide__img {
         height: 19.375rem; }
       .contents-modal .contents-slider-slide__content {
-        padding: 0 1.875rem 0 4.375rem; }
+        padding: 2.1875rem 5px 0 5px; }
       .contents-modal .contents-count {
+        height: auto;
         top: 20rem; }
         .contents-modal .contents-count .slider-counter {
-          padding: 0 10px; }
+          padding: 0 5px; }
       .input-wrapper .input-main {
         padding: 1.875rem 10px 10px 10px; }
         .input-wrapper > .select2 .select2-selection__arrow {
