@@ -178,27 +178,24 @@ function activeSidebarLink() {
 	var link_value = $('.side-bar-nav .link-navigation__link_active').text();
 	$('.show-sidebar-menu .link-value').text(link_value);
 
-	var side_bar_m = $('.show-sidebar-menu');
+	var side_bar_m = $('.show-sidebar-menu'),
+	    t_list = side_bar_m.next();
 
 	side_bar_m.off('click.side').on('click.side', function (e) {
 		e.preventDefault();
-
 		if ($(this).hasClass('sidebar-menu-visible')) {
 			$(this).removeClass('sidebar-menu-visible');
 		} else {
 			$(this).addClass('sidebar-menu-visible');
 		}
+	});
 
-		$(document).off('mouseup.side').on('mouseup.side', function (e) {
-
-			if (!side_bar_m.is(e.target) && side_bar_m.has(e.target).length === 0) {
-
-				if (side_bar_m.hasClass('sidebar-menu-visible')) {
-
-					side_bar_m.removeClass('sidebar-menu-visible');
-				}
+	$(document).off('click touchstart').on('click touchstart', function (e) {
+		if (!side_bar_m.is(e.target) && side_bar_m.has(e.target).length === 0 && !t_list.is(e.target) && t_list.has(e.target).length === 0) {
+			if (side_bar_m.hasClass('sidebar-menu-visible')) {
+				side_bar_m.removeClass('sidebar-menu-visible');
 			}
-		});
+		}
 	});
 }
 
