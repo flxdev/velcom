@@ -13,12 +13,14 @@
 	&:hover
 		cursor: pointer
 		transform: rotate(90deg)
+
 .modals
 	visibility: hidden
 	pointer-events: none
 	position: absolute
 	top: -2000px
 	left: -2000px
+
 .modal-layout
 	position: fixed
 	left: 0
@@ -50,6 +52,8 @@
 			transform: none
 			visibility: visible
 			transition-delay: 0s
+		.gallery-modal
+			transition-delay: .5s
 
 .modal-container
 	margin-top: 60px
@@ -432,6 +436,7 @@
 			//&__description
 
 .gallery-modal
+	transition-delay: .5s
 	.modal-container-content
 		padding-right: 0
 		padding-left: 0

@@ -4263,6 +4263,10 @@ a.site-dev {
       -webkit-transition-delay: 0s;
       -o-transition-delay: 0s;
       transition-delay: 0s; }
+    .modal-layout.active .gallery-modal {
+      -webkit-transition-delay: .5s;
+      -o-transition-delay: .5s;
+      transition-delay: .5s; }
 
 .modal-container {
   margin-top: 3.75rem;
@@ -4571,11 +4575,15 @@ a.site-dev {
     color: #000000;
     margin-bottom: 2.1875rem; }
 
-.gallery-modal .modal-container-content {
-  padding-right: 0;
-  padding-left: 0;
-  position: relative;
-  overflow: hidden; }
+.gallery-modal {
+  -webkit-transition-delay: .5s;
+  -o-transition-delay: .5s;
+  transition-delay: .5s; }
+  .gallery-modal .modal-container-content {
+    padding-right: 0;
+    padding-left: 0;
+    position: relative;
+    overflow: hidden; }
 
 .success-modal {
   padding: 2.8125rem 1.875rem 3.125rem 1.875rem;

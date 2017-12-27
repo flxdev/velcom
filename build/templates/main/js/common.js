@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	popUpsInit();
 	initInnerPageSlider();
 	initCustomSelectList();
-	YoutubeVids();
+	YoutubeVideo();
 	listhide();
 	Accordeon();
 	validateForms();
@@ -313,15 +313,17 @@ function popUpsInit() {
 	};
 
 	_this.f.closePopup = function (_popup) {
-		// var _cont = _popup.find('.modal-container-content:not(.response)'),
-		// 	_response = _popup.find('.response');
 		_popup.removeClass(_this.conf.active_class);
-		window.DOM.showScroll();
+		setTimeout(function () {
+			window.DOM.showScroll();
+		}, 5);
 	};
 
 	_this.f.openPopup = function (_popup) {
 		_popup.addClass(_this.conf.active_class);
-		window.DOM.hideScroll();
+		setTimeout(function () {
+			window.DOM.hideScroll();
+		}, 5);
 	};
 	/**
   * Initial.
@@ -755,7 +757,7 @@ function CheckForSelect(form) {
 	}
 }
 
-function YoutubeVids() {
+function YoutubeVideo() {
 
 	var youtube = document.querySelectorAll('.youtube');
 
