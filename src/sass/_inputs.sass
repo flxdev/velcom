@@ -1,12 +1,14 @@
 .form-block
-	padding: 40px 0 0 0
+	padding: 40px 10px 0 10px
 	width: 100%
 	background-color: #ffffff
 	// &__head
 	// &__body
 	&__footer
 		margin-top: 10px
-		padding: 33px 0 60px 0
+		margin-right: -10px
+		margin-left: -10px
+		padding: 33px 10px 60px 10px
 		background-color: #fafafa
 	&__title
 		margin-bottom: 20px
@@ -171,6 +173,8 @@
 			padding: 30px 10px 10px 25px
 			resize: none
 			background-color: #FFF
+			+r(980)
+				padding: 30px 10px 10px 20px
 			+r(450)
 				padding: 30px 10px 10px 10px
 			&:hover
@@ -266,10 +270,12 @@
 		overflow: hidden
 		pointer-events: none
 		+tr(all .3s ease)
+		+r(980)
+			left: 20px
+			font-size: 14px
 		+r(640)
 			max-width: 80%
 		+r(450)
-			font-size: 14px
 			left: 10px
 		&.fixed
 			opacity: .7
@@ -277,19 +283,21 @@
 			top: 10px
 		&.sm 
 			font-size: 14px
-			+r(450)
+			+r(980)
 				font-size: 12px
 	&-counter
 		&-nav
 			position: absolute
+			z-index: 4
 			top: 50%
 			right: 20px
 			transform: translateY(-50%)
 		&-btn
 			display: block
 			width: 10px
-			height: 6px
-			margin: 13px 0
+			height: 10px
+			padding: 10px 0
+			margin: 7px 0
 			position: relative
 			svg
 				position: absolute

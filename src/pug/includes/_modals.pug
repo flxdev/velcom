@@ -1,6 +1,15 @@
 //TODO need modals!!!
 include _mixins.pug
 
+.modal-layout(data-modal='popup-success').js-popup-container
+	.modal-container.success-modal
+		button(type="button").pop-close.closePopup
+				+icon('close')
+		.modal-container-inner
+			.content-area
+				h2 Ваша заявка принята
+				p В ближайшее время наш менеджер свяжется с вами для уточнения деталей
+
 .modal-layout(data-modal='popup-contents').js-popup-container
 
 .modal-layout(data-modal='popup-gallery').js-popup-container
@@ -230,149 +239,3 @@ include _mixins.pug
 								option(value="1") Критический
 								option(value="2") Высокий
 								option(value="3",selected) Обычный
-
-//- .modal-layout(data-modal='get-consultation').js-popup-container
-//- 	.modal-container.consultation-modal
-//- 		.modal-container-inner
-//- 			.pop-close.closePopup
-//- 				+icon('close')
-//- 			form(action="#").js-validate
-//- 				.form-block
-//- 					.form-block__head
-//- 						.h2.form-block__title Получить консультацию
-//- 					.form-block__body
-//- 						hr.form-content-devider
-//- 						.form-content
-//- 							.form-content-head Контактные данные
-//- 							.input-row
-//- 								.input-item.w100
-//- 									.input-wrapper
-//- 										input.input-main(
-//- 											type="text",
-//- 											data-validation="required",
-//- 											data-validation-error-msg="Поле обязательно для заполнения",
-//- 											name="clieentName",
-//- 											id="clieentName"
-//- 										)
-//- 										label.input-label(for="clieentName") ФИО*
-//- 								.input-item.w50
-//- 									.input-wrapper
-//- 										input.input-main(
-//- 											type="phone",
-//- 											data-validation="custom",
-//- 											data-validation-regexp="^[-0-9()+ ]+$",
-//- 											data-validation-error-msg="Введите корректный номер телефона",
-//- 											name="clieentPhone",
-//- 											id="clieentPhone")
-//- 										label.input-label(for="clieentPhone") Телефон*
-//- 								.input-item.w50
-//- 									.input-wrapper
-//- 										input.input-main(
-//- 											type="text",
-//- 											data-validation="email",
-//- 											data-validation-error-msg="Введите корректный e-mail",
-//- 											name="clieentEmail",
-//- 											id="clieentEmail"
-//- 										)
-//- 										label.input-label(for="clieentEmail") Email*
-//- 								.input-item.w50
-//- 										.input-wrapper
-//- 											input.input-main(
-//- 												type="text",
-//- 												name="clieentFrim",
-//- 												id="clieentFrim")
-//- 											label.input-label(for="clieentFrim") Организация
-//- 								.input-item.w50
-//- 										.input-wrapper
-//- 											input.input-main(
-//- 												type="text",
-//- 												name="clieentPosition",
-//- 												id="clieentPosition")
-//- 											label.input-label(for="clieentPosition") Должность
-//- 						hr.form-content-devider
-//- 						.form-content
-//- 							.form-content-head Тема обращения
-//- 							.input-row
-//- 								.radio-group
-//- 									.radio-wrapper
-//- 										input.radio-input(
-//- 											type="radio", 
-//- 											name="radio-group", 
-//- 											id="radio-4",
-//- 											data-validation="required",
-//- 											data-display-trigger='theme-question',
-//- 											data-display-trigger-value='1',
-//- 											checked)
-//- 										label.radio-label(for="radio-4",)
-//- 											.radio-label__custom
-//- 												.radio-label__check
-//- 											.radio-label__text Вопрос по услугам
-//- 									.radio-wrapper
-//- 										input.radio-input(
-//- 											type="radio", 
-//- 											name="radio-group", 
-//- 											id="radio-5",
-//- 											data-validation="required",
-//- 											data-display-trigger='theme-question',
-//- 											data-display-trigger-value='2',
-//- 											)
-//- 										label.radio-label(for="radio-5")
-//- 											.radio-label__custom
-//- 												.radio-label__check
-//- 											.radio-label__text Общие вопросы
-//- 							.form-content(data-display-container='theme-question')
-							
-//- 					.form-block__footer
-//- 						.input-row
-//- 							.input-item.w100
-//- 								label.check-label
-//- 									input(
-//- 										type="checkbox",
-//- 										data-trigger="btn-submit")
-//- 									.check-label__custom
-//- 										.check-label__checked
-//- 											+icon('checked')
-//- 									| Даю согласие на обработку моих 
-//- 									a(href="#") персональных данных
-//- 						button.button-submit.disabled-field(
-//- 						type="submit",
-//- 						data-target="btn-submit",
-//- 						value="Отправить") Отправить
-//- 			.form-appended-els(style='display: none;')
-//- 				/// блок 1
-//- 				.input-row(data-display-target='theme-question',data-display-trigger-value='1')
-//- 					.input-item.w100
-//- 						.input-wrapper
-//- 							// у селектов в конейнере для добавление не должно быть класса .js-select
-//- 							select.input-main(name='Category', 
-//- 														id='Category',
-//- 														data-validation='length', 
-//- 														data-validation-length='min1',
-//- 														data-validation-event="change",
-//- 														data-placeholder='Разъёмы электропитания',
-//- 														data-trigger='otherQuestions',data-trigger-value='5')
-//- 								option(value="1") Co-location
-//- 								option(value="2") Выделенные сервера
-//- 								option(value="3") Категория 3
-//- 								option(value="4") IaaS
-//- 								option(value="5") Другое
-//- 					.input-item.w100
-//- 						.input-wrapper
-//- 							textarea.input-main.disabled-field(
-//- 								type="text",
-//- 								rows="4",
-//- 								disabled='true',
-//- 								data-validation="length",
-//- 								data-validation-length="50-200",
-//- 								data-target='otherQuestions')
-//- 							label.input-label Вопрос *
-//- 				/// конец блок 1
-//- 				/// блок 2
-//- 				.input-row(data-display-target='theme-question',data-display-trigger-value='2')
-//- 					.input-item.w100
-//- 						.input-wrapper
-//- 							textarea.input-main(
-//- 								type="text",
-//- 								rows="4")
-//- 							label.input-label Вопрос *
-//- 				/// конец блок 2

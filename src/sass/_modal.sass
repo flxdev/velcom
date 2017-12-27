@@ -9,7 +9,7 @@
 	box-sizing: content-box
 	position: absolute
 	z-index: 20
-	+tr(all .5s ease)
+	+tr(transform .5s ease)
 	&:hover
 		cursor: pointer
 		transform: rotate(90deg)
@@ -73,8 +73,13 @@
 		position: relative
 		form
 			overflow: hidden
+	&-img
+		padding: 40px 10px
+		text-align: center
+		+r(768)
+			padding: 40px 0
 
-// .modal-container modificate
+// modificate .modal-container
 .application-modal
 	width: 100%
 	height: 100%
@@ -432,3 +437,12 @@
 		padding-left: 0
 		position: relative
 		overflow: hidden
+
+.success-modal
+	padding: 45px 30px 50px 30px
+	position: relative
+	.pop-close
+		width: 19px
+		height: 19px
+		right: 20px
+		top: 20px

@@ -26,10 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		var el_view = $(this).data('view-img'),
 			el_data = $(this).data('modal'),
 			modal = $("body").find('.modal-layout[data-modal="'+ el_data+'"]');
-		console.log(el_view + ' el_view');
-		console.log(el_data + ' el_data');
-		
-
+		window.DOM.hideScroll();
 		modal.addClass('active').find('.modal-container-img').html('<img src="img/'+ el_view +'" alt="blanck" />');
 	});
 
