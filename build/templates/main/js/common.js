@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		    el_data = $(this).data('modal'),
 		    modal = $("body").find('.modal-layout[data-modal="' + el_data + '"]');
 		window.DOM.hideScroll();
-		modal.addClass('active').find('.modal-container-img').html('<img src="img/' + el_view + '" alt="blanck" />');
+		modal.addClass('active').find('.modal-container-img').html('<img src="' + el_view + '" alt="blanck" />');
 	});
 
 	var sliderPromoReclame = $('.promo-reclame').slick({
