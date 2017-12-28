@@ -4510,8 +4510,8 @@ a.site-dev {
     height: 32.5rem;
     overflow: hidden;
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 10px;
+    top: 0;
     z-index: 20; }
     .contents-modal .image-paginate-slider .slick-list {
       padding: 0 !important; }
@@ -4578,7 +4578,8 @@ a.site-dev {
 .gallery-modal {
   -webkit-transition-delay: .5s;
   -o-transition-delay: .5s;
-  transition-delay: .5s; }
+  transition-delay: .5s;
+  height: auto; }
   .gallery-modal .modal-container-content {
     padding-right: 0;
     padding-left: 0;
