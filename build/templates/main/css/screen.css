@@ -4610,11 +4610,12 @@ a.site-dev {
     width: 100%;
     max-width: 90%; }
 
-.form-content .form-content-head {
+.form-content-head {
   font-size: 1rem;
   color: #000000;
   font-weight: bold;
-  margin-bottom: 1.5625rem; }
+  margin-bottom: 1.5625rem;
+  padding: 0 3px; }
 
 .form-content-devider {
   border: none;
