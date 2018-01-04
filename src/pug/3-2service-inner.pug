@@ -579,7 +579,7 @@ block content
 																option(value="2") Трехфазное
 																option(value="Other") Другое
 													/// контейнер для блоков
-													.input-row(data-display-container='PowerType')
+													.form-content(data-display-container='PowerType')
 													hr.form-content-devider
 													
 													.form-content-head Разъемы электропитания
@@ -599,7 +599,7 @@ block content
 																option(value="2") C19
 																option(value="Other") Другое
 													/// контейнер для блоков
-													.input-row(data-display-container='power-сonnectors')
+													.form-content(data-display-container='power-сonnectors')
 															
 													hr.form-content-devider
 													
@@ -783,7 +783,7 @@ block content
 										// сюда кладем блоки, которые надо вставить
 										.form-appended-els(style='display: none;')
 											/// блок PowerType
-											.form-content(data-display-target='PowerType',data-display-trigger-value='Other')
+											.input-add(data-display-target='PowerType',data-display-trigger-value='Other')
 												.text-small Опишите необходимые вам характеристики питания
 												.input-item.w100
 													.input-wrapper
@@ -795,7 +795,7 @@ block content
 														label.input-label(for="complete-сonnectors-text") Характеристики электропитания
 											/// блок PowerType
 											//- .input-row
-											.form-content(data-display-target='power-сonnectors',data-display-trigger-value='Other')
+											.input-add(data-display-target='power-сonnectors',data-display-trigger-value='Other')
 												.text-small Опишите необходимые вам характеристики и количество разьемов питания
 												.input-item.w100
 													.input-wrapper

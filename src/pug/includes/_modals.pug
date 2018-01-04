@@ -185,7 +185,7 @@ include _mixins.pug
 			// сюда кладем блоки, которые надо вставить
 			.form-appended-els(style='display: none;')
 				/// блок 1
-				.input-row(data-display-target='theme-question',data-display-trigger-value='1')
+				.input-add(data-display-target='theme-question',data-display-trigger-value='1')
 					.text-small Укажите минимум данных и мы перезвоним вам в течение 
 						strong 30 минут в рабочее время (с 8:30 до 17:30), 
 						| чтобы уточнить требования по телефону
@@ -215,7 +215,7 @@ include _mixins.pug
 							label.input-label(for="quest-0") Вопрос *
 				/// конец блок 1
 				/// блок 2
-				.input-row(data-display-target='theme-question',data-display-trigger-value='2')
+				.input-add(data-display-target='theme-question',data-display-trigger-value='2')
 					.text-small Другой текс, которого может быть, а может не быть
 						strong меняется, 
 						| чтобы уточнить требования по телефону
@@ -227,7 +227,7 @@ include _mixins.pug
 								rows="4")
 							label.input-label Вопрос *
 				/// конец блок 2
-				.input-row(data-display-target='theme-question',data-display-trigger-value='3')
+				.input-add(data-display-target='theme-question',data-display-trigger-value='3')
 					.input-item.w100
 						.input-wrapper
 							select.input-main(name='Category', 
