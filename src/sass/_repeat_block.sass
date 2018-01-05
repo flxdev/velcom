@@ -30,7 +30,7 @@
 		color: #000000
 		font-size: 18px
 		line-height:  1.333
-		font-weight: 800
+		font-weight: 600
 		max-width: 714px
 	img
 		width: 100%
@@ -322,7 +322,7 @@ p
 	color: #000000
 	font-size: 18px
 	line-height:  1.333
-	font-weight: 800
+	font-weight: 600
 
 .text-primary
 	font-size: 16px
@@ -515,6 +515,7 @@ p
 	&__desc
 		width: 100%
 		margin-bottom: 70px
+		+tr(color .3s ease)
 	&__link
 		position: absolute
 		bottom: 33px
@@ -522,7 +523,7 @@ p
 		z-index: 40
 		&:hover
 			+notouch
-				background-color: #ffffff !important
+				background-color: #f2db00 !important
 	&__icon
 		position: absolute
 		z-index: -1
@@ -534,17 +535,17 @@ p
 		+tr(all .3s ease)
 	&:hover
 		+notouch
-			background-color: #fff164
-			border-color: #fff164
+			background-color: #fafafa
+			border-color: #e4e4e4
 			.icon-arrow-circle use
 				stroke: #000000
-			.service-card__link
-				background-color: #f2db00
 			.service-card__t-arrow
 				margin-right: 0
 				color: #000000
 			.service-card__icon
 				color: #f2db00
+			.service-card__desc
+				color: #000000
 	&:active &__link
 		+notouch
 			background-color: #edcd1c
@@ -1475,7 +1476,7 @@ p
 		max-width: 100px
 	&__experience
 		display: none
-		background-color: #fff164
+		background-color: #f2f4f6
 		font-size: 12px
 		line-height: 2
 		padding: 0 12px

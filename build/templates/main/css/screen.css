@@ -533,7 +533,7 @@ b {
   color: #000000;
   font-size: 1.125rem;
   line-height: 1.333;
-  font-weight: 800;
+  font-weight: 600;
   max-width: 44.625rem; }
 
 .content-area img {
@@ -829,7 +829,7 @@ p a:not([class]) {
   color: #000000;
   font-size: 1.125rem;
   line-height: 1.333;
-  font-weight: 800; }
+  font-weight: 600; }
 
 .text-primary {
   font-size: 1rem;
@@ -1099,7 +1099,10 @@ p a:not([class]) {
     transition: margin 0.3s ease; }
   .service-card__desc {
     width: 100%;
-    margin-bottom: 4.375rem; }
+    margin-bottom: 4.375rem;
+    -webkit-transition: color 0.3s ease;
+    -o-transition: color 0.3s ease;
+    transition: color 0.3s ease; }
   .service-card__link {
     position: absolute;
     bottom: 2.0625rem;
@@ -1891,7 +1894,7 @@ p a:not([class]) {
     max-width: 6.25rem; }
   .project-item-decor__experience {
     display: none;
-    background-color: #fff164;
+    background-color: #f2f4f6;
     font-size: 0.75rem;
     line-height: 2;
     padding: 0 0.75rem;
@@ -3117,9 +3120,10 @@ body {
     line-height: 1.5;
     color: #000000; }
   .data-center-partner__link {
-    background-color: #f2db00; }
+    background-color: #fff233;
+    border: 1px solid #000000; }
     .data-center-partner__link:hover {
-      background-color: #ffffff; }
+      background-color: #edcd1c; }
 
 .data-sertificate {
   max-width: 44.625rem;
@@ -5134,19 +5138,19 @@ a.site-dev {
       .link-more a:active .icon-arrow-circle use {
         stroke: #edcd1c; }
       .service-card__link:hover {
-        background-color: #ffffff !important; }
+        background-color: #f2db00 !important; }
     .service-card:hover {
-      background-color: #fff164;
-      border-color: #fff164; }
+      background-color: #fafafa;
+      border-color: #e4e4e4; }
       .service-card:hover .icon-arrow-circle use {
         stroke: #000000; }
-      .service-card:hover .service-card__link {
-        background-color: #f2db00; }
       .service-card:hover .service-card__t-arrow {
         margin-right: 0;
         color: #000000; }
       .service-card:hover .service-card__icon {
         color: #f2db00; }
+      .service-card:hover .service-card__desc {
+        color: #000000; }
     .service-card:active .service-card__link {
       background-color: #edcd1c; }
     .news-item:hover .news-item__text {
