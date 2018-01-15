@@ -546,7 +546,7 @@ AppendedBlocks.prototype = {
 			let elementsBlock = _.closest('form').parent().find('.form-appended-els');
 			let targetContainer = _.closest('form').find('[data-display-container]').filter(`[data-display-container="${name}"]`);
 			self.InitTriggerChange(_,name,type,value,elementsBlock,targetContainer);
-			_.trigger('change.appendBlock')
+			_.trigger('change.appendBlock');
 		});
 	},
 	InitTriggerChange(_,name,type,value,elementsBlock,targetContainer){
@@ -555,13 +555,17 @@ AppendedBlocks.prototype = {
 				case 'radio':
 					let prop = _.prop('checked');
 					if(prop === true) {
-						this.appendElement(name,elementsBlock,targetContainer,value)
+						this.appendElement(name,elementsBlock,targetContainer,value);
+						inputValEdit();
+						validateForms();
 					}
 					break;
 				case 'select' :
 					let val = _.val();
 					if(val === value){
-						this.appendElement(name,elementsBlock,targetContainer,value)
+						this.appendElement(name,elementsBlock,targetContainer,value);
+						inputValEdit();
+						validateForms();
 					}else{
 						this.cleartTrgetContainer(targetContainer)
 					}
@@ -1154,15 +1158,13 @@ function validateForms() {
 			},
 		});
 	});
-		function singleErrorMessages(item, errorMessage)
-		{
+		function singleErrorMessages(item, errorMessage){
 			var currentElementParentObject = item.parent();
 			currentElementParentObject.find('.form-error').remove();
 			currentElementParentObject.append(`<div class='help-block form-error'>${errorMessage}</div>`);
 		}
 
-		function singleRemoveErrorMessages(item)
-		{
+		function singleRemoveErrorMessages(item){
 			var currentElementParentObject = item.parent();
 			currentElementParentObject.find('.form-error').remove();
 		}

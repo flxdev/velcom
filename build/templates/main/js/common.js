@@ -534,12 +534,16 @@ AppendedBlocks.prototype = {
 				var prop = _.prop('checked');
 				if (prop === true) {
 					_this2.appendElement(name, elementsBlock, targetContainer, value);
+					inputValEdit();
+					validateForms();
 				}
 				break;
 			case 'select':
 				var val = _.val();
 				if (val === value) {
 					_this2.appendElement(name, elementsBlock, targetContainer, value);
+					inputValEdit();
+					validateForms();
 				} else {
 					_this2.cleartTrgetContainer(targetContainer);
 				}
@@ -1073,6 +1077,37 @@ function validateForms() {
 			});
 		});
 	}
+	function validateLength() {
+		window.DOM.MaxLength = function () {
+			var inputs = $('.maxlength');
+			inputs.each(function () {
+				var _this3 = this;
+
+				var input = $(this);
+				var countLimit = parseInt(input.data('countdown'));
+				var counterTarget = void 0;
+				if (input.hasClass('maxLength-inited')) {
+					counterTarget = input.parent().find('.js-countdown');
+				} else {
+					input.parent().append('<div class="input-countdown"> <span class=\'js-countdown\'>0</span> <span> / ' + countLimit + '</span ></div>\'');
+					counterTarget = input.parent().find('.js-countdown');
+					input.addClass('maxLength-inited');
+				}
+
+				input.off('input paste').on('input paste', function () {
+					// setTimeout(() => {
+					var charCount = $(_this3).val().length;
+					counterTarget.text(charCount);
+					if (charCount >= countLimit) {
+						counterTarget.text(countLimit);
+						input[0].value = input[0].value.substring(0, countLimit);
+					}
+				});
+			});
+		};
+		window.DOM.MaxLength();
+	}
+	validateLength();
 }
 
 function inputValEdit() {

@@ -558,7 +558,10 @@ block content
 																type="text",
 																rows="6",
 																id="security-comment",
-																data-target="physical-security-comment")
+																data-target="physical-security-comment",
+																data-validation="length",
+																data-validation-length="max500",
+																data-validation-error-msg="Длина сообщения должна быть не более 500 символов")
 															label.input-label(for="security-comment") Комментарий
 													hr.form-content-devider
 													
@@ -644,7 +647,10 @@ block content
 																type="text",
 																rows="6",
 																id="add-equipment-comment",
-																data-target="add-equipment-comment")
+																data-target="add-equipment-comment",
+																data-validation="length",
+																data-validation-length="max500",
+																data-validation-error-msg="Длина сообщения должна быть не более 500 символов")
 															label.input-label(for="add-equipment-comment") Комментарий
 													.input-item.w100
 														.input-wrapper
@@ -790,7 +796,10 @@ block content
 														textarea.input-main(
 															rows='5',
 															name="power",
-															id="complete-сonnectors-text"
+															id="complete-сonnectors-text",
+															data-validation="length",
+															data-validation-length="max500",
+															data-validation-error-msg="Длина сообщения должна быть не более 500 символов"
 														)
 														label.input-label(for="complete-сonnectors-text") Характеристики электропитания
 											/// блок PowerType
@@ -802,7 +811,10 @@ block content
 														textarea.input-main(
 															rows='5',
 															name="power",
-															id="complete-count-сonnectors"
+															id="complete-count-сonnectors",
+															data-validation="length",
+															data-validation-length="max500",
+															data-validation-error-msg="Длина сообщения должна быть не более 500 символов"
 														)
 														label.input-label(for="complete-count-сonnectors") Тип и количество разьемов
 					+link-more('Вернуться к услугам', 'back-link')

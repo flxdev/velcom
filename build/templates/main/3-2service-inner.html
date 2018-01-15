@@ -755,8 +755,9 @@
                                     </div>
                                     <div class="input-item w100">
                                       <div class="input-wrapper">
-                                        <textarea class="input-main" type="text" rows="6" id="security-comment" data-target="physical-security-comment"></textarea>
+                                        <textarea class="input-main" type="text" rows="6" id="security-comment" data-target="physical-security-comment" data-validation="length" data-validation-length="max500" data-validation-error-msg="Длина сообщения должна быть не более 500 символов"></textarea>
                                         <label class="input-label" for="security-comment">Комментарий</label>
+                                        <div class="js-countdown"></div>
                                       </div>
                                     </div>
                                     <hr class="form-content-devider">
@@ -817,8 +818,9 @@
                                     </div>
                                     <div class="input-item w100">
                                       <div class="input-wrapper">
-                                        <textarea class="input-main disabled-field" type="text" rows="6" id="add-equipment-comment" data-target="add-equipment-comment"></textarea>
+                                        <textarea class="input-main disabled-field" type="text" rows="6" id="add-equipment-comment" data-target="add-equipment-comment" data-validation="length" data-validation-length="max500" data-validation-error-msg="Длина сообщения должна быть не более 500 символов"></textarea>
                                         <label class="input-label" for="add-equipment-comment">Комментарий</label>
+                                        <div class="js-countdown"></div>
                                       </div>
                                     </div>
                                     <div class="input-item w100">
@@ -974,8 +976,9 @@
                                   <div class="text-small">Опишите необходимые вам характеристики питания</div>
                                   <div class="input-item w100">
                                     <div class="input-wrapper">
-                                      <textarea class="input-main" rows="5" name="power" id="complete-сonnectors-text"></textarea>
+                                      <textarea class="input-main" rows="5" name="power" id="complete-сonnectors-text" data-validation="length" data-validation-length="max500" data-validation-error-msg="Длина сообщения должна быть не более 500 символов"></textarea>
                                       <label class="input-label" for="complete-сonnectors-text">Характеристики электропитания</label>
+                                      <div class="js-countdown"></div>
                                     </div>
                                   </div>
                                 </div>
@@ -984,8 +987,9 @@
                                   <div class="text-small">Опишите необходимые вам характеристики и количество разьемов питания</div>
                                   <div class="input-item w100">
                                     <div class="input-wrapper">
-                                      <textarea class="input-main" rows="5" name="power" id="complete-count-сonnectors"></textarea>
+                                      <textarea class="input-main" rows="5" name="power" id="complete-count-сonnectors" data-validation="length" data-validation-length="max500" data-validation-error-msg="Длина сообщения должна быть не более 500 символов" data-countdown="500"></textarea>
                                       <label class="input-label" for="complete-count-сonnectors">Тип и количество разьемов</label>
+                                      <div class="js-countdown"></div>
                                     </div>
                                   </div>
                                 </div>
@@ -1295,8 +1299,8 @@
                 </div>
                 <div class="input-item w100">
                   <div class="input-wrapper">
-                    <textarea class="input-main" id="quest-0" type="text" rows="4" data-validation="length" data-validation-length="50-200"></textarea>
-                    <label class="input-label" for="quest-0">Вопрос *</label>
+                    <textarea class="input-main" id="quest-0" type="text" rows="4" data-validation="length" data-validation-length="min1" data-validation-error-msg="Длина вопроса должна быть не менее 1 и не более 500 символов"></textarea>
+                    <label class="input-label" for="quest-0">Вопрос * </label>
                   </div>
                 </div>
               </div>
@@ -1307,8 +1311,8 @@
                 <hr class="form-content-devider">
                 <div class="input-item w100">
                   <div class="input-wrapper">
-                    <textarea class="input-main" type="text" rows="4"></textarea>
-                    <label class="input-label">Вопрос *</label>
+                    <textarea class="input-main" type="text" rows="4" data-validation="length" data-validation-length="min1" data-validation-error-msg="Длина вопроса должна быть не менее 1 и не более 500 символов"></textarea>
+                    <label class="input-label">Вопрос ответ *</label>
                   </div>
                 </div>
               </div>

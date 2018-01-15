@@ -211,8 +211,9 @@ include _mixins.pug
 								type="text",
 								rows="4",
 								data-validation="length",
-								data-validation-length="50-200")
-							label.input-label(for="quest-0") Вопрос *
+								data-validation-length="1-500",
+								data-validation-error-msg="Длина вопроса должна быть не менее 1 и не более 500 символов")
+							label.input-label(for="quest-0") Вопрос * 
 				/// конец блок 1
 				/// блок 2
 				.input-add(data-display-target='theme-question',data-display-trigger-value='2')
@@ -224,8 +225,11 @@ include _mixins.pug
 						.input-wrapper
 							textarea.input-main(
 								type="text",
-								rows="4")
-							label.input-label Вопрос *
+								rows="4",
+								data-validation="length",
+								data-validation-length="1-500",
+								data-validation-error-msg="Длина вопроса должна быть не менее 1 и не более 500 символов")
+							label.input-label Вопрос ответ *
 				/// конец блок 2
 				.input-add(data-display-target='theme-question',data-display-trigger-value='3')
 					.input-item.w100
