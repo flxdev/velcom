@@ -510,17 +510,20 @@ function formSelects(elem) {
 function AppendedBlocks() {
 	this.triggers = $('[data-display-trigger]');
 	this.initState();
+	// console.log(this.triggers.length)
 }
 AppendedBlocks.prototype = {
 	initState: function initState() {
 		var self = this;
 		this.triggers.each(function () {
+
 			var _ = $(this);
 			var name = _.data('display-trigger');
 			var type = _.attr('type') || _[0].nodeName.toLowerCase();
 			var value = _.data('display-trigger-value');
 			var elementsBlock = _.closest('form').parent().find('.form-appended-els');
 			var targetContainer = _.closest('form').find('[data-display-container]').filter('[data-display-container="' + name + '"]');
+
 			self.InitTriggerChange(_, name, type, value, elementsBlock, targetContainer);
 			_.trigger('change.appendBlock');
 		});
@@ -539,8 +542,8 @@ AppendedBlocks.prototype = {
 				}
 				break;
 			case 'select':
-				var val = _.val();
-				if (val === value) {
+				var val = _.val().toString();
+				if (val === value.toString()) {
 					_this2.appendElement(name, elementsBlock, targetContainer, value);
 					inputValEdit();
 					validateForms();
@@ -553,9 +556,7 @@ AppendedBlocks.prototype = {
 	},
 	appendElement: function appendElement(name, elementsBlock, targetContainer, value) {
 		var appendetEl = elementsBlock.find('[data-display-target="' + name + '"]').filter('[data-display-trigger-value="' + value + '"]').clone();
-		// appendetEl.find('select').select2('destroy');
 		targetContainer.empty().append(appendetEl);
-		// formSelects(appendetEl.find('select'))
 		formSelects(targetContainer.find('select'));
 		ToggleDisabled();
 		autosize($('textarea'));
@@ -803,7 +804,7 @@ function listhide() {
 		    text = 'Свернуть',
 		    trigger = _t.parent().find('.js-list-more');
 
-		console.log(trigger + ' trigger');
+		// console.log(trigger + ' trigger');
 		if (len >= itemsl) {
 			trigger.css('display', 'none');
 		} else {
@@ -1077,37 +1078,6 @@ function validateForms() {
 			});
 		});
 	}
-	function validateLength() {
-		window.DOM.MaxLength = function () {
-			var inputs = $('.maxlength');
-			inputs.each(function () {
-				var _this3 = this;
-
-				var input = $(this);
-				var countLimit = parseInt(input.data('countdown'));
-				var counterTarget = void 0;
-				if (input.hasClass('maxLength-inited')) {
-					counterTarget = input.parent().find('.js-countdown');
-				} else {
-					input.parent().append('<div class="input-countdown"> <span class=\'js-countdown\'>0</span> <span> / ' + countLimit + '</span ></div>\'');
-					counterTarget = input.parent().find('.js-countdown');
-					input.addClass('maxLength-inited');
-				}
-
-				input.off('input paste').on('input paste', function () {
-					// setTimeout(() => {
-					var charCount = $(_this3).val().length;
-					counterTarget.text(charCount);
-					if (charCount >= countLimit) {
-						counterTarget.text(countLimit);
-						input[0].value = input[0].value.substring(0, countLimit);
-					}
-				});
-			});
-		};
-		window.DOM.MaxLength();
-	}
-	validateLength();
 }
 
 function inputValEdit() {
@@ -1327,7 +1297,7 @@ function phoneSelectChange(wrapper) {
 
 			$(this).on('click', function () {
 				$(this).addClass('telwrapper_active');
-				console.log('qq');
+				// console.log('qq');
 			});
 
 			//});
