@@ -688,7 +688,7 @@ b {
     -webkit-transform: translateX(-50%) translateY(-50%);
     -ms-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    z-index: 1;
+    z-index: 4;
     cursor: pointer;
     -webkit-transition: color .3s;
     -o-transition: color .3s;
