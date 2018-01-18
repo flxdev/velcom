@@ -559,16 +559,12 @@ AppendedBlocks.prototype = {
 					let prop = _.prop('checked');
 					if(prop === true) {
 						this.appendElement(name,elementsBlock,targetContainer,value);
-						inputValEdit();
-						validateForms();
 					}
 					break;
 				case 'select' :
 					let val = _.val().toString();
 					if(val === value.toString()){
 						this.appendElement(name,elementsBlock,targetContainer,value);
-						inputValEdit();
-						validateForms();
 					}else{
 						this.cleartTrgetContainer(targetContainer)
 					}
@@ -581,7 +577,10 @@ AppendedBlocks.prototype = {
 		targetContainer.empty().append(appendetEl)
 		formSelects(targetContainer.find('select'));
 		ToggleDisabled();
+		inputValIncDecr('.input-counter');
 		autosize($('textarea'));
+		inputValEdit();
+		validateForms();
 	},
 	cleartTrgetContainer(targetContainer){
 		targetContainer.empty();
