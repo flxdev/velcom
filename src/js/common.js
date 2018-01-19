@@ -534,17 +534,20 @@ function formSelects(elem){
 function AppendedBlocks() {
 	this.triggers = $('[data-display-trigger]');
 	this.initState();
+	// console.log(this.triggers.length)
 }
 AppendedBlocks.prototype = {
 	initState(){
 		const self = this;
 		this.triggers.each(function(){
+
 			let _ = $(this);
 			let name = _.data('display-trigger');
 			let type = _.attr('type') || _[0].nodeName.toLowerCase();
 			let value = _.data('display-trigger-value');
 			let elementsBlock = _.closest('form').parent().find('.form-appended-els');
 			let targetContainer = _.closest('form').find('[data-display-container]').filter(`[data-display-container="${name}"]`);
+			
 			self.InitTriggerChange(_,name,type,value,elementsBlock,targetContainer);
 			_.trigger('change.appendBlock');
 		});
@@ -556,16 +559,12 @@ AppendedBlocks.prototype = {
 					let prop = _.prop('checked');
 					if(prop === true) {
 						this.appendElement(name,elementsBlock,targetContainer,value);
-						inputValEdit();
-						validateForms();
 					}
 					break;
 				case 'select' :
-					let val = _.val();
-					if(val === value){
+					let val = _.val().toString();
+					if(val === value.toString()){
 						this.appendElement(name,elementsBlock,targetContainer,value);
-						inputValEdit();
-						validateForms();
 					}else{
 						this.cleartTrgetContainer(targetContainer)
 					}
@@ -575,12 +574,13 @@ AppendedBlocks.prototype = {
 	},
 	appendElement(name,elementsBlock,targetContainer,value){
 		let appendetEl = elementsBlock.find(`[data-display-target="${name}"]`).filter(`[data-display-trigger-value="${value}"]`).clone();
-		// appendetEl.find('select').select2('destroy');
 		targetContainer.empty().append(appendetEl)
-		// formSelects(appendetEl.find('select'))
 		formSelects(targetContainer.find('select'));
 		ToggleDisabled();
+		inputValIncDecr('.input-counter');
 		autosize($('textarea'));
+		inputValEdit();
+		validateForms();
 	},
 	cleartTrgetContainer(targetContainer){
 		targetContainer.empty();
@@ -827,7 +827,7 @@ function listhide(){
 			text = 'Свернуть',
 			trigger = _t.parent().find('.js-list-more');
 
-		console.log(trigger + ' trigger');
+		// console.log(trigger + ' trigger');
 		if(len >= itemsl){
 			trigger.css('display', 'none');
 		}else{
@@ -1381,7 +1381,7 @@ function phoneSelectChange(wrapper){
 
 				$(this).on('click',function(){
 					$(this).addClass('telwrapper_active');
-					console.log('qq');
+					// console.log('qq');
 				});
 
 			//});
