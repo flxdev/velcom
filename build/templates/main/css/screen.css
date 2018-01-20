@@ -1334,6 +1334,9 @@ p a:not([class]) {
   box-sizing: border-box;
   z-index: 2; }
 
+.side-bar-banner {
+  height: 23.125rem; }
+
 .side-bar-nav {
   position: relative; }
   .side-bar-nav__mob-btn {
@@ -1625,7 +1628,8 @@ p a:not([class]) {
   -webkit-background-size: cover;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 100% 100%; }
+  background-position: 100% 100%;
+  position: relative; }
   .link-banner__title {
     font-size: 1.25rem;
     max-width: 80%;
@@ -1636,7 +1640,9 @@ p a:not([class]) {
     font-size: 3rem;
     text-align: left; }
   .link-banner a {
-    margin-top: 3.8125rem; }
+    position: absolute;
+    bottom: 1.875rem;
+    left: 1.875rem; }
 
 .partners {
   display: -webkit-box;
@@ -4603,12 +4609,13 @@ a.site-dev {
 .form-block {
   padding: 2.5rem 10px 0 10px;
   width: 100%;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  border: 1px solid #cccccc; }
   .form-block__footer {
     margin-top: 10px;
     margin-right: -10px;
     margin-left: -10px;
-    padding: 2.0625rem 10px 3.75rem 10px;
+    padding: 2.0625rem 10px 3.75rem 2.1875rem;
     background-color: #fafafa; }
   .form-block__title {
     margin-bottom: 1.25rem;
@@ -5543,6 +5550,8 @@ a.site-dev {
     .side-bar {
       width: 100%;
       padding-right: 0; }
+    .side-bar-banner {
+      height: auto; }
     .side-bar-nav {
       width: 80%; }
       .side-bar-nav .link-navigation {
@@ -5607,6 +5616,8 @@ a.site-dev {
       background-size: contain;
       text-align: left; }
       .link-banner a {
+        position: static;
+        margin-top: 3.75rem;
         padding-left: 1.25rem;
         padding-right: 1.25rem; }
     .project-item {

@@ -844,8 +844,10 @@ p
 	+r(768)
 		width: 100%
 		padding-right: 0
-// .side-bar-banner
-// 	margin-top: 20px
+.side-bar-banner
+	height: 370px
+	+r(768)
+		height: auto
 .side-bar-nav
 	position: relative
 	&__mob-btn
@@ -1203,6 +1205,7 @@ p
 	background-size: cover
 	background-repeat: no-repeat
 	background-position: 100% 100%
+	position: relative
 	&__title
 		font-size: 20px
 		max-width: 80%
@@ -1213,7 +1216,9 @@ p
 		font-size: 48px
 		text-align: left
 	& a
-		margin-top: 61px
+		position: absolute
+		bottom: 30px
+		left: 30px
 	+r(980)
 		& a
 			padding-left: 7px
@@ -1226,6 +1231,8 @@ p
 		background-size: contain
 		text-align: left
 		& a
+			position: static
+			margin-top: 60px
 			padding-left: 20px
 			padding-right: 20px
 
