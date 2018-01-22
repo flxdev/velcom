@@ -4324,8 +4324,7 @@ a.site-dev {
   .application-modal .form-block {
     background-color: #ffffff; }
     .application-modal .form-block__footer {
-      background-color: #ffffff;
-      padding-bottom: 10px; }
+      padding-bottom: 1.875rem; }
   .application-modal .pop-close {
     right: 1.5625rem;
     top: 1.25rem; }
@@ -4609,13 +4608,10 @@ a.site-dev {
 .form-block {
   padding: 2.5rem 10px 0 10px;
   width: 100%;
-  background-color: #ffffff;
-  border: 1px solid #cccccc; }
+  background-color: #ffffff; }
   .form-block__footer {
     margin-top: 10px;
-    margin-right: -10px;
-    margin-left: -10px;
-    padding: 2.0625rem 10px 3.75rem 2.1875rem;
+    padding: 2.0625rem 10px 3.75rem 1.5625rem;
     background-color: #fafafa; }
   .form-block__title {
     margin-bottom: 1.25rem;
