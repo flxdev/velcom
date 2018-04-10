@@ -11,6 +11,7 @@
 		line-height: 1.4
 		font-weight: 400
 		max-width: 714px
+		margin-top: 45px
 		margin-bottom: 40px
 		display: flex
 		align-items: center
@@ -22,6 +23,7 @@
 		line-height: 1.7
 		font-weight: 400
 		max-width: 714px
+		margin-top: 25px
 		margin-bottom: 22px
 		display: flex
 		align-items: center
@@ -29,6 +31,8 @@
 	h4
 		color: #000000
 		font-size: 18px
+		margin-top: 21px
+		margin-bottom: 18px
 		line-height:  1.333
 		font-weight: 600
 		max-width: 714px
@@ -122,7 +126,7 @@
 
 	ul
 		max-width: 714px
-		margin-top: 42px
+		margin-top: 37px
 		li
 			padding-left: 2.5rem
 			margin-bottom: 24px
@@ -312,6 +316,8 @@ p
 	font-size: 32px
 	line-height: 1.4
 	font-weight: 400
+	margin-top: 45px
+	margin-bottom: 40px
 	+r(768)
 		font-size: 30px
 .h3
@@ -319,11 +325,15 @@ p
 	font-size: 20px
 	line-height: 1.7
 	font-weight: 400
+	margin-top: 25px
+	margin-bottom: 22px
 .h4
 	color: #000000
 	font-size: 18px
 	line-height:  1.333
 	font-weight: 600
+	margin-top: 21px
+	margin-bottom: 18px
 
 .text-primary
 	font-size: 16px
@@ -353,6 +363,48 @@ p
 	strong
 		color: #000000
 		font-weight: bold
+
+.table-wrap
+	overflow: hidden
+	overflow-x: auto
+	width: 100% 
+	max-width: 714px
+	text-align: left
+	margin-top: 25px
+	margin-bottom: 25px
+	table
+		width: 100%
+	td
+		padding: 18px 10px
+		font-size: 14px
+		color: #767a7d
+		line-height: 1.714
+		border-bottom: 1px solid #cccccc
+		&:first-child
+			padding-left: 0
+		&:last-child
+			padding-right: 0
+			padding-left: 0
+	th
+		padding: 25px 10px
+		font-size: 13px
+		color: #a3a3a3
+		line-height: 1.846
+		border-top: 1px solid #cccccc
+		border-bottom: 1px solid #636363
+		min-width: 135px
+		&:last-child
+			padding-right: 0
+			padding-left: 0
+		&:nth-child(1)
+			width: 25%
+		&:nth-child(2)
+			width: 30%
+		&:nth-child(3)
+			width: 20%
+		&:nth-child(4)
+			width: 25%
+			
 
 .box
 	width: 100%
@@ -850,6 +902,7 @@ p
 		height: auto
 .side-bar-nav
 	position: relative
+	z-index: 2
 	&__mob-btn
 		display: none
 		font-size: 16px
@@ -1270,6 +1323,8 @@ p
 			width: 100%
 		&-header
 			margin-bottom: 40px
+			.h4
+				margin-top: 0
 			&-type
 				margin-bottom: 15px
 			&-link
@@ -1420,6 +1475,7 @@ p
 		align-items: flex-start
 		margin-bottom: auto
 		padding-bottom: 20px
+		margin-top: 0
 	&__t-text
 		display: block
 		width: 100%

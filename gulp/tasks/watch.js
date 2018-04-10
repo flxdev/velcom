@@ -17,4 +17,4 @@ gulp.task('delete', function (cb) {
 });
 
 gulp.task('default', ['server', 'watch'], function() {});
-gulp.task('build', gulpsync.sync(['delete','pug','copy:build','js','sass','svg','svgmin','critical']), function() {});
+gulp.task('build', gulpsync.sync(['delete','pug','copy:build','js','sass','svg']), function() {});
