@@ -801,7 +801,7 @@ function listhide() {
 		    items = _t.find('li'),
 		    itemsl = items.length,
 		    text = 'Свернуть',
-		    trigger = _t.parent().find('.js-list-more');
+		    trigger = _t.find('.js-list-more');
 
 		// console.log(trigger + ' trigger');
 		if (len >= itemsl) {

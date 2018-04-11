@@ -40,10 +40,24 @@ block content
 								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
 								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
 								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
-							.services-inner-view-all.more.js-list-more(data-alt-text='Скрыть')
-								a(href="#").link-view-all Все приемущества
-								.link-view-carret
-									+icon('arrow_down')
+								.services-inner-view-all.more.js-list-more(data-alt-text='Скрыть')
+									a(href="#").link-view-all Все приемущества
+									.link-view-carret
+										+icon('arrow_down')
+							h3.h3 Преимущества
+							ul.services-inner-details__list.js-slidelist(data-items='5')
+								li.services-inner-details__item.text-primary Индивидуальный подход и гибкие решения
+								li.services-inner-details__item.text-primary Широкий диапазон выбора вариантов энергопотребления 
+								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
+								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
+								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
+								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
+								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
+								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
+								.services-inner-view-all.more.js-list-more(data-alt-text='Скрыть')
+									a(href="#").link-view-all Все приемущества
+									.link-view-carret
+										+icon('arrow_down')
 			.content-wrap
 				aside.side-bar.js-stick-parent
 					.side-bar-banner.js-stick
@@ -54,7 +68,7 @@ block content
 						
 							h3.h3 Предлагаем вам воспользоваться стандартными конфигурациями:
 							.services-config-wrap
-								.accordeon-wrapper
+								.accordeon-wrapper.no-accordeon
 									.accordeon-head
 										label.accordeon-head-check
 											input(type="checkbox")
@@ -68,11 +82,7 @@ block content
 											.accordeon-head-info
 												.text-primary.text-primary_black.text-primary_bold до 12
 												.text-small Мбит/с
-											.accordeon-head-icon
-												span
-													+icon('arrow_services')
-									.accordeon-body(style='display: none;')
-										.accordeon-body-content
+											
 											
 								.accordeon-wrapper
 									.accordeon-head
