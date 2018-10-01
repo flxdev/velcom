@@ -67,8 +67,8 @@ mixin link-more(text, add_class)
 
 mixin datacenter-characteristics(val, text)
 	.datacenter-characteristics__item
-		.datacenter-characteristics__value= val
-		.datacenter-characteristics__desc.text-primary= text
+		.datacenter-characteristics__value!= val
+		.datacenter-characteristics__desc.text-primary!= text
 
 mixin v-style-text(text)
 	span.v-style-text=text

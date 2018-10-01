@@ -1191,9 +1191,10 @@ p a:not([class]) {
   .datacenter-characteristics__value {
     font-size: 3rem;
     line-height: 1.167;
+    font-weight: bold;
     color: #ffffff; }
   .datacenter-characteristics__desc {
-    max-width: 10rem;
+    max-width: none;
     color: #ffffff; }
   .datacenter-characteristics_data {
     margin-top: 3.125rem;
@@ -1574,6 +1575,7 @@ p a:not([class]) {
       transition: all 0.3s ease; }
     .gallery-album__image::after {
       content: '';
+      display: block;
       background-color: rgba(0, 0, 0, 0.2);
       position: absolute;
       top: 0;
@@ -1595,6 +1597,7 @@ p a:not([class]) {
     margin-right: 0; }
   .gallery-photo::after {
     content: '';
+    display: block;
     background-color: rgba(0, 0, 0, 0.2);
     position: absolute;
     top: 0;
@@ -1863,6 +1866,7 @@ p a:not([class]) {
     width: 100%; }
     .project-item-img-el::after {
       content: '';
+      display: block;
       background-color: rgba(0, 0, 0, 0.2);
       position: absolute;
       top: 0;
@@ -2423,8 +2427,8 @@ body {
   font-family: "Arial", "Helvetica", "Roboto", sans-serif;
   width: 100%;
   min-width: 20rem;
-  min-width: -webkit-calc(20rem-2rem);
-  min-width: calc(20rem-2rem);
+  min-width: -webkit-calc(20rem - 2rem);
+  min-width: calc(20rem - 2rem);
   height: auto;
   min-height: 100%;
   -webkit-overflow-scrolling: touch;
@@ -2506,8 +2510,8 @@ body {
       margin-left: 9.375rem;
       padding-bottom: 1.25rem; }
     .header-inner__title_col {
-      width: 50%;
-      padding: 1.25rem 2.5rem 1.25rem 9.375rem;
+      width: 35%;
+      padding: 0 2.5rem 1.25rem 5.625rem;
       -webkit-box-sizing: content-box;
       box-sizing: content-box; }
     .header-inner__title a {
@@ -2515,8 +2519,7 @@ body {
   .header-inner__desc {
     color: #ffffff; }
     .header-inner__desc_col {
-      width: 50%;
-      padding: 1.25rem 3.125rem 1.25rem 1.25rem;
+      width: 65%;
       -webkit-box-sizing: content-box;
       box-sizing: content-box; }
   .header-inner__text {
@@ -2581,7 +2584,29 @@ body {
   .basic-services-outer {
     margin-right: -1.875rem; }
   .basic-services-wrapper {
-    width: 100%; }
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap; }
+    .basic-services-wrapper .slick-track {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+      height: 100%; }
+      .basic-services-wrapper .slick-track .service-card {
+        float: none;
+        height: 100%; }
   .basic-services__nav {
     width: 100%;
     position: absolute;
@@ -2590,7 +2615,6 @@ body {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    width: 100%;
     max-width: 78.5rem;
     margin: 0 auto; }
   .basic-services__prev, .basic-services__next {
@@ -2769,7 +2793,7 @@ body {
     z-index: -2; }
 
 .advantages {
-  background-color: #fff233;
+  background-color: #ffffff;
   position: relative;
   z-index: 1;
   padding-top: 5.9375rem;
@@ -2805,9 +2829,9 @@ body {
     height: 100%;
     width: 100%;
     background-repeat: no-repeat;
-    -webkit-background-size: contain;
-    background-size: contain;
-    background-position: 100% 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 0% 0%;
     z-index: -1; }
   .advantages__slider-dots {
     display: none; }
@@ -3324,7 +3348,8 @@ body {
     line-height: 1.889;
     color: #000000; }
   .search-result b {
-    color: #000000; }
+    color: #000000;
+    font-weight: bold; }
 
 .error-404__title {
   margin-top: 0;
@@ -5356,6 +5381,8 @@ a.site-dev {
   @media only screen and (max-width: 1100px) {
     .service-card__icon {
       right: 1rem; }
+    .datacenter-characteristics__value {
+      font-size: 2.5rem; }
     .content-inner-item {
       padding-top: 3.125rem; }
       .content-inner-item__decor {
@@ -5479,7 +5506,7 @@ a.site-dev {
       width: 100%; }
     .header-inner__desc_col {
       width: 100%;
-      padding: 1.25rem 3.125rem 1.25rem 9.375rem; }
+      padding: 1.25rem 3.125rem 1.25rem 5.625rem; }
         .basic-services-list .service-card {
           width: 48%; }
     .advantages {
@@ -5615,7 +5642,7 @@ a.site-dev {
     .datacenter-characteristics__item {
       margin-bottom: 1rem; }
     .datacenter-characteristics__value {
-      font-size: 2.375rem; }
+      font-size: 2.125rem; }
     .datacenter-characteristics_data {
       margin-top: 2.5rem;
       margin-bottom: 3.125rem; }
@@ -6137,6 +6164,8 @@ a.site-dev {
       .content-area .datacenter-characteristics__item {
         width: 100%;
         margin-right: 0; }
+    .datacenter-characteristics__value {
+      font-size: 1.625rem; }
     .accordeon-head {
       padding: 0 0.9375rem; }
       .accordeon-head-content {

@@ -633,10 +633,11 @@ p
 	&__value
 		font-size: 48px
 		line-height: 1.167
-		font-weight:bold
+		font-weight: bold
 		color: #ffffff
 	&__desc
-		max-width: 160px
+		//max-width: 160px
+		max-width: none
 		color: #ffffff
 	&_data
 		margin-top: 50px
@@ -644,14 +645,20 @@ p
 	&_data &__value,
 	&_data &__desc
 		color: #000000
+	+r(1100)
+		&__value
+			font-size: 40px
 	+r(768)
 		&__item
 			margin-bottom: 16px
 		&__value
-			font-size: 38px
+			font-size: 34px
 		&_data
 			margin-top: 40px
 			margin-bottom: 50px
+	+r(450)
+		&__value
+			font-size: 26px
 .news-item
 	width: 100%
 	margin-bottom: 60px
@@ -845,7 +852,7 @@ p
 	&:before
 		content: ''
 		+coverdiv
-		background-color: rgba(#242424, .7);
+		background-color: rgba(#242424, .7)
 		z-index: 1
 
 .video-container
@@ -1123,7 +1130,7 @@ p
 			+tr(all .3s ease)
 		&::after
 			content: ''
-			display:block
+			display: block
 			background-color: rgba(#000000, .2)
 			position: absolute
 			top: 0
@@ -1140,7 +1147,7 @@ p
 				&::after
 					opacity: 1
 			.gallery-album__title
-				color:#5a5a5a
+				color: #5a5a5a
 
 .gallery-photo
 	position: relative
@@ -1152,7 +1159,7 @@ p
 		margin-right: 0
 	&::after
 		content: ''
-		display:block
+		display: block
 		background-color: rgba(#000000, .2)
 		position: absolute
 		top: 0
@@ -1454,7 +1461,7 @@ p
 		width: 100%
 		&::after
 			content: ''
-			display:block
+			display: block
 			background-color: rgba(#000000, .2)
 			position: absolute
 			top: 0
@@ -1758,7 +1765,7 @@ p
 	&__form
 		width: 100%
 		position: relative
-		&:hover > *,
+		&:hover > *
 			color: #000000
 			border-color: #000000
 	&__field

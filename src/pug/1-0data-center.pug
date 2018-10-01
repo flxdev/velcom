@@ -25,19 +25,19 @@ block content
 								.header-inner__desc.header-inner__desc_col
 									p.text-increased.header-inner__text.slider-text-animate Независимое от городских сетей электропитание на базе ДГУ, также по принципу N+1, что превосходит требования Tier III
 									.datacenter-characteristics.slider-characteristics-animate
-										+datacenter-characteristics('6 620', 'кв.м. площадь ЦОД')
-										+datacenter-characteristics('800', 'Серверных стоек')
-										+datacenter-characteristics('4', 'Машинных зала')
+										+datacenter-characteristics('8МВт', 'Общая мощность дата-центра')
+										+datacenter-characteristics('2х1МВт +1 резервный', 'Количество дизельных генераторов на каждый модуль')
+										+datacenter-characteristics('на 48 часов работы', 'Запасы топлива в хранилище')
 					.data-center-slider__slide(data-slide-text='Кондиционирование')
 						.data-center-slider__slide-wrap
 							.header-inner.header-inner_row
 								.header-inner__title.header-inner__title_col.slider-title-animate
-									h1.h1 Дата-центр
+									h1.h1 Кондицио&shy;нирование
 								.header-inner__desc.header-inner__desc_col
-									p.text-increased.header-inner__text.slider-text-animate ЦОД нашего уровня имеют собственную территорию, что исключает форс-мажорных ситуаций с окончанием сроков аренды у самого владельца ЦОД
+									p.text-increased.header-inner__text.slider-text-animate В дата-центре созданы необходимые климатические условия требуемые для полноценного функционирования оборудования
 									.datacenter-characteristics.slider-characteristics-animate
-										+datacenter-characteristics('35 000', 'Общая проектная площадь кв.м.')
-										+datacenter-characteristics('6620', 'Площадь зданий и сооружений кв.м.')
+										+datacenter-characteristics('20°±2°', 'Температура в холодных коридорах')
+										+datacenter-characteristics('50%±20%', 'Уставка по влажности в машинных залах')
 					.data-center-slider__slide(data-slide-text='Безопасность')
 						.data-center-slider__slide-wrap
 							.header-inner.header-inner_row
@@ -49,6 +49,16 @@ block content
 										+datacenter-characteristics('6 620', 'кв.м. площадь ЦОД')
 										+datacenter-characteristics('800', 'Серверных стоек')
 										+datacenter-characteristics('4', 'Машинных зала')
+					.data-center-slider__slide(data-slide-text='Техническая поддержка')
+						.data-center-slider__slide-wrap
+							.header-inner.header-inner_row
+								.header-inner__title.header-inner__title_col.slider-title-animate
+									h1.h1 Техническая поддержка
+								.header-inner__desc.header-inner__desc_col
+									p.text-increased.header-inner__text.slider-text-animate Круглосуточная техническая поддержка
+									.datacenter-characteristics.slider-characteristics-animate
+										+datacenter-characteristics('24/7/365', 'Время работы службы')
+										+datacenter-characteristics('+375-29-6000-411', 'Единый телефон для связи')
 				.data-center-slider__nav
 					button(type="button",class="slick-prev").data-center-slider__prev
 						+icon('arrow-light')

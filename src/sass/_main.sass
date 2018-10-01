@@ -79,7 +79,7 @@ body
 	font-family: $o
 	width: 100%
 	min-width: 320px
-	min-width: calc(320px-32px)
+	min-width: calc(320px - 32px)
 	height: auto
 	min-height: 100%
 	-webkit-overflow-scrolling: touch
@@ -145,16 +145,19 @@ body
 			margin-left: 150px
 			padding-bottom: 20px
 		&_col
-			width: 50%
-			padding: 20px 40px 20px 150px
+			////width: 50%
+			//padding: 20px 40px 20px 150px
+			width: 35%
+			padding: 0 40px 20px 90px
 			box-sizing: content-box
 		a
 			margin-top: 70px
 	&__desc
 		color: #ffffff
 		&_col
-			width: 50%
-			padding: 20px 50px 20px 20px
+			//width: 50%
+			//padding: 20px 50px 20px 20px
+			width: 65%
 			box-sizing: content-box
 	&__text
 		color: rgba(#ffffff, .8)
@@ -173,7 +176,8 @@ body
 		&__desc
 			&_col
 				width: 100%
-				padding: 20px 50px 20px 150px
+				//padding: 20px 50px 20px 150px
+				padding: 20px 50px 20px 90px
 	+r(768)
 		padding: 130px 0 10px
 		&__title
@@ -256,9 +260,15 @@ body
 			padding: 0
 	&-wrapper
 		width: 100%
-		// & .slick-track
-		// 	display: flex
-		// 	align-items: stretch
+		display: flex
+		flex-flow: row wrap
+		.slick-track
+			display: flex
+			align-items: stretch
+			height: 100%
+			.service-card
+				float: none
+				height: 100%
 		// & .slick-list
 		// 	display: flex
 		// 	align-items: stretch
@@ -268,7 +278,6 @@ body
 		top: 50%
 		left: 50%
 		transform: translate(-50%, -50%)
-		width: 100%
 		max-width: 1256px
 		margin: 0 auto
 		+r(500)
@@ -445,7 +454,8 @@ body
 			margin-bottom: 40px
 			max-width: 244px
 .advantages
-	background-color: #fff233
+	//background-color: #fff233
+	background-color: #ffffff
 	position: relative
 	z-index: 1
 	padding-top: 95px
@@ -482,8 +492,8 @@ body
 		height: 100%
 		width: 100%
 		background-repeat: no-repeat
-		background-size: contain
-		background-position: 100% 100%
+		background-size: cover
+		background-position: 0% 0%
 		z-index: -1
 	&__slider-dots
 		display: none
@@ -564,7 +574,7 @@ body
 		width: 100%
 		height: 100%
 		& .slick-list,
-		& .slick-track,
+		& .slick-track
 			height: 100%
 			width: 100%
 		& .slick-slide
@@ -985,7 +995,7 @@ body
 		color: #000000
 	& b
 		color: #000000
-		font-weight:bold
+		font-weight: bold
 	+r(768)
 		margin-bottom: 20px
 		&__title, &__count
@@ -1133,7 +1143,7 @@ body
 	padding: 15px
 	text-align: left
 	background-color: #ffffff
-	border-width: 1px;
+	border-width: 1px
 	border-color: #cccccc
 	border-style: solid
 	font-size: 14px
@@ -1155,12 +1165,12 @@ body
 .option
 	display: block
 	width: 100%
-	cursor: pointer;
-	position: relative;
+	cursor: pointer
+	position: relative
 	padding: 15px 10px 15px 20px
 	font-size: 14px
 	color: #737373
-	line-height: 1.429;
+	line-height: 1.429
 	background-color: #ffffff
 	margin-bottom: 0 !important
 	white-space: normal !important
@@ -1173,7 +1183,7 @@ body
 	span 
 		+tr(all .3s)
 	input
-		position: absolute;
+		position: absolute
 		opacity: 0
 		&:checked + span
 			color: #000000
