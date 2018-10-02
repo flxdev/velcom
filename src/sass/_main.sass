@@ -821,9 +821,11 @@ body
 
 .data-center-cooperation
 	max-width: 714px
-	padding: 68px 0 0
+	//padding: 68px 0 0 change
+	margin: 68px 0 0
 	+r(440)
-		padding: 50px 0 0
+		//padding: 50px 0 0 change
+		margin: 50px 0 0
 	&__promo
 		background-repeat: no-repeat
 		background-size: cover
@@ -1297,7 +1299,7 @@ body
 	+tr(all .3s ease)
 	&:first-child
 		border-top: 2px solid #fff233
-	&_no-check
+	//&_no-check change
 		.accordeon-head
 			&-content
 				padding-left: 20px
@@ -1333,8 +1335,9 @@ body
 	+r(450)
 		padding: 0 15px
 	&-check
-		padding: 35px 20px 35px 0
-		+r(520)
+		//padding: 35px 20px 35px 0 change
+		display: none
+		//+r(520) change
 			padding: 35px 10px 35px 10px
 		input
 			display: none
@@ -1395,7 +1398,8 @@ body
 	
 .accordeon-body
 	border-top: none
-	padding-left: 75px
+	//padding-left: 75px change
+	padding-left: 40px
 	padding-right: 30px
 	+r(450)
 		padding-left: 15px
@@ -1503,12 +1507,14 @@ body
 		font-size: 0
 
 .services-config-ordering
-	text-align: right
+	//text-align: right change
+	text-align: left
+	margin: 40px 0
 	&__link
 		padding-left: 47px
 		padding-right: 47px
-		margin-right: 0
-		margin-left: auto
+		//margin-right: 0 change
+		//margin-left: auto
 
 .services-form
 	width: 100%
