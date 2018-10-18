@@ -20,49 +20,19 @@ block content
 		.services-inner-page
 			.content-wrap
 				aside.side-bar.js-stick-parent
-					.side-bar-nav.js-stick
-						a(href="#").side-bar-nav__mob-btn.show-sidebar-menu
-							span.link-value ...
-							span.link-i-arrow
-								+icon('arrow_down')
-						+link-navigation(['Co-location', 'Выделенные сервера', 'IaaS'])
+					.js-stick
+						.side-bar-nav
+							a(href="#").side-bar-nav__mob-btn.show-sidebar-menu
+								span.link-value ...
+								span.link-i-arrow
+									+icon('arrow_down')
+							+link-navigation(['Co-location', 'Выделенные сервера', 'IaaS'])
+						.side-bar-banner
+							+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
+						
 				.content-inner
 					h2.h2.content-inner__title Аренда серверных шкафов (стоек) либо площадей, для размещения оборудования с обеспечением гарантированного электропитания, климатического режима и доступа в Интернет
-					.bg-gray
-						.services-inner-details
-							h3.h3 Преимущества
-							ul.services-inner-details__list.js-slidelist(data-items='5')
-								li.services-inner-details__item.text-primary Индивидуальный подход и гибкие решения
-								li.services-inner-details__item.text-primary Широкий диапазон выбора вариантов энергопотребления 
-								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
-								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
-								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
-								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
-								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
-								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
-								.services-inner-view-all.more.js-list-more(data-alt-text='Скрыть')
-									a(href="#").link-view-all Все приемущества
-									.link-view-carret
-										+icon('arrow_down')
-							h3.h3 Преимущества
-							ul.services-inner-details__list.js-slidelist(data-items='5')
-								li.services-inner-details__item.text-primary Индивидуальный подход и гибкие решения
-								li.services-inner-details__item.text-primary Широкий диапазон выбора вариантов энергопотребления 
-								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
-								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
-								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
-								li.services-inner-details__item.text-primary Круглосуточная служба технической поддержки и мониторинга инфраструктуры
-								li.services-inner-details__item.text-primary Опытная команда экспертов реализует сложные варианты инсталляций оборудования
-								li.services-inner-details__item.text-primary Постоянные климатические условия для надежного функционирования вашего оборудования в соответствии со стандартами ASHRAE A
-								.services-inner-view-all.more.js-list-more(data-alt-text='Скрыть')
-									a(href="#").link-view-all Все приемущества
-									.link-view-carret
-										+icon('arrow_down')
-			.content-wrap
-				aside.side-bar.js-stick-parent
-					.side-bar-banner.js-stick
-						+link-banner('Узнать больше и заказать наши услуги', 'Перейти к услугам', 'side-banner-1.jpg')
-				.content-inner
+
 					.services-config-inner
 						form(action="#").services-config
 						

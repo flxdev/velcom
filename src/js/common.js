@@ -289,6 +289,7 @@ function stickinit() {
 		$('.js-stick').stick_in_parent({
 			parent: ".js-stick-parent",
 			offset_top: 90,
+			inner_scrolling: false
 		});
 	}, 1);
 }

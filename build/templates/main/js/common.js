@@ -273,7 +273,8 @@ function stickinit() {
 	setTimeout(function () {
 		$('.js-stick').stick_in_parent({
 			parent: ".js-stick-parent",
-			offset_top: 90
+			offset_top: 90,
+			inner_scrolling: false
 		});
 	}, 1);
 }

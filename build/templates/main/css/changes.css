@@ -1,0 +1,15 @@
+.side-bar-nav + .side-bar-banner {
+  margin-top: 3.75rem; }
+
+.side-bar-banner + .side-bar-banner {
+  margin-top: 1.25rem; }
+
+.link-banner__title {
+  margin-top: 0; }
+
+@media only screen and (max-width: 768px) {
+  .side-bar-nav,
+  .link-banner {
+    width: 100%;
+    max-width: 28.125rem;
+    margin-left: 0; } }
